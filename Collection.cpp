@@ -49,10 +49,14 @@ QPixmap Collection::getPixmap(QString letter){
 
 void Collection::playSoundPicture(QString letter,bool async){
     QString speak_method = (listLetters[letter].speak_method.isEmpty()) ? _speak_method : listLetters[letter].speak_method;
-    QString espeak_params = (listLetters[letter].espeak_params.isEmpty()) ? _espeak_params : listLetters[letter].espeak_params;
+    QString espeak_params = (listLetters[letter].espeak_params.isEmpty()) ? _espeak_params : listLetters[letter].espeak_params;   
 
     if (speak_method=="espeak"){
-
+        if (async){
+            QProcess::startDetached("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
+        }else{
+            QProcess::execute("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
+        }
     }else{
         QString filename = _pathUserResources+"/"+listLetters[letter].sound_pic;
         if (async){

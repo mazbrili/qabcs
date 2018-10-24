@@ -200,8 +200,11 @@ void MainWindow::playSoundLetter(QString letter,bool async){
             QString espeak_params = (l.espeak_params.isEmpty()) ? _espeak_params : l.espeak_params;
 
             if (speak_method=="espeak"){
-                QString espeak_words = l.espeak_words;
-
+                if (async){
+                    QProcess::startDetached("espeak "+espeak_params+" "+l.espeak_words);
+                }else{
+                    QProcess::execute("espeak "+espeak_params+" "+l.espeak_words);
+                }
             }else{
                 QString filename = globalPathUserResources+"/"+l.sound_letter;
                 if (async){
