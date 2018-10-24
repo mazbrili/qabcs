@@ -37,8 +37,8 @@ gcc {
     QMAKE_CXXFLAGS += -Wall -Wextra -Wformat -Wformat-security -Wno-unused-variable -Wno-unused-parameter
 }
 
-TRANSLATIONS = qabcs_en.ts \
-    qabcs_ru.ts
+TRANSLATIONS = langs/qabcs_en.ts \
+    langs/qabcs_ru.ts
 
 # Input
 SOURCES += main.cpp \

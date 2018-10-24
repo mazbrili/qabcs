@@ -9,7 +9,7 @@ FormHelp::FormHelp(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Help"));
-    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/abc.png"));
+    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
 
 
     ui->textEdit->setText(tr("How to use:\n\

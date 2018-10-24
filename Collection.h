@@ -19,12 +19,12 @@ struct LETTER_CONFIG {
 
 class Collection{
     public:
-        explicit Collection(QString pathUserResources);
+        explicit Collection(QString abcLanguage);
 
         void setGlobalParam(QJsonObject params);
         void setLetter(QString letter,QJsonObject params);
         void clear();
-        void setPathUserResources(QString pathUserResources);
+        void setAbcLanguage(QString abcLanguage);
 
         QString getPixmapFileName(QString letter);
         QString getName(QString letter);
@@ -37,7 +37,7 @@ class Collection{
     private:
         QMap<QString,LETTER_CONFIG> listLetters;
 
-        QString _pathUserResources;
+        QString _abcLanguage;
 
         QString _speak_method;
         QString _espeak_params;

@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(this->width(),this->height());
-    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/abc.png"));
+    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
 
     currentIndexLetter=0;   
     listTypes = QStringList() << "misc" << "food" << "animals" << "instrument" << "toys";
@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     // init collections
-    for (QString type:listTypes) listCollections[type] = new Collection(globalPathUserResources);
+    for (QString type:listTypes) listCollections[type] = new Collection(confSettings->value("abc/language","en").toString());
 
     initToolBar();
     setAbcLang(confSettings->value("abc/language","en").toString());
@@ -57,41 +57,41 @@ void MainWindow::initToolBar(){
 
     typeGameGroup = new QActionGroup(this);
 
-    accAbc = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/abc.png"), tr("Find the letter on the keyboard"), this);
+    accAbc = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"), tr("Find the letter on the keyboard"), this);
     accAbc->setStatusTip(tr("Find the letter on the keyboard"));
     accAbc->setCheckable(true);
     accAbc->setActionGroup(typeGameGroup);
 
-    accFood = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/food.png"), tr("Show foods that begin with each letter"), this);
+    accFood = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/food.png"), tr("Show foods that begin with each letter"), this);
     accFood->setStatusTip(tr("Show foods that begin with each letter"));
     accFood ->setCheckable(true);
     accFood->setActionGroup(typeGameGroup);
 
-    accAnimals = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/animals.png"), tr("Show animals that begin with each letter"), this);
+    accAnimals = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/animals.png"), tr("Show animals that begin with each letter"), this);
     accAnimals->setStatusTip(tr("Show animals that begin with each letter"));
     accAnimals->setCheckable(true);
     accAnimals->setActionGroup(typeGameGroup);
 
-    accInstrument = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/instrument.png"), tr("Show musical instruments for each letter"), this);
+    accInstrument = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/instrument.png"), tr("Show musical instruments for each letter"), this);
     accInstrument->setStatusTip(tr("Show musical instruments for each letter"));
     accInstrument->setCheckable(true);
     accInstrument->setActionGroup(typeGameGroup);
 
-    accToys = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/toys.png"), tr("Show toys for each letter"), this);
+    accToys = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/toys.png"), tr("Show toys for each letter"), this);
     accToys->setStatusTip(tr("Show toys for each letter"));
     accToys->setCheckable(true);
     accToys->setActionGroup(typeGameGroup);
 
-    accLang = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/languages.png"), tr("Select language"), this);
+    accLang = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/languages.png"), tr("Select language"), this);
     accLang->setStatusTip(tr("Select language"));
 
-    accHelp = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/help.png"), tr("Help"), this);
+    accHelp = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/help.png"), tr("Help"), this);
     accHelp->setStatusTip(tr("Help"));
 
-    accInfo = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/info.png"), tr("About qabcs"), this);
+    accInfo = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/info.png"), tr("About qabcs"), this);
     accInfo->setStatusTip(tr("About qabcs"));
 
-    accExit = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/exit.png"), tr("Exit"), this);
+    accExit = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/exit.png"), tr("Exit"), this);
     accExit->setStatusTip(tr("Exit"));
 
     toolBar->addAction(accAbc);
@@ -126,14 +126,15 @@ void MainWindow::initLanguageAbc(){
     for (QString type:listTypes) listCollections[type]->clear();
 
     // reinit path to resource
-    for (QString type:listTypes) listCollections[type]->setPathUserResources(globalPathUserResources);
+    for (QString type:listTypes) listCollections[type]->setAbcLanguage(currentLanguageAbc);
 
 
+    QString jsonFilename = globalPathUserResources+"/"+currentLanguageAbc+"/abc.json";
     QByteArray val;
     QFile file;
-    file.setFileName(globalPathUserResources+"/abc_"+currentLanguageAbc+".json");
+    file.setFileName(jsonFilename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(this,"QABCS",tr("Error open ")+globalPathUserResources+"/abc_"+currentLanguageAbc+".json\n"+file.errorString());
+        QMessageBox::critical(this,"QABCS",tr("Error open ")+jsonFilename+"\n"+file.errorString());
         return;
     }
     val = file.readAll();
@@ -141,7 +142,7 @@ void MainWindow::initLanguageAbc(){
 
     QJsonDocument document = QJsonDocument::fromJson(val);
     if (document.isEmpty()){
-        QMessageBox::critical(this,"QABCS","abc_"+currentLanguageAbc+".json "+tr("is not valid"));
+        QMessageBox::critical(this,"QABCS",jsonFilename+" "+tr("is not valid"));
         return;
     }
     QJsonObject root = document.object();
@@ -206,7 +207,7 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                     QProcess::execute("espeak "+espeak_params+" "+l.espeak_words);
                 }
             }else{
-                QString filename = globalPathUserResources+"/"+l.sound_letter;
+                QString filename =  GLOBAL_PATH_USERDATA+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter;
                 if (async){
                     QProcess::startDetached("play "+filename);
                 }else{

@@ -1,8 +1,9 @@
 #include "Collection.h"
 
 #include <QProcess>
+#include "config_qabcs.h"
 
-Collection::Collection(QString pathUserResources) : _pathUserResources(pathUserResources){
+Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
 
 }
 
@@ -26,8 +27,8 @@ void Collection::clear(){
     listLetters.clear();
 }
 
-void Collection::setPathUserResources(QString pathUserResources){
-    _pathUserResources=pathUserResources;
+void Collection::setAbcLanguage(QString abcLanguage){
+    _abcLanguage=abcLanguage;
 }
 
 QString Collection::getPixmapFileName(QString letter){
@@ -44,7 +45,7 @@ QString Collection::getSound(QString letter){
 }
 
 QPixmap Collection::getPixmap(QString letter){
-    return QPixmap(_pathUserResources+"/"+listLetters[letter].pic);
+    return QPixmap(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+listLetters[letter].pic);
 }
 
 void Collection::playSoundPicture(QString letter,bool async){
@@ -58,7 +59,7 @@ void Collection::playSoundPicture(QString letter,bool async){
             QProcess::execute("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
         }
     }else{
-        QString filename = _pathUserResources+"/"+listLetters[letter].sound_pic;
+        QString filename = GLOBAL_PATH_USERDATA+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic;
         if (async){
             QProcess::startDetached("play "+filename);
         }else{

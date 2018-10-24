@@ -13,7 +13,7 @@ FormAbout::FormAbout(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(this->width(),this->height());
     this->setWindowTitle(tr("About"));
-    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/abc.png"));
+    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
 
     ui->label_2->setText(tr("Version: ")+QString(QABCS_VERSION));
     ui->label_3->setText(tr("Date build: ")+QString(QABCS_DATEBUILD));

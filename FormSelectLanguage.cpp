@@ -17,7 +17,7 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(this->width(),this->height());
     this->setWindowTitle(tr("Select language abc"));
-    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/abc.png"));
+    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
 
     QDir dirConfig(QDir::homePath()+"/.qabcs/");
     if (dirConfig.exists()==false) dirConfig.mkpath(QDir::homePath()+"/.qabcs/");
@@ -28,22 +28,19 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
 
     QDir dir(GLOBAL_PATH_USERDATA+"/abcs/");
-    dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot);
+    dir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot);
     QFileInfoList list = dir.entryInfoList();
     for (int i = 0; i < list.size(); ++i) {
         QFileInfo fileInfo = list.at(i);
 
+        if (fileInfo.fileName()=="all") continue;
 
-        ABC_INFO lang_info = getLangFromJson(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName());
-        if (!lang_info.language.isEmpty()){            
-            QRegExp rx("(abc_)(.*)(.json)");
-            if (rx.indexIn(fileInfo.fileName())!=-1){
-                QString lang = rx.cap(2);
-                ui->comboBox->addItem(lang_info.language+"  ("+lang_info.author+")",lang);
-                if (confSettings->value("abc/language","en").toString()==lang){
-                    ui->comboBox->setCurrentIndex(ui->comboBox->count()-1);
-                }
-            }
+
+        ABC_INFO lang_info = getLangFromJson(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.json");
+        QString lang = fileInfo.fileName();
+        ui->comboBox->addItem(lang_info.language+"  ("+lang_info.author+")",lang);
+        if (confSettings->value("abc/language","en").toString()==lang){
+            ui->comboBox->setCurrentIndex(ui->comboBox->count()-1);
         }
     }
 
