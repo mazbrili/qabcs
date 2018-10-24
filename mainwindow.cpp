@@ -264,7 +264,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
         if (currentIndexLetter<listLetters.size()){
             if (listLetters.at(currentIndexLetter).letter==QString(QChar(key))){
-                playSoundLetter(listLetters.at(currentIndexLetter).sound_letter);
+                playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 currentIndexLetter++;
             }
         }
@@ -278,7 +278,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         for (int i=0;i<listLetters.size();i++){
             if (listLetters.at(i).letter==QString(QChar(key))){
                 currentIndexLetter=i;
-                playSoundLetter(listLetters.at(currentIndexLetter).sound_letter,true);
+                playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
                 break;
             }
         }
