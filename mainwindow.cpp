@@ -201,11 +201,14 @@ void MainWindow::playSoundLetter(QString letter,bool async){
             QString espeak_params = (l.espeak_params.isEmpty()) ? _espeak_params : l.espeak_params;
 
             if (speak_method=="espeak"){
-                if (async){
-                    QProcess::startDetached("espeak "+espeak_params+" "+l.espeak_words);
-                }else{
-                    QProcess::execute("espeak "+espeak_params+" "+l.espeak_words);
+                if (!l.espeak_words.isEmpty()){
+                    if (async){
+                        QProcess::startDetached("espeak "+espeak_params+" "+l.espeak_words);
+                    }else{
+                        QProcess::execute("espeak "+espeak_params+" "+l.espeak_words);
+                    }
                 }
+
             }else{
                 QString filename =  GLOBAL_PATH_USERDATA+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter;
                 if (async){

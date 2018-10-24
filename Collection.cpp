@@ -53,10 +53,12 @@ void Collection::playSoundPicture(QString letter,bool async){
     QString espeak_params = (listLetters[letter].espeak_params.isEmpty()) ? _espeak_params : listLetters[letter].espeak_params;   
 
     if (speak_method=="espeak"){
-        if (async){
-            QProcess::startDetached("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
-        }else{
-            QProcess::execute("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
+        if (!listLetters[letter].espeak_words.isEmpty()){
+            if (async){
+                QProcess::startDetached("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
+            }else{
+                QProcess::execute("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
+            }
         }
     }else{
         QString filename = GLOBAL_PATH_USERDATA+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic;
