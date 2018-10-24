@@ -243,6 +243,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         return;
     }
 
+    if (listLetters.size()==0) return;
+
+
     if (key==Qt::Key_Space){
         listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter);
         return;
@@ -304,7 +307,7 @@ void MainWindow::clickButtonAbc(){
         ui->label_2->setText(currentLetter);
     }else{
         ui->label->setPixmap(QPixmap());
-        ui->label_3->setText("");
+        ui->label_3->setText(tr("abc is not loaded"));
         ui->label_2->setText("");
     }
 }
