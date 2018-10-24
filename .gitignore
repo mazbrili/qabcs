@@ -1,0 +1,12 @@
+/0000/
+/Bin/
+/.build/
+/release/
+/debug/
+/.qmake.stash
+/Makefile
+/Makefile.Debug
+/Makefile.Release
+/qabcs.pro.user
+
+
