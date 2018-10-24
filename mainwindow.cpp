@@ -15,8 +15,7 @@
 #include <QJsonArray>
 #include <QSound>
 #include <QProcess>
-#include <QAudioOutput>
-
+#include <QEventLoop>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -41,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initToolBar();
     setAbcLang(confSettings->value("abc/language","en").toString());
+
+
 }
 
 MainWindow::~MainWindow(){
@@ -225,6 +226,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     int key=event->key();
     qDebug() << "KEY: " << key << ", " << QString(QChar(key));
 
+    soundEffect.stop();
+
     if (key==Qt::Key_Tab){
         switch (typeGame) {
         case TYPE_ABC:
@@ -272,15 +275,20 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             }
         }
         if (currentIndexLetter>=listLetters.size()){
-            ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/ribbon.png"));
+            ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/ribbon.png"));
             ui->label_2->setText(tr("CONGRATS!"));
             ui->label_3->setText(tr("Press \"ENTER\" to Play Again"));
+
+            soundEffect.setSource(QUrl::fromLocalFile(GLOBAL_PATH_USERDATA+"/sounds/cheering.wav"));
+            soundEffect.play();
+
             return;
         }
     }else{
         for (int i=0;i<listLetters.size();i++){
             if (listLetters.at(i).letter==QString(QChar(key))){
                 currentIndexLetter=i;
+
                 playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
                 break;
             }

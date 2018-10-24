@@ -7,6 +7,7 @@
 #include <QKeyEvent>
 #include <QMap>
 #include <QSettings>
+#include <QSoundEffect>
 
 #include "Collection.h"
 
@@ -73,6 +74,8 @@ class MainWindow : public QMainWindow {
         QString currentLanguageAbc;
 
         QSettings *confSettings;
+
+        QSoundEffect soundEffect;
 
 
         QString _speak_method;
