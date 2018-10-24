@@ -224,7 +224,6 @@ void MainWindow::playSoundLetter(QString letter,bool async){
 
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     int key=event->key();
-    qDebug() << "KEY: " << key << ", " << QString(QChar(key));
 
     soundEffect.stop();
 
