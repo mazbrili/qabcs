@@ -1,0 +1,885 @@
+{
+   "general": {
+      "language": "Русский",
+      "author": "admsasha <dik@inbox.ru>",
+      "speak_method": "file",
+      "espeak_params": ""
+   },
+   "letters": [
+	{"А": {
+		"sound_letter": "A.wav",
+                "speak_method": "file",
+	        "espeak_params": "",
+                "espeak_words": "",
+		"misc": {
+		      "pic": "misc/airplane.png",
+		      "name": "AIRPLANE",
+                      "speak_method": "file",
+		      "sound_pic": "airplane.wav",
+ 	              "espeak_params": "",
+	              "espeak_words": ""
+		},
+		"food": {
+		      "pic": "food/apple.png",
+		      "name": "APPLE",
+		      "sound_pic": "apple.wav"
+		},
+		"animals": {
+		      "pic": "animals/angelfish.png",
+		      "name": "ANGELFISH",
+		      "sound_pic": "angelfish.wav"
+		},
+		"instrument": {
+		      "pic": "music/accordion.png",
+		      "name": "ACCORDION",
+		      "sound_pic": "accordion.wav"
+		},
+		"toys": {
+		      "pic": "toys/anklet.png",
+		      "name": "ANKLET",
+		      "sound_pic": "anklet.wav"
+		}
+	}},
+	{"Б": {
+		"sound_letter": "B.wav",
+		"misc": {
+		      "pic": "toys/bicycle.png",
+		      "name": "BICYCLE",
+		      "sound_pic": "bicycle.wav"
+		},
+		"food": {
+		      "pic": "food/bananas.png",
+		      "name": "BANANAS",
+		      "sound_pic": "bananas.wav"
+		},
+		"animals": {
+		      "pic": "animals/bird.png",
+		      "name": "BIRD",
+		      "sound_pic": "bird.wav"
+		},
+		"instrument": {
+		      "pic": "music/bagpipes.png",
+		      "name": "BAGPIPES",
+		      "sound_pic": "bagpipes.wav"
+		},
+		"toys": {
+		      "pic": "toys/balloons.png",
+		      "name": "BALLOONS",
+		      "sound_pic": "balloons.wav"
+		}
+	}},	
+	{"В": {
+		"sound_letter": "C.wav",
+		"misc": {
+		      "pic": "misc/clock.png",
+		      "name": "CLOCK",
+		      "sound_pic": "clock.wav"
+		},
+		"food": {
+		      "pic": "food/cherries.png",
+		      "name": "CHERRIES",
+		      "sound_pic": "cherries.wav"
+		},
+		"animals": {
+		      "pic": "animals/cat.png",
+		      "name": "CAT",
+		      "sound_pic": "cat.wav"
+		},
+		"instrument": {
+		      "pic": "music/clarinet.png",
+		      "name": "CLARINET",
+		      "sound_pic": "clarinet.wav"
+		},
+		"toys": {
+		      "pic": "toys/chalkboard.png",
+		      "name": "CHALKBOARD",
+		      "sound_pic": "chalkboard.wav"
+		}
+	}},
+	{"Г": {
+		"sound_letter": "D.wav",
+		"misc": {
+		      "pic": "animals/dolphin.png",
+		      "name": "DOLPHIN",
+		      "sound_pic": "dolphin.wav"
+		},
+		"food": {
+		      "pic": "food/doughnut.png",
+		      "name": "DOUGHNUT",
+		      "sound_pic": "doughnut.wav"
+		},
+		"animals": {
+		      "pic": "animals/dog.png",
+		      "name": "DOG",
+		      "sound_pic": "dog.wav"
+		},
+		"instrument": {
+		      "pic": "music/drums.png",
+		      "name": "DRUMS",
+		      "sound_pic": "drums.wav"
+		},
+		"toys": {
+		      "pic": "toys/doll.png",
+		      "name": "DOLL",
+		      "sound_pic": "doll.wav"
+		}
+	}},
+	{"Д": {
+		"sound_letter": "E.wav",
+		"misc": {
+		      "pic": "misc/earth.png",
+		      "name": "EARTH",
+		      "sound_pic": "earth.wav"
+		},
+		"food": {
+		      "pic": "food/egg.png",
+		      "name": "EGG",
+		      "sound_pic": "egg.wav"
+		},
+		"animals": {
+		      "pic": "animals/elephant.png",
+		      "name": "ELEPHANT",
+		      "sound_pic": "elephant.wav"
+		},
+		"instrument": {
+		      "pic": "music/electric_guitar.png",
+		      "name": "ELECTRIC GUITAR",
+		      "sound_pic": "eguitar.wav"
+		},
+		"toys": {
+		      "pic": "toys/easel.png",
+		      "name": "EASEL",
+		      "sound_pic": "easel.wav"
+		}
+	}},
+	{"Е": {
+		"sound_letter": "F.wav",
+		"misc": {
+		      "pic": "misc/fire.png",
+		      "name": "FIRE",
+		      "sound_pic": "fire.wav"
+		},
+		"food": {
+		      "pic": "food/fries.png",
+		      "name": "FRIES",
+		      "sound_pic": "fries.wav"
+		},
+		"animals": {
+		      "pic": "animals/frog.png",
+		      "name": "FROG",
+		      "sound_pic": "frog.wav"
+		},
+		"instrument": {
+		      "pic": "music/flute.png",
+		      "name": "FLUTE",
+		      "sound_pic": "flute.wav"
+		},
+		"toys": {
+		      "pic": "toys/football.png",
+		      "name": "FOOTBALL",
+		      "sound_pic": "football.wav"
+		}
+	}},
+	{"Ё": {
+		"sound_letter": "G.wav",
+		"misc": {
+		      "pic": "animals/grasshopper.png",
+		      "name": "GRASSHOPPER",
+		      "sound_pic": "grasshopper.wav"
+		},
+		"food": {
+		      "pic": "food/grapes.png",
+		      "name": "GRAPES",
+		      "sound_pic": "grapes.wav"
+		},
+		"animals": {
+		      "pic": "animals/giraffe.png",
+		      "name": "GIRAFFE",
+		      "sound_pic": "giraffe.wav"
+		},
+		"instrument": {
+		      "pic": "music/guitar.png",
+		      "name": "GUITAR",
+		      "sound_pic": "guitar.wav"
+		},
+		"toys": {
+		      "pic": "toys/glove.png",
+		      "name": "GLOVE",
+		      "sound_pic": "glove.wav"
+		}
+	}},
+	{"Ж": {
+		"sound_letter": "H.wav",
+		"misc": {
+		      "pic": "misc/hat.png",
+		      "name": "HAT",
+		      "sound_pic": "hat.wav"
+		},
+		"food": {
+		      "pic": "food/hot_dog.png",
+		      "name": "HOT_DOG",
+		      "sound_pic": "hot_dog.wav"
+		},
+		"animals": {
+		      "pic": "animals/horse.png",
+		      "name": "HORSE",
+		      "sound_pic": "horse.wav"
+		},
+		"instrument": {
+		      "pic": "music/harp.png",
+		      "name": "HARP",
+		      "sound_pic": "harp.wav"
+		},
+		"toys": {
+		      "pic": "toys/horn.png",
+		      "name": "HORN",
+		      "sound_pic": "horn.wav"
+		}
+	}},
+	{"З": {
+		"sound_letter": "I.wav",
+		"misc": {
+		      "pic": "misc/igloo.png",
+		      "name": "IGLOO",
+		      "sound_pic": "igloo.wav"
+		},
+		"food": {
+		      "pic": "food/ice_cream.png",
+		      "name": "ICE_CREAM",
+		      "sound_pic": "ice_cream.wav"
+		},
+		"animals": {
+		      "pic": "animals/iguana.png",
+		      "name": "IGUANA",
+		      "sound_pic": "iguana.wav"
+		},
+		"instrument": {
+		      "pic": "music/ipu.png",
+		      "name": "IPU",
+		      "sound_pic": "ipu.wav"
+		},
+		"toys": {
+		      "pic": "toys/ice_skate.png",
+		      "name": "ICE_SKATE",
+		      "sound_pic": "ice_skate.wav"
+		}
+	}},
+	{"И": {
+		"sound_letter": "J.wav",
+		"misc": {
+		      "pic": "misc/jar.png",
+		      "name": "JAR",
+		      "sound_pic": "jar.wav"
+		},
+		"food": {
+		      "pic": "food/juice.png",
+		      "name": "JUICE",
+		      "sound_pic": "juice.wav"
+		},
+		"animals": {
+		      "pic": "animals/jaguar.png",
+		      "name": "JAGUAR",
+		      "sound_pic": "jaguar.wav"
+		},
+		"instrument": {
+		      "pic": "music/jug.png",
+		      "name": "JUG",
+		      "sound_pic": "jug.wav"
+		},
+		"toys": {
+		      "pic": "toys/jump_rope.png",
+		      "name": "JUMP_ROPE",
+		      "sound_pic": "jump_rope.wav"
+		}
+	}},
+	{"Й": {
+		"sound_letter": "K.wav",
+		"misc": {
+		      "pic": "misc/keyboard.png",
+		      "name": "KEYBOARD",
+		      "sound_pic": "keyboard.wav"
+		},
+		"food": {
+		      "pic": "food/ketchup.png",
+		      "name": "KETCHUP",
+		      "sound_pic": "ketchup.wav"
+		},
+		"animals": {
+		      "pic": "animals/koala.png",
+		      "name": "KOALA",
+		      "sound_pic": "koala.wav"
+		},
+		"instrument": {
+		      "pic": "music/kazoo.png",
+		      "name": "KAZOO",
+		      "sound_pic": "kazoo.wav"
+		},
+		"toys": {
+		      "pic": "toys/kite.png",
+		      "name": "KITE",
+		      "sound_pic": "kite.wav"
+		}
+	}},
+	{"К": {
+		"sound_letter": "L.wav",
+		"misc": {
+		      "pic": "animals/ladybug.png",
+		      "name": "LADYBUG",
+		      "sound_pic": "ladybug.wav"
+		},
+		"food": {
+		      "pic": "food/lasagna.png",
+		      "name": "LASAGNA",
+		      "sound_pic": "lasagna.wav"
+		},
+		"animals": {
+		      "pic": "animals/lion.png",
+		      "name": "LION",
+		      "sound_pic": "lion.wav"
+		},
+		"instrument": {
+		      "pic": "music/lute.png",
+		      "name": "LUTE",
+		      "sound_pic": "lute.wav"
+		},
+		"toys": {
+		      "pic": "toys/lunchbox.png",
+		      "name": "LUNCHBOX",
+		      "sound_pic": "lunchbox.wav"
+		}
+	}},
+	{"Л": {
+		"sound_letter": "M.wav",
+		"misc": {
+		      "pic": "misc/mag_glass.png",
+		      "name": "MAGNIFYING GLASS",
+		      "sound_pic": "mag_glass.wav"
+		},
+		"food": {
+		      "pic": "food/mushroom.png",
+		      "name": "MUSHROOM",
+		      "sound_pic": "mushroom.wav"
+		},
+		"animals": {
+		      "pic": "animals/mouse.png",
+		      "name": "MOUSE",
+		      "sound_pic": "mouse.wav"
+		},
+		"instrument": {
+		      "pic": "music/maracas.png",
+		      "name": "MARACAS",
+		      "sound_pic": "maracas.wav"
+		},
+		"toys": {
+		      "pic": "toys/magnet.png",
+		      "name": "MAGNET",
+		      "sound_pic": "magnet.wav"
+		}
+	}},
+	{"М": {
+		"sound_letter": "N.wav",
+		"misc": {
+		      "pic": "misc/newspaper.png",
+		      "name": "NEWSPAPER",
+		      "sound_pic": "newspaper.wav"
+		},
+		"food": {
+		      "pic": "food/noodle.png",
+		      "name": "NOODLE",
+		      "sound_pic": "noodle.wav"
+		},
+		"animals": {
+		      "pic": "animals/newt.png",
+		      "name": "NEWT",
+		      "sound_pic": "newt.wav"
+		},
+		"instrument": {
+		      "pic": "music/ney.png",
+		      "name": "NEY",
+		      "sound_pic": "ney.wav"
+		},
+		"toys": {
+		      "pic": "toys/necklace.png",
+		      "name": "NECKLACE",
+		      "sound_pic": "necklace.wav"
+		}
+	}},
+	{"Н": {
+		"sound_letter": "O.wav",
+		"misc": {
+		      "pic": "food/onion.png",
+		      "name": "ONION",
+		      "sound_pic": "onion.wav"
+		},
+		"food": {
+		      "pic": "food/olive.png",
+		      "name": "OLIVE",
+		      "sound_pic": "olive.wav"
+		},
+		"animals": {
+		      "pic": "animals/owl.png",
+		      "name": "OWL",
+		      "sound_pic": "owl.wav"
+		},
+		"instrument": {
+		      "pic": "music/oboe.png",
+		      "name": "OBOE",
+		      "sound_pic": "oboe.wav"
+		},
+		"toys": {
+		      "pic": "toys/origami.png",
+		      "name": "ORIGAMI",
+		      "sound_pic": "origami.wav"
+		}
+	}},
+	{"О": {
+		"sound_letter": "P.wav",
+		"misc": {
+		      "pic": "toys/paper_airplane.png",
+		      "name": "PAPER AIRPLANE",
+		      "sound_pic": "paper_plane.wav"
+		},
+		"food": {
+		      "pic": "food/pretzel.png",
+		      "name": "PRETZEL",
+		      "sound_pic": "pretzel.wav"
+		},
+		"animals": {
+		      "pic": "animals/pig.png",
+		      "name": "PIG",
+		      "sound_pic": "pig.wav"
+		},
+		"instrument": {
+		      "pic": "music/piano.png",
+		      "name": "PIANO",
+		      "sound_pic": "piano.wav"
+		},
+		"toys": {
+		      "pic": "toys/paint.png",
+		      "name": "PAINT",
+		      "sound_pic": "paint.wav"
+		}
+	}},
+	{"П": {
+		"sound_letter": "Q.wav",
+		"misc": {
+		      "pic": "misc/quarter.png",
+		      "name": "QUARTER",
+		      "sound_pic": "quarter.wav"
+		},
+		"food": {
+		      "pic": "food/quiche.png",
+		      "name": "QUICHE",
+		      "sound_pic": "quiche.wav"
+		},
+		"animals": {
+		      "pic": "animals/quail.png",
+		      "name": "QUAIL",
+		      "sound_pic": "quail.wav"
+		},
+		"instrument": {
+		      "pic": "music/quena.png",
+		      "name": "QUENA",
+		      "sound_pic": "quena.wav"
+		},
+		"toys": {
+		      "pic": "toys/quilt.png",
+		      "name": "QUILT",
+		      "sound_pic": "quilt.wav"
+		}
+	}},
+	{"Р": {
+		"sound_letter": "R.wav",
+		"misc": {
+		      "pic": "animals/raccoon.png",
+		      "name": "RACCOON",
+		      "sound_pic": "raccoon.wav"
+		},
+		"food": {
+		      "pic": "food/radishes.png",
+		      "name": "RADISHES",
+		      "sound_pic": "radishes.wav"
+		},
+		"animals": {
+		      "pic": "animals/rooster.png",
+		      "name": "ROOSTER",
+		      "sound_pic": "rooster.wav"
+		},
+		"instrument": {
+		      "pic": "music/recorder.png",
+		      "name": "RECORDER",
+		      "sound_pic": "recorder.wav"
+		},
+		"toys": {
+		      "pic": "toys/rocking_horse.png",
+		      "name": "ROCK_HORSE",
+		      "sound_pic": "rocking_horse.wav"
+		}
+	}},
+	{"С": {
+		"sound_letter": "S.wav",
+		"misc": {
+		      "pic": "misc/star.png",
+		      "name": "STAR",
+		      "sound_pic": "star.wav"
+		},
+		"food": {
+		      "pic": "food/strawberry.png",
+		      "name": "STRAWBERRY",
+		      "sound_pic": "strawberry.wav"
+		},
+		"animals": {
+		      "pic": "animals/sheep.png",
+		      "name": "SHEEP",
+		      "sound_pic": "sheep.wav"
+		},
+		"instrument": {
+		      "pic": "music/sax.png",
+		      "name": "SAX",
+		      "sound_pic": "sax.wav"
+		},
+		"toys": {
+		      "pic": "toys/seesaw.png",
+		      "name": "SEESAW",
+		      "sound_pic": "seesaw.wav"
+		}
+	}},
+	{"Т": {
+		"sound_letter": "T.wav",
+		"misc": {
+		      "pic": "misc/train.png",
+		      "name": "TRAIN",
+		      "sound_pic": "train.wav"
+		},
+		"food": {
+		      "pic": "food/tomato.png",
+		      "name": "TOMATO",
+		      "sound_pic": "tomato.wav"
+		},
+		"animals": {
+		      "pic": "animals/turtle.png",
+		      "name": "TURTLE",
+		      "sound_pic": "turtle.wav"
+		},
+		"instrument": {
+		      "pic": "music/trumpet.png",
+		      "name": "TRUMPET",
+		      "sound_pic": "trumpet.wav"
+		},
+		"toys": {
+		      "pic": "toys/top.png",
+		      "name": "TOP",
+		      "sound_pic": "top.wav"
+		}
+	}},
+	{"У": {
+		"sound_letter": "U.wav",
+		"misc": {
+		      "pic": "misc/umbrella.png",
+		      "name": "UMBRELLA",
+		      "sound_pic": "umbrella.wav"
+		},
+		"food": {
+		      "pic": "food/udon.png",
+		      "name": "UDON",
+		      "sound_pic": "udon.wav"
+		},
+		"animals": {
+		      "pic": "animals/urchin.png",
+		      "name": "URCHIN",
+		      "sound_pic": "urchin.wav"
+		},
+		"instrument": {
+		      "pic": "music/ukulele.png",
+		      "name": "UKULELE",
+		      "sound_pic": "ukulele.wav"
+		},
+		"toys": {
+		      "pic": "toys/unicycle.png",
+		      "name": "UNICYCLE",
+		      "sound_pic": "unicycle.wav"
+		}
+	}},
+	{"Ф": {
+		"sound_letter": "V.wav",
+		"misc": {
+		      "pic": "misc/vase.png",
+		      "name": "VASE",
+		      "sound_pic": "vase.wav"
+		},
+		"food": {
+		      "pic": "food/vegetables.png",
+		      "name": "VEGETABLES",
+		      "sound_pic": "vegetables.wav"
+		},
+		"animals": {
+		      "pic": "animals/vulture.png",
+		      "name": "VULTURE",
+		      "sound_pic": "vulture.wav"
+		},
+		"instrument": {
+		      "pic": "music/violin.png",
+		      "name": "VIOLIN",
+		      "sound_pic": "violin.wav"
+		},
+		"toys": {
+		      "pic": "toys/volleyball.png",
+		      "name": "VOLLEYBALL",
+		      "sound_pic": "volleyball.wav"
+		}
+	}},
+ 	{"Х": {
+		"sound_letter": "W.wav",
+		"misc": {
+		      "pic": "misc/watch.png",
+		      "name": "WATCH",
+		      "sound_pic": "watch.wav"
+		},
+		"food": {
+		      "pic": "food/watermelon.png",
+		      "name": "WATERMELON",
+		      "sound_pic": "watermelon.wav"
+		},
+		"animals": {
+		      "pic": "animals/whale.png",
+		      "name": "WHALE",
+		      "sound_pic": "whale.wav"
+		},
+		"instrument": {
+		      "pic": "music/whistle.png",
+		      "name": "WHISTLE",
+		      "sound_pic": "whistle.wav"
+		},
+		"toys": {
+		      "pic": "toys/wagon.png",
+		      "name": "WAGON",
+		      "sound_pic": "wagon.wav"
+		}
+	}},
+ 	{"Ц": {
+		"sound_letter": "X.wav",
+		"misc": {
+		      "pic": "misc/x_ray.png",
+		      "name": "X RAY",
+		      "sound_pic": "xray.wav"
+		},
+		"food": {
+		      "pic": "food/x_cookie.png",
+		      "name": "X-COOKIE",
+		      "sound_pic": "xcookie.wav"
+		},
+		"animals": {
+		      "pic": "animals/xiphias.png",
+		      "name": "XIPHIAS",
+		      "sound_pic": "xiphias.wav"
+		},
+		"instrument": {
+		      "pic": "music/xylophone.png",
+		      "name": "XYLOPHONE",
+		      "sound_pic": "xylophone.wav"
+		},
+		"toys": {
+		      "pic": "music/xylophone.png",
+		      "name": "XYLOPHONE",
+		      "sound_pic": "xylophone.wav"
+		}
+	}},
+ 	{"Ч": {
+		"sound_letter": "Y.wav",
+		"misc": {
+		      "pic": "misc/yinyang.png",
+		      "name": "YINYANG",
+		      "sound_pic": "yinyang.wav"
+		},
+		"food": {
+		      "pic": "food/yam.png",
+		      "name": "YAM",
+		      "sound_pic": "yam.wav"
+		},
+		"animals": {
+		      "pic": "animals/yak.png",
+		      "name": "YAK",
+		      "sound_pic": "yak.wav"
+		},
+		"instrument": {
+		      "pic": "music/yangqin.png",
+		      "name": "YANGQIN",
+		      "sound_pic": "yangqin.wav"
+		},
+		"toys": {
+		      "pic": "toys/yoyo.png",
+		      "name": "YOYO",
+		      "sound_pic": "yoyo.wav"
+		}
+	}},
+ 	{"Ш": {
+		"sound_letter": "Z.wav",
+		"misc": {
+		      "pic": "misc/zipper.png",
+		      "name": "ZIPPER",
+		      "sound_pic": "zipper.wav"
+		},
+		"food": {
+		      "pic": "food/zucchini.png",
+		      "name": "ZUCCHINI",
+		      "sound_pic": "zucchini.wav"
+		},
+		"animals": {
+		      "pic": "animals/zebra.png",
+		      "name": "ZEBRA",
+		      "sound_pic": "zebra.wav"
+		},
+		"instrument": {
+		      "pic": "music/zurna.png",
+		      "name": "ZURNA",
+		      "sound_pic": "zurna.wav"
+		},
+		"toys": {
+		      "pic": "toys/zipline.png",
+		      "name": "ZIPLINE",
+		      "sound_pic": "zipline.wav"
+		}
+	}},
+ 	{"Щ": {
+		"sound_letter": "Y.wav",
+		"misc": {
+		      "pic": "misc/yinyang.png",
+		      "name": "YINYANG",
+		      "sound_pic": "yinyang.wav"
+		},
+		"food": {
+		      "pic": "food/yam.png",
+		      "name": "YAM",
+		      "sound_pic": "yam.wav"
+		},
+		"animals": {
+		      "pic": "animals/yak.png",
+		      "name": "YAK",
+		      "sound_pic": "yak.wav"
+		},
+		"instrument": {
+		      "pic": "music/yangqin.png",
+		      "name": "YANGQIN",
+		      "sound_pic": "yangqin.wav"
+		},
+		"toys": {
+		      "pic": "toys/yoyo.png",
+		      "name": "YOYO",
+		      "sound_pic": "yoyo.wav"
+		}
+	}},
+ 	{"Ы": {
+		"sound_letter": "Y.wav",
+		"misc": {
+		      "pic": "misc/yinyang.png",
+		      "name": "YINYANG",
+		      "sound_pic": "yinyang.wav"
+		},
+		"food": {
+		      "pic": "food/yam.png",
+		      "name": "YAM",
+		      "sound_pic": "yam.wav"
+		},
+		"animals": {
+		      "pic": "animals/yak.png",
+		      "name": "YAK",
+		      "sound_pic": "yak.wav"
+		},
+		"instrument": {
+		      "pic": "music/yangqin.png",
+		      "name": "YANGQIN",
+		      "sound_pic": "yangqin.wav"
+		},
+		"toys": {
+		      "pic": "toys/yoyo.png",
+		      "name": "YOYO",
+		      "sound_pic": "yoyo.wav"
+		}
+	}},
+ 	{"Э": {
+		"sound_letter": "Y.wav",
+		"misc": {
+		      "pic": "misc/yinyang.png",
+		      "name": "YINYANG",
+		      "sound_pic": "yinyang.wav"
+		},
+		"food": {
+		      "pic": "food/yam.png",
+		      "name": "YAM",
+		      "sound_pic": "yam.wav"
+		},
+		"animals": {
+		      "pic": "animals/yak.png",
+		      "name": "YAK",
+		      "sound_pic": "yak.wav"
+		},
+		"instrument": {
+		      "pic": "music/yangqin.png",
+		      "name": "YANGQIN",
+		      "sound_pic": "yangqin.wav"
+		},
+		"toys": {
+		      "pic": "toys/yoyo.png",
+		      "name": "YOYO",
+		      "sound_pic": "yoyo.wav"
+		}
+	}},
+ 	{"Ю": {
+		"sound_letter": "Y.wav",
+		"misc": {
+		      "pic": "misc/yinyang.png",
+		      "name": "YINYANG",
+		      "sound_pic": "yinyang.wav"
+		},
+		"food": {
+		      "pic": "food/yam.png",
+		      "name": "YAM",
+		      "sound_pic": "yam.wav"
+		},
+		"animals": {
+		      "pic": "animals/yak.png",
+		      "name": "YAK",
+		      "sound_pic": "yak.wav"
+		},
+		"instrument": {
+		      "pic": "music/yangqin.png",
+		      "name": "YANGQIN",
+		      "sound_pic": "yangqin.wav"
+		},
+		"toys": {
+		      "pic": "toys/yoyo.png",
+		      "name": "YOYO",
+		      "sound_pic": "yoyo.wav"
+		}
+	}},
+ 	{"Я": {
+		"sound_letter": "Y.wav",
+		"misc": {
+		      "pic": "misc/yinyang.png",
+		      "name": "YINYANG",
+		      "sound_pic": "yinyang.wav"
+		},
+		"food": {
+		      "pic": "food/yam.png",
+		      "name": "YAM",
+		      "sound_pic": "yam.wav"
+		},
+		"animals": {
+		      "pic": "animals/yak.png",
+		      "name": "YAK",
+		      "sound_pic": "yak.wav"
+		},
+		"instrument": {
+		      "pic": "music/yangqin.png",
+		      "name": "YANGQIN",
+		      "sound_pic": "yangqin.wav"
+		},
+		"toys": {
+		      "pic": "toys/yoyo.png",
+		      "name": "YOYO",
+		      "sound_pic": "yoyo.wav"
+		}
+	}}
+   ]
+   
+}
