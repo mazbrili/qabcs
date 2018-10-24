@@ -296,11 +296,17 @@ void MainWindow::clickButtonAbc(){
     typeGame=TYPE_ABC;
     currentIndexLetter=0;
 
-    QString currentLetter = listLetters.at(currentIndexLetter).letter;
+    if (listLetters.size()>0){
+        QString currentLetter = listLetters.at(currentIndexLetter).letter;
 
-    ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
-    ui->label_3->setText(listCollections[typeGameToString(typeGame)]->getName(currentLetter));
-    ui->label_2->setText(currentLetter);
+        ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
+        ui->label_3->setText(listCollections[typeGameToString(typeGame)]->getName(currentLetter));
+        ui->label_2->setText(currentLetter);
+    }else{
+        ui->label->setPixmap(QPixmap());
+        ui->label_3->setText("");
+        ui->label_2->setText("");
+    }
 }
 
 void MainWindow::clickButtonAnimals(){
