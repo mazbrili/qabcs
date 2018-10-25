@@ -48,6 +48,7 @@ class MainWindow : public QMainWindow {
         QString typeGameToString(TYPE_GAME type);
 
         void setAbcLang(QString lang);
+        void refreshViewer();
 
         void playSoundLetter(QString letter, bool async=false);
 

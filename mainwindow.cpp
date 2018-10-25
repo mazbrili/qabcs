@@ -196,6 +196,20 @@ void MainWindow::setAbcLang(QString lang){
 
 }
 
+void MainWindow::refreshViewer(){
+    if (currentIndexLetter<0) return;
+
+    QString currentLetter = listLetters.at(currentIndexLetter).letter;
+    QString text = listCollections[typeGameToString(typeGame)]->getName(currentLetter);
+
+    text.replace(currentLetter,"<font color=\"red\">"+currentLetter+"</font>");
+
+    ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
+    ui->label_3->setText(text);
+    ui->label_2->setText(currentLetter);
+
+}
+
 void MainWindow::playSoundLetter(QString letter,bool async){
     for (LETTER_INFO l:listLetters){
         if (l.letter==letter){
@@ -296,16 +310,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
     }
 
-
-    if (currentIndexLetter>=0){
-        QString currentLetter = listLetters.at(currentIndexLetter).letter;
-
-
-        ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
-        ui->label_3->setText(listCollections[typeGameToString(typeGame)]->getName(currentLetter));
-
-        ui->label_2->setText(currentLetter);
-    }
+    refreshViewer();
 }
 
 void MainWindow::clickButtonAbc(){
@@ -316,11 +321,7 @@ void MainWindow::clickButtonAbc(){
     currentIndexLetter=0;
 
     if (listLetters.size()>0){
-        QString currentLetter = listLetters.at(currentIndexLetter).letter;
-
-        ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
-        ui->label_3->setText(listCollections[typeGameToString(typeGame)]->getName(currentLetter));
-        ui->label_2->setText(currentLetter);
+        refreshViewer();
     }else{
         ui->label->setPixmap(QPixmap());
         ui->label_3->setText(tr("abc is not loaded"));
