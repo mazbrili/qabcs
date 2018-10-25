@@ -660,7 +660,7 @@
 		"sound_letter": "X.wav",
 		"misc": {
 		      "pic": "misc/x_ray.png",
-		      "name": "X RAY",
+		      "name": "X-RAY",
 		      "sound_pic": "xray.wav"
 		},
 		"food": {
