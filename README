@@ -1,0 +1,18 @@
+qabcs is copyright by AdmSasha (dik@inbox.ru), 2018
+
+This program is licensed under the terms and conditions of
+the GNU General Public License (GPLv3+).
+Please read the 'COPYING' file for more information.
+
+To build KRoots you need Qt5 and qmake.
+Full list of dependencies: see rpm/qabcs.spec
+
+Building:
+qmake
+make
+
+Installation (under root):
+make install
+
+Translations:
+https://www.transifex.com/Magic/qabcs
