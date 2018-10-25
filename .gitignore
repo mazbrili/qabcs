@@ -4,6 +4,7 @@
 /release/
 /debug/
 /.qmake.stash
+/langs/*.qm
 /Makefile
 /Makefile.Debug
 /Makefile.Release

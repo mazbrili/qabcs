@@ -32,21 +32,7 @@ to advance through the alphabet, press "Backspace" to go back
 %make_build
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-mkdir -p %{buildroot}%{_datadir}/%{name}
-
-cp -af Bin/qabcs %{buildroot}%{_bindir}/%{name}
-cp -af abcs %{buildroot}%{_datadir}/%{name}/
-cp -af images %{buildroot}%{_datadir}/%{name}/
-cp -af sounds %{buildroot}%{_datadir}/%{name}/
-cp -af langs/*.qm  %{buildroot}%{_datadir}/%{name}/
-cp -f icon.xpm %{buildroot}%{_datadir}/%{name}/
-
-mkdir -p %{buildroot}%{_datadir}/applications
-cp -f rpm/qabcs.desktop %{buildroot}%{_datadir}/applications
-
-mkdir -p %{buildroot}%{_datadir}/pixmaps
-ln -s %{_datadir}/%{name}/icon.xpm %{buildroot}%{_datadir}/pixmaps/%{name}.xpm
+%make_install DESTDIR=$RPM_BUILD_ROOT
 
 %files
 %doc README
