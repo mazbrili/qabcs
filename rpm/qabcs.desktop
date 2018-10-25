@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=QABCs
+GenericName=Alphabet
+GenericName[ru]=Алфавит
+GenericName[uk]=Абетка
+Comment=Learn the alphabet
+Comment[ru]=Изучение алфавита
+Exec=qabcs
+Icon=qabcs
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Education;Languages;
