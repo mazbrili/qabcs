@@ -4,7 +4,7 @@ This program is licensed under the terms and conditions of
 the GNU General Public License (GPLv3+).
 Please read the 'COPYING' file for more information.
 
-To build KRoots you need Qt5 and qmake.
+To build QABCs you need Qt5 and qmake.
 Full list of dependencies: see rpm/qabcs.spec
 
 Building:
