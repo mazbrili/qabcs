@@ -14,6 +14,7 @@ struct LETTER_CONFIG {
     QString speak_method;
     QString espeak_params;
     QString espeak_words;
+    QString noises;
 };
 
 
@@ -32,7 +33,7 @@ class Collection{
 
         QPixmap getPixmap(QString letter);
 
-        void playSoundPicture(QString letter, bool async=false);
+        void playSoundPicture(QString letter);
 
     private:
         QMap<QString,LETTER_CONFIG> listLetters;

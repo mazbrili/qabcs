@@ -14,8 +14,9 @@ void Collection::setLetter(QString letter,QJsonObject params){
     QString speak_method = params.value("speak_method").toString();
     QString espeak_params = params.value("espeak_params").toString();
     QString espeak_words = params.value("espeak_words").toString();
+    QString noises = params.value("noises").toString();
 
-    listLetters[letter]={name,pic,sound_pic,speak_method,espeak_params,espeak_words};
+    listLetters[letter]={name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
 }
 
 void Collection::setGlobalParam(QJsonObject params){
@@ -48,25 +49,24 @@ QPixmap Collection::getPixmap(QString letter){
     return QPixmap(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+listLetters[letter].pic);
 }
 
-void Collection::playSoundPicture(QString letter,bool async){
+void Collection::playSoundPicture(QString letter){
     QString speak_method = (listLetters[letter].speak_method.isEmpty()) ? _speak_method : listLetters[letter].speak_method;
     QString espeak_params = (listLetters[letter].espeak_params.isEmpty()) ? _espeak_params : listLetters[letter].espeak_params;   
 
     if (speak_method=="espeak"){
         if (!listLetters[letter].espeak_words.isEmpty()){
-            if (async){
-                QProcess::startDetached("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
-            }else{
-                QProcess::execute("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
-            }
+            QProcess::execute("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
         }
     }else{
         QString filename = GLOBAL_PATH_USERDATA+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic;
-        if (async){
-            QProcess::startDetached("play "+filename);
-        }else{
-            QProcess::execute("play "+filename);
-        }
+        QProcess::execute("play "+filename);
+    }
+
+
+    // play noises
+    if (!listLetters[letter].noises.isEmpty()){
+        QString filename = GLOBAL_PATH_USERDATA+"/abcs/all/noises/"+listLetters[letter].noises;
+        QProcess::execute("play "+filename);
     }
 
 }
