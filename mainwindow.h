@@ -77,6 +77,8 @@ class MainWindow : public QMainWindow {
 
         QSoundEffect soundEffect;
 
+        bool gameAbcFinish;
+
 
         QString _speak_method;
         QString _espeak_params;

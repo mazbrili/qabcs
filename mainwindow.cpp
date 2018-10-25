@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
 
     currentIndexLetter=0;   
+    gameAbcFinish=false;
     listTypes = QStringList() << "misc" << "food" << "animals" << "instrument" << "toys";
 
     // open ini user config
@@ -252,18 +253,18 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (listLetters.size()==0) return;
 
 
-    if (key==Qt::Key_Space){
+    if (gameAbcFinish==false and currentIndexLetter>=0 and key==Qt::Key_Space){
         listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter);
         return;
     }
 
     if (typeGame==TYPE_ABC){
-        if (key==Qt::Key_Enter or key==Qt::Key_Return){
+        if (gameAbcFinish and (key==Qt::Key_Enter or key==Qt::Key_Return)){
             clickButtonAbc();
             return;
         }
 
-        if (key==Qt::Key_Backspace){
+        if (currentIndexLetter>=0 and key==Qt::Key_Backspace){
             if (currentIndexLetter>0) currentIndexLetter--;
         }
 
@@ -281,6 +282,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             soundEffect.setSource(QUrl::fromLocalFile(GLOBAL_PATH_USERDATA+"/sounds/cheering.wav"));
             soundEffect.play();
 
+            gameAbcFinish=true;
             return;
         }
     }else{
@@ -294,13 +296,16 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
     }
 
-    QString currentLetter = listLetters.at(currentIndexLetter).letter;
+
+    if (currentIndexLetter>=0){
+        QString currentLetter = listLetters.at(currentIndexLetter).letter;
 
 
-    ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
-    ui->label_3->setText(listCollections[typeGameToString(typeGame)]->getName(currentLetter));
+        ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
+        ui->label_3->setText(listCollections[typeGameToString(typeGame)]->getName(currentLetter));
 
-    ui->label_2->setText(currentLetter);
+        ui->label_2->setText(currentLetter);
+    }
 }
 
 void MainWindow::clickButtonAbc(){
@@ -321,6 +326,8 @@ void MainWindow::clickButtonAbc(){
         ui->label_3->setText(tr("abc is not loaded"));
         ui->label_2->setText("");
     }
+
+    gameAbcFinish=false;
 }
 
 void MainWindow::clickButtonAnimals(){
@@ -328,7 +335,8 @@ void MainWindow::clickButtonAnimals(){
     this->setWindowTitle(tr("Press a Key to See an Animal"));
 
     typeGame=TYPE_ANIMALS;
-    currentIndexLetter=0;
+    currentIndexLetter=-1;
+    gameAbcFinish=true;
 
     ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/turtle.png"));
     ui->label_3->setText("");
@@ -340,7 +348,8 @@ void MainWindow::clickButtonFood(){
     this->setWindowTitle(tr("Press a Key to See an Food"));
 
     typeGame=TYPE_FOOD;
-    currentIndexLetter=0;
+    currentIndexLetter=-1;
+    gameAbcFinish=true;
 
     ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/hot_dog.png"));
     ui->label_3->setText("");
@@ -352,7 +361,8 @@ void MainWindow::clickButtonInstrument(){
     this->setWindowTitle(tr("Press a Key to See an Instrument"));
 
     typeGame=TYPE_INSTRUMENT;
-    currentIndexLetter=0;
+    currentIndexLetter=-1;
+    gameAbcFinish=true;
 
     ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/guitar.png"));
     ui->label_3->setText("");
@@ -365,7 +375,8 @@ void MainWindow::clickButtonToys(){
     this->setWindowTitle(tr("Press a Key to See an Toy"));
 
     typeGame=TYPE_TOYS;
-    currentIndexLetter=0;
+    currentIndexLetter=-1;
+    gameAbcFinish=true;
 
     ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/wagon.png"));
     ui->label_3->setText("");
