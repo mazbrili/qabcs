@@ -217,7 +217,7 @@
 		},
 		"food": {
 		      "pic": "food/hot_dog.png",
-		      "name": "HOT_DOG",
+		      "name": "HOT DOG",
 		      "sound_pic": "hot_dog.wav"
 		},
 		"animals": {
@@ -245,7 +245,7 @@
 		},
 		"food": {
 		      "pic": "food/ice_cream.png",
-		      "name": "ICE_CREAM",
+		      "name": "ICE CREAM",
 		      "sound_pic": "ice_cream.wav"
 		},
 		"animals": {
@@ -260,7 +260,7 @@
 		},
 		"toys": {
 		      "pic": "toys/ice_skate.png",
-		      "name": "ICE_SKATE",
+		      "name": "ICE SKATE",
 		      "sound_pic": "ice_skate.wav"
 		}
 	}},
@@ -288,7 +288,7 @@
 		},
 		"toys": {
 		      "pic": "toys/jump_rope.png",
-		      "name": "JUMP_ROPE",
+		      "name": "JUMP ROPE",
 		      "sound_pic": "jump_rope.wav"
 		}
 	}},
@@ -512,7 +512,7 @@
 		},
 		"toys": {
 		      "pic": "toys/rocking_horse.png",
-		      "name": "ROCK_HORSE",
+		      "name": "ROCK HORSE",
 		      "sound_pic": "rocking_horse.wav"
 		}
 	}},
