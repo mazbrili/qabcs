@@ -267,7 +267,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (listLetters.size()==0) return;
 
 
-    if (gameAbcFinish==false and currentIndexLetter>=0 and key==Qt::Key_Space){
+    if (currentIndexLetter>=0 and key==Qt::Key_Space){
+        if (typeGame==TYPE_ABC and gameAbcFinish==true) return;
+
         listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter);
         return;
     }
