@@ -16,6 +16,7 @@ class FormAbout : public QDialog {
 
     private slots:
         void visit_web_site();
+        void visit_bitbucket();
 
     private:
         Ui::FormAbout *ui;
