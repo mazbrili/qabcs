@@ -5,6 +5,7 @@
 #include <QDesktopServices>
 
 #include "config_qabcs.h"
+#include "icon.xpm"
 
 FormAbout::FormAbout(QWidget *parent) :
     QDialog(parent),
@@ -17,7 +18,7 @@ FormAbout::FormAbout(QWidget *parent) :
 
     ui->label_2->setText(tr("Version: ")+QString(QABCS_VERSION));
     ui->label_3->setText(tr("Date build: ")+QString(QABCS_DATEBUILD));
-    ui->label_5->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
+    ui->label_5->setPixmap(QPixmap(icon_xpm));
 
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close()));
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(visit_web_site()));
