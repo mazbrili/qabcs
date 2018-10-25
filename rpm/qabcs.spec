@@ -11,7 +11,6 @@ BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
 
 Source0: %{name}-%{version}.tar.gz
-Source1: %{name}.desktop
 
 %description
 QABCs Educational Software. An educational game for young children.
@@ -44,7 +43,7 @@ cp -af langs/*.qm  %{buildroot}%{_datadir}/%{name}/
 cp -f icon.xpm %{buildroot}%{_datadir}/%{name}/
 
 mkdir -p %{buildroot}%{_datadir}/applications
-cp -f %{SOURCE1} %{buildroot}%{_datadir}/applications
+cp -f rpm/qabcs.desktop %{buildroot}%{_datadir}/applications
 
 mkdir -p %{buildroot}%{_datadir}/pixmaps
 ln -s %{_datadir}/%{name}/icon.xpm %{buildroot}%{_datadir}/pixmaps/%{name}.xpm
