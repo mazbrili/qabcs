@@ -30,7 +30,6 @@ to advance through the alphabet, press "Backspace" to go back
 
 %build
 %qmake_qt5
-lrelease %{name}.pro
 %make_build
 
 %install

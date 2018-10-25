@@ -5,6 +5,7 @@ GenericName[ru]=Алфавит
 GenericName[uk]=Абетка
 Comment=Learn the alphabet
 Comment[ru]=Изучение алфавита
+Keywords=abc;learn;alphabet;educational
 Exec=qabcs
 Icon=qabcs
 Terminal=false
