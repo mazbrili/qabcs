@@ -205,9 +205,9 @@ void MainWindow::playSoundLetter(QString letter,bool async){
             if (speak_method=="espeak"){
                 if (!l.espeak_words.isEmpty()){
                     if (async){
-                        QProcess::startDetached("espeak "+espeak_params+" "+l.espeak_words);
+                        QProcess::startDetached("espeak "+espeak_params+" \""+l.espeak_words+"\"");
                     }else{
-                        QProcess::execute("espeak "+espeak_params+" "+l.espeak_words);
+                        QProcess::execute("espeak "+espeak_params+" \""+l.espeak_words+"\"");
                     }
                 }
 

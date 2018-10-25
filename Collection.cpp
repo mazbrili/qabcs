@@ -55,9 +55,9 @@ void Collection::playSoundPicture(QString letter,bool async){
     if (speak_method=="espeak"){
         if (!listLetters[letter].espeak_words.isEmpty()){
             if (async){
-                QProcess::startDetached("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
+                QProcess::startDetached("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
             }else{
-                QProcess::execute("espeak "+espeak_params+" "+listLetters[letter].espeak_words);
+                QProcess::execute("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
             }
         }
     }else{
