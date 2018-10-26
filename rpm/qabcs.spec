@@ -1,19 +1,18 @@
-Name: qabcs
-Summary: Learn the English alphabet
-Version: 1.0.0
-Release: %mkrel 1
-License: GPLv3+
-Group: Education
-URL: https://bitbucket.org/admsasha/qabcs
+Name:           qabcs
+Version:        1.0.0
+Release:        %mkrel 1
+Summary:        Learn the English alphabet
+Group:          Education
+License:        GPLv3+
+Url:            https://bitbucket.org/admsasha/qabcs
+Source0:        https://bitbucket.org/admsasha/kroots/downloads/%{name}-%{version}.tar.gz
 
 BuildRequires:  qttools5
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Multimedia)
-Requires:  espeak
-
-Source0: %{name}-%{version}.tar.gz
+Requires:       espeak
 
 %description
 QABCs Educational Software. An educational game for young children.
