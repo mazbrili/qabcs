@@ -216,8 +216,6 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
-            qDebug() << type << letter << str << espeak_words << metka;
-
             listLetters.push_back({letter.toUpper(),letter+".wav",speak_method,"",espeak_words});
             listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,"",espeak_words,"");
 
