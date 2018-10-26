@@ -28,6 +28,7 @@ QMAKE_LINK_OBJECT_SCRIPT = .build/$$ARCH/object_script
 #RESOURCES += qabcs.qrc
 win32:RC_FILE = qabcs.rc
 
+DESTDIR = Bin
 
 gcc {
     QMAKE_CXXFLAGS += -std=gnu++11
