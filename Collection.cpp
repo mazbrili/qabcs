@@ -1,6 +1,7 @@
 #include "Collection.h"
 
 #include <QProcess>
+#include <QFile>
 #include "config_qabcs.h"
 
 Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
@@ -46,7 +47,21 @@ QString Collection::getSound(QString letter){
 }
 
 QPixmap Collection::getPixmap(QString letter){
-    return QPixmap(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+listLetters[letter].pic);
+    QStringList listCombinationspaths;
+    QStringList listTypes = QStringList() << "misc" << "food" << "animals" << "music" << "toys";
+
+    listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+listLetters[letter].pic);
+    for (QString type:listTypes){
+        listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic);
+        listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic+".png");
+        listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic+".jpg");
+    }
+
+    for (QString filename:listCombinationspaths){
+        if (QFile::exists(filename)) return QPixmap(filename);
+    }
+
+    return QPixmap();
 }
 
 void Collection::playSoundPicture(QString letter){
