@@ -74,7 +74,7 @@ data_images.files = images/*
 INSTALLS += data_images
 
 data_app.path = /usr/share/applications/
-data_app.files = rpm/qabcs.desktop
+data_app.files = qabcs.desktop
 INSTALLS += data_app
 
 data_other.path = /usr/share/qabcs/

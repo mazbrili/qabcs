@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
 
     QString locale = QLocale::system().name();
 
-    //set translator for default widget's text (for example: QMessageBox's buttons)
+    // set translator for default widget's text (for example: QMessageBox's buttons)
     QTranslator qtTranslator;
     qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     app.installTranslator(&qtTranslator);
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
     }
     app.installTranslator(&translator);
 
-    // Инициализация rnd
+    // initialization for rnd
     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
 
     MainWindow *window = new MainWindow();

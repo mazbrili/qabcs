@@ -93,7 +93,7 @@ void MainWindow::initToolBar(){
     accHelp->setStatusTip(tr("Help"));
 
     accInfo = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/info.png"), tr("About qabcs"), this);
-    accInfo->setStatusTip(tr("About qabcs"));
+    accInfo->setStatusTip(tr("About QABCs"));
 
     accExit = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/exit.png"), tr("Exit"), this);
     accExit->setStatusTip(tr("Exit"));
@@ -349,7 +349,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             ui->label_2->setText(tr("CONGRATS!"));
             ui->label_3->setText(tr("Press \"ENTER\" to Play Again"));
 
-            soundEffect.setSource(QUrl::fromLocalFile(GLOBAL_PATH_USERDATA+"/sounds/cheering.wav"));
+            soundEffect.setSource(QUrl::fromLocalFile(GLOBAL_PATH_USERDATA+"/abcs/all/sounds/cheering.wav"));
             soundEffect.play();
 
             gameAbcFinish=true;
@@ -402,7 +402,7 @@ void MainWindow::clickButtonAnimals(){
 
 void MainWindow::clickButtonFood(){
     if (!accFood->isChecked()) return;
-    this->setWindowTitle(tr("Press a Key to See an Food"));
+    this->setWindowTitle(tr("Press a Key to See a Food"));
 
     typeGame=TYPE_FOOD;
     currentIndexLetter=-1;
@@ -429,7 +429,7 @@ void MainWindow::clickButtonInstrument(){
 
 void MainWindow::clickButtonToys(){
     if (!accToys->isChecked()) return;
-    this->setWindowTitle(tr("Press a Key to See an Toy"));
+    this->setWindowTitle(tr("Press a Key to See a Toy"));
 
     typeGame=TYPE_TOYS;
     currentIndexLetter=-1;
