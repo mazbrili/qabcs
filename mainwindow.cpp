@@ -225,6 +225,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             qDebug() << tr("error str: ")+line;
         }
     }
+    file.close();
 
     return true;
 }
