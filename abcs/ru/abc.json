@@ -1,7 +1,7 @@
 {
    "general": {
       "language": "Русский",
-      "author": "admsasha <dik@inbox.ru>",
+      "author": "alexl <alexl@mageia.org>",
       "speak_method": "espeak",
       "espeak_params": "-vru -s70"
    },
@@ -19,6 +19,9 @@
 		      "espeak_words": "АР-БУЗ"
 		},
 		"animals": {
+		      "pic": "animals/stork.png",
+		      "name": "АИСТ",
+		      "espeak_words": "АИСТ"
 		},
 		"instrument": {
 		      "pic": "music/harp.png",
@@ -69,6 +72,9 @@
 		      "espeak_words": "ВИНОГРАД"
 		},
 		"animals": {
+		      "pic": "animals/crow.png",
+		      "name": "ВОРОНА",
+		      "espeak_words": "ВОРОНА"
 		},
 		"instrument": {
 		      "pic": "music/bagpipes.png",
@@ -157,6 +163,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/hedgehog.png",
+		      "name": "ЁЖИК",
+		      "espeak_words": "ЁЖИК"
 		},
 		"instrument": {
 		},
@@ -236,6 +245,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/yorkshire_terrier.png",
+		      "name": "ЙОРКШИРСКИЙ ТЕРЬЕР",
+		      "espeak_words": "ЙОРКШИРСКИЙ ТЕРЬ-ЕР"
 		},
 		"instrument": {
 		},
@@ -336,6 +348,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/rhinoceros.png",
+		      "name": "НОСОРОГ",
+		      "espeak_words": "НОСОРОГ"
 		},
 		"instrument": {
 		      "pic": "music/ney.png",
@@ -483,6 +498,9 @@
 		      "espeak_words": "У-ДОН"
 		},
 		"animals": {
+		      "pic": "animals/duck.png",
+		      "name": "УТКА",
+		      "espeak_words": "УТКА"
 		},
 		"instrument": {
 		      "pic": "music/ukulele.png",
@@ -499,6 +517,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/pheasant.png",
+		      "name": "ФАЗАН",
+		      "espeak_words": "ФА-ЗАН"
 		},
 		"instrument": {
 		      "pic": "music/flute.png",
@@ -543,6 +564,9 @@
 		      "espeak_words": "ЦУ-КИНИ"
 		},
 		"animals": {
+		      "pic": "animals/heron.png",
+		      "name": "ЦАПЛЯ",
+		      "espeak_words": "ЦАПЛЯ"
 		},
 		"instrument": {
 		},
@@ -581,6 +605,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/chimpanzee.png",
+		      "name": "ШИМПАНЗЕ",
+		      "espeak_words": "ШИМ-ПАН-ЗЭ"
 		},
 		"instrument": {
 		},
@@ -613,6 +640,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/fish.png",
+		      "name": "ПОДЪЯЗОК",
+		      "espeak_words": "ПО-ДЪЯ-ЗОК"
 		},
 		"instrument": {
 		},
@@ -667,6 +697,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/emu.png",
+		      "name": "ЭМУ",
+		      "espeak_words": "ЭМУ"
 		},
 		"instrument": {
 		      "pic": "music/electric_guitar.png",
@@ -683,6 +716,9 @@
 		"food": {
 		},
 		"animals": {
+		      "pic": "animals/sparrow.png",
+		      "name": "ЮРОК",
+		      "espeak_words": "ЮРОК"
 		},
 		"instrument": {
 		},
