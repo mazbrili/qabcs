@@ -160,7 +160,7 @@ void MainWindow::initLanguageAbc(){
         QString letter = arrLetters.at(i).toObject().keys().at(0);
         QJsonObject objLetter = arrLetters.at(i).toObject().value(letter).toObject();
 
-        listLetters.push_back({letter,
+        listLetters.push_back({letter.toUpper(),
                                objLetter.value("sound_letter").toString(),
                                objLetter.value("speak_method").toString(),
                                objLetter.value("espeak_params").toString(),
@@ -168,7 +168,7 @@ void MainWindow::initLanguageAbc(){
                              });
 
         for (QString type:listTypes){
-            listCollections[type]->setLetter(letter,objLetter.value(type).toObject());
+            listCollections[type]->setLetter(letter.toUpper(),objLetter.value(type).toObject());
         }
 
     }

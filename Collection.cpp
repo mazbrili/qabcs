@@ -8,7 +8,7 @@ Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
 }
 
 void Collection::setLetter(QString letter,QJsonObject params){
-    QString name = params.value("name").toString();
+    QString name = params.value("name").toString().toUpper();
     QString pic = params.value("pic").toString();
     QString sound_pic = params.value("sound_pic").toString();
     QString speak_method = params.value("speak_method").toString();
