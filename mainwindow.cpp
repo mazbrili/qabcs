@@ -189,6 +189,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     return true;
 }
 
+
 bool MainWindow::loadAbcConfigProperties(QString filename){
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -199,26 +200,36 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
     _speak_method = "";
     _espeak_params = "";
 
-    QRegExp rx("(.*)(:)(.*)(=)(.*)(=)(.*)(=)(.*)");
 
     while (!file.atEnd()) {
-        QByteArray line = file.readLine();
+        QString line = file.readLine();
+        line.replace(QRegExp("\\s"),"");
+
+        QStringList pair = line.split(":");
+
+        // format
+        // type:letter:str_rus:metka:espeak_words:noises
 
         //skip special words
-        if (line.indexOf("language:")!=-1 or line.indexOf("author:")!=-1) continue;
+        if (pair.at(0)=="language" or pair.at(0)=="author") continue;
 
-        if (rx.indexIn(line)!=-1){
-            QString type = rx.cap(1);
-            QString letter = rx.cap(3);
-            QString str = rx.cap(5);
-            QString espeak_words = rx.cap(7);
-            QString metka = rx.cap(9).replace(QRegExp("\\s"),"");
+        if (pair.size()==2){
+            QStringList params = pair.at(1).split("=");
+            if (params.size()<4) continue;
+            QString type = pair.at(0);
+
+            QString letter = params.at(0);
+            QString str = params.at(1).toUpper();
+            QString metka = params.at(2);
+            QString espeak_words = params.at(3);
+            QString noises = "";
+
+            if (params.size()==5) noises=params.at(4);
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
             listLetters.push_back({letter.toUpper(),letter+".wav",speak_method,"",espeak_words});
-            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,"",espeak_words,"");
-
+            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,"",espeak_words,noises);
         }else{
             qDebug() << tr("error str: ")+line;
         }
@@ -227,6 +238,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
     return true;
 }
+
 
 QString MainWindow::typeGameToString(TYPE_GAME type){
     if (type==TYPE_ABC) return "misc";
