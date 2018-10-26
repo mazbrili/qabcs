@@ -24,6 +24,7 @@ class FormSelectLanguage : public QDialog {
         };
 
         ABC_INFO getLangFromJson(QString filename);
+        ABC_INFO getLangFromProperties(QString filename);
 
         QSettings *confSettings;
 

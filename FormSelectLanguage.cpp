@@ -35,8 +35,15 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
         if (fileInfo.fileName()=="all") continue;
 
+        ABC_INFO lang_info;
 
-        ABC_INFO lang_info = getLangFromJson(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.json");
+        if (QFile::exists(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.json")){
+            lang_info = getLangFromJson(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.json");
+        }
+        if (QFile::exists(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.properties")){
+            lang_info = getLangFromProperties(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.properties");
+        }
+
         QString lang = fileInfo.fileName();
         ui->comboBox->addItem(lang_info.language+"  ("+lang_info.author+")",lang);
         if (confSettings->value("abc/language","en").toString()==lang){
@@ -73,6 +80,31 @@ FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromJson(QString filenam
 
     result.language = root_general.value("language").toString();
     result.author = root_general.value("author").toString();
+
+    return result;
+}
+
+FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromProperties(QString filename){
+    ABC_INFO result;
+
+    QRegExp rx("(.*)(:)(.*)");
+
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        return ABC_INFO();
+    }
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+        if (rx.indexIn(line)!=-1){
+            if (rx.cap(1)=="language"){
+                result.language = rx.cap(3).replace(QRegExp("\\s"),"");
+            }
+            if (rx.cap(1)=="author"){
+                result.author = rx.cap(3).replace(QRegExp("\\s"),"");
+            }
+        }
+    }
+    file.close();
 
     return result;
 }
