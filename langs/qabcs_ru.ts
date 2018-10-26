@@ -165,132 +165,142 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="27"/>
-        <location filename="../mainwindow.ui" line="66"/>
+        <location filename="../mainwindow.ui" line="69"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="45"/>
+        <location filename="../mainwindow.ui" line="48"/>
         <source>ABC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="62"/>
-        <location filename="../mainwindow.cpp" line="63"/>
-        <location filename="../mainwindow.cpp" line="320"/>
+        <location filename="../mainwindow.cpp" line="64"/>
+        <location filename="../mainwindow.cpp" line="65"/>
+        <location filename="../mainwindow.cpp" line="374"/>
         <source>Find the letter on the keyboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="67"/>
-        <location filename="../mainwindow.cpp" line="68"/>
+        <location filename="../mainwindow.cpp" line="69"/>
+        <location filename="../mainwindow.cpp" line="70"/>
         <source>Show foods that begin with each letter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="72"/>
-        <location filename="../mainwindow.cpp" line="73"/>
+        <location filename="../mainwindow.cpp" line="74"/>
+        <location filename="../mainwindow.cpp" line="75"/>
         <source>Show animals that begin with each letter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
-        <location filename="../mainwindow.cpp" line="78"/>
+        <location filename="../mainwindow.cpp" line="79"/>
+        <location filename="../mainwindow.cpp" line="80"/>
         <source>Show musical instruments for each letter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="82"/>
-        <location filename="../mainwindow.cpp" line="83"/>
+        <location filename="../mainwindow.cpp" line="84"/>
+        <location filename="../mainwindow.cpp" line="85"/>
         <source>Show toys for each letter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="87"/>
-        <location filename="../mainwindow.cpp" line="88"/>
+        <location filename="../mainwindow.cpp" line="89"/>
+        <location filename="../mainwindow.cpp" line="90"/>
         <source>Select language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="90"/>
-        <location filename="../mainwindow.cpp" line="91"/>
+        <location filename="../mainwindow.cpp" line="92"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="93"/>
-        <location filename="../mainwindow.cpp" line="94"/>
+        <location filename="../mainwindow.cpp" line="95"/>
         <source>About qabcs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="96"/>
-        <location filename="../mainwindow.cpp" line="97"/>
+        <source>About QABCs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="98"/>
+        <location filename="../mainwindow.cpp" line="99"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="139"/>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <location filename="../mainwindow.cpp" line="195"/>
         <source>Error open </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="160"/>
         <source>is not valid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="223"/>
+        <source>error str: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="349"/>
         <source>CONGRATS!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="296"/>
+        <location filename="../mainwindow.cpp" line="350"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="329"/>
+        <location filename="../mainwindow.cpp" line="383"/>
         <source>abc is not loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="338"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Press a Key to See an Animal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="346"/>
+        <location filename="../mainwindow.cpp" line="400"/>
         <source>Animals</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="351"/>
-        <source>Press a Key to See an Food</source>
+        <location filename="../mainwindow.cpp" line="405"/>
+        <source>Press a Key to See a Food</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="359"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Food</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="364"/>
+        <location filename="../mainwindow.cpp" line="418"/>
         <source>Press a Key to See an Instrument</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="372"/>
+        <location filename="../mainwindow.cpp" line="426"/>
         <source>Music</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="378"/>
-        <source>Press a Key to See an Toy</source>
+        <location filename="../mainwindow.cpp" line="432"/>
+        <source>Press a Key to See a Toy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Toys</source>
         <translation type="unfinished"></translation>
     </message>
