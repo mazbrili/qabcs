@@ -57,7 +57,7 @@ updateqm.CONFIG += no_link target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
 
 data_bin.path = /usr/bin/
-data_bin.files = qabcs
+data_bin.files = Bin/qabcs
 INSTALLS += data_bin
 
 data_abcs.path = /usr/share/qabcs/abcs/
