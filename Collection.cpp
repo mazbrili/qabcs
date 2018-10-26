@@ -85,14 +85,14 @@ void Collection::playSoundPicture(QString letter){
         }
     }else{
         QString filename = GLOBAL_PATH_USERDATA+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic;
-        QProcess::execute("play "+filename);
+        if (QFile::exists(filename)) QProcess::execute("play "+filename);
     }
 
 
     // play noises
     if (!listLetters[letter].noises.isEmpty()){
         QString filename = GLOBAL_PATH_USERDATA+"/abcs/all/noises/"+listLetters[letter].noises;
-        QProcess::execute("play "+filename);
+        if (QFile::exists(filename)) QProcess::execute("play "+filename);
     }
 
 }

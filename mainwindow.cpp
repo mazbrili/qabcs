@@ -228,7 +228,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
-            listLetters.push_back({letter.toUpper(),letter+".wav",speak_method,"",espeak_words});
+            listLetters.push_back({letter.toUpper(),letter+".wav",speak_method,"",letter});
             listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,"",espeak_words,noises);
         }else{
             qDebug() << tr("error str: ")+line;
@@ -293,10 +293,12 @@ void MainWindow::playSoundLetter(QString letter,bool async){
 
             }else{
                 QString filename =  GLOBAL_PATH_USERDATA+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter;
-                if (async){
-                    QProcess::startDetached("play "+filename);
-                }else{
-                    QProcess::execute("play "+filename);
+                if (QFile::exists(filename)){
+                    if (async){
+                        QProcess::startDetached("play "+filename);
+                    }else{
+                        QProcess::execute("play "+filename);
+                    }
                 }
             }
         }
