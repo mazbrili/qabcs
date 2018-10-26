@@ -28,14 +28,14 @@ to advance through the alphabet, press "Backspace" to go back
 * To hear the word displayed on the screen, press the spacebar
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %qmake_qt5
 %make_build
 
 %install
-%make_install INSTALL_ROOT=$RPM_BUILD_ROOT
+%make_install INSTALL_ROOT=%{buildroot}
 
 %files
 %doc README
