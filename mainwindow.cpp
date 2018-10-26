@@ -347,6 +347,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
 
         if (currentIndexLetter>=0 and key==Qt::Key_Backspace){
+            gameAbcFinish=false;
             if (currentIndexLetter>0) currentIndexLetter--;
         }
 
