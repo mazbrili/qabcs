@@ -6,6 +6,7 @@ License: GPLv3+
 Group: Education
 URL: https://bitbucket.org/admsasha/qabcs
 
+BuildRequires:  qttools5
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
