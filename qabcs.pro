@@ -82,7 +82,7 @@ INSTALLS += data_other
 
 
 data_pixmaps.path = /usr/share/pixmaps/
-data_pixmaps.extra = ln -s /usr/share/qabcs/icon.xpm ${INSTALL_ROOT}/usr/share/pixmaps/qabcs.xpm
+data_pixmaps.extra = ln -fs /usr/share/qabcs/icon.xpm ${INSTALL_ROOT}/usr/share/pixmaps/qabcs.xpm
 INSTALLS += data_pixmaps
 
 
