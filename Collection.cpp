@@ -20,6 +20,11 @@ void Collection::setLetter(QString letter,QJsonObject params){
     listLetters[letter]={name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
 }
 
+void Collection::setLetter(QString letter,QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises){
+    listLetters[letter]={name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
+}
+
+
 void Collection::setGlobalParam(QJsonObject params){
     _speak_method = params.value("speak_method").toString();
     _espeak_params = params.value("espeak_params").toString();
@@ -27,6 +32,9 @@ void Collection::setGlobalParam(QJsonObject params){
 
 void Collection::clear(){
     listLetters.clear();
+
+    _speak_method="";
+    _espeak_params="";
 }
 
 void Collection::setAbcLanguage(QString abcLanguage){
@@ -48,13 +56,16 @@ QString Collection::getSound(QString letter){
 
 QPixmap Collection::getPixmap(QString letter){
     QStringList listCombinationspaths;
+
     QStringList listTypes = QStringList() << "misc" << "food" << "animals" << "music" << "toys";
+    QStringList listExtensionFiles = QStringList() << "png" << "jpg" << "svg";
 
     listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+listLetters[letter].pic);
     for (QString type:listTypes){
         listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic);
-        listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic+".png");
-        listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic+".jpg");
+        for (QString ext:listExtensionFiles){
+            listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic+"."+ext);
+        }
     }
 
     for (QString filename:listCombinationspaths){

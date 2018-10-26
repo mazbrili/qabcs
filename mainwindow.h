@@ -45,6 +45,9 @@ class MainWindow : public QMainWindow {
         void initToolBar();
         void initLanguageAbc();
 
+        bool loadAbcConfigJson(QString filename);
+        bool loadAbcConfigProperties(QString filename);
+
         QString typeGameToString(TYPE_GAME type);
 
         void setAbcLang(QString lang);

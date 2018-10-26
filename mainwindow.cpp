@@ -9,13 +9,12 @@
 #include <QDebug>
 #include <QDir>
 #include <QMessageBox>
-
+#include <QRegExp>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QSound>
 #include <QProcess>
-#include <QEventLoop>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -27,6 +26,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     currentIndexLetter=0;   
     gameAbcFinish=false;
+    _speak_method="";
+    _espeak_params="";
+
     listTypes = QStringList() << "misc" << "food" << "animals" << "instrument" << "toys";
 
     // open ini user config
@@ -132,20 +134,31 @@ void MainWindow::initLanguageAbc(){
 
 
     QString jsonFilename = globalPathUserResources+"/"+currentLanguageAbc+"/abc.json";
+    if (QFile::exists(jsonFilename)){
+        if (loadAbcConfigJson(jsonFilename)) return;
+    }
+
+    QString propertiesFilename = globalPathUserResources+"/"+currentLanguageAbc+"/abc.properties";
+    if (QFile::exists(propertiesFilename)){
+        if (loadAbcConfigProperties(propertiesFilename)) return;
+    }
+}
+
+bool MainWindow::loadAbcConfigJson(QString filename){
     QByteArray val;
     QFile file;
-    file.setFileName(jsonFilename);
+    file.setFileName(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(this,"QABCS",tr("Error open ")+jsonFilename+"\n"+file.errorString());
-        return;
+        QMessageBox::critical(this,"QABCS",tr("Error open ")+filename+"\n"+file.errorString());
+        return false;
     }
     val = file.readAll();
     file.close();
 
     QJsonDocument document = QJsonDocument::fromJson(val);
     if (document.isEmpty()){
-        QMessageBox::critical(this,"QABCS",jsonFilename+" "+tr("is not valid"));
-        return;
+        QMessageBox::critical(this,"QABCS",filename+" "+tr("is not valid"));
+        return false;
     }
     QJsonObject root = document.object();
 
@@ -172,6 +185,48 @@ void MainWindow::initLanguageAbc(){
         }
 
     }
+
+    return true;
+}
+
+bool MainWindow::loadAbcConfigProperties(QString filename){
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QMessageBox::critical(this,"QABCS",tr("Error open ")+filename+"\n"+file.errorString());
+        return false;
+    }
+
+    _speak_method = "";
+    _espeak_params = "";
+
+    QRegExp rx("(.*)(:)(.*)(=)(.*)(=)(.*)(=)(.*)");
+
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+
+        //skip special words
+        if (line.indexOf("language:")!=-1 or line.indexOf("author:")!=-1) continue;
+
+        if (rx.indexIn(line)!=-1){
+            QString type = rx.cap(1);
+            QString letter = rx.cap(3);
+            QString str = rx.cap(5);
+            QString espeak_words = rx.cap(7);
+            QString metka = rx.cap(9).replace(QRegExp("\\s"),"");
+
+            QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
+
+            qDebug() << type << letter << str << espeak_words << metka;
+
+            listLetters.push_back({letter.toUpper(),letter+".wav",speak_method,"",espeak_words});
+            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,"",espeak_words,"");
+
+        }else{
+            qDebug() << tr("error str: ")+line;
+        }
+    }
+
+    return true;
 }
 
 QString MainWindow::typeGameToString(TYPE_GAME type){
