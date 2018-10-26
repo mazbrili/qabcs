@@ -9,6 +9,8 @@ URL: https://bitbucket.org/admsasha/qabcs
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
+BuildRequires:  pkgconfig(Qt5Multimedia)
+Requires:  espeak
 
 Source0: %{name}-%{version}.tar.gz
 
@@ -32,7 +34,7 @@ to advance through the alphabet, press "Backspace" to go back
 %make_build
 
 %install
-%make_install DESTDIR=$RPM_BUILD_ROOT
+%make_install INSTALL_ROOT=$RPM_BUILD_ROOT
 
 %files
 %doc README

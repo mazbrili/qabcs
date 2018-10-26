@@ -57,33 +57,33 @@ updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm langs/${QMAKE_
 updateqm.CONFIG += no_link target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
 
-data_bin.path = /$(DESTDIR)/usr/bin/
+data_bin.path = /usr/bin/
 data_bin.files = Bin/qabcs
 INSTALLS += data_bin
 
-data_abcs.path = /$(DESTDIR)/usr/share/qabcs/abcs/
+data_abcs.path = /usr/share/qabcs/abcs/
 data_abcs.files = abcs/*
 INSTALLS += data_abcs
 
-data_sounds.path = /$(DESTDIR)/usr/share/qabcs/sounds/
+data_sounds.path = /usr/share/qabcs/sounds/
 data_sounds.files = sounds/*
 INSTALLS += data_sounds
 
-data_images.path = /$(DESTDIR)/usr/share/qabcs/images/
+data_images.path = /usr/share/qabcs/images/
 data_images.files = images/*
 INSTALLS += data_images
 
-data_app.path = /$(DESTDIR)/usr/share/applications/
+data_app.path = /usr/share/applications/
 data_app.files = rpm/qabcs.desktop
 INSTALLS += data_app
 
-data_other.path = /$(DESTDIR)/usr/share/qabcs/
+data_other.path = /usr/share/qabcs/
 data_other.files = langs/*.qm icon.xpm
 INSTALLS += data_other
 
 
-data_pixmaps.path = /$(DESTDIR)/usr/share/pixmaps/
-data_pixmaps.extra = ln -s /usr/share/qabcs/icon.xpm /$(DESTDIR)/usr/share/pixmaps/qabcs.xpm
+data_pixmaps.path = /usr/share/pixmaps/
+data_pixmaps.extra = ln -s /usr/share/qabcs/icon.xpm ${INSTALL_ROOT}/usr/share/pixmaps/qabcs.xpm
 INSTALLS += data_pixmaps
 
 
