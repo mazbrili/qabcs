@@ -25,8 +25,6 @@ CONFIG(release, release|debug){
 QMAKE_LINK_OBJECT_SCRIPT = .build/$$ARCH/object_script
 
 
-DESTDIR = Bin
-
 #RESOURCES += qabcs.qrc
 win32:RC_FILE = qabcs.rc
 
@@ -58,7 +56,7 @@ updateqm.CONFIG += no_link target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
 
 data_bin.path = /usr/bin/
-data_bin.files = Bin/qabcs
+data_bin.files = qabcs
 INSTALLS += data_bin
 
 data_abcs.path = /usr/share/qabcs/abcs/
