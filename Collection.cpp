@@ -60,11 +60,11 @@ QPixmap Collection::getPixmap(QString letter){
     QStringList listTypes = QStringList() << "misc" << "food" << "animals" << "music" << "toys";
     QStringList listExtensionFiles = QStringList() << "png" << "jpg" << "svg";
 
-    listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+listLetters[letter].pic);
+    listCombinationspaths.push_back(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/pics/"+listLetters[letter].pic);
     for (QString type:listTypes){
-        listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic);
+        listCombinationspaths.push_back(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic);
         for (QString ext:listExtensionFiles){
-            listCombinationspaths.push_back(GLOBAL_PATH_USERDATA+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic+"."+ext);
+            listCombinationspaths.push_back(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/pics/"+type+"/"+listLetters[letter].pic+"."+ext);
         }
     }
 
@@ -84,14 +84,14 @@ void Collection::playSoundPicture(QString letter){
             QProcess::execute("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
         }
     }else{
-        QString filename = GLOBAL_PATH_USERDATA+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic;
+        QString filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic;
         if (QFile::exists(filename)) QProcess::execute("play "+filename);
     }
 
 
     // play noises
     if (!listLetters[letter].noises.isEmpty()){
-        QString filename = GLOBAL_PATH_USERDATA+"/abcs/all/noises/"+listLetters[letter].noises;
+        QString filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/all/noises/"+listLetters[letter].noises;
         if (QFile::exists(filename)) QProcess::execute("play "+filename);
     }
 

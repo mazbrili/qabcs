@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(this->width(),this->height());
-    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
+    this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
     currentIndexLetter=0;   
     gameAbcFinish=false;
@@ -30,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
     _espeak_params="";
 
     listTypes = QStringList() << "misc" << "food" << "animals" << "instrument" << "toys";
+
+    qDebug() << "use path: " << QString(GLOBAL_PATH_USERDATA);
 
     // open ini user config
     QDir dirConfig(QDir::homePath()+"/.qabcs/");
@@ -61,41 +63,41 @@ void MainWindow::initToolBar(){
 
     typeGameGroup = new QActionGroup(this);
 
-    accAbc = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"), tr("Find the letter on the keyboard"), this);
+    accAbc = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"), tr("Find the letter on the keyboard"), this);
     accAbc->setStatusTip(tr("Find the letter on the keyboard"));
     accAbc->setCheckable(true);
     accAbc->setActionGroup(typeGameGroup);
 
-    accFood = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/food.png"), tr("Show foods that begin with each letter"), this);
+    accFood = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/food.png"), tr("Show foods that begin with each letter"), this);
     accFood->setStatusTip(tr("Show foods that begin with each letter"));
     accFood ->setCheckable(true);
     accFood->setActionGroup(typeGameGroup);
 
-    accAnimals = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/animals.png"), tr("Show animals that begin with each letter"), this);
+    accAnimals = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/animals.png"), tr("Show animals that begin with each letter"), this);
     accAnimals->setStatusTip(tr("Show animals that begin with each letter"));
     accAnimals->setCheckable(true);
     accAnimals->setActionGroup(typeGameGroup);
 
-    accInstrument = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/instrument.png"), tr("Show musical instruments for each letter"), this);
+    accInstrument = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/instrument.png"), tr("Show musical instruments for each letter"), this);
     accInstrument->setStatusTip(tr("Show musical instruments for each letter"));
     accInstrument->setCheckable(true);
     accInstrument->setActionGroup(typeGameGroup);
 
-    accToys = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/toys.png"), tr("Show toys for each letter"), this);
+    accToys = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/toys.png"), tr("Show toys for each letter"), this);
     accToys->setStatusTip(tr("Show toys for each letter"));
     accToys->setCheckable(true);
     accToys->setActionGroup(typeGameGroup);
 
-    accLang = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/languages.png"), tr("Select language"), this);
+    accLang = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/languages.png"), tr("Select language"), this);
     accLang->setStatusTip(tr("Select language"));
 
-    accHelp = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/help.png"), tr("Help"), this);
+    accHelp = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/help.png"), tr("Help"), this);
     accHelp->setStatusTip(tr("Help"));
 
-    accInfo = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/info.png"), tr("About qabcs"), this);
+    accInfo = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/info.png"), tr("About qabcs"), this);
     accInfo->setStatusTip(tr("About QABCs"));
 
-    accExit = new QAction(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/exit.png"), tr("Exit"), this);
+    accExit = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/exit.png"), tr("Exit"), this);
     accExit->setStatusTip(tr("Exit"));
 
     toolBar->addAction(accAbc);
@@ -252,7 +254,7 @@ QString MainWindow::typeGameToString(TYPE_GAME type){
 
 void MainWindow::setAbcLang(QString lang){
     currentLanguageAbc=lang;
-    globalPathUserResources=GLOBAL_PATH_USERDATA+"/abcs";
+    globalPathUserResources=QString(GLOBAL_PATH_USERDATA)+"/abcs";
     currentIndexLetter=0;
 
     initLanguageAbc();
@@ -321,7 +323,7 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                 }
 
             }else{
-                QString filename =  GLOBAL_PATH_USERDATA+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter;
+                QString filename =  QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter;
                 if (QFile::exists(filename)){
                     if (async){
                         QProcess::startDetached("play "+filename);
@@ -389,11 +391,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             }
         }
         if (currentIndexLetter>=listLetters.size()){
-            setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/ribbon.png"));
+            setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/ribbon.png"));
             ui->label_2->setText(tr("CONGRATS!"));
             ui->label_3->setText(tr("Press \"ENTER\" to Play Again"));
 
-            soundEffect.setSource(QUrl::fromLocalFile(GLOBAL_PATH_USERDATA+"/abcs/all/sounds/cheering.wav"));
+            soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
             soundEffect.play();
 
             gameAbcFinish=true;
@@ -439,7 +441,7 @@ void MainWindow::clickButtonAnimals(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/turtle.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/turtle.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Animals"));
 }
@@ -452,7 +454,7 @@ void MainWindow::clickButtonFood(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/hot_dog.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/hot_dog.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Food"));
 }
@@ -465,7 +467,7 @@ void MainWindow::clickButtonInstrument(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/guitar.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/guitar.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Music"));
 
@@ -479,7 +481,7 @@ void MainWindow::clickButtonToys(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/wagon.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Toys"));
 }

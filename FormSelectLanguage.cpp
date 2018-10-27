@@ -17,7 +17,7 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(this->width(),this->height());
     this->setWindowTitle(tr("Select language abc"));
-    this->setWindowIcon(QIcon(GLOBAL_PATH_USERDATA+"/images/icons/abc.png"));
+    this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
     QDir dirConfig(QDir::homePath()+"/.qabcs/");
     if (dirConfig.exists()==false) dirConfig.mkpath(QDir::homePath()+"/.qabcs/");
@@ -27,7 +27,7 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
 
 
-    QDir dir(GLOBAL_PATH_USERDATA+"/abcs/");
+    QDir dir(QString(GLOBAL_PATH_USERDATA)+"/abcs/");
     dir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot);
     QFileInfoList list = dir.entryInfoList();
     for (int i = 0; i < list.size(); ++i) {
@@ -37,11 +37,11 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
         ABC_INFO lang_info;
 
-        if (QFile::exists(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.json")){
-            lang_info = getLangFromJson(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.json");
+        if (QFile::exists(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.json")){
+            lang_info = getLangFromJson(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.json");
         }
-        if (QFile::exists(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.properties")){
-            lang_info = getLangFromProperties(GLOBAL_PATH_USERDATA+"/abcs/"+fileInfo.fileName()+"/abc.properties");
+        if (QFile::exists(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.properties")){
+            lang_info = getLangFromProperties(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.properties");
         }
 
         QString lang = fileInfo.fileName();

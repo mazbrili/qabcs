@@ -5,10 +5,12 @@
 #define QABCS_VERSION "1.0.0"
 #define QABCS_DATEBUILD "27.10.2018"
 
+#if !defined(GLOBAL_PATH_USERDATA)
 #if defined(__WIN32__)
-#define GLOBAL_PATH_USERDATA QString(".")
+#define GLOBAL_PATH_USERDATA "."
 #else
-#define GLOBAL_PATH_USERDATA QString("/usr/share/qabcs")
+#define GLOBAL_PATH_USERDATA "/usr/share/qabcs"
+#endif
 #endif
 
 
