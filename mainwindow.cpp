@@ -270,10 +270,39 @@ void MainWindow::refreshViewer(){
 
     text.replace(currentLetter,"<font color=\"red\">"+currentLetter+"</font>");
 
-    ui->label->setPixmap(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
     ui->label_3->setText(text);
     ui->label_2->setText(currentLetter);
 
+    setPixmapViewer(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
+}
+
+void MainWindow::setPixmapViewer(QPixmap pixmap){
+    ui->label_4->setPixmap(pixmap);
+
+    int startY = 20;
+
+    int maxWidth = this->width()-20;
+    int maxHeight = 290;
+
+    ui->label_4->setFixedSize(pixmap.width(),pixmap.height());
+
+
+    if (ui->label_4->height()>maxHeight){
+        double deltaH = (double)ui->label_4->height()/(double)maxHeight;
+        ui->label_4->setFixedWidth(ui->label_4->width()/deltaH);
+        ui->label_4->setFixedHeight(maxHeight);
+    }
+
+    if (ui->label_4->width()>maxWidth){
+        double deltaW = (double)ui->label_4->width()/(double)maxWidth;
+        ui->label_4->setFixedWidth(maxWidth);
+        ui->label_4->setFixedHeight(ui->label_4->height()/deltaW);
+    }
+
+
+
+    // move to center
+    ui->label_4->move((this->width()-ui->label_4->width())/2,startY+(maxHeight-ui->label_4->height())/2);
 }
 
 void MainWindow::playSoundLetter(QString letter,bool async){
@@ -360,7 +389,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             }
         }
         if (currentIndexLetter>=listLetters.size()){
-            ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/ribbon.png"));
+            setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/ribbon.png"));
             ui->label_2->setText(tr("CONGRATS!"));
             ui->label_3->setText(tr("Press \"ENTER\" to Play Again"));
 
@@ -394,7 +423,7 @@ void MainWindow::clickButtonAbc(){
     if (listLetters.size()>0){
         refreshViewer();
     }else{
-        ui->label->setPixmap(QPixmap());
+        setPixmapViewer(QPixmap());
         ui->label_3->setText(tr("abc is not loaded"));
         ui->label_2->setText("");
     }
@@ -410,7 +439,7 @@ void MainWindow::clickButtonAnimals(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/turtle.png"));
+    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/turtle.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Animals"));
 }
@@ -423,7 +452,7 @@ void MainWindow::clickButtonFood(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/hot_dog.png"));
+    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/hot_dog.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Food"));
 }
@@ -436,7 +465,7 @@ void MainWindow::clickButtonInstrument(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/guitar.png"));
+    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/guitar.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Music"));
 
@@ -450,7 +479,7 @@ void MainWindow::clickButtonToys(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
-    ui->label->setPixmap(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/wagon.png"));
+    setPixmapViewer(QPixmap(GLOBAL_PATH_USERDATA+"/images/backgrounds/wagon.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Toys"));
 }

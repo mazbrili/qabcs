@@ -52,6 +52,7 @@ class MainWindow : public QMainWindow {
 
         void setAbcLang(QString lang);
         void refreshViewer();
+        void setPixmapViewer(QPixmap pixmap);
 
         void playSoundLetter(QString letter, bool async=false);
 
