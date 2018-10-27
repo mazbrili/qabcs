@@ -485,18 +485,18 @@ void MainWindow::clickButtonToys(){
 }
 
 void MainWindow::clickButtonLang(){
-    FormSelectLanguage form;
+    FormSelectLanguage form(this);
     if (form.exec()){
         setAbcLang(confSettings->value("abc/language","en").toString());
     }
 }
 
 void MainWindow::clickButtonHelp(){
-    FormHelp form;
+    FormHelp form(this);
     form.exec();
 }
 
 void MainWindow::clickButtonInfo(){
-    FormAbout form;
+    FormAbout form(this);
     form.exec();
 }
