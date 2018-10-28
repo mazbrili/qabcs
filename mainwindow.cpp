@@ -323,7 +323,7 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                 }
 
             }else{
-                QString filename =  QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter;
+                QString filename =  QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter.toLower();
                 if (QFile::exists(filename)){
                     if (async){
                         QProcess::startDetached("play "+filename);
