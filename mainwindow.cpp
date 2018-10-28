@@ -88,6 +88,10 @@ void MainWindow::initToolBar(){
     accToys->setCheckable(true);
     accToys->setActionGroup(typeGameGroup);
 
+    accSound = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"), tr("Sound on/off"), this);
+    accSound->setCheckable(true);
+    accSound->setStatusTip(tr("Sound on/off"));
+
     accLang = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/languages.png"), tr("Select language"), this);
     accLang->setStatusTip(tr("Select language"));
 
@@ -106,6 +110,7 @@ void MainWindow::initToolBar(){
     toolBar->addAction(accInstrument);
     toolBar->addAction(accToys);
     toolBar->addSeparator();
+    toolBar->addAction(accSound);
     toolBar->addAction(accLang);
     toolBar->addAction(accHelp);
     toolBar->addAction(accInfo);
@@ -118,6 +123,7 @@ void MainWindow::initToolBar(){
     connect(accAnimals,SIGNAL(changed()),this,SLOT(clickButtonAnimals()));
     connect(accInstrument,SIGNAL(changed()),this,SLOT(clickButtonInstrument()));
     connect(accToys,SIGNAL(changed()),this,SLOT(clickButtonToys()));
+    connect(accSound,SIGNAL(triggered()),this,SLOT(clickButtonSound()));
     connect(accLang,SIGNAL(triggered()),this,SLOT(clickButtonLang()));
     connect(accHelp,SIGNAL(triggered()),this,SLOT(clickButtonHelp()));
     connect(accInfo,SIGNAL(triggered()),this,SLOT(clickButtonInfo()));
@@ -308,6 +314,8 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
 }
 
 void MainWindow::playSoundLetter(QString letter,bool async){
+    if (accSound->isChecked()) return;
+
     for (LETTER_INFO l:listLetters){
         if (l.letter==letter){
             QString speak_method = (l.speak_method.isEmpty()) ? _speak_method : l.speak_method;
@@ -369,7 +377,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (currentIndexLetter>=0 and key==Qt::Key_Space){
         if (typeGame==TYPE_ABC and gameAbcFinish==true) return;
 
-        listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter);
+        if (!accSound->isChecked()){
+            listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter);
+        }
         return;
     }
 
@@ -395,8 +405,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             ui->label_2->setText(tr("CONGRATS!"));
             ui->label_3->setText(tr("Press \"ENTER\" to Play Again"));
 
-            soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
-            soundEffect.play();
+            if (!accSound->isChecked()){
+                soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
+                soundEffect.play();
+            }
 
             gameAbcFinish=true;
             return;
@@ -484,6 +496,14 @@ void MainWindow::clickButtonToys(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
     ui->label_3->setText("");
     ui->label_2->setText(tr("Toys"));
+}
+
+void MainWindow::clickButtonSound(){
+    if (accSound->isChecked()){
+        accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
+    }else{
+        accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"));
+    }
 }
 
 void MainWindow::clickButtonLang(){
