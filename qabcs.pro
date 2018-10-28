@@ -96,7 +96,6 @@ SOURCES += main.cpp \
 
 FORMS += \
     FormAbout.ui \
-    mainwindow.ui \
     FormHelp.ui \
     FormSelectLanguage.ui
 

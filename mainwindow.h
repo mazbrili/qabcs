@@ -8,6 +8,8 @@
 #include <QMap>
 #include <QSettings>
 #include <QSoundEffect>
+#include <QStatusBar>
+#include <QLabel>
 
 #include "Collection.h"
 
@@ -40,8 +42,7 @@ class MainWindow : public QMainWindow {
         ~MainWindow();
 
     private:
-        Ui::MainWindow *ui;
-
+        void initGUI();
         void initToolBar();
         void initLanguageAbc();
 
@@ -58,7 +59,12 @@ class MainWindow : public QMainWindow {
 
         QString globalPathUserResources;
 
+        QStatusBar *statusbar;
         QToolBar *toolBar;
+        QLabel *lblAbcPicture;
+        QLabel *lblAbcLetter;
+        QLabel *lblAbcText;
+
 
         QActionGroup *typeGameGroup;
 

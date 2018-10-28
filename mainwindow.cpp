@@ -16,12 +16,8 @@
 #include <QSound>
 #include <QProcess>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
-    this->setFixedSize(this->width(),this->height());
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
+    this->setFixedSize(552,541);
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
     currentIndexLetter=0;   
@@ -43,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // init collections
     for (QString type:listTypes) listCollections[type] = new Collection(confSettings->value("abc/language","en").toString());
 
+    initGUI();
     initToolBar();
     setAbcLang(confSettings->value("abc/language","en").toString());
 
@@ -50,7 +47,37 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 MainWindow::~MainWindow(){
-    delete ui;
+
+}
+
+void MainWindow::initGUI(){
+
+    statusbar = new QStatusBar(this);
+    this->setStatusBar(statusbar);
+
+
+    QFont fontSizeLetter;
+    fontSizeLetter.setPointSize(45);
+
+    QFont fontSizeText;
+    fontSizeText.setPointSize(20);
+
+    lblAbcPicture =  new QLabel(this);
+    lblAbcPicture->setGeometry(QRect(130, 20, 290, 290));
+    lblAbcPicture->setScaledContents(true);
+    //lblAbcPicture->setFrameShape(QFrame::Box);
+
+    lblAbcLetter = new QLabel(this);
+    lblAbcLetter->setFont(fontSizeLetter);
+    lblAbcLetter->setAlignment(Qt::AlignCenter);
+    lblAbcLetter->setGeometry(0,360,this->width(),101);
+    //lblAbcLetter->setFrameShape(QFrame::Box);
+
+    lblAbcText = new QLabel(this);
+    lblAbcText->setFont(fontSizeText);
+    lblAbcText->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+    lblAbcText->setGeometry(0, this->height()-statusbar->height()-101, this->width(), 91);
+    //lblAbcText->setFrameShape(QFrame::Box);
 }
 
 
@@ -278,39 +305,39 @@ void MainWindow::refreshViewer(){
 
     text.replace(currentLetter,"<font color=\"red\">"+currentLetter+"</font>");
 
-    ui->label_3->setText(text);
-    ui->label_2->setText(currentLetter);
+    lblAbcText->setText(text);
+    lblAbcLetter->setText(currentLetter);
 
     setPixmapViewer(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
 }
 
 void MainWindow::setPixmapViewer(QPixmap pixmap){
-    ui->label_4->setPixmap(pixmap);
+    lblAbcPicture->setPixmap(pixmap);
 
-    int startY = 20;
+    int startY = 70;
 
     int maxWidth = this->width()-20;
     int maxHeight = 290;
 
-    ui->label_4->setFixedSize(pixmap.width(),pixmap.height());
+    lblAbcPicture->setFixedSize(pixmap.width(),pixmap.height());
 
 
-    if (ui->label_4->height()>maxHeight){
-        double deltaH = (double)ui->label_4->height()/(double)maxHeight;
-        ui->label_4->setFixedWidth(ui->label_4->width()/deltaH);
-        ui->label_4->setFixedHeight(maxHeight);
+    if (lblAbcPicture->height()>maxHeight){
+        double deltaH = (double)lblAbcPicture->height()/(double)maxHeight;
+        lblAbcPicture->setFixedWidth(lblAbcPicture->width()/deltaH);
+        lblAbcPicture->setFixedHeight(maxHeight);
     }
 
-    if (ui->label_4->width()>maxWidth){
-        double deltaW = (double)ui->label_4->width()/(double)maxWidth;
-        ui->label_4->setFixedWidth(maxWidth);
-        ui->label_4->setFixedHeight(ui->label_4->height()/deltaW);
+    if (lblAbcPicture->width()>maxWidth){
+        double deltaW = (double)lblAbcPicture->width()/(double)maxWidth;
+        lblAbcPicture->setFixedWidth(maxWidth);
+        lblAbcPicture->setFixedHeight(lblAbcPicture->height()/deltaW);
     }
 
 
 
     // move to center
-    ui->label_4->move((this->width()-ui->label_4->width())/2,startY+(maxHeight-ui->label_4->height())/2);
+    lblAbcPicture->move((this->width()-lblAbcPicture->width())/2,startY+(maxHeight-lblAbcPicture->height())/2);
 }
 
 void MainWindow::playSoundLetter(QString letter,bool async){
@@ -402,8 +429,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
         if (currentIndexLetter>=listLetters.size()){
             setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/ribbon.png"));
-            ui->label_2->setText(tr("CONGRATS!"));
-            ui->label_3->setText(tr("Press \"ENTER\" to Play Again"));
+            lblAbcLetter->setText(tr("CONGRATS!"));
+            lblAbcText->setText(tr("Press \"ENTER\" to Play Again"));
 
             if (!accSound->isChecked()){
                 soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
@@ -438,8 +465,8 @@ void MainWindow::clickButtonAbc(){
         refreshViewer();
     }else{
         setPixmapViewer(QPixmap());
-        ui->label_3->setText(tr("abc is not loaded"));
-        ui->label_2->setText("");
+        lblAbcText->setText(tr("abc is not loaded"));
+        lblAbcLetter->setText("");
     }
 
     gameAbcFinish=false;
@@ -454,8 +481,8 @@ void MainWindow::clickButtonAnimals(){
     gameAbcFinish=true;
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/turtle.png"));
-    ui->label_3->setText("");
-    ui->label_2->setText(tr("Animals"));
+    lblAbcText->setText("");
+    lblAbcLetter->setText(tr("Animals"));
 }
 
 void MainWindow::clickButtonFood(){
@@ -467,8 +494,8 @@ void MainWindow::clickButtonFood(){
     gameAbcFinish=true;
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/hot_dog.png"));
-    ui->label_3->setText("");
-    ui->label_2->setText(tr("Food"));
+    lblAbcText->setText("");
+    lblAbcLetter->setText(tr("Food"));
 }
 
 void MainWindow::clickButtonInstrument(){
@@ -480,8 +507,8 @@ void MainWindow::clickButtonInstrument(){
     gameAbcFinish=true;
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/guitar.png"));
-    ui->label_3->setText("");
-    ui->label_2->setText(tr("Music"));
+    lblAbcText->setText("");
+    lblAbcLetter->setText(tr("Music"));
 
 }
 
@@ -494,8 +521,8 @@ void MainWindow::clickButtonToys(){
     gameAbcFinish=true;
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
-    ui->label_3->setText("");
-    ui->label_2->setText(tr("Toys"));
+    lblAbcText->setText("");
+    lblAbcLetter->setText(tr("Toys"));
 }
 
 void MainWindow::clickButtonSound(){
