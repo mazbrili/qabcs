@@ -109,10 +109,10 @@ FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromProperties(QString f
         QByteArray line = file.readLine();
         if (rx.indexIn(line)!=-1){
             if (rx.cap(1)=="language"){
-                result.language = rx.cap(3).replace(QRegExp("\\s"),"");
+                result.language = rx.cap(3).replace(QRegExp("(\\s*)$"),"");
             }
             if (rx.cap(1)=="author"){
-                result.author = rx.cap(3).replace(QRegExp("\\s"),"");
+                result.author = rx.cap(3).replace(QRegExp("(\\s*)$"),"");
             }
         }
     }
