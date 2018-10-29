@@ -29,6 +29,9 @@
 		      "espeak_words": "АРФА"
 		},
 		"toys": {
+		      "pic": "toys/watercolor.png",
+		      "name": "АКВАРЕЛЬ",
+		      "espeak_words": "АКВА-РЕЛЬ"
 		}
 	}},
 	{"Б": {
@@ -123,6 +126,9 @@
 		      "espeak_words": "ДЕ-НЬГИ"
 		},
 		"food": {
+		      "pic": "food/durian.png",
+		      "name": "ДУРИАН",
+		      "espeak_words": "ДУРИ-АН"
 		},
 		"animals": {
 		      "pic": "animals/dolphin.png",
@@ -143,8 +149,14 @@
 	{"Е": {
 		"espeak_words": "Е",
 		"misc": {
+		      "pic": "animals/raccoon.png",
+		      "name": "ЕНОТ",
+		      "espeak_words": "ЕНОТ"
 		},
 		"food": {
+		      "pic": "food/blackberry.png",
+		      "name": "ЕЖЕВИКА",
+		      "espeak_words": "ЕЖЕ-ВИКА"
 		},
 		"animals": {
 		      "pic": "animals/raccoon.png",
@@ -152,15 +164,27 @@
 		      "espeak_words": "ЕНОТ"
 		},
 		"instrument": {
+		      "pic": "music/yahoo.png",
+		      "name": "ЕХУ",
+		      "espeak_words": "ЕХУ"
 		},
 		"toys": {
+		      "pic": "toys/emelya.png",
+		      "name": "ЕМЕЛЯ",
+		      "espeak_words": "ЕМЕЛЯ"
 		}
 	}},
 	{"Ё": {
 		"espeak_words": "Ё",
 		"misc": {
+		      "pic": "animals/hedgehog.png",
+		      "name": "ЁЖИК",
+		      "espeak_words": "ЁЖИК"
 		},
 		"food": {
+		      "pic": "food/ruff.png",
+		      "name": "ЁРШ",
+		      "espeak_words": "ЁРШ"
 		},
 		"animals": {
 		      "pic": "animals/hedgehog.png",
@@ -168,8 +192,14 @@
 		      "espeak_words": "ЁЖИК"
 		},
 		"instrument": {
+		      "pic": "music/iotshin.png",
+		      "name": "ЁОЧИН",
+		      "espeak_words": "ЁОЧИН"
 		},
 		"toys": {
+		      "pic": "toys/christmas_tree.png",
+		      "name": "ЁЛКА",
+		      "espeak_words": "ЁЛКА"
 		}
 	}},
 	{"Ж": {
@@ -180,6 +210,9 @@
 		      "espeak_words": "ЖАБА"
 		},
 		"food": {
+		      "pic": "food/roast.png",
+		      "name": "ЖАРКОЕ",
+		      "espeak_words": "ЖАР-КОЕ"
 		},
 		"animals": {
 		      "pic": "animals/giraffe.png",
@@ -187,8 +220,14 @@
 		      "espeak_words": "ЖИ-РАФ"
 		},
 		"instrument": {
+		      "pic": "music/zhaleyka.png",
+		      "name": "ЖАЛЕЙКА",
+		      "espeak_words": "ЖАЛЕЙКА"
 		},
 		"toys": {
+		      "pic": "toys/firebird.png",
+		      "name": "ЖАР-ПТИЦА",
+		      "espeak_words": "ЖАР-ПТИЦА"
 		}
 	}},
 	{"З": {
@@ -199,6 +238,9 @@
 		      "espeak_words": "ЗОНТ"
 		},
 		"food": {
+		      "pic": "food/casserole.png",
+		      "name": "ЗАПЕКАНКА",
+		      "espeak_words": "ЗАПЕ-КАНКА"
 		},
 		"animals": {
 		      "pic": "animals/zebra.png",
@@ -224,6 +266,9 @@
 		      "espeak_words": "ИГЛУ"
 		},
 		"food": {
+		      "pic": "food/shadberry.png",
+		      "name": "ИРГА",
+		      "espeak_words": "ИРГА"
 		},
 		"animals": {
 		      "pic": "animals/iguana.png",
@@ -236,20 +281,32 @@
 		      "espeak_words": "И-ПУ"
 		},
 		"toys": {
+		      "pic": "toys/prince.png",
+		      "name": "ИВАН-ЦАРЕВИЧ",
+		      "espeak_words": "ИВАН-ЦА-РЕ-ВИЧ"
 		}
 	}},
 	{"Й": {
 		"espeak_words": "Й",
 		"misc": {
+		      "pic": "food/yogurt.png",
+		      "name": "ЙОГУРТ",
+		      "espeak_words": "ЙО-ГУРТ"
 		},
 		"food": {
+		      "pic": "food/yogurt.png",
+		      "name": "ЙОГУРТ",
+		      "espeak_words": "ЙО-ГУРТ"
 		},
 		"animals": {
 		      "pic": "animals/yorkshire_terrier.png",
-		      "name": "ЙОРКШИРСКИЙ ТЕРЬЕР",
-		      "espeak_words": "ЙОРКШИРСКИЙ ТЕРЬ-ЕР"
+		      "name": "ЙОРК",
+		      "espeak_words": "ЙОРК"
 		},
 		"instrument": {
+		      "pic": "music/youhikko.png",
+		      "name": "ЙОУХИККО",
+		      "espeak_words": "ЙОУ-ХИККО"
 		},
 		"toys": {
 		      "pic": "toys/yoyo.png",
@@ -344,8 +401,14 @@
 	{"Н": {
 		"espeak_words": "Н",
 		"misc": {
+		      "pic": "animals/rhinoceros.png",
+		      "name": "НОСОРОГ",
+		      "espeak_words": "НОСОРОГ"
 		},
 		"food": {
+		      "pic": "food/nectarine.png",
+		      "name": "НЕКТАРИН",
+		      "espeak_words": "НЕКТА-РИН"
 		},
 		"animals": {
 		      "pic": "animals/rhinoceros.png",
@@ -358,6 +421,9 @@
 		      "espeak_words": "НЕЙ"
 		},
 		"toys": {
+		      "pic": "toys/dunno.png",
+		      "name": "НЕЗНАЙКА",
+		      "espeak_words": "НЕЗНАЙКА"
 		}
 	}},
 	{"О": {
@@ -378,6 +444,9 @@
 		      "espeak_words": "ОВ-ЦА"
 		},
 		"instrument": {
+		      "pic": "music/organ.png",
+		      "name": "ОРГАН",
+		      "espeak_words": "ОР-ГАН"
 		},
 		"toys": {
 		      "pic": "toys/origami.png",
@@ -431,8 +500,14 @@
 		      "espeak_words": "РЫБА"
 		},
 		"instrument": {
+		      "pic": "music/rozhok.png",
+		      "name": "РОЖОК",
+		      "espeak_words": "РОЖОК"
 		},
 		"toys": {
+		      "pic": "toys/rocket.png",
+		      "name": "РАКЕТА",
+		      "espeak_words": "РАКЕТА"
 		}
 	}},
 	{"С": {
@@ -466,6 +541,9 @@
 	{"Т": {
 		"espeak_words": "Т",
 		"misc": {
+		      "pic": "toys/wagon.png",
+		      "name": "ТЕЛЕЖКА",
+		      "espeak_words": "ТЕЛЕЖКА"
 		},
 		"food": {
 		      "pic": "food/tomato.png",
@@ -491,6 +569,9 @@
 	{"У": {
 		"espeak_words": "У",
 		"misc": {
+		      "pic": "animals/duck.png",
+		      "name": "УТКА",
+		      "espeak_words": "УТКА"
 		},
 		"food": {
 		      "pic": "food/udon.png",
@@ -508,13 +589,22 @@
 		      "espeak_words": "УКУ-ЛЕЛЕ"
 		},
 		"toys": {
+		      "pic": "toys/umka.png",
+		      "name": "УМКА",
+		      "espeak_words": "УМКА"
 		}
 	}},
 	{"Ф": {
 		"espeak_words": "Ф",
 		"misc": {
+		      "pic": "food/kidney_beans.png",
+		      "name": "ФАСОЛЬ",
+		      "espeak_words": "ФА-СОЛЬ"
 		},
 		"food": {
+		      "pic": "food/kidney_beans.png",
+		      "name": "ФАСОЛЬ",
+		      "espeak_words": "ФА-СОЛЬ"
 		},
 		"animals": {
 		      "pic": "animals/pheasant.png",
@@ -535,6 +625,9 @@
  	{"Х": {
 		"espeak_words": "Х",
 		"misc": {
+		      "pic": "music/hang.png",
+		      "name": "ХАНГ",
+		      "espeak_words": "ХАНГ"
 		},
 		"food": {
 		      "pic": "food/hot_dog.png",
@@ -547,8 +640,14 @@
 		      "espeak_words": "ХРЯК"
 		},
 		"instrument": {
+		      "pic": "music/hang.png",
+		      "name": "ХАНГ",
+		      "espeak_words": "ХАНГ"
 		},
 		"toys": {
+		      "pic": "toys/hockey_puck.png",
+		      "name": "ХОККЕЙ",
+		      "espeak_words": "ХОК-КЕЙ"
 		}
 	}},
  	{"Ц": {
@@ -569,8 +668,14 @@
 		      "espeak_words": "ЦАПЛЯ"
 		},
 		"instrument": {
+		      "pic": "music/cymbals.png",
+		      "name": "ЦИМБАЛЫ",
+		      "espeak_words": "ЦИ-МБАЛЫ"
 		},
 		"toys": {
+		      "pic": "toys/circus.png",
+		      "name": "ЦИРК",
+		      "espeak_words": "ЦИРК"
 		}
 	}},
  	{"Ч": {
@@ -591,6 +696,9 @@
 		      "espeak_words": "ЧЕ-РЕ-ПАХА"
 		},
 		"instrument": {
+		      "pic": "music/changu.png",
+		      "name": "ЧАНГУ",
+		      "espeak_words": "ЧАНГУ"
 		},
 		"toys": {
 		      "pic": "toys/lunchbox.png",
@@ -601,8 +709,14 @@
  	{"Ш": {
 		"espeak_words": "Ш",
 		"misc": {
+		      "pic": "music/hand_organ.png",
+		      "name": "ШАРМАНКА",
+		      "espeak_words": "ШАРМАНКА"
 		},
 		"food": {
+		      "pic": "food/sprats.png",
+		      "name": "ШПРОТЫ",
+		      "espeak_words": "ШПРОТЫ"
 		},
 		"animals": {
 		      "pic": "animals/chimpanzee.png",
@@ -610,6 +724,9 @@
 		      "espeak_words": "ШИМ-ПАН-ЗЭ"
 		},
 		"instrument": {
+		      "pic": "music/hand_organ.png",
+		      "name": "ШАРМАНКА",
+		      "espeak_words": "ШАРМАНКА"
 		},
 		"toys": {
 		      "pic": "toys/balloons.png",
@@ -620,8 +737,14 @@
  	{"Щ": {
 		"espeak_words": "Щ",
 		"misc": {
+		      "pic": "food/sorrel.png",
+		      "name": "ЩАВЕЛЬ",
+		      "espeak_words": "ЩА-ВЕЛЬ"
 		},
 		"food": {
+		      "pic": "food/sorrel.png",
+		      "name": "ЩАВЕЛЬ",
+		      "espeak_words": "ЩА-ВЕЛЬ"
 		},
 		"animals": {
 		      "pic": "animals/dog.png",
@@ -629,15 +752,27 @@
 		      "espeak_words": "ЩЕ-НОК"
 		},
 		"instrument": {
+		      "pic": "music/slit_drum.png",
+		      "name": "ЩЕЛЕВОЙ БАРАБАН",
+		      "espeak_words": "ЩЕЛЕ-ВОЙ БАРА-БАН"
 		},
 		"toys": {
+		      "pic": "toys/shield.png",
+		      "name": "ЩИТ",
+		      "espeak_words": "ЩИТ"
 		}
 	}},
  	{"Ъ": {
 		"espeak_words": "Ъ",
 		"misc": {
+		      "pic": "toys/adjutant.png",
+		      "name": "АДЪЮТАНТ",
+		      "espeak_words": "АДЪЮТАНТ"
 		},
 		"food": {
+		      "pic": "food/saffron_milk_cap.png",
+		      "name": "ПОДЪЕЛОЧНИК",
+		      "espeak_words": "ПОДЪ-ЕЛО-ЧНИК"
 		},
 		"animals": {
 		      "pic": "animals/fish.png",
@@ -645,15 +780,27 @@
 		      "espeak_words": "ПО-ДЪЯ-ЗОК"
 		},
 		"instrument": {
+		      "pic": "music/jack.png",
+		      "name": "РАЗЪЁМ",
+		      "espeak_words": "РАЗЪЁМ"
 		},
 		"toys": {
+		      "pic": "toys/adjutant.png",
+		      "name": "АДЪЮТАНТ",
+		      "espeak_words": "АДЪЮТАНТ"
 		}
 	}},
  	{"Ы": {
 		"espeak_words": "Ы",
 		"misc": {
+		      "pic": "music/topshuur.png",
+		      "name": "ЫЫХ",
+		      "espeak_words": "ЫЫХ"
 		},
 		"food": {
+		      "pic": "food/stewed_duck.png",
+		      "name": "ЫКШТЫМА",
+		      "espeak_words": "ЫКШТЫМА"
 		},
 		"animals": {
 		      "pic": "animals/mouse.png",
@@ -661,8 +808,14 @@
 		      "espeak_words": "МЫШЬ"
 		},
 		"instrument": {
+		      "pic": "music/topshuur.png",
+		      "name": "ЫЫХ",
+		      "espeak_words": "ЫЫХ"
 		},
 		"toys": {
+		      "pic": "toys/yi.png",
+		      "name": "Ы",
+		      "espeak_words": "Ы"
 		}
 	}},
  	{"Ь": {
@@ -673,6 +826,9 @@
 		      "espeak_words": "МОЛЬБЕРТ"
 		},
 		"food": {
+		      "pic": "food/x_cookie.png",
+		      "name": "ПЕЧЕНЬЕ",
+		      "espeak_words": "ПЕЧЕНЬЕ"
 		},
 		"animals": {
 		      "pic": "animals/horse.png",
@@ -693,8 +849,14 @@
  	{"Э": {
 		"espeak_words": "Э",
 		"misc": {
+		      "pic": "food/eclair.png",
+		      "name": "ЭКЛЕР",
+		      "espeak_words": "ЭК-ЛЕР"
 		},
 		"food": {
+		      "pic": "food/eclair.png",
+		      "name": "ЭКЛЕР",
+		      "espeak_words": "ЭК-ЛЕР"
 		},
 		"animals": {
 		      "pic": "animals/emu.png",
@@ -707,13 +869,22 @@
 		      "espeak_words": "ЭЛЕКТРО-ГИТАРА"
 		},
 		"toys": {
+		      "pic": "toys/excavator.png",
+		      "name": "ЭКСКАВАТОР",
+		      "espeak_words": "ЭКСКАВАТОР"
 		}
 	}},
  	{"Ю": {
 		"espeak_words": "Ю",
 		"misc": {
+		      "pic": "toys/top.png",
+		      "name": "ЮЛА",
+		      "espeak_words": "Ю-ЛА"
 		},
 		"food": {
+		      "pic": "food/yupka.png",
+		      "name": "ЮПКА",
+		      "espeak_words": "ЮПКА"
 		},
 		"animals": {
 		      "pic": "animals/sparrow.png",
@@ -721,6 +892,9 @@
 		      "espeak_words": "ЮРОК"
 		},
 		"instrument": {
+		      "pic": "music/yueqin.png",
+		      "name": "ЮЭЦИНЬ",
+		      "espeak_words": "ЮЭ-ЦИНЬ"
 		},
 		"toys": {
 		      "pic": "toys/top.png",
@@ -751,6 +925,9 @@
 		      "espeak_words": "ЯН-ЦИНЬ"
 		},
 		"toys": {
+		      "pic": "toys/yaga.png",
+		      "name": "ЯГА",
+		      "espeak_words": "Я-ГА"
 		}
 	}}
    ]
