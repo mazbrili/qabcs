@@ -11,9 +11,6 @@ FormHelp::FormHelp(QWidget *parent) :
     this->setWindowTitle(tr("Help"));
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
-    // force move to centre
-    this->move(parent->x()+(parent->width()-this->width())/2,parent->y()+(parent->height()-this->height())/2);
-
 
     ui->textEdit->setText(tr("How to use:\n\n")+
       tr("Selecting a mode:\n\
