@@ -241,7 +241,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
     while (!file.atEnd()) {
         QString line = file.readLine();
-        line.replace(QRegExp("\\s"),"");
+        line.replace(QRegExp("(\\s*)$"),"");
 
         QStringList pair = line.split(":");
 
