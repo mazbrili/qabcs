@@ -242,10 +242,14 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         QStringList pair = line.split(":");
 
         // format
-        // type:letter:str_rus:metka:espeak_words:noises
+        // type:letter=str_rus=espeak_words=metka=noises
 
         //skip special words
         if (pair.at(0)=="language" or pair.at(0)=="author") continue;
+
+        if (pair.at(0)=="language"){
+            if (pair.size()==2) _espeak_params=pair.at(1);
+        }
 
         if (pair.size()==2){
             QStringList params = pair.at(1).split("=");
@@ -254,13 +258,12 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             QString letter = params.at(0);
             QString str = params.at(1).toUpper();
-            QString metka = params.at(2);
-            QString espeak_words = params.at(3);
+            QString espeak_words = params.at(2);
+            QString metka = params.at(3);
             QString espeak_params = "";
             QString noises = "";
 
-            if (params.size()>=5) espeak_params=params.at(4);
-            if (params.size()>=6) noises=params.at(4);
+            if (params.size()>=5) noises=params.at(4);
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
