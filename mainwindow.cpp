@@ -365,13 +365,8 @@ void MainWindow::playSoundLetter(QString letter,bool async){
 
             if (speak_method=="espeak"){
                 if (!l.espeak_words.isEmpty()){
-                    if (async){
-                        QProcess::startDetached("espeak "+espeak_params+" \""+l.espeak_words+"\"");
-                    }else{
-                        QProcess::execute("espeak "+espeak_params+" \""+l.espeak_words+"\"");
-                    }
+                    playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
                 }
-
             }else{
                 QString filename =  QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter.toLower();
                 if (!QFile::exists(filename)){
@@ -381,14 +376,33 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                     }
                 }
                 if (QFile::exists(filename)){
-                    if (async){
-                        QProcess::startDetached("play "+filename);
-                    }else{
-                        QProcess::execute("play "+filename);
-                    }
+                    playSoundFromFile(filename,async);
+                }else{
+                    playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+letter+"\"",async);
                 }
             }
         }
+    }
+}
+
+void MainWindow::playSoundFromFile(QString filename, bool async){
+    if (!QFile::exists(filename)) return;
+
+    if (async){
+        QProcess::startDetached("play "+filename);
+    }else{
+        QProcess::execute("play "+filename);
+    }
+
+}
+
+void MainWindow::playSoundFromSpeechSynthesizer(QString cmdLine, bool async){
+    if (cmdLine.isEmpty()) return;
+
+    if (async){
+        QProcess::startDetached(cmdLine);
+    }else{
+        QProcess::execute(cmdLine);
     }
 }
 

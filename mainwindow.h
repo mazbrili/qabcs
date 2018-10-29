@@ -56,6 +56,8 @@ class MainWindow : public QMainWindow {
         void setPixmapViewer(QPixmap pixmap);
 
         void playSoundLetter(QString letter, bool async=false);
+        void playSoundFromFile(QString filename, bool async=false);
+        void playSoundFromSpeechSynthesizer(QString cmdLine, bool async=false);
 
         QString globalPathUserResources;
 
