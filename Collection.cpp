@@ -1,9 +1,9 @@
 #include "Collection.h"
 
-#include <QProcess>
 #include <QFile>
-#include <QDebug>
+
 #include "config_qabcs.h"
+#include "SoundEngine.h"
 
 Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
 
@@ -85,37 +85,21 @@ void Collection::playSoundPicture(QString letter){
     QString speak_method = (listLetters[letter].speak_method.isEmpty()) ? _speak_method : listLetters[letter].speak_method;
     QString espeak_params = (listLetters[letter].espeak_params.isEmpty()) ? _espeak_params : listLetters[letter].espeak_params;   
 
-    QStringList listExtensionFiles = QStringList() << "wav" << "ogg" << "mp3";
-
-
     if (speak_method=="espeak"){
         if (!listLetters[letter].espeak_words.isEmpty()){
-            qDebug() << "espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"";
-            QProcess::execute("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
+            SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
         }
     }else{
-        QString filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic.toLower();
-        if (!QFile::exists(filename)){
-            for (QString ext:listExtensionFiles){
-                filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words/"+listLetters[letter].sound_pic.toLower()+"."+ext;
-                if (QFile::exists(filename)) break;
-            }
-        }
-
-        if (QFile::exists(filename)) QProcess::execute("play "+filename);
+        QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
+        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower());
+        SoundEngine::playSoundFromFile(filename);
     }
-
 
     // play noises
     if (!listLetters[letter].noises.isEmpty()){
-        QString filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/all/noises/"+listLetters[letter].noises.toLower();
-        if (!QFile::exists(filename)){
-            for (QString ext:listExtensionFiles){
-                filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/all/noises/"+listLetters[letter].noises.toLower()+"."+ext;
-                if (QFile::exists(filename)) break;
-            }
-        }
-        if (QFile::exists(filename)) QProcess::execute("play "+filename);
+        QString folderNoises =  QString(GLOBAL_PATH_USERDATA)+"/abcs/all/noises";
+        QString filename = SoundEngine::findSoundfile(folderNoises,listLetters[letter].noises.toLower());
+        SoundEngine::playSoundFromFile(filename);
     }
 
 }
