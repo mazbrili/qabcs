@@ -2,6 +2,7 @@
 
 #include <QProcess>
 #include <QFile>
+#include <QDebug>
 #include "config_qabcs.h"
 
 Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
@@ -86,6 +87,7 @@ void Collection::playSoundPicture(QString letter){
 
     if (speak_method=="espeak"){
         if (!listLetters[letter].espeak_words.isEmpty()){
+            qDebug() << "espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"";
             QProcess::execute("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
         }
     }else{
