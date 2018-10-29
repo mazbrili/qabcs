@@ -92,7 +92,8 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     FormHelp.cpp \
     Collection.cpp \
-    FormSelectLanguage.cpp
+    FormSelectLanguage.cpp \
+    SoundEngine.cpp
 
 FORMS += \
     FormAbout.ui \
@@ -105,4 +106,5 @@ HEADERS += \
     FormHelp.h \
     Collection.h \
     FormSelectLanguage.h \
-    config_qabcs.h
+    config_qabcs.h \
+    SoundEngine.h
