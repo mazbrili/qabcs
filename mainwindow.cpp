@@ -356,6 +356,8 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
 void MainWindow::playSoundLetter(QString letter,bool async){
     if (!soundStatus) return;
 
+    QStringList listExtensionFiles = QStringList() << "wav" << "ogg" << "mp3";
+
     for (LETTER_INFO l:listLetters){
         if (l.letter==letter){
             QString speak_method = (l.speak_method.isEmpty()) ? _speak_method : l.speak_method;
@@ -372,6 +374,12 @@ void MainWindow::playSoundLetter(QString letter,bool async){
 
             }else{
                 QString filename =  QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter.toLower();
+                if (!QFile::exists(filename)){
+                    for (QString ext:listExtensionFiles){
+                        filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter.toLower()+"."+ext;
+                        if (QFile::exists(filename)) break;
+                    }
+                }
                 if (QFile::exists(filename)){
                     if (async){
                         QProcess::startDetached("play "+filename);
