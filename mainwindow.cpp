@@ -369,8 +369,9 @@ void MainWindow::playSoundLetter(QString letter,bool async){
             }else{
                 QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha";
                 QString filename =  SoundEngine::findSoundfile(folderAlpha,l.sound_letter.toLower());
-                if (!filename.isEmpty() and QFile::exists(filename)){
-                    SoundEngine::playSoundFromFile(filename,async);
+
+                if (!filename.isEmpty() and QFile::exists(folderAlpha+"/"+filename)){
+                    SoundEngine::playSoundFromFile(folderAlpha+"/"+filename,async);
                 }else{
                     SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+letter+"\"",async);
                 }

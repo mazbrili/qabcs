@@ -92,14 +92,14 @@ void Collection::playSoundPicture(QString letter){
     }else{
         QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
         QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower());
-        SoundEngine::playSoundFromFile(filename);
+        SoundEngine::playSoundFromFile(folderWords+"/"+filename);
     }
 
     // play noises
     if (!listLetters[letter].noises.isEmpty()){
         QString folderNoises =  QString(GLOBAL_PATH_USERDATA)+"/abcs/all/noises";
         QString filename = SoundEngine::findSoundfile(folderNoises,listLetters[letter].noises.toLower());
-        SoundEngine::playSoundFromFile(filename);
+        SoundEngine::playSoundFromFile(folderNoises+"/"+filename);
     }
 
 }
