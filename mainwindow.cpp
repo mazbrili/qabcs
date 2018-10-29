@@ -252,6 +252,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
                 _espeak_params=pair.at(1);
                 for (QString type:listTypes) listCollections[type]->setGlobalParam("",_espeak_params);
             }
+            continue;
         }
 
         if (pair.size()==2){
