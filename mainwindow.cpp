@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     gameAbcFinish=false;
     _speak_method="";
     _espeak_params="";
+    soundStatus=true;       // sound on
 
     listTypes = QStringList() << "misc" << "food" << "animals" << "instrument" << "toys";
 
@@ -115,7 +116,6 @@ void MainWindow::initToolBar(){
     accToys->setActionGroup(typeGameGroup);
 
     accSound = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"), tr("Sound on/off"), this);
-    accSound->setCheckable(true);
     accSound->setStatusTip(tr("Sound on/off"));
 
     accLang = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/languages.png"), tr("Select language"), this);
@@ -340,7 +340,7 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
 }
 
 void MainWindow::playSoundLetter(QString letter,bool async){
-    if (accSound->isChecked()) return;
+    if (!soundStatus) return;
 
     for (LETTER_INFO l:listLetters){
         if (l.letter==letter){
@@ -403,7 +403,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (currentIndexLetter>=0 and key==Qt::Key_Space){
         if (typeGame==TYPE_ABC and gameAbcFinish==true) return;
 
-        if (!accSound->isChecked()){
+        if (soundStatus){
             listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter);
         }
         return;
@@ -431,7 +431,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             lblAbcLetter->setText(tr("CONGRATS!"));
             lblAbcText->setText(tr("Press \"ENTER\" to Play Again"));
 
-            if (!accSound->isChecked()){
+            if (soundStatus){
                 soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
                 soundEffect.play();
             }
@@ -525,10 +525,12 @@ void MainWindow::clickButtonToys(){
 }
 
 void MainWindow::clickButtonSound(){
-    if (accSound->isChecked()){
+    if (soundStatus){
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
+        soundStatus=false;
     }else{
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"));
+        soundStatus=true;
     }
 }
 

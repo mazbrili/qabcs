@@ -87,6 +87,7 @@ class MainWindow : public QMainWindow {
 
         QSettings *confSettings;
 
+        bool soundStatus;
         QSoundEffect soundEffect;
 
         bool gameAbcFinish;
