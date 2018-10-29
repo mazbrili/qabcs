@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     initGUI();
     initToolBar();
-    setAbcLang(confSettings->value("abc/language","en").toString());
+    setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
 
 
 }
@@ -167,14 +167,18 @@ void MainWindow::initLanguageAbc(){
     for (QString type:listTypes) listCollections[type]->setAbcLanguage(currentLanguageAbc);
 
 
-    QString jsonFilename = globalPathUserResources+"/"+currentLanguageAbc+"/abc.json";
-    if (QFile::exists(jsonFilename)){
-        if (loadAbcConfigJson(jsonFilename)) return;
+    if (currentFilenameAbc.indexOf(QRegExp("(.*)(.json)$"))!=-1){
+        QString jsonFilename = globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc;
+        if (QFile::exists(jsonFilename)){
+            if (loadAbcConfigJson(jsonFilename)) return;
+        }
     }
 
-    QString propertiesFilename = globalPathUserResources+"/"+currentLanguageAbc+"/abc.properties";
-    if (QFile::exists(propertiesFilename)){
-        if (loadAbcConfigProperties(propertiesFilename)) return;
+    if (currentFilenameAbc.indexOf(QRegExp("(.*)(.properties)$"))!=-1){
+        QString propertiesFilename = globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc;
+        if (QFile::exists(propertiesFilename)){
+            if (loadAbcConfigProperties(propertiesFilename)) return;
+        }
     }
 }
 
@@ -293,8 +297,9 @@ QString MainWindow::typeGameToString(TYPE_GAME type){
     return "misc";
 }
 
-void MainWindow::setAbcLang(QString lang){
+void MainWindow::setAbcLang(QString lang,QString filename){
     currentLanguageAbc=lang;
+    currentFilenameAbc=filename;
     globalPathUserResources=QString(GLOBAL_PATH_USERDATA)+"/abcs";
     currentIndexLetter=0;
 
@@ -546,7 +551,7 @@ void MainWindow::clickButtonSound(){
 void MainWindow::clickButtonLang(){
     FormSelectLanguage form(this);
     if (form.exec()){
-        setAbcLang(confSettings->value("abc/language","en").toString());
+        setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
     }
 }
 

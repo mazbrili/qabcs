@@ -51,7 +51,7 @@ class MainWindow : public QMainWindow {
 
         QString typeGameToString(TYPE_GAME type);
 
-        void setAbcLang(QString lang);
+        void setAbcLang(QString lang, QString filename);
         void refreshViewer();
         void setPixmapViewer(QPixmap pixmap);
 
@@ -84,6 +84,7 @@ class MainWindow : public QMainWindow {
         int currentIndexLetter;
 
         QString currentLanguageAbc;
+        QString currentFilenameAbc;
 
         QSettings *confSettings;
 

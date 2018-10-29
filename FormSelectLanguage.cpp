@@ -32,22 +32,34 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
     QFileInfoList list = dir.entryInfoList();
     for (int i = 0; i < list.size(); ++i) {
         QFileInfo fileInfo = list.at(i);
-
         if (fileInfo.fileName()=="all") continue;
-
-        ABC_INFO lang_info;
-
-        if (QFile::exists(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.json")){
-            lang_info = getLangFromJson(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.json");
-        }
-        if (QFile::exists(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.properties")){
-            lang_info = getLangFromProperties(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+fileInfo.fileName()+"/abc.properties");
-        }
-
         QString lang = fileInfo.fileName();
-        ui->comboBox->addItem(lang_info.language+"  ("+lang_info.author+")",lang);
-        if (confSettings->value("abc/language","en").toString()==lang){
-            ui->comboBox->setCurrentIndex(ui->comboBox->count()-1);
+
+        QDir dir2(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+lang+"/");
+        dir2.setFilter(QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot);
+        QFileInfoList list2 = dir2.entryInfoList();
+        for (int i = 0; i < list2.size(); ++i) {
+            QFileInfo fileInfo2 = list2.at(i);
+            QString lang_filename = fileInfo2.fileName();
+            if (lang_filename.indexOf(QRegExp("(.*)(.json|.properties)$"))==-1) continue;
+
+            ABC_INFO lang_info;
+
+            if (lang_filename.indexOf(QRegExp("(.*)(.json)$"))!=-1){
+                lang_info = getLangFromJson(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+lang+"/"+lang_filename);
+            }
+            if (lang_filename.indexOf(QRegExp("(.*)(.properties)$"))!=-1){
+                lang_info = getLangFromProperties(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+lang+"/"+lang_filename);
+            }
+            lang_info.folder=lang;
+            lang_info.filename=lang_filename;
+
+            listAbcFiles.push_back(lang_info);
+
+            ui->comboBox->addItem(lang_info.language+"  ("+lang_info.author+")");
+            if (confSettings->value("abc/language","en").toString()==lang and confSettings->value("abc/filename","abc.json").toString()==lang_filename){
+                ui->comboBox->setCurrentIndex(ui->comboBox->count()-1);
+            }
         }
     }
 
@@ -112,6 +124,9 @@ FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromProperties(QString f
 void FormSelectLanguage::saveLanguageAbc(){
     if (ui->comboBox->currentIndex()==-1) return;
 
-    confSettings->setValue("abc/language",ui->comboBox->currentData());
+    ABC_INFO abc_info = listAbcFiles.at(ui->comboBox->currentIndex());
+
+    confSettings->setValue("abc/language",abc_info.folder);
+    confSettings->setValue("abc/filename",abc_info.filename);
     accept();
 }

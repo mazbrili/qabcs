@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QSettings>
+#include <QVector>
 
 namespace Ui {
     class FormSelectLanguage;
@@ -19,9 +20,13 @@ class FormSelectLanguage : public QDialog {
         Ui::FormSelectLanguage *ui;
 
         struct ABC_INFO {
+            QString folder;
+            QString filename;
             QString language;
             QString author;
         };
+
+        QVector<ABC_INFO> listAbcFiles;
 
         ABC_INFO getLangFromJson(QString filename);
         ABC_INFO getLangFromProperties(QString filename);
