@@ -256,14 +256,16 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             QString str = params.at(1).toUpper();
             QString metka = params.at(2);
             QString espeak_words = params.at(3);
+            QString espeak_params = "";
             QString noises = "";
 
-            if (params.size()==5) noises=params.at(4);
+            if (params.size()>=5) espeak_params=params.at(4);
+            if (params.size()>=6) noises=params.at(4);
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
             listLetters.push_back({letter.toUpper(),letter+".wav",speak_method,"",letter});
-            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,"",espeak_words,noises);
+            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,espeak_params,espeak_words,noises);
         }else{
             qDebug() << tr("error str: ")+line;
         }
