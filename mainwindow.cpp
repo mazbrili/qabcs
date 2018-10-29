@@ -276,7 +276,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
-            listLetters.push_back({letter.toUpper(),letter+".wav",speak_method,"",letter});
+            listLetters.push_back({letter.toUpper(),letter,"","",letter});
             listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,espeak_params,espeak_words,noises);
         }else{
             qDebug() << tr("error str: ")+line;
@@ -357,8 +357,6 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
 void MainWindow::playSoundLetter(QString letter,bool async){
     if (!soundStatus) return;
 
-    QStringList listExtensionFiles = QStringList() << "wav" << "ogg" << "mp3";
-
     for (LETTER_INFO l:listLetters){
         if (l.letter==letter){
             QString speak_method = (l.speak_method.isEmpty()) ? _speak_method : l.speak_method;
@@ -369,14 +367,10 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                     SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
                 }
             }else{
-                QString filename =  QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter.toLower();
-                if (!QFile::exists(filename)){
-                    for (QString ext:listExtensionFiles){
-                        filename = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha/"+l.sound_letter.toLower()+"."+ext;
-                        if (QFile::exists(filename)) break;
-                    }
-                }
-                if (QFile::exists(filename)){
+                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha";
+                QString filename =  SoundEngine::findSoundfile(folderAlpha,l.sound_letter.toLower());
+                qDebug() << filename;
+                if (!filename.isEmpty() and QFile::exists(filename)){
                     SoundEngine::playSoundFromFile(filename,async);
                 }else{
                     SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+letter+"\"",async);
