@@ -248,7 +248,10 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         if (pair.at(0)=="language" or pair.at(0)=="author") continue;
 
         if (pair.at(0)=="language"){
-            if (pair.size()==2) _espeak_params=pair.at(1);
+            if (pair.size()==2){
+                _espeak_params=pair.at(1);
+                for (QString type:listTypes) listCollections[type]->setGlobalParam("",_espeak_params);
+            }
         }
 
         if (pair.size()==2){

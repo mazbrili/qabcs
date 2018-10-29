@@ -30,6 +30,11 @@ void Collection::setGlobalParam(QJsonObject params){
     _espeak_params = params.value("espeak_params").toString();
 }
 
+void Collection::setGlobalParam(QString speak_method,QString espeak_params){
+    _speak_method = speak_method;
+    _espeak_params = espeak_params;
+}
+
 void Collection::clear(){
     listLetters.clear();
 
