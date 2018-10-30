@@ -535,7 +535,7 @@
 		},
 		"instrument": {
 		      "pic": "music/sax.png",
-		      "name": "SAX",
+		      "name": "SAXOPHONE",
 		      "sound_pic": "sax.wav"
 		},
 		"toys": {
