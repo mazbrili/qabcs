@@ -5,7 +5,7 @@ the GNU General Public License (GPLv3+).
 Please read the 'COPYING' file for more information.
 
 To build qABCs you need Qt5 and qmake.
-Full list of dependencies: see pkg/qabcs.spec
+Full list of dependencies: see pkg/qabcs.spec.
 
 Building:
 qmake
@@ -14,5 +14,13 @@ make
 Installation (under root):
 make install
 
+Testing without installation:
+qmake QMAKE_CXXFLAGS+='-DGLOBAL_PATH_USERDATA=\\\"..\\\"'
+make
+./Bin/qabcs
+
 Translations:
-https://www.transifex.com/Magic/qabcs
+GUI and desktop file: https://www.transifex.com/Magic/qabcs
+ABC: create your own abs.json (more detailed format) or
+abs.properties (easier, but not detailed format). Use pictures
+from abcs/all/pics.
