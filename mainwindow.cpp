@@ -101,13 +101,13 @@ void MainWindow::initToolBar(){
     accGameRand->setCheckable(true);
     accGameRand->setActionGroup(typeGameGroup);
 
-    accGameFood = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/food.png"), tr("Show foods that begin with each letter"), this);
-    accGameFood->setStatusTip(tr("Show foods that begin with each letter"));
+    accGameFood = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/food.png"), tr("Show foods for each letter"), this);
+    accGameFood->setStatusTip(tr("Show foods for each letter"));
     accGameFood ->setCheckable(true);
     accGameFood->setActionGroup(typeGameGroup);
 
-    accGameAnimals = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/animals.png"), tr("Show animals that begin with each letter"), this);
-    accGameAnimals->setStatusTip(tr("Show animals that begin with each letter"));
+    accGameAnimals = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/animals.png"), tr("Show animals for each letter"), this);
+    accGameAnimals->setStatusTip(tr("Show animals for each letter"));
     accGameAnimals->setCheckable(true);
     accGameAnimals->setActionGroup(typeGameGroup);
 
@@ -195,7 +195,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     QFile file;
     file.setFileName(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(this,"qABCs",tr("Error open ")+filename+"\n"+file.errorString());
+        QMessageBox::critical(this,"qABCs",tr("Error while opening")+" "+filename+"\n"+file.errorString());
         return false;
     }
     val = file.readAll();
@@ -239,7 +239,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
 bool MainWindow::loadAbcConfigProperties(QString filename){
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(this,"qABCs",tr("Error open ")+filename+"\n"+file.errorString());
+        QMessageBox::critical(this,"qABCs",tr("Error while opening"+" "+filename+"\n"+file.errorString());
         return false;
     }
 
@@ -534,7 +534,7 @@ void MainWindow::clickButtonGameAbc(){
         refreshViewer();
     }else{
         setPixmapViewer(QPixmap());
-        lblAbcText->setText(tr("abc is not loaded"));
+        lblAbcText->setText(tr("ABC is not loaded"));
         lblAbcLetter->setText("");
     }
 
@@ -582,7 +582,7 @@ void MainWindow::clickButtonGameRand(){
         refreshViewer();
     }else{
         setPixmapViewer(QPixmap());
-        lblAbcText->setText(tr("abc is not loaded"));
+        lblAbcText->setText(tr("ABC is not loaded"));
         lblAbcLetter->setText("");
     }
 
