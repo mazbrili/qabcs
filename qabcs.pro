@@ -86,7 +86,7 @@ data_pixmaps.extra = ln -fs /usr/share/qabcs/icon.xpm ${INSTALL_ROOT}/usr/share/
 INSTALLS += data_pixmaps
 
 data_doc.path = /usr/share/man/man1/
-data_doc.extra = xz -c pkg/qabcs.1 > ${INSTALL_ROOT}/usr/share/man/man1/qabcs.1.xz
+data_doc.extra = install -D -m 644 pkg/qabcs.1  ${INSTALL_ROOT}/usr/share/man/man1/qabcs.1
 INSTALLS += data_doc
 
 # Input
