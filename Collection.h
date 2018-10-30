@@ -8,6 +8,7 @@
 
 
 struct LETTER_CONFIG {
+    QString letter;
     QString name;
     QString pic;
     QString sound_pic;
@@ -25,7 +26,9 @@ class Collection{
         void setGlobalParam(QJsonObject params);
         void setGlobalParam(QString speak_method,QString espeak_params);
         void setLetter(QString letter,QJsonObject params);
+        void setLetter(QString letter,LETTER_CONFIG config);
         void setLetter(QString letter,QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises);
+
         void clear();
         void setAbcLanguage(QString abcLanguage);
 
@@ -34,6 +37,8 @@ class Collection{
         QString getSound(QString letter);
 
         QPixmap getPixmap(QString letter);
+
+        LETTER_CONFIG getLetterConfig(QString letter);
 
         void playSoundPicture(QString letter);
 

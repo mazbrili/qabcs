@@ -18,13 +18,16 @@ void Collection::setLetter(QString letter,QJsonObject params){
     QString espeak_words = params.value("espeak_words").toString();
     QString noises = params.value("noises").toString();
 
-    listLetters[letter]={name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
+    listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
 }
 
 void Collection::setLetter(QString letter,QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises){
-    listLetters[letter]={name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
+    listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
 }
 
+void Collection::setLetter(QString letter,LETTER_CONFIG config){
+    listLetters[letter]={letter,config.name,config.pic,config.sound_pic,config.speak_method,config.espeak_params,config.espeak_words,config.noises};
+}
 
 void Collection::setGlobalParam(QJsonObject params){
     _speak_method = params.value("speak_method").toString();
@@ -79,6 +82,10 @@ QPixmap Collection::getPixmap(QString letter){
     }
 
     return QPixmap();
+}
+
+LETTER_CONFIG Collection::getLetterConfig(QString letter){
+    return listLetters[letter];
 }
 
 void Collection::playSoundPicture(QString letter){

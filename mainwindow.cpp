@@ -17,7 +17,7 @@
 #include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
-    this->setFixedSize(552,541);
+    this->setFixedSize(592,550);
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
     currentIndexLetter=0;   
@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     _espeak_params="";
     soundStatus=true;       // sound on
 
-    listTypes = QStringList() << "misc" << "food" << "animals" << "instrument" << "toys";
+    listTypes = QStringList() << "misc" << "rand" << "food" << "animals" << "instrument" << "toys";
 
     qDebug() << "use path: " << QString(GLOBAL_PATH_USERDATA);
 
@@ -68,17 +68,17 @@ void MainWindow::initGUI(){
     lblAbcPicture->setScaledContents(true);
     //lblAbcPicture->setFrameShape(QFrame::Box);
 
-    lblAbcLetter = new QLabel(this);
-    lblAbcLetter->setFont(fontSizeLetter);
-    lblAbcLetter->setAlignment(Qt::AlignCenter);
-    lblAbcLetter->setGeometry(0,360,this->width(),101);
-    //lblAbcLetter->setFrameShape(QFrame::Box);
-
     lblAbcText = new QLabel(this);
     lblAbcText->setFont(fontSizeText);
     lblAbcText->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
     lblAbcText->setGeometry(0, this->height()-statusbar->height()-101, this->width(), 91);
     //lblAbcText->setFrameShape(QFrame::Box);
+
+    lblAbcLetter = new QLabel(this);
+    lblAbcLetter->setFont(fontSizeLetter);
+    lblAbcLetter->setAlignment(Qt::AlignCenter);
+    lblAbcLetter->setGeometry(0,lblAbcText->y()-50,this->width(),101);
+    //lblAbcLetter->setFrameShape(QFrame::Box);
 }
 
 
@@ -91,30 +91,35 @@ void MainWindow::initToolBar(){
 
     typeGameGroup = new QActionGroup(this);
 
-    accAbc = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"), tr("Find the letter on the keyboard"), this);
-    accAbc->setStatusTip(tr("Find the letter on the keyboard"));
-    accAbc->setCheckable(true);
-    accAbc->setActionGroup(typeGameGroup);
+    accGameAbc = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"), tr("Find the letter on the keyboard"), this);
+    accGameAbc->setStatusTip(tr("Find the letter on the keyboard"));
+    accGameAbc->setCheckable(true);
+    accGameAbc->setActionGroup(typeGameGroup);
 
-    accFood = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/food.png"), tr("Show foods that begin with each letter"), this);
-    accFood->setStatusTip(tr("Show foods that begin with each letter"));
-    accFood ->setCheckable(true);
-    accFood->setActionGroup(typeGameGroup);
+    accGameRand = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/random.png"), tr("Find the letter on the keyboard"), this);
+    accGameRand->setStatusTip(tr("Find the letter on the keyboard"));
+    accGameRand->setCheckable(true);
+    accGameRand->setActionGroup(typeGameGroup);
 
-    accAnimals = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/animals.png"), tr("Show animals that begin with each letter"), this);
-    accAnimals->setStatusTip(tr("Show animals that begin with each letter"));
-    accAnimals->setCheckable(true);
-    accAnimals->setActionGroup(typeGameGroup);
+    accGameFood = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/food.png"), tr("Show foods that begin with each letter"), this);
+    accGameFood->setStatusTip(tr("Show foods that begin with each letter"));
+    accGameFood ->setCheckable(true);
+    accGameFood->setActionGroup(typeGameGroup);
 
-    accInstrument = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/instrument.png"), tr("Show musical instruments for each letter"), this);
-    accInstrument->setStatusTip(tr("Show musical instruments for each letter"));
-    accInstrument->setCheckable(true);
-    accInstrument->setActionGroup(typeGameGroup);
+    accGameAnimals = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/animals.png"), tr("Show animals that begin with each letter"), this);
+    accGameAnimals->setStatusTip(tr("Show animals that begin with each letter"));
+    accGameAnimals->setCheckable(true);
+    accGameAnimals->setActionGroup(typeGameGroup);
 
-    accToys = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/toys.png"), tr("Show toys for each letter"), this);
-    accToys->setStatusTip(tr("Show toys for each letter"));
-    accToys->setCheckable(true);
-    accToys->setActionGroup(typeGameGroup);
+    accGameInstrument = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/instrument.png"), tr("Show musical instruments for each letter"), this);
+    accGameInstrument->setStatusTip(tr("Show musical instruments for each letter"));
+    accGameInstrument->setCheckable(true);
+    accGameInstrument->setActionGroup(typeGameGroup);
+
+    accGameToys = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/toys.png"), tr("Show toys for each letter"), this);
+    accGameToys->setStatusTip(tr("Show toys for each letter"));
+    accGameToys->setCheckable(true);
+    accGameToys->setActionGroup(typeGameGroup);
 
     accSound = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"), tr("Sound on/off"), this);
     accSound->setStatusTip(tr("Sound on/off"));
@@ -131,11 +136,12 @@ void MainWindow::initToolBar(){
     accExit = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/exit.png"), tr("Exit"), this);
     accExit->setStatusTip(tr("Exit"));
 
-    toolBar->addAction(accAbc);
-    toolBar->addAction(accFood);
-    toolBar->addAction(accAnimals);
-    toolBar->addAction(accInstrument);
-    toolBar->addAction(accToys);
+    toolBar->addAction(accGameAbc);
+    toolBar->addAction(accGameRand);
+    toolBar->addAction(accGameFood);
+    toolBar->addAction(accGameAnimals);
+    toolBar->addAction(accGameInstrument);
+    toolBar->addAction(accGameToys);
     toolBar->addSeparator();
     toolBar->addAction(accSound);
     toolBar->addAction(accLang);
@@ -145,11 +151,12 @@ void MainWindow::initToolBar(){
     toolBar->addAction(accExit);
 
 
-    connect(accAbc,SIGNAL(changed()),this,SLOT(clickButtonAbc()));
-    connect(accFood,SIGNAL(changed()),this,SLOT(clickButtonFood()));
-    connect(accAnimals,SIGNAL(changed()),this,SLOT(clickButtonAnimals()));
-    connect(accInstrument,SIGNAL(changed()),this,SLOT(clickButtonInstrument()));
-    connect(accToys,SIGNAL(changed()),this,SLOT(clickButtonToys()));
+    connect(accGameAbc,SIGNAL(changed()),this,SLOT(clickButtonGameAbc()));
+    connect(accGameRand,SIGNAL(changed()),this,SLOT(clickButtonGameRand()));
+    connect(accGameFood,SIGNAL(changed()),this,SLOT(clickButtonGameFood()));
+    connect(accGameAnimals,SIGNAL(changed()),this,SLOT(clickButtonGameAnimals()));
+    connect(accGameInstrument,SIGNAL(changed()),this,SLOT(clickButtonGameInstrument()));
+    connect(accGameToys,SIGNAL(changed()),this,SLOT(clickButtonGameToys()));
     connect(accSound,SIGNAL(triggered()),this,SLOT(clickButtonSound()));
     connect(accLang,SIGNAL(triggered()),this,SLOT(clickButtonLang()));
     connect(accHelp,SIGNAL(triggered()),this,SLOT(clickButtonHelp()));
@@ -290,6 +297,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
 QString MainWindow::typeGameToString(TYPE_GAME type){
     if (type==TYPE_ABC) return "misc";
+    if (type==TYPE_RAND) return "rand";
     if (type==TYPE_FOOD) return "food";
     if (type==TYPE_ANIMALS) return "animals";
     if (type==TYPE_INSTRUMENT) return "instrument";
@@ -306,8 +314,8 @@ void MainWindow::setAbcLang(QString lang,QString filename){
 
     initLanguageAbc();
 
-    accAbc->setChecked(true);
-    clickButtonAbc();
+    accGameAbc->setChecked(true);
+    clickButtonGameAbc();
 
 }
 
@@ -380,6 +388,30 @@ void MainWindow::playSoundLetter(QString letter,bool async){
     }
 }
 
+int MainWindow::gameRandomGenerateNextIndex(){
+    int indexLetter=-1;
+
+    if (listLettersGameRand.size()==0) return -1;
+
+    int nIndex = qrand()%listLettersGameRand.size();
+
+    // find index letter
+    QString letter = listLettersGameRand.at(nIndex).letter;
+    for (int i=0;i<listLetters.size();i++){
+        if (listLetters.at(i).letter==letter){
+            indexLetter=i;
+            break;
+        }
+    }
+    if (indexLetter==-1) return -1;
+
+
+    listCollections["rand"]->setLetter(listLettersGameRand.at(nIndex).letter,listLettersGameRand.at(nIndex));
+    listLettersGameRand.remove(nIndex);
+
+    return indexLetter;
+}
+
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     int key=event->key();
 
@@ -388,19 +420,22 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (key==Qt::Key_Tab){
         switch (typeGame) {
         case TYPE_ABC:
-            accFood->setChecked(true);
+            accGameRand->setChecked(true);
+            break;
+        case TYPE_RAND:
+            accGameFood->setChecked(true);
             break;
         case TYPE_FOOD:
-            accAnimals->setChecked(true);
+            accGameAnimals->setChecked(true);
             break;
         case TYPE_ANIMALS:
-            accInstrument->setChecked(true);
+            accGameInstrument->setChecked(true);
             break;
         case TYPE_INSTRUMENT:
-            accToys->setChecked(true);
+            accGameToys->setChecked(true);
             break;
         default:
-            accAbc->setChecked(true);
+            accGameAbc->setChecked(true);
             break;
         }
 
@@ -411,7 +446,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
 
     if (currentIndexLetter>=0 and key==Qt::Key_Space){
-        if (typeGame==TYPE_ABC and gameAbcFinish==true) return;
+        if ((typeGame==TYPE_ABC or typeGame==TYPE_RAND) and gameAbcFinish==true) return;
 
         if (soundStatus){
             listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter);
@@ -421,7 +456,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
     if (typeGame==TYPE_ABC){
         if (gameAbcFinish and (key==Qt::Key_Enter or key==Qt::Key_Return)){
-            clickButtonAbc();
+            clickButtonGameAbc();
             return;
         }
 
@@ -449,7 +484,32 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             gameAbcFinish=true;
             return;
         }
-    }else{
+    } else if (typeGame==TYPE_RAND){
+        if (gameAbcFinish and (key==Qt::Key_Enter or key==Qt::Key_Return)){
+            clickButtonGameRand();
+            return;
+        }
+        if (currentIndexLetter>=0){
+            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key))){
+                playSoundLetter(listLetters.at(currentIndexLetter).letter);
+                currentIndexLetter = gameRandomGenerateNextIndex();
+            }
+        }
+        if (currentIndexLetter==-1){
+            setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/ribbon.png"));
+            lblAbcLetter->setText(tr("CONGRATS!"));
+            lblAbcText->setText(tr("Press \"ENTER\" to Play Again"));
+
+            if (soundStatus){
+                soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
+                soundEffect.play();
+            }
+
+            gameAbcFinish=true;
+            return;
+        }
+
+    } else {
         for (int i=0;i<listLetters.size();i++){
             if (listLetters.at(i).letter==QString(QChar(key))){
                 currentIndexLetter=i;
@@ -463,8 +523,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     refreshViewer();
 }
 
-void MainWindow::clickButtonAbc(){
-    if (!accAbc->isChecked()) return;
+void MainWindow::clickButtonGameAbc(){
+    if (!accGameAbc->isChecked()) return;
     this->setWindowTitle(tr("Find the letter on the keyboard"));
 
     typeGame=TYPE_ABC;
@@ -481,8 +541,56 @@ void MainWindow::clickButtonAbc(){
     gameAbcFinish=false;
 }
 
-void MainWindow::clickButtonAnimals(){
-    if (!accAnimals->isChecked()) return;
+void MainWindow::clickButtonGameRand(){
+    if (!accGameRand->isChecked()) return;
+    this->setWindowTitle(tr("Find the letter on the keyboard"));
+
+    typeGame=TYPE_RAND;
+    currentIndexLetter=0;
+
+    QVector<LETTER_CONFIG> tmplistLetterConfig;
+    QMap<QString,QString> useLetters;
+
+    listCollections["rand"]->clear();
+    listLettersGameRand.clear();
+
+    // generate list
+    for (QString type:listTypes) {
+        if (type=="rand") continue;
+
+        for (LETTER_INFO l:listLetters){
+            LETTER_CONFIG letterConfig = listCollections[type]->getLetterConfig(l.letter);
+
+            if (useLetters.contains(l.letter+"-"+letterConfig.name)!=0) continue;
+            tmplistLetterConfig.push_back(letterConfig);
+            useLetters[l.letter+"-"+letterConfig.name]="1";
+        }
+    }
+
+    // sort
+    while (tmplistLetterConfig.size()>0){
+        int nIndex = qrand()%tmplistLetterConfig.size();
+        listLettersGameRand.push_back(tmplistLetterConfig.at(nIndex));
+        tmplistLetterConfig.remove(nIndex);
+    }
+
+
+    int index = gameRandomGenerateNextIndex();
+    currentIndexLetter=index;
+
+    if (listLetters.size()>0){
+        refreshViewer();
+    }else{
+        setPixmapViewer(QPixmap());
+        lblAbcText->setText(tr("abc is not loaded"));
+        lblAbcLetter->setText("");
+    }
+
+    gameAbcFinish=false;
+}
+
+void MainWindow::clickButtonGameAnimals(){
+    if (!accGameAnimals->isChecked()) return;
     this->setWindowTitle(tr("Press a Key to See an Animal"));
 
     typeGame=TYPE_ANIMALS;
@@ -494,8 +602,8 @@ void MainWindow::clickButtonAnimals(){
     lblAbcLetter->setText(tr("Animals"));
 }
 
-void MainWindow::clickButtonFood(){
-    if (!accFood->isChecked()) return;
+void MainWindow::clickButtonGameFood(){
+    if (!accGameFood->isChecked()) return;
     this->setWindowTitle(tr("Press a Key to See a Food"));
 
     typeGame=TYPE_FOOD;
@@ -507,8 +615,8 @@ void MainWindow::clickButtonFood(){
     lblAbcLetter->setText(tr("Food"));
 }
 
-void MainWindow::clickButtonInstrument(){
-    if (!accInstrument->isChecked()) return;
+void MainWindow::clickButtonGameInstrument(){
+    if (!accGameInstrument->isChecked()) return;
     this->setWindowTitle(tr("Press a Key to See an Instrument"));
 
     typeGame=TYPE_INSTRUMENT;
@@ -521,8 +629,8 @@ void MainWindow::clickButtonInstrument(){
 
 }
 
-void MainWindow::clickButtonToys(){
-    if (!accToys->isChecked()) return;
+void MainWindow::clickButtonGameToys(){
+    if (!accGameToys->isChecked()) return;
     this->setWindowTitle(tr("Press a Key to See a Toy"));
 
     typeGame=TYPE_TOYS;

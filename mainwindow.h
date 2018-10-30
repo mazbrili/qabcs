@@ -20,6 +20,7 @@ class MainWindow;
 
 enum TYPE_GAME {
     TYPE_ABC,
+    TYPE_RAND,
     TYPE_FOOD,
     TYPE_ANIMALS,
     TYPE_INSTRUMENT,
@@ -57,6 +58,9 @@ class MainWindow : public QMainWindow {
 
         void playSoundLetter(QString letter, bool async=false);
 
+        // for type game random
+        int gameRandomGenerateNextIndex();
+
         QString globalPathUserResources;
 
         QStatusBar *statusbar;
@@ -68,11 +72,12 @@ class MainWindow : public QMainWindow {
 
         QActionGroup *typeGameGroup;
 
-        QAction *accAbc;
-        QAction *accAnimals;
-        QAction *accFood;
-        QAction *accInstrument;
-        QAction *accToys;
+        QAction *accGameAbc;
+        QAction *accGameRand;
+        QAction *accGameAnimals;
+        QAction *accGameFood;
+        QAction *accGameInstrument;
+        QAction *accGameToys;
 
         QAction *accSound;
         QAction *accLang;
@@ -93,6 +98,9 @@ class MainWindow : public QMainWindow {
 
         bool gameAbcFinish;
 
+        // type game random
+        QVector<LETTER_CONFIG> listLettersGameRand;
+
 
         QString _speak_method;
         QString _espeak_params;
@@ -105,11 +113,12 @@ class MainWindow : public QMainWindow {
        virtual void keyPressEvent(QKeyEvent *event);
 
     private slots:
-        void clickButtonAbc();
-        void clickButtonAnimals();
-        void clickButtonFood();
-        void clickButtonInstrument();
-        void clickButtonToys();
+        void clickButtonGameAbc();
+        void clickButtonGameRand();
+        void clickButtonGameAnimals();
+        void clickButtonGameFood();
+        void clickButtonGameInstrument();
+        void clickButtonGameToys();
         void clickButtonSound();
         void clickButtonLang();
         void clickButtonHelp();
