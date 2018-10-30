@@ -76,8 +76,8 @@ data_man.files = pkg/qabcs.1
 INSTALLS += data_man
 
 data_pixmaps.path = /usr/share/pixmaps/
-data_pixmaps.extra = cp icon.xpm qabcs.xpm
-data_pixmaps.files = qabcs.xpm
+data_pixmaps.extra = ln -fs /usr/share/qabcs/icon.xpm ${INSTALL_ROOT}/usr/share/pixmaps/qabcs.xpm
+data_pixmaps.uninstall = rm -f -r ${INSTALL_ROOT}/usr/share/pixmaps/qabcs.xpm
 INSTALLS += data_pixmaps
 
 data_abcs.path = /usr/share/qabcs/abcs/
@@ -101,13 +101,6 @@ data_other.files = icon.xpm
 INSTALLS += data_other
 
 
-#data_pixmaps.path = /usr/share/pixmaps/
-#data_pixmaps.extra = ln -fs /usr/share/qabcs/icon.xpm ${INSTALL_ROOT}/usr/share/pixmaps/qabcs.xpm
-#INSTALLS += data_pixmaps
-#
-#data_doc.path = /usr/share/man/man1/
-#data_doc.extra = install -D -m 644 pkg/qabcs.1  ${INSTALL_ROOT}/usr/share/man/man1/qabcs.1
-#INSTALLS += data_doc
 
 # Input
 SOURCES += main.cpp \
