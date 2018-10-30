@@ -36,9 +36,12 @@ gcc {
     QMAKE_CXXFLAGS += -Wall -Wextra -Wformat -Wformat-security -Wno-unused-variable -Wno-unused-parameter
 }
 
-TRANSLATIONS = langs/qabcs_en.ts \
-    langs/qabcs_ru.ts
-
+exists( langs/qabcs_en.ts ) {
+      TRANSLATIONS = $$files(langs/qabcs_*.ts)
+} else {
+      TRANSLATIONS = langs/qabcs_en.ts \
+         $$files(langs/qabcs_*.ts)
+}
 
 isEmpty(QMAKE_LRELEASE) {
     win32|os2:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\lrelease.exe
