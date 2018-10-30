@@ -389,14 +389,13 @@ void MainWindow::playSoundLetter(QString letter,bool async){
 }
 
 int MainWindow::gameRandomGenerateNextIndex(){
+    if (listLettersGameRand.size()==0) return -1;
+    if (gameRandomCurrentIndex>=listLettersGameRand.size()) return -1;
+
     int indexLetter=-1;
 
-    if (listLettersGameRand.size()==0) return -1;
-
-    int nIndex = qrand()%listLettersGameRand.size();
-
     // find index letter
-    QString letter = listLettersGameRand.at(nIndex).letter;
+    QString letter = listLettersGameRand.at(gameRandomCurrentIndex).letter;
     for (int i=0;i<listLetters.size();i++){
         if (listLetters.at(i).letter==letter){
             indexLetter=i;
@@ -405,9 +404,7 @@ int MainWindow::gameRandomGenerateNextIndex(){
     }
     if (indexLetter==-1) return -1;
 
-
-    listCollections["rand"]->setLetter(listLettersGameRand.at(nIndex).letter,listLettersGameRand.at(nIndex));
-    listLettersGameRand.remove(nIndex);
+    listCollections["rand"]->setLetter(letter,listLettersGameRand.at(gameRandomCurrentIndex));
 
     return indexLetter;
 }
@@ -460,9 +457,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             return;
         }
 
-        if (currentIndexLetter>=0 and key==Qt::Key_Backspace){
+        if (currentIndexLetter>0 and key==Qt::Key_Backspace){
             gameAbcFinish=false;
-            if (currentIndexLetter>0) currentIndexLetter--;
+            currentIndexLetter--;
         }
 
         if (currentIndexLetter<listLetters.size()){
@@ -489,13 +486,19 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             clickButtonGameRand();
             return;
         }
-        if (currentIndexLetter>=0){
+        if (gameRandomCurrentIndex>0 and key==Qt::Key_Backspace){
+            gameAbcFinish=false;
+            gameRandomCurrentIndex--;
+            currentIndexLetter = gameRandomGenerateNextIndex();
+        }
+        if (gameRandomCurrentIndex<listLettersGameRand.size()){
             if (listLetters.at(currentIndexLetter).letter==QString(QChar(key))){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
+                gameRandomCurrentIndex++;
                 currentIndexLetter = gameRandomGenerateNextIndex();
             }
         }
-        if (currentIndexLetter==-1){
+        if (gameRandomCurrentIndex>=listLettersGameRand.size()){
             setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/ribbon.png"));
             lblAbcLetter->setText(tr("CONGRATS!"));
             lblAbcText->setText(tr("Press \"ENTER\" to Play Again"));
@@ -547,6 +550,7 @@ void MainWindow::clickButtonGameRand(){
 
     typeGame=TYPE_RAND;
     currentIndexLetter=0;
+    gameRandomCurrentIndex=0;
 
     QVector<LETTER_CONFIG> tmplistLetterConfig;
     QMap<QString,QString> useLetters;
@@ -575,8 +579,7 @@ void MainWindow::clickButtonGameRand(){
     }
 
 
-    int index = gameRandomGenerateNextIndex();
-    currentIndexLetter=index;
+    currentIndexLetter = gameRandomGenerateNextIndex();
 
     if (listLetters.size()>0){
         refreshViewer();

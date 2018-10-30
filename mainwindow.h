@@ -98,9 +98,9 @@ class MainWindow : public QMainWindow {
 
         bool gameAbcFinish;
 
-        // type game random
+        // for type game random
+        int gameRandomCurrentIndex;
         QVector<LETTER_CONFIG> listLettersGameRand;
-
 
         QString _speak_method;
         QString _espeak_params;
