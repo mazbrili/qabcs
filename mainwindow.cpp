@@ -239,7 +239,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
 bool MainWindow::loadAbcConfigProperties(QString filename){
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(this,"qABCs",tr("Error while opening"+" "+filename+"\n"+file.errorString());
+        QMessageBox::critical(this,"qABCs",tr("Error while opening")+" "+filename+"\n"+file.errorString());
         return false;
     }
 
