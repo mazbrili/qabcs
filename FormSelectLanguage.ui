@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Select language abc:</string>
+    <string>Select ABC language:</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox">
