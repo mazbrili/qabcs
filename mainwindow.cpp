@@ -91,13 +91,13 @@ void MainWindow::initToolBar(){
 
     typeGameGroup = new QActionGroup(this);
 
-    accGameAbc = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"), tr("Find the letter on the keyboard"), this);
-    accGameAbc->setStatusTip(tr("Find the letter on the keyboard"));
+    accGameAbc = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"), tr("Find the letter on the keyboard (alphabetically)"), this);
+    accGameAbc->setStatusTip(tr("Find the letter on the keyboard (alphabetically)"));
     accGameAbc->setCheckable(true);
     accGameAbc->setActionGroup(typeGameGroup);
 
-    accGameRand = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/random.png"), tr("Find the letter on the keyboard"), this);
-    accGameRand->setStatusTip(tr("Find the letter on the keyboard"));
+    accGameRand = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/random.png"), tr("Find the letter on the keyboard (randomly)"), this);
+    accGameRand->setStatusTip(tr("Find the letter on the keyboard (randomly)"));
     accGameRand->setCheckable(true);
     accGameRand->setActionGroup(typeGameGroup);
 
@@ -528,7 +528,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
 void MainWindow::clickButtonGameAbc(){
     if (!accGameAbc->isChecked()) return;
-    this->setWindowTitle(tr("Find the letter on the keyboard"));
+    this->setWindowTitle(tr("Find the letter on the keyboard (alphabetically)"));
 
     typeGame=TYPE_ABC;
     currentIndexLetter=0;
@@ -546,7 +546,7 @@ void MainWindow::clickButtonGameAbc(){
 
 void MainWindow::clickButtonGameRand(){
     if (!accGameRand->isChecked()) return;
-    this->setWindowTitle(tr("Find the letter on the keyboard"));
+    this->setWindowTitle(tr("Find the letter on the keyboard (randomly)"));
 
     typeGame=TYPE_RAND;
     currentIndexLetter=0;
