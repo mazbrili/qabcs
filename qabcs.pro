@@ -50,6 +50,13 @@ isEmpty(QMAKE_LRELEASE) {
     }
 }
 
+!win32 {
+  system($${QMAKE_LRELEASE} -silent $${_PRO_FILE_} 2> /dev/null)
+}
+win32 {
+  system($${QMAKE_LRELEASE} $${_PRO_FILE_})
+}
+
 updateqm.input = TRANSLATIONS
 updateqm.output = langs/${QMAKE_FILE_BASE}.qm
 updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm langs/${QMAKE_FILE_BASE}.qm
@@ -77,8 +84,12 @@ data_app.files = pkg/qabcs.desktop
 INSTALLS += data_app
 
 data_other.path = /usr/share/qabcs/
-data_other.files = langs/*.qm icon.xpm
+data_other.files = icon.xpm
 INSTALLS += data_other
+
+data_langs.path = /usr/share/qabcs/langs/
+data_langs.files = langs/*.qm
+INSTALLS += data_langs
 
 
 data_pixmaps.path = /usr/share/pixmaps/

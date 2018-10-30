@@ -24,8 +24,8 @@ int main(int argc, char *argv[]){
 
     // set translator for app
     QTranslator translator;
-    if (translator.load(QString("qabcs_") + locale)==false){
-        translator.load(QString("/usr/share/qabcs/qabcs_") + locale);
+    if (translator.load(QString("langs/qabcs_") + locale)==false){
+        translator.load(QString("/usr/share/qabcs/langs/qabcs_") + locale);
     }
     app.installTranslator(&translator);
 
