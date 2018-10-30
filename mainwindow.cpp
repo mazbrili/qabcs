@@ -558,6 +558,9 @@ void MainWindow::clickButtonGameRand(){
     listCollections["rand"]->clear();
     listLettersGameRand.clear();
 
+
+    listCollections["rand"]->setGlobalParam(_speak_method,_espeak_params);
+
     // generate list
     for (QString type:listTypes) {
         if (type=="rand") continue;
