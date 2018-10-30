@@ -85,6 +85,9 @@ data_pixmaps.path = /usr/share/pixmaps/
 data_pixmaps.extra = ln -fs /usr/share/qabcs/icon.xpm ${INSTALL_ROOT}/usr/share/pixmaps/qabcs.xpm
 INSTALLS += data_pixmaps
 
+data_doc.path = /usr/share/man/man1/
+data_doc.extra = xz -c pkg/qabcs.1 > ${INSTALL_ROOT}/usr/share/man/man1/qabcs.1.xz
+INSTALLS += data_doc
 
 # Input
 SOURCES += main.cpp \
