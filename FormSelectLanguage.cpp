@@ -16,7 +16,7 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(this->width(),this->height());
-    this->setWindowTitle(tr("Select language abc"));
+    this->setWindowTitle(tr("Select ABC language"));
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
     QDir dirConfig(QDir::homePath()+"/.qabcs/");
