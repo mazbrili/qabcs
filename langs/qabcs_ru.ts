@@ -189,12 +189,16 @@
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
         <location filename="../mainwindow.cpp" line="95"/>
+        <location filename="../mainwindow.cpp" line="531"/>
+        <source>Find the letter on the keyboard (alphabetically)</source>
+        <translation>Найдите букву на клавиатуре (алфавитный порядок)</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="99"/>
         <location filename="../mainwindow.cpp" line="100"/>
-        <location filename="../mainwindow.cpp" line="531"/>
         <location filename="../mainwindow.cpp" line="549"/>
-        <source>Find the letter on the keyboard</source>
-        <translation>Найти букву на клавиатуре</translation>
+        <source>Find the letter on the keyboard (randomly)</source>
+        <translation>Найдите букву на клавиатуре (случайный порядок)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="104"/>
