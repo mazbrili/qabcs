@@ -10,7 +10,7 @@
     </message>
     <message>
         <location filename="../FormAbout.ui" line="31"/>
-        <source>QABCS</source>
+        <source>qABCs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -219,12 +219,12 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="95"/>
-        <source>About qabcs</source>
+        <source>About qABCs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="96"/>
-        <source>About QABCs</source>
+        <source>About qABCs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

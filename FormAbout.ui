@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="text">
-    <string>QABCS</string>
+    <string>qABCs</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

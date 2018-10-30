@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=QABCs
+Name=qABCs
 GenericName=Alphabet
 GenericName[ru]=Алфавит
 GenericName[uk]=Абетка
-Comment=Learn the alphabet
+Comment=Learn alphabet
 Comment[ru]=Изучение алфавита
 Exec=qabcs
 Icon=qabcs

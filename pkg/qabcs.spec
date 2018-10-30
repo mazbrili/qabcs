@@ -1,7 +1,7 @@
 Name:           qabcs
 Version:        1.0.0
 Release:        %mkrel 1
-Summary:        Learn the English alphabet
+Summary:        Learn alphabet
 Group:          Education
 License:        GPLv3+
 Url:            https://bitbucket.org/admsasha/qabcs
@@ -15,9 +15,9 @@ BuildRequires:  pkgconfig(Qt5Multimedia)
 Requires:       espeak
 
 %description
-QABCs Educational Software. An educational game for young children.
-QABCs familiarizes children with the alphabet and a keyboard.
-Children can play with QABCs to learn about the alphabet and words
+qABCs is Educational Software. An educational game for young children.
+qABCs familiarizes children with the alphabet and a keyboard.
+Children can play with qABCs to learn about the alphabet and words
 associated with it.
 
 How to play:
@@ -43,3 +43,4 @@ to advance through the alphabet, press "Backspace" to go back
 %{_bindir}/%{name}
 %{_datadir}/pixmaps/%{name}.xpm
 %{_datadir}/applications/%{name}.desktop
+%{_mandir}/man1/*.1*

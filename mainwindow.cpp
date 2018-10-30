@@ -125,8 +125,8 @@ void MainWindow::initToolBar(){
     accHelp = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/help.png"), tr("Help"), this);
     accHelp->setStatusTip(tr("Help"));
 
-    accInfo = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/info.png"), tr("About qabcs"), this);
-    accInfo->setStatusTip(tr("About QABCs"));
+    accInfo = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/info.png"), tr("About qABCs"), this);
+    accInfo->setStatusTip(tr("About qABCs"));
 
     accExit = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/exit.png"), tr("Exit"), this);
     accExit->setStatusTip(tr("Exit"));
@@ -188,7 +188,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     QFile file;
     file.setFileName(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(this,"QABCS",tr("Error open ")+filename+"\n"+file.errorString());
+        QMessageBox::critical(this,"qABCs",tr("Error open ")+filename+"\n"+file.errorString());
         return false;
     }
     val = file.readAll();
@@ -196,7 +196,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
 
     QJsonDocument document = QJsonDocument::fromJson(val);
     if (document.isEmpty()){
-        QMessageBox::critical(this,"QABCS",filename+" "+tr("is not valid"));
+        QMessageBox::critical(this,"qABCs",filename+" "+tr("is not valid"));
         return false;
     }
     QJsonObject root = document.object();
@@ -232,7 +232,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
 bool MainWindow::loadAbcConfigProperties(QString filename){
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(this,"QABCS",tr("Error open ")+filename+"\n"+file.errorString());
+        QMessageBox::critical(this,"qABCs",tr("Error open ")+filename+"\n"+file.errorString());
         return false;
     }
 
