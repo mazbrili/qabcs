@@ -7,6 +7,7 @@
 #include <QLibraryInfo>
 #include <QTime>
 
+#include "config_qabcs.h"
 #include "mainwindow.h"
 
 int main(int argc, char *argv[]){
@@ -24,9 +25,7 @@ int main(int argc, char *argv[]){
 
     // set translator for app
     QTranslator translator;
-    if (translator.load(QString("langs/qabcs_") + locale)==false){
-        translator.load(QString("/usr/share/qabcs/langs/qabcs_") + locale);
-    }
+    translator.load(QString(GLOBAL_PATH_USERDATA)+QString("/langs/qabcs_") + locale);
     app.installTranslator(&translator);
 
     // initialization for rnd
