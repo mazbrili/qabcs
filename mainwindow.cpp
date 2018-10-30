@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     listTypes = QStringList() << "misc" << "rand" << "food" << "animals" << "instrument" << "toys";
 
-    qDebug() << "use path: " << QString(GLOBAL_PATH_USERDATA);
+    qDebug() << "Using path: " << QString(GLOBAL_PATH_USERDATA);
 
     // open ini user config
     QDir dirConfig(QDir::homePath()+"/.qabcs/");
