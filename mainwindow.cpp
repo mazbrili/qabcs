@@ -13,8 +13,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
-#include <QSound>
-#include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     this->setFixedSize(592,550);
