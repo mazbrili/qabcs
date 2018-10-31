@@ -360,6 +360,7 @@ void MainWindow::refreshViewer(){
     QString currentLetter = listLetters.at(currentIndexLetter).letter;
     QString text = listCollections[typeGameToString(typeGame)]->getName(currentLetter);
 
+    text.replace("_"," ");
     text.replace(currentLetter,"<font color=\"red\">"+currentLetter+"</font>");
 
     lblAbcText->setText(text);
