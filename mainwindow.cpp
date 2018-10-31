@@ -512,7 +512,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             if (soundStatus){
                 QString filename =  SoundEngine::findSoundfile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds","cheering");
                 if (!filename.isEmpty()){
-                    soundEffect.setSource(QUrl::fromLocalFile(filename));
+                    QFileInfo soundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/"+filename);
+                    soundEffect.setMedia(QUrl::fromLocalFile(soundFile.absoluteFilePath()));
                     soundEffect.play();
                 }
             }
@@ -545,7 +546,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             if (soundStatus){
                 QString filename =  SoundEngine::findSoundfile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds","cheering");
                 if (!filename.isEmpty()){
-                    soundEffect.setSource(QUrl::fromLocalFile(filename));
+                    QFileInfo soundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/"+filename);
+                    soundEffect.setMedia(QUrl::fromLocalFile(soundFile.absoluteFilePath()));
                     soundEffect.play();
                 }
             }

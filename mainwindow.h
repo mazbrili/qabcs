@@ -7,7 +7,7 @@
 #include <QKeyEvent>
 #include <QMap>
 #include <QSettings>
-#include <QSoundEffect>
+#include <QMediaPlayer>
 #include <QStatusBar>
 #include <QLabel>
 
@@ -94,7 +94,7 @@ class MainWindow : public QMainWindow {
         QSettings *confSettings;
 
         bool soundStatus;
-        QSoundEffect soundEffect;
+        QMediaPlayer soundEffect;
 
         bool gameAbcFinish;
 
