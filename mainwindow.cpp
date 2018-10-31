@@ -317,7 +317,7 @@ void MainWindow::setAbcLang(QString lang,QString filename){
 
     initLanguageAbc();
 
-    QString type_game = confSettings->value("global/typegame","misc").toString();
+    QString type_game = confSettings->value("global/gametype","misc").toString();
     if (type_game=="rand"){
         accGameRand->setChecked(true);
         clickButtonGameRand();
@@ -572,7 +572,7 @@ void MainWindow::clickButtonGameAbc(){
 
     gameAbcFinish=false;
 
-    confSettings->setValue("global/typegame",typeGameToString(typeGame));
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameRand(){
@@ -624,7 +624,7 @@ void MainWindow::clickButtonGameRand(){
     }
 
     gameAbcFinish=false;
-    confSettings->setValue("global/typegame",typeGameToString(typeGame));
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameAnimals(){
@@ -638,7 +638,7 @@ void MainWindow::clickButtonGameAnimals(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/turtle.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Animals"));
-    confSettings->setValue("global/typegame",typeGameToString(typeGame));
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameFood(){
@@ -652,7 +652,7 @@ void MainWindow::clickButtonGameFood(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/hot_dog.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Food"));
-    confSettings->setValue("global/typegame",typeGameToString(typeGame));
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameInstrument(){
@@ -666,7 +666,7 @@ void MainWindow::clickButtonGameInstrument(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/guitar.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Music"));
-    confSettings->setValue("global/typegame",typeGameToString(typeGame));
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameToys(){
@@ -680,7 +680,7 @@ void MainWindow::clickButtonGameToys(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Toys"));
-    confSettings->setValue("global/typegame",typeGameToString(typeGame));
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonSound(){
