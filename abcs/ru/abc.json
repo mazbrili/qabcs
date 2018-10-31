@@ -45,8 +45,8 @@
 		},
 		"food": {
 		      "pic": "food/bananas.png",
-		      "name": "БАНАН",
-		      "espeak_words": "БА-НАН"
+		      "name": "БАНАНЫ",
+		      "espeak_words": "БА-НАНЫ"
 		},
 		"animals": {
 		      "pic": "animals/ladybug.png",
@@ -310,7 +310,7 @@
 		      "espeak_words": "ЙО-ГУРТ"
 		},
 		"animals": {
-		      "pic": "animals/yorkshire_terrier.png",
+		      "pic": "animals/york.png",
 		      "name": "ЙОРК",
 		      "espeak_words": "ЙОРК"
 		},
@@ -358,7 +358,7 @@
 	{"Л": {
 		"espeak_words": "Л",
 		"misc": {
-		      "pic": "misc/mag_glass.png",
+		      "pic": "misc/magnifying_glass.png",
 		      "name": "ЛУПА",
 		      "espeak_words": "ЛУПА"
 		},
@@ -505,7 +505,7 @@
 	{"Р": {
 		"espeak_words": "Р",
 		"misc": {
-		      "pic": "misc/x_ray.png",
+		      "pic": "misc/x-ray.png",
 		      "name": "РЕНТГЕН",
 		      "espeak_words": "РЕН-ГЕН"
 		},
@@ -657,8 +657,8 @@
 		},
 		"food": {
 		      "pic": "food/hot_dog.png",
-		      "name": "ХОТДОГ",
-		      "espeak_words": "ХОТДОГ"
+		      "name": "ХОТ-ДОГ",
+		      "espeak_words": "ХОТ-ДОГ"
 		},
 		"animals": {
 		      "pic": "animals/pig.png",
@@ -672,7 +672,7 @@
 		      "espeak_words": "ХАНГ"
 		},
 		"toys": {
-		      "pic": "toys/hockey_puck.png",
+		      "pic": "toys/hockey.png",
 		      "name": "ХОККЕЙ",
 		      "espeak_words": "ХОК-КЕЙ"
 		}
@@ -856,7 +856,7 @@
 		      "espeak_words": "МОЛЬБЕРТ"
 		},
 		"food": {
-		      "pic": "food/x_cookie.png",
+		      "pic": "food/x-cookie.png",
 		      "name": "ПЕЧЕНЬЕ",
 		      "espeak_words": "ПЕЧЕНЬЕ"
 		},
@@ -898,7 +898,7 @@
 		      "pic": "music/electric_guitar.png",
 		      "name": "ЭЛЕКТРОГИТАРА",
 		      "espeak_words": "ЭЛЕКТРО-ГИТАРА",
-		      "noises": "eguitar.wav"
+		      "noises": "electric_guitar.wav"
 		},
 		"toys": {
 		      "pic": "toys/excavator.png",
@@ -938,8 +938,8 @@
 		"espeak_words": "Я",
 		"misc": {
 		      "pic": "food/cherries.png",
-		      "name": "ЯГОДА",
-		      "espeak_words": "ЙА-ГОДА"
+		      "name": "ЯГОДЫ",
+		      "espeak_words": "ЙА-ГОДЫ"
 		},
 		"food": {
 		      "pic": "food/apple.png",

@@ -147,8 +147,8 @@
 		"instrument": {
 		      "pic": "music/electric_guitar.png",
 		      "name": "ELECTRIC GUITAR",
-		      "sound_pic": "eguitar.wav",
-		      "noises": "eguitar.wav"
+		      "sound_pic": "electric_guitar.wav",
+		      "noises": "electric_guitar.wav"
 		},
 		"toys": {
 		      "pic": "toys/easel.png",
@@ -363,9 +363,9 @@
 	{"M": {
 		"sound_letter": "M.wav",
 		"misc": {
-		      "pic": "misc/mag_glass.png",
+		      "pic": "misc/magnifying_glass.png",
 		      "name": "MAGNIFYING GLASS",
-		      "sound_pic": "mag_glass.wav"
+		      "sound_pic": "magnifying_glass.wav"
 		},
 		"food": {
 		      "pic": "food/mushroom.png",
@@ -453,7 +453,7 @@
 		"misc": {
 		      "pic": "toys/paper_airplane.png",
 		      "name": "PAPER AIRPLANE",
-		      "sound_pic": "paper_plane.wav"
+		      "sound_pic": "paper_airplane.wav"
 		},
 		"food": {
 		      "pic": "food/pretzel.png",
@@ -534,7 +534,7 @@
 		},
 		"toys": {
 		      "pic": "toys/rocking_horse.png",
-		      "name": "ROCK HORSE",
+		      "name": "ROCKING HORSE",
 		      "sound_pic": "rocking_horse.wav"
 		}
 	}},
@@ -557,10 +557,10 @@
 		      "noises": "sheep.wav"
 		},
 		"instrument": {
-		      "pic": "music/sax.png",
+		      "pic": "music/saxophone.png",
 		      "name": "SAXOPHONE",
-		      "sound_pic": "sax.wav",
-		      "noises": "sax.wav"
+		      "sound_pic": "saxophone.wav",
+		      "noises": "saxophone.wav"
 		},
 		"toys": {
 		      "pic": "toys/seesaw.png",
@@ -690,14 +690,14 @@
  	{"X": {
 		"sound_letter": "X.wav",
 		"misc": {
-		      "pic": "misc/x_ray.png",
+		      "pic": "misc/x-ray.png",
 		      "name": "X-RAY",
-		      "sound_pic": "xray.wav"
+		      "sound_pic": "x-ray.wav"
 		},
 		"food": {
-		      "pic": "food/x_cookie.png",
+		      "pic": "food/x-cookie.png",
 		      "name": "X-COOKIE",
-		      "sound_pic": "xcookie.wav"
+		      "sound_pic": "x-cookie.wav"
 		},
 		"animals": {
 		      "pic": "animals/xiphias.png",
