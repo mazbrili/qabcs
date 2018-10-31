@@ -8,16 +8,11 @@
    "letters": [
 	{"A": {
 		"sound_letter": "A.wav",
-                "speak_method": "file",
-	        "espeak_params": "",
-                "espeak_words": "",
 		"misc": {
 		      "pic": "misc/airplane.png",
 		      "name": "AIRPLANE",
-                      "speak_method": "file",
 		      "sound_pic": "airplane.wav",
- 	              "espeak_params": "",
-	              "espeak_words": ""
+		      "noises": "airplane.wav"
 		},
 		"food": {
 		      "pic": "food/apple.png",
@@ -32,7 +27,8 @@
 		"instrument": {
 		      "pic": "music/accordion.png",
 		      "name": "ACCORDION",
-		      "sound_pic": "accordion.wav"
+		      "sound_pic": "accordion.wav",
+		      "noises": "accordion.wav"
 		},
 		"toys": {
 		      "pic": "toys/anklet.png",
@@ -55,7 +51,8 @@
 		"animals": {
 		      "pic": "animals/bird.png",
 		      "name": "BIRD",
-		      "sound_pic": "bird.wav"
+		      "sound_pic": "bird.wav",
+		      "noises": "bird.wav"
 		},
 		"instrument": {
 		      "pic": "music/bagpipes.png",
@@ -83,12 +80,14 @@
 		"animals": {
 		      "pic": "animals/cat.png",
 		      "name": "CAT",
-		      "sound_pic": "cat.wav"
+		      "sound_pic": "cat.wav",
+		      "noises": "cat.wav"
 		},
 		"instrument": {
 		      "pic": "music/clarinet.png",
 		      "name": "CLARINET",
-		      "sound_pic": "clarinet.wav"
+		      "sound_pic": "clarinet.wav",
+		      "noises": "clarinet.wav"
 		},
 		"toys": {
 		      "pic": "toys/chalkboard.png",
@@ -101,7 +100,8 @@
 		"misc": {
 		      "pic": "animals/dolphin.png",
 		      "name": "DOLPHIN",
-		      "sound_pic": "dolphin.wav"
+		      "sound_pic": "dolphin.wav",
+		      "noises": "dolphin.wav"
 		},
 		"food": {
 		      "pic": "food/doughnut.png",
@@ -111,12 +111,14 @@
 		"animals": {
 		      "pic": "animals/dog.png",
 		      "name": "DOG",
-		      "sound_pic": "dog.wav"
+		      "sound_pic": "dog.wav",
+		      "noises": "dog.wav"
 		},
 		"instrument": {
 		      "pic": "music/drums.png",
 		      "name": "DRUMS",
-		      "sound_pic": "drums.wav"
+		      "sound_pic": "drums.wav",
+		      "noises": "drums.wav"
 		},
 		"toys": {
 		      "pic": "toys/doll.png",
@@ -139,12 +141,14 @@
 		"animals": {
 		      "pic": "animals/elephant.png",
 		      "name": "ELEPHANT",
-		      "sound_pic": "elephant.wav"
+		      "sound_pic": "elephant.wav",
+		      "noises": "elephant.wav"
 		},
 		"instrument": {
 		      "pic": "music/electric_guitar.png",
 		      "name": "ELECTRIC GUITAR",
-		      "sound_pic": "eguitar.wav"
+		      "sound_pic": "eguitar.wav",
+		      "noises": "eguitar.wav"
 		},
 		"toys": {
 		      "pic": "toys/easel.png",
@@ -167,12 +171,14 @@
 		"animals": {
 		      "pic": "animals/frog.png",
 		      "name": "FROG",
-		      "sound_pic": "frog.wav"
+		      "sound_pic": "frog.wav",
+		      "noises": "frog.wav"
 		},
 		"instrument": {
 		      "pic": "music/flute.png",
 		      "name": "FLUTE",
-		      "sound_pic": "flute.wav"
+		      "sound_pic": "flute.wav",
+		      "noises": "flute.wav"
 		},
 		"toys": {
 		      "pic": "toys/football.png",
@@ -200,7 +206,8 @@
 		"instrument": {
 		      "pic": "music/guitar.png",
 		      "name": "GUITAR",
-		      "sound_pic": "guitar.wav"
+		      "sound_pic": "guitar.wav",
+		      "noises": "guitar.wav"
 		},
 		"toys": {
 		      "pic": "toys/glove.png",
@@ -223,12 +230,14 @@
 		"animals": {
 		      "pic": "animals/horse.png",
 		      "name": "HORSE",
-		      "sound_pic": "horse.wav"
+		      "sound_pic": "horse.wav",
+		      "noises": "horse.wav"
 		},
 		"instrument": {
 		      "pic": "music/harp.png",
 		      "name": "HARP",
-		      "sound_pic": "harp.wav"
+		      "sound_pic": "harp.wav",
+		      "noises": "harp.wav"
 		},
 		"toys": {
 		      "pic": "toys/horn.png",
@@ -279,7 +288,8 @@
 		"animals": {
 		      "pic": "animals/jaguar.png",
 		      "name": "JAGUAR",
-		      "sound_pic": "jaguar.wav"
+		      "sound_pic": "jaguar.wav",
+		      "noises": "jaguar.wav"
 		},
 		"instrument": {
 		      "pic": "music/jug.png",
@@ -312,7 +322,8 @@
 		"instrument": {
 		      "pic": "music/kazoo.png",
 		      "name": "KAZOO",
-		      "sound_pic": "kazoo.wav"
+		      "sound_pic": "kazoo.wav",
+		      "noises": "kazoo.wav"
 		},
 		"toys": {
 		      "pic": "toys/kite.png",
@@ -335,7 +346,8 @@
 		"animals": {
 		      "pic": "animals/lion.png",
 		      "name": "LION",
-		      "sound_pic": "lion.wav"
+		      "sound_pic": "lion.wav",
+		      "noises": "lion.wav"
 		},
 		"instrument": {
 		      "pic": "music/lute.png",
@@ -363,12 +375,14 @@
 		"animals": {
 		      "pic": "animals/mouse.png",
 		      "name": "MOUSE",
-		      "sound_pic": "mouse.wav"
+		      "sound_pic": "mouse.wav",
+		      "noises": "mouse.wav"
 		},
 		"instrument": {
 		      "pic": "music/maracas.png",
 		      "name": "MARACAS",
-		      "sound_pic": "maracas.wav"
+		      "sound_pic": "maracas.wav",
+		      "noises": "maracas.wav"
 		},
 		"toys": {
 		      "pic": "toys/magnet.png",
@@ -419,12 +433,14 @@
 		"animals": {
 		      "pic": "animals/owl.png",
 		      "name": "OWL",
-		      "sound_pic": "owl.wav"
+		      "sound_pic": "owl.wav",
+		      "noises": "owl.wav"
 		},
 		"instrument": {
 		      "pic": "music/oboe.png",
 		      "name": "OBOE",
-		      "sound_pic": "oboe.wav"
+		      "sound_pic": "oboe.wav",
+		      "noises": "oboe.wav"
 		},
 		"toys": {
 		      "pic": "toys/origami.png",
@@ -447,12 +463,14 @@
 		"animals": {
 		      "pic": "animals/pig.png",
 		      "name": "PIG",
-		      "sound_pic": "pig.wav"
+		      "sound_pic": "pig.wav",
+		      "noises": "pig.wav"
 		},
 		"instrument": {
 		      "pic": "music/piano.png",
 		      "name": "PIANO",
-		      "sound_pic": "piano.wav"
+		      "sound_pic": "piano.wav",
+		      "noises": "piano.wav"
 		},
 		"toys": {
 		      "pic": "toys/paint.png",
@@ -475,7 +493,8 @@
 		"animals": {
 		      "pic": "animals/quail.png",
 		      "name": "QUAIL",
-		      "sound_pic": "quail.wav"
+		      "sound_pic": "quail.wav",
+		      "noises": "quail.wav"
 		},
 		"instrument": {
 		      "pic": "music/quena.png",
@@ -493,7 +512,8 @@
 		"misc": {
 		      "pic": "animals/raccoon.png",
 		      "name": "RACCOON",
-		      "sound_pic": "raccoon.wav"
+		      "sound_pic": "raccoon.wav",
+		      "noises": "raccoon.wav"
 		},
 		"food": {
 		      "pic": "food/radishes.png",
@@ -503,12 +523,14 @@
 		"animals": {
 		      "pic": "animals/rooster.png",
 		      "name": "ROOSTER",
-		      "sound_pic": "rooster.wav"
+		      "sound_pic": "rooster.wav",
+		      "noises": "rooster.wav"
 		},
 		"instrument": {
 		      "pic": "music/recorder.png",
 		      "name": "RECORDER",
-		      "sound_pic": "recorder.wav"
+		      "sound_pic": "recorder.wav",
+		      "noises": "recorder.wav"
 		},
 		"toys": {
 		      "pic": "toys/rocking_horse.png",
@@ -531,12 +553,14 @@
 		"animals": {
 		      "pic": "animals/sheep.png",
 		      "name": "SHEEP",
-		      "sound_pic": "sheep.wav"
+		      "sound_pic": "sheep.wav",
+		      "noises": "sheep.wav"
 		},
 		"instrument": {
 		      "pic": "music/sax.png",
 		      "name": "SAXOPHONE",
-		      "sound_pic": "sax.wav"
+		      "sound_pic": "sax.wav",
+		      "noises": "sax.wav"
 		},
 		"toys": {
 		      "pic": "toys/seesaw.png",
@@ -549,7 +573,8 @@
 		"misc": {
 		      "pic": "misc/train.png",
 		      "name": "TRAIN",
-		      "sound_pic": "train.wav"
+		      "sound_pic": "train.wav",
+		      "noises": "train.wav"
 		},
 		"food": {
 		      "pic": "food/tomato.png",
@@ -564,7 +589,8 @@
 		"instrument": {
 		      "pic": "music/trumpet.png",
 		      "name": "TRUMPET",
-		      "sound_pic": "trumpet.wav"
+		      "sound_pic": "trumpet.wav",
+		      "noises": "trumpet.wav"
 		},
 		"toys": {
 		      "pic": "toys/top.png",
@@ -592,7 +618,8 @@
 		"instrument": {
 		      "pic": "music/ukulele.png",
 		      "name": "UKULELE",
-		      "sound_pic": "ukulele.wav"
+		      "sound_pic": "ukulele.wav",
+		      "noises": "ukulele.wav"
 		},
 		"toys": {
 		      "pic": "toys/unicycle.png",
@@ -615,12 +642,14 @@
 		"animals": {
 		      "pic": "animals/vulture.png",
 		      "name": "VULTURE",
-		      "sound_pic": "vulture.wav"
+		      "sound_pic": "vulture.wav",
+		      "noises": "vulture.wav"
 		},
 		"instrument": {
 		      "pic": "music/violin.png",
 		      "name": "VIOLIN",
-		      "sound_pic": "violin.wav"
+		      "sound_pic": "violin.wav",
+		      "noises": "violin.wav"
 		},
 		"toys": {
 		      "pic": "toys/volleyball.png",
@@ -643,12 +672,14 @@
 		"animals": {
 		      "pic": "animals/whale.png",
 		      "name": "WHALE",
-		      "sound_pic": "whale.wav"
+		      "sound_pic": "whale.wav",
+		      "noises": "whale.wav"
 		},
 		"instrument": {
 		      "pic": "music/whistle.png",
 		      "name": "WHISTLE",
-		      "sound_pic": "whistle.wav"
+		      "sound_pic": "whistle.wav",
+		      "noises": "whistle.wav"
 		},
 		"toys": {
 		      "pic": "toys/wagon.png",
@@ -676,12 +707,14 @@
 		"instrument": {
 		      "pic": "music/xylophone.png",
 		      "name": "XYLOPHONE",
-		      "sound_pic": "xylophone.wav"
+		      "sound_pic": "xylophone.wav",
+		      "noises": "xylophone.wav"
 		},
 		"toys": {
 		      "pic": "music/xylophone.png",
 		      "name": "XYLOPHONE",
-		      "sound_pic": "xylophone.wav"
+		      "sound_pic": "xylophone.wav",
+		      "noises": "xylophone.wav"
 		}
 	}},
  	{"Y": {
@@ -717,7 +750,8 @@
 		"misc": {
 		      "pic": "misc/zipper.png",
 		      "name": "ZIPPER",
-		      "sound_pic": "zipper.wav"
+		      "sound_pic": "zipper.wav",
+		      "noises": "zipper.wav"
 		},
 		"food": {
 		      "pic": "food/zucchini.png",
@@ -727,12 +761,14 @@
 		"animals": {
 		      "pic": "animals/zebra.png",
 		      "name": "ZEBRA",
-		      "sound_pic": "zebra.wav"
+		      "sound_pic": "zebra.wav",
+		      "noises": "zebra.wav"
 		},
 		"instrument": {
 		      "pic": "music/zurna.png",
 		      "name": "ZURNA",
-		      "sound_pic": "zurna.wav"
+		      "sound_pic": "zurna.wav",
+		      "noises": "zurna.wav"
 		},
 		"toys": {
 		      "pic": "toys/zipline.png",
