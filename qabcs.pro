@@ -112,7 +112,8 @@ SOURCES += main.cpp \
     FormHelp.cpp \
     Collection.cpp \
     FormSelectLanguage.cpp \
-    SoundEngine.cpp
+    SoundEngine.cpp \
+    ThreadMediaPlayer.cpp
 
 FORMS += \
     FormAbout.ui \
@@ -126,4 +127,5 @@ HEADERS += \
     Collection.h \
     FormSelectLanguage.h \
     config_qabcs.h \
-    SoundEngine.h
+    SoundEngine.h \
+    ThreadMediaPlayer.h

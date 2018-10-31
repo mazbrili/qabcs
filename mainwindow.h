@@ -69,6 +69,8 @@ class MainWindow : public QMainWindow {
         QLabel *lblAbcLetter;
         QLabel *lblAbcText;
 
+        QLabel *blockForm;
+
 
         QActionGroup *typeGameGroup;
 

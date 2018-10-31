@@ -34,6 +34,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     confSettings = new QSettings(dirConfig.absoluteFilePath("settings.ini"), QSettings::IniFormat);
     confSettings->setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
+    // init soundEngine
+    SoundEngine::init();
 
     // init collections
     for (QString type:listTypes) listCollections[type] = new Collection(confSettings->value("abc/language","en").toString());
@@ -82,6 +84,10 @@ void MainWindow::initGUI(){
     lblAbcLetter->setAlignment(Qt::AlignCenter);
     lblAbcLetter->setGeometry(0,lblAbcText->y()-50,this->width(),101);
     //lblAbcLetter->setFrameShape(QFrame::Box);
+
+    blockForm = new QLabel(this);
+    blockForm->setGeometry(0,0,this->width(),this->height());
+    blockForm->hide();
 }
 
 
@@ -476,6 +482,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     }
 
     if (listLetters.size()==0) return;
+
+
+    if (SoundEngine::state()!=QMediaPlayer::StoppedState) return;
 
 
     if (currentIndexLetter>=0 and key==Qt::Key_Space){
