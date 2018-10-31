@@ -497,8 +497,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             lblAbcText->setText(tr("Press \"ENTER\" to Play Again"));
 
             if (soundStatus){
-                soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
-                soundEffect.play();
+                QString filename =  SoundEngine::findSoundfile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds","cheering");
+                if (!filename.isEmpty()){
+                    soundEffect.setSource(QUrl::fromLocalFile(filename));
+                    soundEffect.play();
+                }
             }
 
             gameAbcFinish=true;
@@ -527,8 +530,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             lblAbcText->setText(tr("Press \"ENTER\" to Play Again"));
 
             if (soundStatus){
-                soundEffect.setSource(QUrl::fromLocalFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds/cheering.wav"));
-                soundEffect.play();
+                QString filename =  SoundEngine::findSoundfile(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/sounds","cheering");
+                if (!filename.isEmpty()){
+                    soundEffect.setSource(QUrl::fromLocalFile(filename));
+                    soundEffect.play();
+                }
             }
 
             gameAbcFinish=true;
