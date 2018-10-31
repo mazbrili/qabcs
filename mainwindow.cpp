@@ -42,8 +42,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     initGUI();
     initToolBar();
-    setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
 
+    // read status sound from config
+    if (confSettings->value("general/sound","true").toString()=="false"){
+        accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
+        soundStatus=false;
+    }
+
+
+
+    setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
 
 }
 
@@ -652,9 +660,11 @@ void MainWindow::clickButtonSound(){
     if (soundStatus){
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
         soundStatus=false;
+        confSettings->setValue("general/sound","false");
     }else{
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"));
         soundStatus=true;
+        confSettings->setValue("general/sound","true");
     }
 }
 
