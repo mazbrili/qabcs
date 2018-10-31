@@ -12,7 +12,7 @@
 		      "pic": "music/accordion.png",
 		      "name": "АККОРДЕОН",
 		      "espeak_words": "АКОР-ДИ-ОН",
-		      "noises": "accordion.wav"
+		      "noises": "accordion.ogg"
 		},
 		"food": {
 		      "pic": "food/watermelon.png",
@@ -28,7 +28,7 @@
 		      "pic": "music/harp.png",
 		      "name": "АРФА",
 		      "espeak_words": "АРФА",
-		      "noises": "harp.wav"
+		      "noises": "harp.ogg"
 		},
 		"toys": {
 		      "pic": "toys/watercolor.png",
@@ -57,7 +57,7 @@
 		      "pic": "music/drums.png",
 		      "name": "БАРАБАНЫ",
 		      "espeak_words": "БАРА-БАНЫ",
-		      "noises": "drums.wav"
+		      "noises": "drums.ogg"
 		},
 		"toys": {
 		      "pic": "toys/anklet.png",
@@ -109,13 +109,13 @@
 		      "pic": "animals/vulture.png",
 		      "name": "ГРИФ",
 		      "espeak_words": "ГРИФ",
-		      "noises": "vulture.wav"
+		      "noises": "vulture.ogg"
 		},
 		"instrument": {
 		      "pic": "music/guitar.png",
 		      "name": "ГИТАРА",
 		      "espeak_words": "ГИТАРА",
-		      "noises": "guitar.wav"
+		      "noises": "guitar.ogg"
 		},
 		"toys": {
 		      "pic": "toys/horn.png",
@@ -139,7 +139,7 @@
 		      "pic": "animals/dolphin.png",
 		      "name": "ДЕЛЬФИН",
 		      "espeak_words": "ДЕ-ЛЬФИН",
-		      "noises": "dolphin.wav"
+		      "noises": "dolphin.ogg"
 		},
 		"instrument": {
 		      "pic": "music/jug.png",
@@ -158,7 +158,7 @@
 		      "pic": "animals/raccoon.png",
 		      "name": "ЕНОТ",
 		      "espeak_words": "ЕНОТ",
-		      "noises": "raccoon.wav"
+		      "noises": "raccoon.ogg"
 		},
 		"food": {
 		      "pic": "food/blackberry.png",
@@ -169,7 +169,7 @@
 		      "pic": "animals/raccoon.png",
 		      "name": "ЕНОТ",
 		      "espeak_words": "ЕНОТ",
-		      "noises": "raccoon.wav"
+		      "noises": "raccoon.ogg"
 		},
 		"instrument": {
 		      "pic": "music/yahoo.png",
@@ -216,7 +216,7 @@
 		      "pic": "animals/frog.png",
 		      "name": "ЖАБА",
 		      "espeak_words": "ЖАБА",
-		      "noises": "frog.wav"
+		      "noises": "frog.ogg"
 		},
 		"food": {
 		      "pic": "food/roast.png",
@@ -255,13 +255,13 @@
 		      "pic": "animals/zebra.png",
 		      "name": "ЗЕБРА",
 		      "espeak_words": "ЗЕБРА",
-		      "noises": "zebra.wav"
+		      "noises": "zebra.ogg"
 		},
 		"instrument": {
 		      "pic": "music/zurna.png",
 		      "name": "ЗУРНА",
 		      "espeak_words": "ЗУ-РНА",
-		      "noises": "zurna.wav"
+		      "noises": "zurna.ogg"
 		},
 		"toys": {
 		      "pic": "toys/kite.png",
@@ -341,13 +341,13 @@
 		      "pic": "animals/whale.png",
 		      "name": "КИТ",
 		      "espeak_words": "КИТ",
-		      "noises": "whale.wav"
+		      "noises": "whale.ogg"
 		},
 		"instrument": {
 		      "pic": "music/clarinet.png",
 		      "name": "КЛАРНЕТ",
 		      "espeak_words": "КЛАР-НЕТ",
-		      "noises": "clarinet.wav"
+		      "noises": "clarinet.ogg"
 		},
 		"toys": {
 		      "pic": "toys/paint.png",
@@ -371,7 +371,7 @@
 		      "pic": "animals/lion.png",
 		      "name": "ЛЕВ",
 		      "espeak_words": "ЛЕВ",
-		      "noises": "lion.wav"
+		      "noises": "lion.ogg"
 		},
 		"instrument": {
 		      "pic": "music/lute.png",
@@ -390,7 +390,7 @@
 		      "pic": "misc/zipper.png",
 		      "name": "МОЛНИЯ",
 		      "espeak_words": "МОЛНИ-Я",
-		      "noises": "zipper.wav"
+		      "noises": "zipper.ogg"
 		},
 		"food": {
 		      "pic": "food/olive.png",
@@ -406,7 +406,7 @@
 		      "pic": "music/maracas.png",
 		      "name": "МАРАКАСЫ",
 		      "espeak_words": "МАРАКАСЫ",
-		      "noises": "maracas.wav"
+		      "noises": "maracas.ogg"
 		},
 		"toys": {
 		      "pic": "toys/magnet.png",
@@ -458,7 +458,7 @@
 		      "pic": "animals/sheep.png",
 		      "name": "ОВЦА",
 		      "espeak_words": "ОВ-ЦА",
-		      "noises": "sheep.wav"
+		      "noises": "sheep.ogg"
 		},
 		"instrument": {
 		      "pic": "music/organ.png",
@@ -477,7 +477,7 @@
 		      "pic": "misc/train.png",
 		      "name": "ПАРОВОЗ",
 		      "espeak_words": "ПАРО-ВОЗ",
-		      "noises": "train.wav"
+		      "noises": "train.ogg"
 		},
 		"food": {
 		      "pic": "food/quiche.png",
@@ -488,13 +488,13 @@
 		      "pic": "animals/bird.png",
 		      "name": "ПТИЦА",
 		      "espeak_words": "ПТИЦА",
-		      "noises": "bird.wav"
+		      "noises": "bird.ogg"
 		},
 		"instrument": {
 		      "pic": "music/piano.png",
 		      "name": "ПИАНИНО",
 		      "espeak_words": "ПИА-НИНО",
-		      "noises": "piano.wav"
+		      "noises": "piano.ogg"
 		},
 		"toys": {
 		      "pic": "toys/glove.png",
@@ -536,7 +536,7 @@
 		      "pic": "misc/airplane.png",
 		      "name": "САМОЛЁТ",
 		      "espeak_words": "САМОЛЁТ",
-		      "noises": "airplane.wav"
+		      "noises": "airplane.ogg"
 		},
 		"food": {
 		      "pic": "food/juice.png",
@@ -547,13 +547,13 @@
 		      "pic": "animals/owl.png",
 		      "name": "СОВА",
 		      "espeak_words": "СО-ВА",
-		      "noises": "owl.wav"
+		      "noises": "owl.ogg"
 		},
 		"instrument": {
 		      "pic": "music/violin.png",
 		      "name": "СКРИПКА",
 		      "espeak_words": "СКРИПКА",
-		      "noises": "violin.wav"
+		      "noises": "violin.ogg"
 		},
 		"toys": {
 		      "pic": "toys/paper_airplane.png",
@@ -582,7 +582,7 @@
 		      "pic": "music/trumpet.png",
 		      "name": "ТРУБА",
 		      "espeak_words": "ТРУ-БА",
-		      "noises": "trumpet.wav"
+		      "noises": "trumpet.ogg"
 		},
 		"toys": {
 		      "pic": "toys/wagon.png",
@@ -611,7 +611,7 @@
 		      "pic": "music/ukulele.png",
 		      "name": "УКУЛЕЛЕ",
 		      "espeak_words": "УКУ-ЛЕЛЕ",
-		      "noises": "ukulele.wav"
+		      "noises": "ukulele.ogg"
 		},
 		"toys": {
 		      "pic": "toys/umka.png",
@@ -640,7 +640,7 @@
 		      "pic": "music/flute.png",
 		      "name": "ФЛЕЙТА",
 		      "espeak_words": "ФЛЕЙТА",
-		      "noises": "flute.wav"
+		      "noises": "flute.ogg"
 		},
 		"toys": {
 		      "pic": "toys/football.png",
@@ -664,7 +664,7 @@
 		      "pic": "animals/pig.png",
 		      "name": "ХРЯК",
 		      "espeak_words": "ХРЯК",
-		      "noises": "pig.wav"
+		      "noises": "pig.ogg"
 		},
 		"instrument": {
 		      "pic": "music/hang.png",
@@ -777,7 +777,7 @@
 		      "pic": "animals/dog.png",
 		      "name": "ЩЕНОК",
 		      "espeak_words": "ЩЕ-НОК",
-		      "noises": "dog.wav"
+		      "noises": "dog.ogg"
 		},
 		"instrument": {
 		      "pic": "music/slit_drum.png",
@@ -834,7 +834,7 @@
 		      "pic": "animals/mouse.png",
 		      "name": "МЫШЬ",
 		      "espeak_words": "МЫШЬ",
-		      "noises": "mouse.wav"
+		      "noises": "mouse.ogg"
 		},
 		"instrument": {
 		      "pic": "music/topshuur.png",
@@ -845,7 +845,7 @@
 		      "pic": "toys/yi.png",
 		      "name": "Ы",
 		      "espeak_words": "Ы",
-		      "noises": "train.wav"
+		      "noises": "train.ogg"
 		}
 	}},
  	{"Ь": {
@@ -864,7 +864,7 @@
 		      "pic": "animals/horse.png",
 		      "name": "КОНЬ",
 		      "espeak_words": "КОНЬ",
-		      "noises": "horse.wav"
+		      "noises": "horse.ogg"
 		},
 		"instrument": {
 		      "pic": "music/xun.png",
@@ -898,7 +898,7 @@
 		      "pic": "music/electric_guitar.png",
 		      "name": "ЭЛЕКТРОГИТАРА",
 		      "espeak_words": "ЭЛЕКТРО-ГИТАРА",
-		      "noises": "electric_guitar.wav"
+		      "noises": "electric_guitar.ogg"
 		},
 		"toys": {
 		      "pic": "toys/excavator.png",
@@ -950,7 +950,7 @@
 		      "pic": "animals/jaguar.png",
 		      "name": "ЯГУАР",
 		      "espeak_words": "Я-ГУАР",
-		      "noises": "jaguar.wav"
+		      "noises": "jaguar.ogg"
 		},
 		"instrument": {
 		      "pic": "music/yangqin.png",
