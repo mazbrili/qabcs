@@ -49,10 +49,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
         soundStatus=false;
     }
 
-
-
     setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
-
 }
 
 MainWindow::~MainWindow(){
@@ -322,8 +319,28 @@ void MainWindow::setAbcLang(QString lang,QString filename){
 
     initLanguageAbc();
 
-    accGameAbc->setChecked(true);
-    clickButtonGameAbc();
+    QString type_game = confSettings->value("general/typegame","misc").toString();
+    if (type_game=="rand"){
+        accGameRand->setChecked(true);
+        clickButtonGameRand();
+    } else if (type_game=="food"){
+        accGameFood->setChecked(true);
+        clickButtonGameFood();
+    } else if (type_game=="animals"){
+        accGameAnimals->setChecked(true);
+        clickButtonGameAnimals();
+    } else if (type_game=="instrument"){
+        accGameInstrument->setChecked(true);
+        clickButtonGameInstrument();
+    } else if (type_game=="toys"){
+        accGameToys->setChecked(true);
+        clickButtonGameToys();
+    }else{
+        accGameAbc->setChecked(true);
+        clickButtonGameAbc();
+    }
+
+
 
 }
 
@@ -550,6 +567,8 @@ void MainWindow::clickButtonGameAbc(){
     }
 
     gameAbcFinish=false;
+
+    confSettings->setValue("general/typegame",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameRand(){
@@ -601,6 +620,7 @@ void MainWindow::clickButtonGameRand(){
     }
 
     gameAbcFinish=false;
+    confSettings->setValue("general/typegame",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameAnimals(){
@@ -614,6 +634,7 @@ void MainWindow::clickButtonGameAnimals(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/turtle.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Animals"));
+    confSettings->setValue("general/typegame",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameFood(){
@@ -627,6 +648,7 @@ void MainWindow::clickButtonGameFood(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/hot_dog.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Food"));
+    confSettings->setValue("general/typegame",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameInstrument(){
@@ -640,7 +662,7 @@ void MainWindow::clickButtonGameInstrument(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/guitar.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Music"));
-
+    confSettings->setValue("general/typegame",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameToys(){
@@ -654,6 +676,7 @@ void MainWindow::clickButtonGameToys(){
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Toys"));
+    confSettings->setValue("general/typegame",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonSound(){
