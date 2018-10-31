@@ -254,6 +254,10 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         QString line = file.readLine();
         line.replace(QRegExp("(\\s*)$"),"");
 
+        // ignoring lines
+        if (line.indexOf(QRegExp("^([#|;])(.*)"))!=-1) continue;
+
+
         QStringList pair = line.split(":");
 
         // format
@@ -286,7 +290,15 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
-            listLetters.push_back({letter.toUpper(),letter,"","",letter});
+            bool isExistLetter=false;
+            for (LETTER_INFO l:listLetters) {
+                if (l.letter.toUpper()==letter.toUpper()) isExistLetter=true;
+            }
+
+            if (!isExistLetter){
+                listLetters.push_back({letter.toUpper(),letter,"","",letter});
+            }
+
             listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,espeak_params,espeak_words,noises);
         }else{
             qDebug() << tr("Error str:")+" "+line;
