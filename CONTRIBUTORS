@@ -1,0 +1,17 @@
++++ AUTHORS and CONTRIBUTORS +++
+
+AdmSasha from DanSoft (dik@inbox.ru) : qt developer
+Alexey Loginov (alexl@mageia.org) : algorithms, ideas, testing, localization
+Jordan Irwin (antumdeluge@gmail.com) : ideas
+
++++ TRANSLATORS +++
+
+ABC: see abc.json or abc.properties
+GUI: Magic Team from transifex.com
+
++++ PLATFORMS +++
+
+transifex.com : translations
+bitbucket.org : source code
+
+Many thanks to all!
