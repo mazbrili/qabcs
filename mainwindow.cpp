@@ -658,11 +658,18 @@ void MainWindow::clickButtonGameAnimals(){
     typeGame=TYPE_ANIMALS;
     currentIndexLetter=-1;
     gameAbcFinish=true;
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
+
+    if (listLetters.size()==0){
+        setPixmapViewer(QPixmap());
+        lblAbcText->setText(tr("ABC is not loaded"));
+        lblAbcLetter->setText("");
+        return;
+    }
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/turtle.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Animals"));
-    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameFood(){
@@ -672,11 +679,19 @@ void MainWindow::clickButtonGameFood(){
     typeGame=TYPE_FOOD;
     currentIndexLetter=-1;
     gameAbcFinish=true;
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
+
+    if (listLetters.size()==0){
+        setPixmapViewer(QPixmap());
+        lblAbcText->setText(tr("ABC is not loaded"));
+        lblAbcLetter->setText("");
+        return;
+    }
+
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/hot_dog.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Food"));
-    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameInstrument(){
@@ -687,10 +702,17 @@ void MainWindow::clickButtonGameInstrument(){
     currentIndexLetter=-1;
     gameAbcFinish=true;
 
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
+    if (listLetters.size()==0){
+        setPixmapViewer(QPixmap());
+        lblAbcText->setText(tr("ABC is not loaded"));
+        lblAbcLetter->setText("");
+        return;
+    }
+
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/guitar.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Music"));
-    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonGameToys(){
@@ -700,11 +722,18 @@ void MainWindow::clickButtonGameToys(){
     typeGame=TYPE_TOYS;
     currentIndexLetter=-1;
     gameAbcFinish=true;
+    confSettings->setValue("global/gametype",typeGameToString(typeGame));
+
+    if (listLetters.size()==0){
+        setPixmapViewer(QPixmap());
+        lblAbcText->setText(tr("ABC is not loaded"));
+        lblAbcLetter->setText("");
+        return;
+    }
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
     lblAbcText->setText("");
     lblAbcLetter->setText(tr("Toys"));
-    confSettings->setValue("global/gametype",typeGameToString(typeGame));
 }
 
 void MainWindow::clickButtonSound(){
