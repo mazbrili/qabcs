@@ -47,6 +47,7 @@ class MainWindow : public QMainWindow {
         void initToolBar();
         void initLanguageAbc();
 
+        void loadAbcConfig(QString abcFilename);
         bool loadAbcConfigJson(QString filename);
         bool loadAbcConfigProperties(QString filename);
 
@@ -56,6 +57,7 @@ class MainWindow : public QMainWindow {
         void refreshViewer();
         void setPixmapViewer(QPixmap pixmap);
 
+        void updateletterToList(LETTER_INFO letter);
         void playSoundLetter(QString letter, bool async=false);
 
         // for type game random

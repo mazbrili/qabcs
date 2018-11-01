@@ -30,8 +30,12 @@ void Collection::setLetter(QString letter,LETTER_CONFIG config){
 }
 
 void Collection::setGlobalParam(QJsonObject params){
-    _speak_method = params.value("speak_method").toString();
-    _espeak_params = params.value("espeak_params").toString();
+    if (!params.value("speak_method").isNull()){
+        _speak_method = params.value("speak_method").toString();
+    }
+    if (!params.value("espeak_params").isNull()){
+        _espeak_params = params.value("espeak_params").toString();
+    }
 }
 
 void Collection::setGlobalParam(QString speak_method,QString espeak_params){

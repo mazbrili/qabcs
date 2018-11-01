@@ -175,26 +175,30 @@ void MainWindow::initToolBar(){
 }
 
 void MainWindow::initLanguageAbc(){
-
     // Clear array
     listLetters.clear();
     for (QString type:listTypes) listCollections[type]->clear();
 
+    _speak_method = "";
+    _espeak_params = "";
+
     // reinit path to resource
     for (QString type:listTypes) listCollections[type]->setAbcLanguage(currentLanguageAbc);
 
+    loadAbcConfig(globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc);
+}
 
-    if (currentFilenameAbc.indexOf(QRegExp("(.*)(.json)$"))!=-1){
-        QString jsonFilename = globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc;
-        if (QFile::exists(jsonFilename)){
-            if (loadAbcConfigJson(jsonFilename)) return;
+
+void MainWindow::loadAbcConfig(QString abcFilename){
+    if (abcFilename.indexOf(QRegExp("(.*)(.json)$"))!=-1){
+        if (QFile::exists(abcFilename)){
+            loadAbcConfigJson(abcFilename);
         }
     }
 
-    if (currentFilenameAbc.indexOf(QRegExp("(.*)(.properties)$"))!=-1){
-        QString propertiesFilename = globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc;
-        if (QFile::exists(propertiesFilename)){
-            if (loadAbcConfigProperties(propertiesFilename)) return;
+    if (abcFilename.indexOf(QRegExp("(.*)(.properties)$"))!=-1){
+        if (QFile::exists(abcFilename)){
+            loadAbcConfigProperties(abcFilename);
         }
     }
 }
@@ -216,24 +220,33 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         return false;
     }
     QJsonObject root = document.object();
-
     QJsonObject root_general = root.value("general").toObject();
-    _speak_method = root_general.value("speak_method").toString();
-    _espeak_params = root_general.value("espeak_params").toString();
+
+    QString inheritsFrom = root_general.value("inheritsFrom").toString();
+    if (!inheritsFrom.isEmpty()){
+        loadAbcConfig(globalPathUserResources+"/"+inheritsFrom);
+    }
+
+    if (!root_general.value("speak_method").isNull()){
+        _speak_method = root_general.value("speak_method").toString();
+    }
+    if (!root_general.value("espeak_params").isNull()){
+        _espeak_params = root_general.value("espeak_params").toString();
+    }
+
     for (QString type:listTypes) listCollections[type]->setGlobalParam(root_general);
 
     QJsonArray arrLetters = root.value("letters").toArray();
-
     for (int i=0;i<arrLetters.size();i++){
         QString letter = arrLetters.at(i).toObject().keys().at(0);
         QJsonObject objLetter = arrLetters.at(i).toObject().value(letter).toObject();
 
-        listLetters.push_back({letter.toUpper(),
-                               objLetter.value("sound_letter").toString(),
-                               objLetter.value("speak_method").toString(),
-                               objLetter.value("espeak_params").toString(),
-                               objLetter.value("espeak_words").toString()
-                             });
+        updateletterToList({letter.toUpper(),
+                             objLetter.value("sound_letter").toString(),
+                             objLetter.value("speak_method").toString(),
+                             objLetter.value("espeak_params").toString(),
+                             objLetter.value("espeak_words").toString()
+                           });
 
         for (QString type:listTypes){
             listCollections[type]->setLetter(letter.toUpper(),objLetter.value(type).toObject());
@@ -251,10 +264,6 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         QMessageBox::critical(this,"qABCs",tr("Error while opening")+" "+filename+"\n"+file.errorString());
         return false;
     }
-
-    _speak_method = "";
-    _espeak_params = "";
-
 
     while (!file.atEnd()) {
         QString line = file.readLine();
@@ -280,6 +289,11 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             continue;
         }
 
+        if (pair.at(0)=="inheritsFrom"){
+            loadAbcConfig(globalPathUserResources+"/"+pair.at(1));
+            continue;
+        }
+
         if (pair.size()==2){
             QStringList params = pair.at(1).split("=");
             if (params.size()<4) continue;
@@ -296,14 +310,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
 
-            bool isExistLetter=false;
-            for (LETTER_INFO l:listLetters) {
-                if (l.letter.toUpper()==letter.toUpper()) isExistLetter=true;
-            }
-
-            if (!isExistLetter){
-                listLetters.push_back({letter.toUpper(),letter,"","",letter});
-            }
+            updateletterToList({letter.toUpper(),letter,"","",letter});
 
             listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,espeak_params,espeak_words,noises);
         }else{
@@ -402,6 +409,22 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
 
     // move to center
     lblAbcPicture->move((this->width()-lblAbcPicture->width())/2,startY+(maxHeight-lblAbcPicture->height())/2);
+}
+
+void MainWindow::updateletterToList(LETTER_INFO letter){
+    int indexLetter=-1;
+    for (int inx=0;inx<listLetters.size();inx++) {
+        if (listLetters.at(inx).letter.toUpper()==letter.letter.toUpper()){
+            indexLetter=inx;
+            break;
+        }
+    }
+
+    if (indexLetter==-1){
+        listLetters.push_back(letter);
+    }else{
+        listLetters[indexLetter]=letter;
+    }
 }
 
 void MainWindow::playSoundLetter(QString letter,bool async){
