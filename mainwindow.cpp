@@ -369,8 +369,8 @@ void MainWindow::refreshViewer(){
     text.replace("_"," ");
     text.replace(currentLetter,"<font color=\"red\">"+currentLetter+"</font>");
 
+    lblAbcLetter->setText(currentLetter.toUpper()+currentLetter.toLower());
     lblAbcText->setText(text);
-    lblAbcLetter->setText(currentLetter);
 
     setPixmapViewer(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
 }
