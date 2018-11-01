@@ -34,9 +34,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     confSettings = new QSettings(dirConfig.absoluteFilePath("settings.ini"), QSettings::IniFormat);
     confSettings->setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
 
-    // init soundEngine
-    SoundEngine::init();
-
     // init collections
     for (QString type:listTypes) listCollections[type] = new Collection(confSettings->value("abc/language","en").toString());
 
@@ -505,10 +502,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     }
 
     if (listLetters.size()==0) return;
-
-
-    if (SoundEngine::state()!=QMediaPlayer::StoppedState) return;
-
 
     if (currentIndexLetter>=0 and key==Qt::Key_Space){
         if ((typeGame==TYPE_ABC or typeGame==TYPE_RAND) and gameAbcFinish==true) return;

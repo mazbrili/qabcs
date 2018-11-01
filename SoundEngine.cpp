@@ -4,28 +4,18 @@
 #include <QFileInfo>
 #include <QProcess>
 
-#include "ThreadMediaPlayer.h"
-
-ThreadMediaPlayer *mediaPlayer=nullptr;
-
 SoundEngine::SoundEngine(){
 
-}
-
-void SoundEngine::init(){
-    mediaPlayer = new ThreadMediaPlayer;
-    mediaPlayer->start();
-}
-
-QMediaPlayer::State SoundEngine::state(){
-    return mediaPlayer->state();
 }
 
 void SoundEngine::playSoundFromFile(QString filename, bool async){
     if (!QFile::exists(filename)) return;
 
-    QFileInfo soundFile(filename);
-    mediaPlayer->playSoundFromFile(soundFile.absoluteFilePath(),async);
+    if (async){
+        QProcess::startDetached("play "+filename);
+    }else{
+        QProcess::execute("play "+filename);
+    }
 }
 
 void SoundEngine::playSoundFromSpeechSynthesizer(QString cmdLine, bool async){
