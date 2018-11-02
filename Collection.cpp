@@ -100,6 +100,18 @@ void Collection::playSoundPicture(QString letter){
         if (!listLetters[letter].espeak_words.isEmpty()){
             SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
         }
+
+    } else if (speak_method=="properties"){
+        QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
+        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower());
+
+        if (QFile::exists(folderWords+"/"+filename)){
+            SoundEngine::playSoundFromFile(folderWords+"/"+filename);
+        }else{
+            QString words = listLetters[letter].espeak_words;
+            if (words.isEmpty()) words=letter;
+            SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+words+"\"");
+        }
     }else{
         QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
         QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower());

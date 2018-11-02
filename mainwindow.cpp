@@ -262,6 +262,8 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         return false;
     }
 
+    _speak_method="properties";
+
     while (!file.atEnd()) {
         QString line = file.readLine();
         line.replace(QRegExp("(\\s*)$"),"");
@@ -281,7 +283,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         if (pair.at(0)=="espeak_params"){
             if (pair.size()==2){
                 _espeak_params=pair.at(1);
-                for (QString type:listTypes) listCollections[type]->setGlobalParam("",_espeak_params);
+                for (QString type:listTypes) listCollections[type]->setGlobalParam("properties",_espeak_params);
             }
             continue;
         }
@@ -305,11 +307,9 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             if (params.size()>=5) noises=params.at(4);
 
-            QString speak_method = (espeak_words.isEmpty()) ? "file":"espeak";
-
             updateletterToList({letter.toUpper(),letter,"","",letter});
 
-            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,speak_method,espeak_params,espeak_words,noises);
+            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,"properties",espeak_params,espeak_words,noises);
         }else{
             qDebug() << tr("Error str:")+" "+line;
         }
