@@ -106,9 +106,9 @@
 		      "espeak_words": "ГО-РОХ"
 		},
 		"animals": {
-		      "pic": "animals/pigeon.png",
-		      "name": "ГОЛУБЬ",
-		      "espeak_words": "ГОЛУБЬ"
+		      "pic": "animals/hyena.png",
+		      "name": "ГИЕНА",
+		      "espeak_words": "ГИЕНА"
 		},
 		"instrument": {
 		      "pic": "music/guitar.png",
