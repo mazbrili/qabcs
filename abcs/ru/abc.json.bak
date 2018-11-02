@@ -101,15 +101,14 @@
 		      "espeak_words": "ГАЗЕТА"
 		},
 		"food": {
-		      "pic": "food/mushroom.png",
-		      "name": "ГРИБ",
-		      "espeak_words": "ГРИБ"
+		      "pic": "food/beens.png",
+		      "name": "ГОРОХ",
+		      "espeak_words": "ГО-РОХ"
 		},
 		"animals": {
-		      "pic": "animals/vulture.png",
-		      "name": "ГРИФ",
-		      "espeak_words": "ГРИФ",
-		      "noises": "vulture.ogg"
+		      "pic": "animals/pigeon.png",
+		      "name": "ГОЛУБЬ",
+		      "espeak_words": "ГОЛУБЬ"
 		},
 		"instrument": {
 		      "pic": "music/guitar.png",
