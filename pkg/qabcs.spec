@@ -13,6 +13,7 @@ BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Multimedia)
 Requires:       espeak
+Requires:       sox
 
 %description
 qABCs is Educational Software. An educational game for young children.
