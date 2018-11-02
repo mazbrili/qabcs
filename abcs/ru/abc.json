@@ -317,7 +317,7 @@
 		"instrument": {
 		      "pic": "music/youhikko.png",
 		      "name": "ЙОУХИККО",
-		      "espeak_words": "ЙОУ-ХИККО"
+		      "espeak_words": "ЙОУheККО"
 		},
 		"toys": {
 		      "pic": "toys/yoyo.png",
@@ -799,8 +799,8 @@
 		},
 		"food": {
 		      "pic": "food/saffron_milk_cap.png",
-		      "name": "ПОДЪЕЛОЧНИК",
-		      "espeak_words": "ПОДЪ-ЕЛО-ЧНИК"
+		      "name": "ПОДЪЁЛОЧНИК",
+		      "espeak_words": "ПОДЪЁЛОЧНИК"
 		},
 		"animals": {
 		      "pic": "animals/fish.png",
@@ -828,7 +828,7 @@
 		"food": {
 		      "pic": "food/stewed_duck.png",
 		      "name": "ЫКШТЫМА",
-		      "espeak_words": "ЫКШТЫМА"
+		      "espeak_words": "ЫКШТЫ-МА"
 		},
 		"animals": {
 		      "pic": "animals/mouse.png",
