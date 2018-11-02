@@ -104,6 +104,7 @@ void Collection::playSoundPicture(QString letter){
     } else if (speak_method=="properties"){
         QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
         QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower());
+        filename.replace(" ","_");
 
         if (QFile::exists(folderWords+"/"+filename)){
             SoundEngine::playSoundFromFile(folderWords+"/"+filename);
