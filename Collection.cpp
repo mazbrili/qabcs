@@ -103,8 +103,7 @@ void Collection::playSoundPicture(QString letter){
 
     } else if (speak_method=="properties"){
         QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
-        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower());
-        filename.replace(" ","_");
+        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
 
         if (QFile::exists(folderWords+"/"+filename)){
             SoundEngine::playSoundFromFile(folderWords+"/"+filename);
@@ -115,7 +114,7 @@ void Collection::playSoundPicture(QString letter){
         }
     }else{
         QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
-        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower());
+        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
         SoundEngine::playSoundFromFile(folderWords+"/"+filename);
     }
 
