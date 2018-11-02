@@ -309,7 +309,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             updateletterToList({letter.toUpper(),letter,"","",letter});
 
-            listCollections[type]->setLetter(letter.toUpper(),str,metka,metka,"properties",espeak_params,espeak_words,noises);
+            listCollections[type]->setLetter(letter.toUpper(),str,metka,str.toLower(),"properties",espeak_params,espeak_words,noises);
         }else{
             qDebug() << tr("Error str:")+" "+line;
         }
