@@ -1,8 +1,10 @@
 #include "SoundEngine.h"
 
+#include <QApplication>
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
+#include <QDebug>
 
 SoundEngine::SoundEngine(){
 
@@ -10,11 +12,25 @@ SoundEngine::SoundEngine(){
 
 void SoundEngine::playSoundFromFile(QString filename, bool async){
     if (!QFile::exists(filename)) return;
+    QFileInfo fileInfo(filename);
+
+    QProcess proc;
+    QString cmd_to_play = "play "+fileInfo.absoluteFilePath();
+
+#if defined(_WIN32)
+    cmd_to_play=QApplication::applicationDirPath()+"/3rdparty/sox/play.exe \""+fileInfo.absoluteFilePath()+"\"  -t waveaudio";
+
+    QStringList listEvn = proc.environment();
+    listEvn.push_back("AUDIODEV=0");
+    proc.setEnvironment(listEvn);
+
+    proc.setWorkingDirectory(QApplication::applicationDirPath()+"/3rdparty/sox/");
+#endif
 
     if (async){
-        QProcess::startDetached("play "+filename);
+        proc.startDetached(cmd_to_play);
     }else{
-        QProcess::execute("play "+filename);
+        proc.execute(cmd_to_play);
     }
 }
 
