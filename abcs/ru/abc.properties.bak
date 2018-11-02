@@ -65,7 +65,7 @@ toys:и=ИВАН-ЦАРЕВИЧ=ИВАН-ЦА-РЕ-ВИЧ=prince
 misc:й=ЙОГУРТ=ЙО-ГУРТ=yogurt
 food:й=ЙОГУРТ=ЙО-ГУРТ=yogurt
 animals:й=ЙОРК=ЙОРК=york
-instrument:й=ЙОУХИККО=ЙОУ-ХИККО=youhikko
+instrument:й=ЙОУХИККО=ЙОУheККО=youhikko
 toys:й=ЙО-ЙО=ЙО-ЙО=yoyo
 #к
 misc:к=КЕПКА=КЕПКА=hat
@@ -165,13 +165,13 @@ instrument:щ=ЩЕЛЕВОЙ БАРАБАН=ЩЕЛЕ-ВОЙ БАРА-БАН=slit
 toys:щ=ЩИТ=ЩИТ=shield
 #ъ
 misc:ъ=АДЪЮТАНТ=АДЪЮТАНТ=adjutant
-food:ъ=ПОДЪЕЛОЧНИК=ПОДЪ-ЕЛО-ЧНИК=saffron_milk_cap
+food:ъ=ПОДЪЁЛОЧНИК=ПОДЪЁЛОЧНИК=saffron_milk_cap
 animals:ъ=ПОДЪЯЗОК=ПО-ДЪЯ-ЗОК=fish
 instrument:ъ=РАЗЪЁМ=РАЗЪЁМ=jack
 toys:ъ=АДЪЮТАНТ=АДЪЮТАНТ=adjutant
 #ы
 misc:ы=ЫЫХ=ЫЫХ=topshuur
-food:ы=ЫКШТЫМА=ЫКШТЫМА=stewed_duck
+food:ы=ЫКШТЫМА=ЫКШТЫ-МА=stewed_duck
 animals:ы=МЫШЬ=МЫШЬ=mouse=mouse
 instrument:ы=ЫЫХ=ЫЫХ=topshuur
 toys:ы=Ы=Ы=yi
