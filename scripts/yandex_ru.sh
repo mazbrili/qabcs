@@ -20,6 +20,8 @@ speed="0.9"
 emotion="neutral"
 # abcs directory of your language
 lang0="ru"
+# output format
+output="ogg"
 
 if [ -z "$key" ]
 then
@@ -30,7 +32,7 @@ fi
 if [ -f "../abcs/$lang0/abc.json" ]
 then
 words_list=`cat ../abcs/$lang0/abc.json|grep \"name\"|cut -d ":" --fields=2 |cut -d "\"" --fields=2|awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
-letters_list=`cat ../abcs/$lang0/abc.json|grep -v espeak_words|grep -v general|grep -v language |grep -v author|grep -v speak_method |grep -v espeak_params| grep -v letters | grep -v misc |grep -v pic | grep -v name |grep -v noises |grep -v food | grep -v animals | grep -v instrument | grep -v toys | grep -v inheritsFrom |awk '{print tolower($0)}'|sort -u | cut -d "\"" --fields=2|grep -v '\{'|grep -v '\}' | grep -v '\[' |grep -v '\]'| sed s/' '//g|grep -v "^$"`
+letters_list=`cat ../abcs/$lang0/abc.json|grep -v espeak_words|grep -v sound_letter|grep -v general|grep -v language |grep -v author|grep -v speak_method |grep -v espeak_params| grep -v letters | grep -v misc |grep -v pic | grep -v name |grep -v noises |grep -v food | grep -v animals | grep -v instrument | grep -v toys | grep -v inheritsFrom |awk '{print tolower($0)}'|sort -u | cut -d "\"" --fields=2|grep -v '\{'|grep -v '\}' | grep -v '\[' |grep -v '\]'| sed s/' '//g|grep -v "^$"`
 fi
 
 if [ -f "../abcs/$lang0/abc.properties" ]
@@ -53,7 +55,7 @@ fi
 
 mkdir -p ../abcs/$lang0/sounds/words
 rm -f ../abcs/$lang0/sounds/words/*.$format
-rm -f ../abcs/$lang0/sounds/words/*.ogg
+rm -f ../abcs/$lang0/sounds/words/*.$output
 
 for a in $words_list
 do
@@ -76,12 +78,12 @@ text=`echo "$text"|sed "s|ыых|ы-ых|g"`
 text=`echo "$text"|sed "s|янцинь|ян-цинь|g"`
 text=`echo "$text"|sed "s|йо-йо|йо-й+о|g"`
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
-ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.ogg"
+ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
 done
 
 mkdir -p ../abcs/$lang0/sounds/alpha
 rm -f ../abcs/$lang0/sounds/alpha/*.$format
-rm -f ../abcs/$lang0/sounds/alpha/*.ogg
+rm -f ../abcs/$lang0/sounds/alpha/*.$output
 
 for a in $letters_list
 do
@@ -95,7 +97,7 @@ text=`echo "$text"|sed "s|с|эс|g"`
 text=`echo "$text"|sed "s|ъ|твёрдый знак|g"`
 text=`echo "$text"|sed "s|ь|мягкий знак|g"`
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/alpha/"$filename.$format"
-ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.ogg"
+ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
 done
 
 # sometimes using other languages instead of native because of better pronounce
@@ -103,33 +105,33 @@ lang="uk-UK"
 filename="ы"
 text="и"
 rm -f ../abcs/$lang0/sounds/alpha/$filename.$format
-rm -f ../abcs/$lang0/sounds/alpha/$filename.ogg
+rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/alpha/"$filename.$format"
-ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.ogg"
+ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
 filename="у"
 text="у"
 rm -f ../abcs/$lang0/sounds/alpha/$filename.$format
-rm -f ../abcs/$lang0/sounds/alpha/$filename.ogg
+rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/alpha/"$filename.$format"
-ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.ogg"
+ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
 filename="иглу"
 text="іґлу"
 rm -f ../abcs/$lang0/sounds/words/$filename.$format
-rm -f ../abcs/$lang0/sounds/words/$filename.ogg
+rm -f ../abcs/$lang0/sounds/words/$filename.$output
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
-ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.ogg"
+ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
 filename="ы"
 text="и"
 rm -f ../abcs/$lang0/sounds/words/$filename.$format
-rm -f ../abcs/$lang0/sounds/words/$filename.ogg
+rm -f ../abcs/$lang0/sounds/words/$filename.$output
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
-ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.ogg"
+ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
 filename="ыых"
 text="и-их"
 rm -f ../abcs/$lang0/sounds/words/$filename.$format
-rm -f ../abcs/$lang0/sounds/words/$filename.ogg
+rm -f ../abcs/$lang0/sounds/words/$filename.$output
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
-ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.ogg"
+ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
 
 #clean up
 rm -f ../abcs/$lang0/sounds/words/*.$format
