@@ -22,7 +22,8 @@
 		"animals": {
 		      "pic": "animals/stork.png",
 		      "name": "АИСТ",
-		      "espeak_words": "АИСТ"
+		      "espeak_words": "АИСТ",
+		      "noises": "stork.ogg"
 		},
 		"instrument": {
 		      "pic": "music/harp.png",
@@ -80,7 +81,8 @@
 		"animals": {
 		      "pic": "animals/crow.png",
 		      "name": "ВОРОНА",
-		      "espeak_words": "ВОРОНА"
+		      "espeak_words": "ВОРОНА",
+		      "noises": "crow.ogg"
 		},
 		"instrument": {
 		      "pic": "music/bagpipes.png",
@@ -186,7 +188,8 @@
 		"misc": {
 		      "pic": "animals/hedgehog.png",
 		      "name": "ЁЖИК",
-		      "espeak_words": "ЁЖИК"
+		      "espeak_words": "ЁЖИК",
+		      "noises": "hedgehog.ogg"
 		},
 		"food": {
 		      "pic": "food/ruff.png",
@@ -196,7 +199,8 @@
 		"animals": {
 		      "pic": "animals/hedgehog.png",
 		      "name": "ЁЖИК",
-		      "espeak_words": "ЁЖИК"
+		      "espeak_words": "ЁЖИК",
+		      "noises": "hedgehog.ogg"
 		},
 		"instrument": {
 		      "pic": "music/iotshin.png",
@@ -418,7 +422,8 @@
 		"misc": {
 		      "pic": "animals/rhinoceros.png",
 		      "name": "НОСОРОГ",
-		      "espeak_words": "НОСОРОГ"
+		      "espeak_words": "НОСОРОГ",
+		      "noises": "rhinoceros.ogg"
 		},
 		"food": {
 		      "pic": "food/nectarine.png",
@@ -428,7 +433,8 @@
 		"animals": {
 		      "pic": "animals/rhinoceros.png",
 		      "name": "НОСОРОГ",
-		      "espeak_words": "НОСОРОГ"
+		      "espeak_words": "НОСОРОГ",
+		      "noises": "rhinoceros.ogg"
 		},
 		"instrument": {
 		      "pic": "music/ney.png",
@@ -594,7 +600,8 @@
 		"misc": {
 		      "pic": "animals/duck.png",
 		      "name": "УТКА",
-		      "espeak_words": "УТКА"
+		      "espeak_words": "УТКА",
+		      "noises": "duck.ogg"
 		},
 		"food": {
 		      "pic": "food/udon.png",
@@ -604,7 +611,8 @@
 		"animals": {
 		      "pic": "animals/duck.png",
 		      "name": "УТКА",
-		      "espeak_words": "УТКА"
+		      "espeak_words": "УТКА",
+		      "noises": "duck.ogg"
 		},
 		"instrument": {
 		      "pic": "music/ukulele.png",
@@ -633,7 +641,8 @@
 		"animals": {
 		      "pic": "animals/pheasant.png",
 		      "name": "ФАЗАН",
-		      "espeak_words": "ФА-ЗАН"
+		      "espeak_words": "ФА-ЗАН",
+		      "noises": "pheasant.ogg"
 		},
 		"instrument": {
 		      "pic": "music/flute.png",
@@ -691,7 +700,8 @@
 		"animals": {
 		      "pic": "animals/heron.png",
 		      "name": "ЦАПЛЯ",
-		      "espeak_words": "ЦАПЛЯ"
+		      "espeak_words": "ЦАПЛЯ",
+		      "noises": "heron.ogg"
 		},
 		"instrument": {
 		      "pic": "music/cymbals.png",
@@ -747,7 +757,8 @@
 		"animals": {
 		      "pic": "animals/chimpanzee.png",
 		      "name": "ШИМПАНЗЕ",
-		      "espeak_words": "ШИМ-ПАН-ЗЭ"
+		      "espeak_words": "ШИМ-ПАН-ЗЭ",
+		      "noises": "chimpanzee.ogg"
 		},
 		"instrument": {
 		      "pic": "music/hand_organ.png",
@@ -920,7 +931,8 @@
 		"animals": {
 		      "pic": "animals/sparrow.png",
 		      "name": "ЮРОК",
-		      "espeak_words": "ЮРОК"
+		      "espeak_words": "ЮРОК",
+		      "noises": "sparrow.ogg"
 		},
 		"instrument": {
 		      "pic": "music/yueqin.png",

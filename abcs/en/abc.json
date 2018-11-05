@@ -191,7 +191,8 @@
 		"misc": {
 		      "pic": "animals/grasshopper.png",
 		      "name": "GRASSHOPPER",
-		      "sound_pic": "grasshopper.ogg"
+		      "sound_pic": "grasshopper.ogg",
+		      "noises": "grasshopper.ogg"
 		},
 		"food": {
 		      "pic": "food/grapes.png",

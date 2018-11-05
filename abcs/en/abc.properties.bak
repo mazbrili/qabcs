@@ -38,7 +38,7 @@ animals:f=frog==frog=frog
 instrument:f=flute==flute=flute
 toys:f=football==football
 #g
-misc:g=grasshopper==grasshopper
+misc:g=grasshopper==grasshopper=grasshopper
 food:g=grapes==grapes
 animals:g=giraffe==giraffe
 instrument:g=guitar==guitar=guitar
