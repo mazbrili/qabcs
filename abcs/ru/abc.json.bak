@@ -87,7 +87,8 @@
 		"instrument": {
 		      "pic": "music/bagpipes.png",
 		      "name": "ВОЛЫНКА",
-		      "espeak_words": "ВО-ЛЫНКА"
+		      "espeak_words": "ВО-ЛЫНКА",
+		      "noises": "bagpipes.ogg"
 		},
 		"toys": {
 		      "pic": "toys/bicycle.png",
@@ -235,7 +236,8 @@
 		"instrument": {
 		      "pic": "music/zhaleyka.png",
 		      "name": "ЖАЛЕЙКА",
-		      "espeak_words": "ЖАЛЕЙКА"
+		      "espeak_words": "ЖАЛЕЙКА",
+		      "noises": "zhaleyka.ogg"
 		},
 		"toys": {
 		      "pic": "toys/firebird.png",
@@ -380,7 +382,8 @@
 		"instrument": {
 		      "pic": "music/lute.png",
 		      "name": "ЛЮТНЯ",
-		      "espeak_words": "ЛЮТНЯ"
+		      "espeak_words": "ЛЮТНЯ",
+		      "noises": "lute.ogg"
 		},
 		"toys": {
 		      "pic": "toys/rocking_horse.png",
@@ -440,7 +443,8 @@
 		"instrument": {
 		      "pic": "music/ney.png",
 		      "name": "НЕЙ",
-		      "espeak_words": "НЕЙ"
+		      "espeak_words": "НЕЙ",
+		      "noises": "ney.ogg"
 		},
 		"toys": {
 		      "pic": "toys/dunno.png",
@@ -469,7 +473,8 @@
 		"instrument": {
 		      "pic": "music/organ.png",
 		      "name": "ОРГАН",
-		      "espeak_words": "ОР-ГАН"
+		      "espeak_words": "ОР-ГАН",
+		      "noises": "organ.ogg"
 		},
 		"toys": {
 		      "pic": "toys/origami.png",
@@ -528,7 +533,8 @@
 		"instrument": {
 		      "pic": "music/rozhok.png",
 		      "name": "РОЖОК",
-		      "espeak_words": "РОЖОК"
+		      "espeak_words": "РОЖОК",
+		      "noises": "rozhok.ogg"
 		},
 		"toys": {
 		      "pic": "toys/rocket.png",
@@ -663,7 +669,8 @@
 		"misc": {
 		      "pic": "music/hang.png",
 		      "name": "ХАНГ",
-		      "espeak_words": "ХАНГ"
+		      "espeak_words": "ХАНГ",
+		      "noises": "hang.ogg"
 		},
 		"food": {
 		      "pic": "food/hot_dog.png",
@@ -679,7 +686,8 @@
 		"instrument": {
 		      "pic": "music/hang.png",
 		      "name": "ХАНГ",
-		      "espeak_words": "ХАНГ"
+		      "espeak_words": "ХАНГ",
+		      "noises": "hang.ogg"
 		},
 		"toys": {
 		      "pic": "toys/hockey.png",
@@ -708,7 +716,8 @@
 		"instrument": {
 		      "pic": "music/cymbals.png",
 		      "name": "ЦИМБАЛЫ",
-		      "espeak_words": "ЦИ-МБАЛЫ"
+		      "espeak_words": "ЦИ-МБАЛЫ",
+		      "noises": "cymbals.ogg"
 		},
 		"toys": {
 		      "pic": "toys/circus.png",
@@ -749,7 +758,8 @@
 		"misc": {
 		      "pic": "music/hand_organ.png",
 		      "name": "ШАРМАНКА",
-		      "espeak_words": "ШАРМАНКА"
+		      "espeak_words": "ШАРМАНКА",
+		      "noises": "hand_organ.ogg"
 		},
 		"food": {
 		      "pic": "food/sprats.png",
@@ -765,7 +775,8 @@
 		"instrument": {
 		      "pic": "music/hand_organ.png",
 		      "name": "ШАРМАНКА",
-		      "espeak_words": "ШАРМАНКА"
+		      "espeak_words": "ШАРМАНКА",
+		      "noises": "hand_organ.ogg"
 		},
 		"toys": {
 		      "pic": "toys/balloons.png",
@@ -939,7 +950,8 @@
 		"instrument": {
 		      "pic": "music/yueqin.png",
 		      "name": "ЮЭЦИНЬ",
-		      "espeak_words": "ЮЭ-ЦИНЬ"
+		      "espeak_words": "ЮЭ-ЦИНЬ",
+		      "noises": "yueqin.ogg"
 		},
 		"toys": {
 		      "pic": "toys/top.png",

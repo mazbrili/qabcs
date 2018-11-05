@@ -11,7 +11,7 @@ toys:a=anklet==anklet
 misc:b=bicycle==bicycle
 food:b=bananas==bananas
 animals:b=bird==bird
-instrument:b=bagpipes==bagpipes
+instrument:b=bagpipes==bagpipes=bagpipes
 toys:b=balloons==balloons
 #c
 misc:c=clock==clock
@@ -71,7 +71,7 @@ toys:k=kite==kite
 misc:l=ladybug==ladybug
 food:l=lasagna==lasagna
 animals:l=lion==lion
-instrument:l=lute==lute
+instrument:l=lute==lute=lute
 toys:l=lunchbox==lunchbox
 #m
 misc:m=magnifying_glass==magnifying_glass
@@ -83,7 +83,7 @@ toys:m=magnet==magnet
 misc:n=newspaper==newspaper
 food:n=noodle==noodle
 animals:n=newt==newt
-instrument:n=ney==ney
+instrument:n=ney==ney=ney
 toys:n=necklace==necklace
 #o
 misc:o=onion==onion
@@ -101,7 +101,7 @@ toys:p=paint==paint
 misc:q=quarter==quarter
 food:q=quiche==quiche
 animals:q=quail==quail=quail
-instrument:q=quena==quena
+instrument:q=quena==quena=quena
 toys:q=quilt==quilt
 #r
 misc:r=raccoon==raccoon=raccoon

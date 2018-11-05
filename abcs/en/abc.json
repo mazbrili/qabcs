@@ -57,7 +57,8 @@
 		"instrument": {
 		      "pic": "music/bagpipes.png",
 		      "name": "BAGPIPES",
-		      "sound_pic": "bagpipes.ogg"
+		      "sound_pic": "bagpipes.ogg",
+		       "noises": "bagpipes.ogg"
 		},
 		"toys": {
 		      "pic": "toys/balloons.png",
@@ -355,7 +356,8 @@
 		"instrument": {
 		      "pic": "music/lute.png",
 		      "name": "LUTE",
-		      "sound_pic": "lute.ogg"
+		      "sound_pic": "lute.ogg",
+		      "noises": "lute.ogg"
 		},
 		"toys": {
 		      "pic": "toys/lunchbox.png",
@@ -413,7 +415,8 @@
 		"instrument": {
 		      "pic": "music/ney.png",
 		      "name": "NEY",
-		      "sound_pic": "ney.ogg"
+		      "sound_pic": "ney.ogg",
+		      "noises": "ney.ogg"
 		},
 		"toys": {
 		      "pic": "toys/necklace.png",
@@ -502,7 +505,8 @@
 		"instrument": {
 		      "pic": "music/quena.png",
 		      "name": "QUENA",
-		      "sound_pic": "quena.ogg"
+		      "sound_pic": "quena.ogg",
+		      "noises": "quena.ogg"
 		},
 		"toys": {
 		      "pic": "toys/quilt.png",
