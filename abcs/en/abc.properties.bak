@@ -1,4 +1,4 @@
-language:English (UK)
+language:English (US)
 author:Jordan Irwin <antumdeluge@gmail.com>
 espeak_params:-ven -s70
 #a
@@ -21,7 +21,7 @@ instrument:c=clarinet==clarinet=clarinet
 toys:c=chalkboard==chalkboard
 #d
 misc:d=dolphin==dolphin=dolphin
-food:d=doughnut==doughnut
+food:d=donut==donut
 animals:d=dog==dog=dog
 instrument:d=drums==drums=drums
 toys:d=doll==doll

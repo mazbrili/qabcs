@@ -10,9 +10,9 @@
 	{"D": {
 		"sound_letter": "D.ogg",
 		"food": {
-		      "pic": "food/doughnut.png",
-		      "name": "DONUT",
-		      "sound_pic": "doughnut.ogg"
+		      "pic": "food/donut.png",
+		      "name": "DOUGHNUT",
+		      "sound_pic": "donut.ogg"
 		}
 	}}
    ]

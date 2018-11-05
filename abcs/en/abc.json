@@ -1,6 +1,6 @@
 {
    "general": {
-      "language": "English (UK)",
+      "language": "English (US)",
       "author": "Jordan Irwin <antumdeluge@gmail.com>",
       "speak_method": "file",
       "espeak_params": ""
@@ -104,9 +104,9 @@
 		      "noises": "dolphin.ogg"
 		},
 		"food": {
-		      "pic": "food/doughnut.png",
-		      "name": "DOUGHNUT",
-		      "sound_pic": "doughnut.ogg"
+		      "pic": "food/donut.png",
+		      "name": "DONUT",
+		      "sound_pic": "donut.ogg"
 		},
 		"animals": {
 		      "pic": "animals/dog.png",
