@@ -48,7 +48,7 @@ misc:h=hat==hat
 food:h=hot_dog==hot_dog
 animals:h=horse==horse=horse
 instrument:h=harp==harp=harp
-toys:h=horn==horn
+toys:h=horn==horn=horn
 #i
 misc:i=igloo==igloo
 food:i=ice_cream==ice_cream

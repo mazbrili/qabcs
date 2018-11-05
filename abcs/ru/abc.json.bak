@@ -121,7 +121,8 @@
 		"toys": {
 		      "pic": "toys/horn.png",
 		      "name": "ГОРН",
-		      "espeak_words": "ГОРН"
+		      "espeak_words": "ГОРН",
+		      "noises": "horn.ogg"
 		}
 	}},
 	{"Д": {
@@ -532,7 +533,8 @@
 		"toys": {
 		      "pic": "toys/rocket.png",
 		      "name": "РАКЕТА",
-		      "espeak_words": "РАКЕТА"
+		      "espeak_words": "РАКЕТА",
+		      "noises": "rocket.ogg"
 		}
 	}},
 	{"С": {

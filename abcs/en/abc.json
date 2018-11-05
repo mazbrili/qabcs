@@ -243,7 +243,8 @@
 		"toys": {
 		      "pic": "toys/horn.png",
 		      "name": "HORN",
-		      "sound_pic": "horn.ogg"
+		      "sound_pic": "horn.ogg",
+		      "noises": "horn.ogg"
 		}
 	}},
 	{"I": {
