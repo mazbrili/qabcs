@@ -100,7 +100,7 @@ data_langs.files = langs/*.qm
 INSTALLS += data_langs
 
 data_other.path = /usr/share/qabcs/
-data_other.files = icon.xpm
+data_other.files = images/logo/icon.xpm
 INSTALLS += data_other
 
 
