@@ -4,7 +4,7 @@
       "author": "Jordan Irwin <antumdeluge@gmail.com>",
       "speak_method": "file",
       "espeak_params": "",
-      "inheritsFrom" : "en/abc.properties.bak"
+      "inheritsFrom" : "en/abc.properties"
    },
    "letters": [
 	{"D": {
