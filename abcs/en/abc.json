@@ -308,7 +308,8 @@
 		"misc": {
 		      "pic": "misc/keyboard.png",
 		      "name": "KEYBOARD",
-		      "sound_pic": "keyboard.ogg"
+		      "sound_pic": "keyboard.ogg",
+		      "noises": "keyboard.ogg"
 		},
 		"food": {
 		      "pic": "food/ketchup.png",
@@ -663,7 +664,8 @@
 		"misc": {
 		      "pic": "misc/watch.png",
 		      "name": "WATCH",
-		      "sound_pic": "watch.ogg"
+		      "sound_pic": "watch.ogg",
+		      "noises": "watch.ogg"
 		},
 		"food": {
 		      "pic": "food/watermelon.png",

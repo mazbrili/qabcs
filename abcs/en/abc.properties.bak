@@ -62,7 +62,7 @@ animals:j=jaguar==jaguar=jaguar
 instrument:j=jug==jug
 toys:j=jump_rope==jump_rope
 #k
-misc:k=keyboard==keyboard
+misc:k=keyboard==keyboard=keyboard
 food:k=ketchup==ketchup
 animals:k=koala==koala
 instrument:k=kazoo==kazoo=kazoo
@@ -134,7 +134,7 @@ animals:v=vulture==vulture=vulture
 instrument:v=violin==violin=violin
 toys:v=volleyball==volleyball
 #w
-misc:w=watch==watch
+misc:w=watch==watch=watch
 food:w=watermelon==watermelon
 animals:w=whale==whale=whale
 instrument:w=whistle==whistle=whistle
