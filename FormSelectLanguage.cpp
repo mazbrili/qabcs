@@ -54,6 +54,8 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
             lang_info.folder=lang;
             lang_info.filename=lang_filename;
 
+            if (lang_info.visible=="false") continue;
+
             listAbcFiles.push_back(lang_info);
 
             ui->comboBox->addItem(lang_info.language+"  ("+lang_info.author+")");
@@ -92,6 +94,7 @@ FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromJson(QString filenam
 
     result.language = root_general.value("language").toString();
     result.author = root_general.value("author").toString();
+    result.visible = root_general.value("visible").toString();
 
     return result;
 }
@@ -113,6 +116,9 @@ FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromProperties(QString f
             }
             if (rx.cap(1)=="author"){
                 result.author = rx.cap(3).replace(QRegExp("(\\s*)$"),"");
+            }
+            if (rx.cap(1)=="visible"){
+                result.visible = rx.cap(3).replace(QRegExp("(\\s*)$"),"");
             }
         }
     }

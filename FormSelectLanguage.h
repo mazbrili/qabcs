@@ -24,6 +24,9 @@ class FormSelectLanguage : public QDialog {
             QString filename;
             QString language;
             QString author;
+            QString visible;
+
+            ABC_INFO():visible("true"){}
         };
 
         QVector<ABC_INFO> listAbcFiles;
