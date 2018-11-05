@@ -150,10 +150,10 @@
         <location filename="../FormHelp.cpp" line="42"/>
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
-        language&quot; icon. Default language is English.</source>
+        language&quot; icon. Default language is American English.</source>
         <translation>Выбор языка алфавита:
         Вы можете выбрать язык алфавита, нажав на значке &quot;Выбрать
-        язык&quot;. Языком по-умолчанию является английский.</translation>
+        язык&quot;. Языком по-умолчанию является американский английский.</translation>
     </message>
 </context>
 <context>
@@ -187,144 +187,148 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="94"/>
-        <location filename="../mainwindow.cpp" line="95"/>
-        <location filename="../mainwindow.cpp" line="531"/>
+        <location filename="../mainwindow.cpp" line="100"/>
+        <location filename="../mainwindow.cpp" line="101"/>
+        <location filename="../mainwindow.cpp" line="600"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
         <translation>Найдите букву на клавиатуре (алфавитный порядок)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="99"/>
-        <location filename="../mainwindow.cpp" line="100"/>
-        <location filename="../mainwindow.cpp" line="549"/>
+        <location filename="../mainwindow.cpp" line="105"/>
+        <location filename="../mainwindow.cpp" line="106"/>
+        <location filename="../mainwindow.cpp" line="620"/>
         <source>Find the letter on the keyboard (randomly)</source>
         <translation>Найдите букву на клавиатуре (случайный порядок)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="104"/>
-        <location filename="../mainwindow.cpp" line="105"/>
+        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Show foods for each letter</source>
         <translation>Показать продукты для каждой буквы</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="115"/>
+        <location filename="../mainwindow.cpp" line="116"/>
         <source>Show animals for each letter</source>
         <translation>Показать животных для каждой буквы</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="114"/>
-        <location filename="../mainwindow.cpp" line="115"/>
+        <location filename="../mainwindow.cpp" line="120"/>
+        <location filename="../mainwindow.cpp" line="121"/>
         <source>Show musical instruments for each letter</source>
         <translation>Показать музыкальные инструменты для каждой буквы</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="119"/>
-        <location filename="../mainwindow.cpp" line="120"/>
+        <location filename="../mainwindow.cpp" line="125"/>
+        <location filename="../mainwindow.cpp" line="126"/>
         <source>Show toys for each letter</source>
         <translation>Показать игрушки для каждой буквы</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="124"/>
-        <location filename="../mainwindow.cpp" line="125"/>
+        <location filename="../mainwindow.cpp" line="130"/>
+        <location filename="../mainwindow.cpp" line="131"/>
         <source>Sound on/off</source>
         <translation>Включить/выключить звук</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="127"/>
-        <location filename="../mainwindow.cpp" line="128"/>
+        <location filename="../mainwindow.cpp" line="133"/>
+        <location filename="../mainwindow.cpp" line="134"/>
         <source>Select language</source>
         <translation>Выбрать язык</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="130"/>
-        <location filename="../mainwindow.cpp" line="131"/>
+        <location filename="../mainwindow.cpp" line="136"/>
+        <location filename="../mainwindow.cpp" line="137"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="133"/>
-        <location filename="../mainwindow.cpp" line="134"/>
+        <location filename="../mainwindow.cpp" line="139"/>
+        <location filename="../mainwindow.cpp" line="140"/>
         <source>About qABCs</source>
         <translation>О qABCs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="136"/>
-        <location filename="../mainwindow.cpp" line="137"/>
+        <location filename="../mainwindow.cpp" line="142"/>
+        <location filename="../mainwindow.cpp" line="143"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="198"/>
-        <location filename="../mainwindow.cpp" line="242"/>
+        <location filename="../mainwindow.cpp" line="208"/>
+        <location filename="../mainwindow.cpp" line="261"/>
         <source>Error while opening</source>
         <translation>Ошибка при открытии</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="206"/>
+        <location filename="../mainwindow.cpp" line="216"/>
         <source>is not valid</source>
         <translation>не является допустимым</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="289"/>
+        <location filename="../mainwindow.cpp" line="314"/>
         <source>Error str:</source>
         <translation>Строка с ошибкой:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="473"/>
-        <location filename="../mainwindow.cpp" line="503"/>
+        <location filename="../mainwindow.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="568"/>
         <source>CONGRATS!</source>
         <translation>ПОЗДРАВЛЯЕМ!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <location filename="../mainwindow.cpp" line="504"/>
+        <location filename="../mainwindow.cpp" line="535"/>
+        <location filename="../mainwindow.cpp" line="569"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
         <translation>Нажмите &quot;ENTER&quot; чтобы сыграть снова</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="540"/>
-        <location filename="../mainwindow.cpp" line="591"/>
+        <location filename="../mainwindow.cpp" line="609"/>
+        <location filename="../mainwindow.cpp" line="662"/>
+        <location filename="../mainwindow.cpp" line="681"/>
+        <location filename="../mainwindow.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="724"/>
+        <location filename="../mainwindow.cpp" line="745"/>
         <source>ABC is not loaded</source>
         <translation>Алфавит не загружен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="600"/>
+        <location filename="../mainwindow.cpp" line="672"/>
         <source>Press a Key to See an Animal</source>
         <translation>Нажмите клавишу чтобы увидеть животное</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="688"/>
         <source>Animals</source>
         <translation>Животные</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="613"/>
+        <location filename="../mainwindow.cpp" line="693"/>
         <source>Press a Key to See a Food</source>
         <translation>Нажмите клавишу чтобы увидеть продукт</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="710"/>
         <source>Food</source>
         <translation>Продукты</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="626"/>
+        <location filename="../mainwindow.cpp" line="715"/>
         <source>Press a Key to See an Instrument</source>
         <translation>Нажмите клавишу чтобы увидеть инструмент</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="634"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>Music</source>
         <translation>Музыка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="640"/>
+        <location filename="../mainwindow.cpp" line="736"/>
         <source>Press a Key to See a Toy</source>
         <translation>Нажмите клавишу чтобы увидеть игрушку</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="648"/>
+        <location filename="../mainwindow.cpp" line="752"/>
         <source>Toys</source>
         <translation>Игрушки</translation>
     </message>
