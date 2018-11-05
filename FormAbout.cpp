@@ -5,7 +5,7 @@
 #include <QDesktopServices>
 
 #include "config_qabcs.h"
-#include "icon.xpm"
+#include "images/logo/icon.xpm"
 
 FormAbout::FormAbout(QWidget *parent) :
     QDialog(parent),
