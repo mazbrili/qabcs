@@ -1,0 +1,20 @@
+{
+   "general": {
+      "language": "English (UK)",
+      "author": "Jordan Irwin <antumdeluge@gmail.com>",
+      "speak_method": "file",
+      "espeak_params": "",
+      "inheritsFrom" : "en/abc.properties.bak"
+   },
+   "letters": [
+	{"D": {
+		"sound_letter": "D.ogg",
+		"food": {
+		      "pic": "food/doughnut.png",
+		      "name": "DONUT",
+		      "sound_pic": "doughnut.ogg"
+		}
+	}}
+   ]
+   
+}
