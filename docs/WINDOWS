@@ -1,0 +1,31 @@
+How to build qABCs for Microsoft Windows?
+=========================================
+
+qABCs can be built for Microsoft Windows. Generally it uses Qt Library
+(http://qt-project.org). You must use Qt 5.
+
+General pre-requirements for Windows:
+-------------------------------------
+* GCC >= 5.5 (Windows: mingw-gcc)
+* Make (Windows: mingw-make)
+* Qt 5
+
+Building in Windows:
+--------------------
+* Download sources from https://bitbucket.org/admsasha/qabcs/get/master.zip
+* Unpack master.zip to current folder
+* `cd admsasha-qabcs-*`
+* To run Qt tools it needs Qt 'bin' directories to be in PATH. For example:
+* `set PATH=C:\Qt\5.9.4\mingw55_32\bin;C:\Qt/Tools/mingw55_32\bin;%PATH%`
+* `qmake qabcs.pro`
+* `make release`
+
+Also you can use Qt Creator for building.
+Just open qabcs.pro and build qABCs (`Ctrl+B`).
+
+Installation in Windows:
+------------------------
+`make install`
+or
+`make install INSTALL_ROOT=dir`
+if you want to install in the specific directory (dir).

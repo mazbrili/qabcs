@@ -10,11 +10,14 @@ and audio samples. As a side function it can also help to
 familiarize one with a keyboard.
 
 To build qABCs you need Qt5 and qmake.
-Full list of dependencies: see pkg/qabcs.spec.
+Full list of dependencies for linux: see pkg/qabcs.spec.
 
 Building:
 qmake
 make
+
+Also you can use Qt Creator for building.
+Just open qabcs.pro and build qABCs (`Ctrl+B`).
 
 Installation (under root):
 make install
