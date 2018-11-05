@@ -57,7 +57,7 @@ class MainWindow : public QMainWindow {
         void refreshViewer();
         void setPixmapViewer(QPixmap pixmap);
 
-        void updateletterToList(LETTER_INFO letter);
+        void updateletterToList(QString folder_lang, LETTER_INFO letter);
         void playSoundLetter(QString letter, bool async=false);
 
         // for type game random

@@ -49,12 +49,13 @@ QString SoundEngine::findSoundfile(QString folder,QString string){
 
     string = string.toLower();
 
-    if (QFile::exists(folder+"/"+string)) return string;
+    if (QFile::exists(string)) return string;
+    if (QFile::exists(folder+"/"+string)) return folder+"/"+string;
 
     for (QString ext:listExtensionFiles){
         QString filename = string+"."+ext;
         if (QFile::exists(folder+"/"+filename)){
-            return filename;
+            return folder+"/"+filename;
         }
     }
 

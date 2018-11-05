@@ -9,7 +9,7 @@ Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
 
 }
 
-void Collection::setLetter(QString letter,QJsonObject params){
+void Collection::setLetter(QString letter,QString folderLang,QJsonObject params){
     QString name = params.value("name").toString().toUpper();
     QString pic = params.value("pic").toString();
     QString sound_pic = params.value("sound_pic").toString();
@@ -18,15 +18,26 @@ void Collection::setLetter(QString letter,QJsonObject params){
     QString espeak_words = params.value("espeak_words").toString();
     QString noises = params.value("noises").toString();
 
-    listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
+    setLetter(letter,folderLang,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises);
 }
 
-void Collection::setLetter(QString letter,QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises){
-    listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
+
+void Collection::setLetter(QString letter, QString folderLang, LETTER_CONFIG config){
+    setLetter(letter,folderLang,config.name,config.pic,config.sound_pic,config.speak_method,config.espeak_params,config.espeak_words,config.noises);
 }
 
-void Collection::setLetter(QString letter,LETTER_CONFIG config){
-    listLetters[letter]={letter,config.name,config.pic,config.sound_pic,config.speak_method,config.espeak_params,config.espeak_words,config.noises};
+void Collection::setLetter(QString letter,QString folderLang,QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises){
+
+    // find sounds file for letter
+    if (!sound_pic.isEmpty() and !folderLang.isEmpty()){
+        QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+folderLang+"/sounds/words";
+        QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,sound_pic.toLower());
+        if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+            sound_pic=letterSoundLetterFilename;
+        }
+    }
+
+    listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
 }
 
 void Collection::setGlobalParam(QJsonObject params){
@@ -105,8 +116,8 @@ void Collection::playSoundPicture(QString letter){
         QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
         QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
 
-        if (!filename.isEmpty() and QFile::exists(folderWords+"/"+filename)){
-            SoundEngine::playSoundFromFile(folderWords+"/"+filename);
+        if (!filename.isEmpty() and QFile::exists(filename)){
+            SoundEngine::playSoundFromFile(filename);
         }else{
             QString words = listLetters[letter].espeak_words;
             if (words.isEmpty()) words=letter;
@@ -115,14 +126,14 @@ void Collection::playSoundPicture(QString letter){
     }else{
         QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
         QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
-        SoundEngine::playSoundFromFile(folderWords+"/"+filename);
+        SoundEngine::playSoundFromFile(filename);
     }
 
     // play noises
     if (!listLetters[letter].noises.isEmpty()){
         QString folderNoises =  QString(GLOBAL_PATH_USERDATA)+"/abcs/all/noises";
         QString filename = SoundEngine::findSoundfile(folderNoises,listLetters[letter].noises.toLower());
-        SoundEngine::playSoundFromFile(folderNoises+"/"+filename);
+        SoundEngine::playSoundFromFile(filename);
     }
 
 }

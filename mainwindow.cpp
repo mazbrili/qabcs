@@ -211,6 +211,9 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     val = file.readAll();
     file.close();
 
+    QStringList folders = filename.split(QRegExp("[/\\\\]"));
+    QString folder_lang = folders.at(folders.size()-2);
+
     QJsonDocument document = QJsonDocument::fromJson(val);
     if (document.isEmpty()){
         QMessageBox::critical(this,"qABCs",filename+" "+tr("is not valid"));
@@ -238,7 +241,8 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         QString letter = arrLetters.at(i).toObject().keys().at(0);
         QJsonObject objLetter = arrLetters.at(i).toObject().value(letter).toObject();
 
-        updateletterToList({letter.toUpper(),
+
+        updateletterToList(folder_lang,{letter.toUpper(),
                              objLetter.value("sound_letter").toString(),
                              objLetter.value("speak_method").toString(),
                              objLetter.value("espeak_params").toString(),
@@ -246,7 +250,9 @@ bool MainWindow::loadAbcConfigJson(QString filename){
                            });
 
         for (QString type:listTypes){
-            listCollections[type]->setLetter(letter.toUpper(),objLetter.value(type).toObject());
+            if (objLetter.value(type).isObject()){
+                listCollections[type]->setLetter(letter.toUpper(),folder_lang,objLetter.value(type).toObject());
+            }
         }
 
     }
@@ -261,6 +267,9 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         QMessageBox::critical(this,"qABCs",tr("Error while opening")+" "+filename+"\n"+file.errorString());
         return false;
     }
+
+    QStringList folders = filename.split(QRegExp("[/\\\\]"));
+    QString folder_lang = folders.at(folders.size()-2);
 
     _speak_method="properties";
 
@@ -307,9 +316,9 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             if (params.size()>=5) noises=params.at(4);
 
-            updateletterToList({letter.toUpper(),letter,"","",letter});
+            updateletterToList(folder_lang,{letter.toUpper(),letter,"","",letter});
 
-            listCollections[type]->setLetter(letter.toUpper(),str,metka,str.toLower(),"properties",espeak_params,espeak_words,noises);
+            listCollections[type]->setLetter(letter.toUpper(),folder_lang,str,metka,str.toLower(),"properties",espeak_params,espeak_words,noises);
         }else{
             qDebug() << tr("Error str:")+" "+line;
         }
@@ -408,7 +417,7 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
     lblAbcPicture->move((this->width()-lblAbcPicture->width())/2,startY+(maxHeight-lblAbcPicture->height())/2);
 }
 
-void MainWindow::updateletterToList(LETTER_INFO letter){
+void MainWindow::updateletterToList(QString folder_lang,LETTER_INFO letter){
     int indexLetter=-1;
     for (int inx=0;inx<listLetters.size();inx++) {
         if (listLetters.at(inx).letter.toUpper()==letter.letter.toUpper()){
@@ -416,6 +425,17 @@ void MainWindow::updateletterToList(LETTER_INFO letter){
             break;
         }
     }
+
+
+    // find sounds file for letter
+    if (!letter.sound_letter.isEmpty()){
+        QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+folder_lang+"/sounds/alpha";
+        QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,letter.sound_letter.toLower());
+        if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+            letter.sound_letter=letterSoundLetterFilename;
+        }
+    }
+
 
     if (indexLetter==-1){
         listLetters.push_back(letter);
@@ -437,11 +457,9 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                     SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
                 }
             }else{
-                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/sounds/alpha";
-                QString filename =  SoundEngine::findSoundfile(folderAlpha,l.sound_letter.toLower());
-
-                if (!filename.isEmpty() and QFile::exists(folderAlpha+"/"+filename)){
-                    SoundEngine::playSoundFromFile(folderAlpha+"/"+filename,async);
+                QString filename = l.sound_letter;
+                if (!filename.isEmpty() and QFile::exists(filename)){
+                    SoundEngine::playSoundFromFile(filename,async);
                 }else{
                     SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+letter+"\"",async);
                 }
@@ -466,7 +484,7 @@ int MainWindow::gameRandomGenerateNextIndex(){
     }
     if (indexLetter==-1) return -1;
 
-    listCollections["rand"]->setLetter(letter,listLettersGameRand.at(gameRandomCurrentIndex));
+    listCollections["rand"]->setLetter(letter,"",listLettersGameRand.at(gameRandomCurrentIndex));
 
     return indexLetter;
 }
