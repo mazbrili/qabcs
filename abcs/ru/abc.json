@@ -893,7 +893,8 @@
 		"instrument": {
 		      "pic": "music/xun.png",
 		      "name": "СЮНЬ",
-		      "espeak_words": "СЮНЬ"
+		      "espeak_words": "СЮНЬ",
+		      "noises": "xun.ogg"
 		},
 		"toys": {
 		      "pic": "toys/ice_skate.png",

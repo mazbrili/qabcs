@@ -714,10 +714,10 @@
 		      "sound_pic": "xiphias.ogg"
 		},
 		"instrument": {
-		      "pic": "music/xylophone.png",
-		      "name": "XYLOPHONE",
-		      "sound_pic": "xylophone.ogg",
-		      "noises": "xylophone.ogg"
+		      "pic": "music/xun.png",
+		      "name": "XUN",
+		      "sound_pic": "xun.ogg",
+		      "noises": "xun.ogg"
 		},
 		"toys": {
 		      "pic": "music/xylophone.png",
