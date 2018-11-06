@@ -210,7 +210,8 @@
 		"instrument": {
 		      "pic": "music/iotshin.png",
 		      "name": "ЁОЧИН",
-		      "espeak_words": "ЁОЧИН"
+		      "espeak_words": "ЁОЧИН",
+		      "noises": "iotshin.ogg"
 		},
 		"toys": {
 		      "pic": "toys/christmas_tree.png",
@@ -298,7 +299,8 @@
 		"instrument": {
 		      "pic": "music/ipu.png",
 		      "name": "ИПУ",
-		      "espeak_words": "И-ПУ"
+		      "espeak_words": "И-ПУ",
+		      "noises": "ipu.ogg"
 		},
 		"toys": {
 		      "pic": "toys/prince.png",
@@ -326,7 +328,8 @@
 		"instrument": {
 		      "pic": "music/youhikko.png",
 		      "name": "ЙОУХИККО",
-		      "espeak_words": "ЙОУheККО"
+		      "espeak_words": "ЙОУheККО",
+		      "noises": "youhikko.ogg"
 		},
 		"toys": {
 		      "pic": "toys/yoyo.png",
@@ -748,7 +751,8 @@
 		"instrument": {
 		      "pic": "music/changu.png",
 		      "name": "ЧАНГУ",
-		      "espeak_words": "ЧАНГУ"
+		      "espeak_words": "ЧАНГУ",
+		      "noises": "changu.ogg"
 		},
 		"toys": {
 		      "pic": "toys/lunchbox.png",
@@ -808,7 +812,8 @@
 		"instrument": {
 		      "pic": "music/slit_drum.png",
 		      "name": "ЩЕЛЕВОЙ БАРАБАН",
-		      "espeak_words": "ЩЕЛЕ-ВОЙ БАРА-БАН"
+		      "espeak_words": "ЩЕЛЕ-ВОЙ БАРА-БАН",
+		      "noises": "slit_drum.ogg"
 		},
 		"toys": {
 		      "pic": "toys/shield.png",
@@ -865,7 +870,8 @@
 		"instrument": {
 		      "pic": "music/topshuur.png",
 		      "name": "ЫЫХ",
-		      "espeak_words": "ЫЫХ"
+		      "espeak_words": "ЫЫХ",
+		      "noises": "topshuur.ogg"
 		},
 		"toys": {
 		      "pic": "toys/yi.png",
@@ -984,7 +990,8 @@
 		"instrument": {
 		      "pic": "music/yangqin.png",
 		      "name": "ЯНЦИНЬ",
-		      "espeak_words": "ЯН-ЦИНЬ"
+		      "espeak_words": "ЯН-ЦИНЬ",
+		      "noises": "yangqin.ogg"
 		},
 		"toys": {
 		      "pic": "toys/yaga.png",

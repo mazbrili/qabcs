@@ -269,7 +269,8 @@
 		"instrument": {
 		      "pic": "music/ipu.png",
 		      "name": "IPU",
-		      "sound_pic": "ipu.ogg"
+		      "sound_pic": "ipu.ogg",
+		      "noises": "ipu.ogg"
 		},
 		"toys": {
 		      "pic": "toys/ice_skate.png",
@@ -747,7 +748,8 @@
 		"instrument": {
 		      "pic": "music/yangqin.png",
 		      "name": "YANGQIN",
-		      "sound_pic": "yangqin.ogg"
+		      "sound_pic": "yangqin.ogg",
+		      "noises": "yangqin.ogg"
 		},
 		"toys": {
 		      "pic": "toys/yoyo.png",
