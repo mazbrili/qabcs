@@ -53,7 +53,8 @@
 		"animals": {
 		      "pic": "animals/ladybug.png",
 		      "name": "БОЖЬЯ КОРОВКА",
-		      "espeak_words": "БОЖЬЯ КОРОВКА"
+		      "espeak_words": "БОЖЬЯ КОРОВКА",
+		      "noises": "ladybug.ogg"
 		},
 		"instrument": {
 		      "pic": "music/drums.png",
@@ -94,7 +95,8 @@
 		"toys": {
 		      "pic": "toys/bicycle.png",
 		      "name": "ВЕЛОСИПЕД",
-		      "espeak_words": "ВЕЛОСИПЕД"
+		      "espeak_words": "ВЕЛОСИПЕД",
+		      "noises": "bicycle.ogg"
 		}
 	}},
 	{"Г": {
@@ -102,7 +104,8 @@
 		"misc": {
 		      "pic": "misc/newspaper.png",
 		      "name": "ГАЗЕТА",
-		      "espeak_words": "ГАЗЕТА"
+		      "espeak_words": "ГАЗЕТА",
+		      "noises": "newspaper.ogg"
 		},
 		"food": {
 		      "pic": "food/beens.png",
@@ -112,7 +115,8 @@
 		"animals": {
 		      "pic": "animals/hyena.png",
 		      "name": "ГИЕНА",
-		      "espeak_words": "ГИЕНА"
+		      "espeak_words": "ГИЕНА",
+		      "noises": "hyena.ogg"
 		},
 		"instrument": {
 		      "pic": "music/guitar.png",
@@ -185,7 +189,8 @@
 		"toys": {
 		      "pic": "toys/emelya.png",
 		      "name": "ЕМЕЛЯ",
-		      "espeak_words": "ЕМЕЛЯ"
+		      "espeak_words": "ЕМЕЛЯ",
+		      "noises": "emelya.ogg"
 		}
 	}},
 	{"Ё": {
@@ -216,7 +221,8 @@
 		"toys": {
 		      "pic": "toys/christmas_tree.png",
 		      "name": "ЁЛКА",
-		      "espeak_words": "ЁЛКА"
+		      "espeak_words": "ЁЛКА",
+		      "noises": "christmas_tree.ogg"
 		}
 	}},
 	{"Ж": {
@@ -235,7 +241,8 @@
 		"animals": {
 		      "pic": "animals/giraffe.png",
 		      "name": "ЖИРАФ",
-		      "espeak_words": "ЖИ-РАФ"
+		      "espeak_words": "ЖИ-РАФ",
+		      "noises": "giraffe.ogg"
 		},
 		"instrument": {
 		      "pic": "music/zhaleyka.png",
@@ -323,7 +330,8 @@
 		"animals": {
 		      "pic": "animals/york.png",
 		      "name": "ЙОРК",
-		      "espeak_words": "ЙОРК"
+		      "espeak_words": "ЙОРК",
+		      "noises": "york.ogg"
 		},
 		"instrument": {
 		      "pic": "music/youhikko.png",
@@ -463,7 +471,8 @@
 		"misc": {
 		      "pic": "misc/fire.png",
 		      "name": "ОГОНЬ",
-		      "espeak_words": "О-ГОНЬ"
+		      "espeak_words": "О-ГОНЬ",
+		      "noises": "fire.ogg"
 		},
 		"food": {
 		      "pic": "food/vegetables.png",
@@ -637,7 +646,8 @@
 		"toys": {
 		      "pic": "toys/umka.png",
 		      "name": "УМКА",
-		      "espeak_words": "УМКА"
+		      "espeak_words": "УМКА",
+		      "noises": "umka.ogg"
 		}
 	}},
 	{"Ф": {
@@ -736,7 +746,8 @@
 		"misc": {
 		      "pic": "misc/watch.png",
 		      "name": "ЧАСЫ",
-		      "espeak_words": "ЧА-СЫ"
+		      "espeak_words": "ЧА-СЫ",
+		      "noises": "watch.ogg"
 		},
 		"food": {
 		      "pic": "food/fries.png",
@@ -854,7 +865,8 @@
 		"misc": {
 		      "pic": "music/topshuur.png",
 		      "name": "ЫЫХ",
-		      "espeak_words": "ЫЫХ"
+		      "espeak_words": "ЫЫХ",
+		      "noises": "topshuur.ogg"
 		},
 		"food": {
 		      "pic": "food/stewed_duck.png",
@@ -925,7 +937,8 @@
 		"animals": {
 		      "pic": "animals/emu.png",
 		      "name": "ЭМУ",
-		      "espeak_words": "ЭМУ"
+		      "espeak_words": "ЭМУ",
+		      "noises": "emu.ogg"
 		},
 		"instrument": {
 		      "pic": "music/electric_guitar.png",
@@ -936,7 +949,8 @@
 		"toys": {
 		      "pic": "toys/excavator.png",
 		      "name": "ЭКСКАВАТОР",
-		      "espeak_words": "ЭКСКАВАТОР"
+		      "espeak_words": "ЭКСКАВАТОР",
+		      "noises": "excavator.ogg"
 		}
 	}},
  	{"Ю": {
@@ -944,7 +958,8 @@
 		"misc": {
 		      "pic": "toys/top.png",
 		      "name": "ЮЛА",
-		      "espeak_words": "Ю-ЛА"
+		      "espeak_words": "Ю-ЛА",
+		      "noises": "top.ogg"
 		},
 		"food": {
 		      "pic": "food/yupka.png",
@@ -966,7 +981,8 @@
 		"toys": {
 		      "pic": "toys/top.png",
 		      "name": "ЮЛА",
-		      "espeak_words": "Ю-ЛА"
+		      "espeak_words": "Ю-ЛА",
+		      "noises": "top.ogg"
 		}
 	}},
  	{"Я": {
@@ -996,7 +1012,8 @@
 		"toys": {
 		      "pic": "toys/yaga.png",
 		      "name": "ЯГА",
-		      "espeak_words": "Я-ГА"
+		      "espeak_words": "Я-ГА",
+		      "noises": "yaga.ogg"
 		}
 	}}
    ]
