@@ -148,7 +148,8 @@
 		"instrument": {
 		      "pic": "music/jug.png",
 		      "name": "ДЖАГ",
-		      "espeak_words": "ДЖАГ"
+		      "espeak_words": "ДЖАГ",
+		      "noises": "jug.ogg"
 		},
 		"toys": {
 		      "pic": "toys/chalkboard.png",
@@ -176,9 +177,10 @@
 		      "noises": "raccoon.ogg"
 		},
 		"instrument": {
-		      "pic": "music/yahoo.png",
+		      "pic": "music/erhu.png",
 		      "name": "ЕХУ",
-		      "espeak_words": "ЕХУ"
+		      "espeak_words": "ЕХУ",
+		      "noises": "erhu.ogg"
 		},
 		"toys": {
 		      "pic": "toys/emelya.png",

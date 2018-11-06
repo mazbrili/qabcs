@@ -298,7 +298,8 @@
 		"instrument": {
 		      "pic": "music/jug.png",
 		      "name": "JUG",
-		      "sound_pic": "jug.ogg"
+		      "sound_pic": "jug.ogg",
+		      "noises": "jug.ogg"
 		},
 		"toys": {
 		      "pic": "toys/jump_rope.png",
