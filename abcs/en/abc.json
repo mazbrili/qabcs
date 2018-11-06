@@ -3,7 +3,8 @@
       "language": "English (US)",
       "author": "Jordan Irwin <antumdeluge@gmail.com>",
       "speak_method": "file",
-      "espeak_params": ""
+      "espeak_params": "",
+      "visible": "true"
    },
    "letters": [
 	{"A": {

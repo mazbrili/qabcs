@@ -3,7 +3,8 @@
       "language": "Русский",
       "author": "Alexey Loginov <alexl@mageia.org>",
       "speak_method": "espeak",
-      "espeak_params": "-vru -s70"
+      "espeak_params": "-vru -s70",
+      "visible": "false"
    },
    "letters": [
 	{"А": {
