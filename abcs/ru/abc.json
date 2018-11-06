@@ -312,7 +312,8 @@
 		"toys": {
 		      "pic": "toys/prince.png",
 		      "name": "ИВАН-ЦАРЕВИЧ",
-		      "espeak_words": "ИВАН-ЦА-РЕ-ВИЧ"
+		      "espeak_words": "ИВАН-ЦА-РЕ-ВИЧ",
+		      "noises": "prince.ogg"
 		}
 	}},
 	{"Й": {
@@ -463,7 +464,8 @@
 		"toys": {
 		      "pic": "toys/dunno.png",
 		      "name": "НЕЗНАЙКА",
-		      "espeak_words": "НЕЗНАЙКА"
+		      "espeak_words": "НЕЗНАЙКА",
+		      "noises": "dunno.ogg"
 		}
 	}},
 	{"О": {
@@ -738,7 +740,8 @@
 		"toys": {
 		      "pic": "toys/circus.png",
 		      "name": "ЦИРК",
-		      "espeak_words": "ЦИРК"
+		      "espeak_words": "ЦИРК",
+		      "noises": "circus.ogg"
 		}
 	}},
  	{"Ч": {
