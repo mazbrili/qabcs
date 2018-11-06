@@ -308,7 +308,8 @@
 		"toys": {
 		      "pic": "toys/jump_rope.png",
 		      "name": "JUMP ROPE",
-		      "sound_pic": "jump_rope.ogg"
+		      "sound_pic": "jump_rope.ogg",
+		      "noises": "jump_rope.ogg"
 		}
 	}},
 	{"K": {
@@ -327,7 +328,8 @@
 		"animals": {
 		      "pic": "animals/koala.png",
 		      "name": "KOALA",
-		      "sound_pic": "koala.ogg"
+		      "sound_pic": "koala.ogg",
+		      "noises": "koala.ogg"
 		},
 		"instrument": {
 		      "pic": "music/kazoo.png",
@@ -749,7 +751,8 @@
 		"animals": {
 		      "pic": "animals/yak.png",
 		      "name": "YAK",
-		      "sound_pic": "yak.ogg"
+		      "sound_pic": "yak.ogg",
+		      "noises": "yak.ogg"
 		},
 		"instrument": {
 		      "pic": "music/yangqin.png",
