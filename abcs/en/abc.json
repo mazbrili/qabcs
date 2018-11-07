@@ -612,8 +612,7 @@
 		"toys": {
 		      "pic": "toys/top.png",
 		      "name": "TOP",
-		      "sound_pic": "top.ogg",
-		      "noises": "top.ogg"
+		      "sound_pic": "top.ogg"
 		}
 	}},
 	{"U": {

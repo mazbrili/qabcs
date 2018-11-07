@@ -959,10 +959,10 @@
  	{"Ю": {
 		"espeak_words": "Ю",
 		"misc": {
-		      "pic": "toys/top.png",
+		      "pic": "toys/whirligig.png",
 		      "name": "ЮЛА",
 		      "espeak_words": "Ю-ЛА",
-		      "noises": "top.ogg"
+		      "noises": "whirligig.ogg"
 		},
 		"food": {
 		      "pic": "food/yupka.png",
@@ -982,10 +982,10 @@
 		      "noises": "yueqin.ogg"
 		},
 		"toys": {
-		      "pic": "toys/top.png",
+		      "pic": "toys/whirligig.png",
 		      "name": "ЮЛА",
 		      "espeak_words": "Ю-ЛА",
-		      "noises": "top.ogg"
+		      "noises": "whirligig.ogg"
 		}
 	}},
  	{"Я": {
