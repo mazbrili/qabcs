@@ -32,3 +32,6 @@ GUI and desktop file: https://www.transifex.com/Magic/qabcs
 ABC: create your own abs.json (more detailed format) or
 abs.properties (easier, but not detailed format). Use pictures
 from abcs/all/pics.
+
+![screenshot1 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
+![screenshot2 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
