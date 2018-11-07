@@ -38,7 +38,7 @@ to advance through the alphabet, press "Backspace" to go back
 %make_install INSTALL_ROOT=%{buildroot}
 
 %files
-%doc README CONTRIBUTORS
+%doc README* CONTRIBUTORS
 %license COPYING
 %{_datadir}/%{name}
 %{_bindir}/%{name}
