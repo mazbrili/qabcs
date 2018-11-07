@@ -4,7 +4,7 @@
       "author": "Jordan Irwin <antumdeluge@gmail.com>",
       "speak_method": "file",
       "espeak_params": "",
-      "visible": "false",
+      "visible": "true",
       "inheritsFrom" : "en/abc.properties"
    },
    "letters": [
@@ -15,6 +15,12 @@
 		      "name": "DOUGHNUT",
 		      "sound_pic": "donut.ogg"
 		}
+	}},
+	{"R": {
+		"sound_letter": "R.ogg"
+	}},
+	{"Z": {
+		"sound_letter": "Z.ogg"
 	}}
    ]
    
