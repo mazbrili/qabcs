@@ -431,9 +431,14 @@ void MainWindow::updateletterToList(QString folder_lang,LETTER_INFO letter){
     if (!letter.sound_letter.isEmpty()){
         QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+folder_lang+"/sounds/alpha";
         QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,letter.sound_letter.toLower());
+
         if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
             letter.sound_letter=letterSoundLetterFilename;
+        }else{
+            if (indexLetter!=-1) letter.sound_letter=listLetters[indexLetter].sound_letter;
         }
+    }else{
+        if (indexLetter!=-1) letter.sound_letter=listLetters[indexLetter].sound_letter;
     }
 
 

@@ -34,7 +34,11 @@ void Collection::setLetter(QString letter,QString folderLang,QString name,QStrin
         QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,sound_pic.toLower());
         if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
             sound_pic=letterSoundLetterFilename;
+        }else{
+            if (listLetters.contains(letter)) sound_pic=listLetters[letter].sound_pic;
         }
+    }else{
+        if (listLetters.contains(letter)) sound_pic=listLetters[letter].sound_pic;
     }
 
     listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
