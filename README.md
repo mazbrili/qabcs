@@ -33,5 +33,5 @@ ABC: create your own abs.json (more detailed format) or
 abs.properties (easier, but not detailed format). Use pictures
 from abcs/all/pics.
 
-![Alt text](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
-![Alt text](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
+![screenshot1 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
+![screenshot2 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
