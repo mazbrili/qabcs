@@ -5,15 +5,17 @@
       "speak_method": "file",
       "espeak_params": "",
       "visible": "true",
-      "inheritsFrom" : "en/abc.properties"
+      "inheritsFrom" : "en/abc.json"
    },
    "letters": [
-	{"D": {
-		"sound_letter": "D.ogg",
+	{"B": {
+                "animals": {
+                      "sound_pic": "bird.ogg"
+                }
+        }},
+    	{"D": {
 		"food": {
-		      "pic": "food/donut.png",
-		      "name": "DOUGHNUT",
-		      "sound_pic": "donut.ogg"
+		      "name": "DOUGHNUT"
 		}
 	}},
 	{"R": {

@@ -5,6 +5,7 @@
 #include "FormHelp.h"
 #include "FormSelectLanguage.h"
 #include "SoundEngine.h"
+#include "LoaderAbcFormats.h"
 
 #include <QDebug>
 #include <QDir>
@@ -190,12 +191,14 @@ void MainWindow::loadAbcConfig(QString abcFilename){
     if (abcFilename.indexOf(QRegExp("(.*)(.json)$"))!=-1){
         if (QFile::exists(abcFilename)){
             loadAbcConfigJson(abcFilename);
+            _lastFormatLoaded="json";
         }
     }
 
     if (abcFilename.indexOf(QRegExp("(.*)(.properties)$"))!=-1){
         if (QFile::exists(abcFilename)){
             loadAbcConfigProperties(abcFilename);
+            _lastFormatLoaded="properties";
         }
     }
 }
@@ -314,9 +317,11 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             QString espeak_params = "";
             QString noises = "";
 
+            QString letter_sound = letter.toLower();
+
             if (params.size()>=5) noises=params.at(4);
 
-            updateletterToList(folder_lang,{letter.toUpper(),letter,"","",letter});
+            updateletterToList(folder_lang,{letter.toUpper(),letter_sound,"","",letter});
 
             listCollections[type]->setLetter(letter.toUpper(),folder_lang,str,metka,str.toLower(),"properties",espeak_params,espeak_words,noises);
         }else{
@@ -457,16 +462,45 @@ void MainWindow::playSoundLetter(QString letter,bool async){
             QString speak_method = (l.speak_method.isEmpty()) ? _speak_method : l.speak_method;
             QString espeak_params = (l.espeak_params.isEmpty()) ? _espeak_params : l.espeak_params;
 
-            if (speak_method=="espeak"){
-                if (!l.espeak_words.isEmpty()){
-                    SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
+            // FIXME: very bad code. Rewriting required
+            if (_lastFormatLoaded=="properties"){
+                qDebug() << currentFilenameAbc;
+                ABC_CONFIG config_current = LoaderAbcFormats::LoadFilename(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc);
+                ABC_CONFIG config_inherits;
+                if (!config_current.inheritsFrom.isEmpty()){
+                    config_inherits = LoaderAbcFormats::LoadFilename(globalPathUserResources+"/"+config_current.inheritsFrom);
                 }
-            }else{
-                QString filename = l.sound_letter;
-                if (!filename.isEmpty() and QFile::exists(filename)){
-                    SoundEngine::playSoundFromFile(filename,async);
+
+                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.folder_lang+"/sounds/alpha";
+                QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,letter.toLower());
+                if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+                    SoundEngine::playSoundFromFile(letterSoundLetterFilename,async);
+                    return;
                 }else{
-                    SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+letter+"\"",async);
+                    if (!config_inherits.filename.isEmpty()){
+                        QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/alpha";
+                        QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,letter.toLower());
+                        if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+                            SoundEngine::playSoundFromFile(letterSoundLetterFilename,async);
+                            return;
+                        }
+                    }
+                }
+
+                SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
+
+            }else{
+                if (speak_method=="espeak"){
+                    if (!l.espeak_words.isEmpty()){
+                        SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
+                    }
+                }else{
+                    QString filename = l.sound_letter;
+                    if (!filename.isEmpty() and QFile::exists(filename)){
+                        SoundEngine::playSoundFromFile(filename,async);
+                    }else{
+                        SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+letter+"\"",async);
+                    }
                 }
             }
         }

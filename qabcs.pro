@@ -106,7 +106,8 @@ SOURCES += main.cpp \
     FormHelp.cpp \
     Collection.cpp \
     FormSelectLanguage.cpp \
-    SoundEngine.cpp
+    SoundEngine.cpp \
+    LoaderAbcFormats.cpp
 
 FORMS += \
     FormAbout.ui \
@@ -120,4 +121,5 @@ HEADERS += \
     Collection.h \
     FormSelectLanguage.h \
     config_qabcs.h \
-    SoundEngine.h
+    SoundEngine.h \
+    LoaderAbcFormats.h

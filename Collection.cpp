@@ -10,13 +10,13 @@ Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
 }
 
 void Collection::setLetter(QString letter,QString folderLang,QJsonObject params){
-    QString name = params.value("name").toString().toUpper();
-    QString pic = params.value("pic").toString();
-    QString sound_pic = params.value("sound_pic").toString();
-    QString speak_method = params.value("speak_method").toString();
-    QString espeak_params = params.value("espeak_params").toString();
-    QString espeak_words = params.value("espeak_words").toString();
-    QString noises = params.value("noises").toString();
+    QString name = (params.value("name").isString()) ? params.value("name").toString().toUpper() : QString();
+    QString pic = (params.value("pic").isString()) ? params.value("pic").toString() : QString();
+    QString sound_pic = (params.value("sound_pic").isString()) ? params.value("sound_pic").toString() : QString();
+    QString speak_method = (params.value("speak_method").isString()) ? params.value("speak_method").toString() : QString();
+    QString espeak_params = (params.value("espeak_params").isString()) ? params.value("espeak_params").toString() : QString();
+    QString espeak_words = (params.value("espeak_words").isString()) ? params.value("espeak_words").toString() : QString();
+    QString noises = (params.value("noises").isString()) ? params.value("noises").toString() : QString();
 
     setLetter(letter,folderLang,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises);
 }
@@ -27,6 +27,17 @@ void Collection::setLetter(QString letter, QString folderLang, LETTER_CONFIG con
 }
 
 void Collection::setLetter(QString letter,QString folderLang,QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises){
+
+    if (listLetters.contains(letter)){
+        if (name.isEmpty()) name=listLetters[letter].name;
+        if (pic.isEmpty()) pic=listLetters[letter].pic;
+        if (sound_pic.isEmpty()) sound_pic=listLetters[letter].sound_pic;
+        if (speak_method.isEmpty()) speak_method=listLetters[letter].speak_method;
+        if (espeak_params.isEmpty()) espeak_params=listLetters[letter].espeak_params;
+        if (espeak_words.isEmpty()) espeak_words=listLetters[letter].espeak_words;
+        if (noises.isEmpty()) noises=listLetters[letter].noises;
+    }
+
 
     // find sounds file for letter
     if (!sound_pic.isEmpty() and !folderLang.isEmpty()){
