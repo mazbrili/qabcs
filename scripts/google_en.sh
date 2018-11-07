@@ -3,7 +3,7 @@
 # Licence: GPLv3+
 # Description: convert text and letters into .ogg using Google Cloud Text-to-Speech
 # https://cloud.google.com/text-to-speech/docs
-# WARNING: you need curl, ffmpeg installed
+# You need curl, ffmpeg installed
 
 key="$1"
 # https://cloud.google.com/text-to-speech/docs/voices
@@ -20,6 +20,8 @@ format="wav"
 output="ogg"
 # abcs directory of your language
 lang0="en"
+# file format: properties or json
+file_format="properties"
 
 if [ -z "$key" ]
 then
@@ -27,16 +29,42 @@ then
    exit 1
 fi
 
+curl=`curl -h`
+
+if [ -z "$curl" ]
+then
+   echo "You have no curl installed!"
+   exit 1
+else
+   echo "curl detected"
+fi
+
+ffmpeg=`ffmpeg -version`
+
+if [ -z "$ffmpeg" ]
+then
+   echo "You have no ffmpeg installed!"
+   exit 1
+else
+   echo "ffmpeg detected"
+fi
+
 if [ -f "../abcs/$lang0/abc.json" ]
+then
+if [ $file_format = "json" ]
 then
 words_list=`cat ../abcs/$lang0/abc.json|grep \"name\"|cut -d ":" --fields=2 |cut -d "\"" --fields=2|awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
 letters_list=`cat ../abcs/$lang0/abc.json|grep -v espeak_words|grep -v visible|grep -v sound_letter|grep -v general|grep -v language |grep -v author|grep -v speak_method |grep -v espeak_params| grep -v letters | grep -v misc |grep -v pic | grep -v name |grep -v noises |grep -v food | grep -v animals | grep -v instrument | grep -v toys | grep -v inheritsFrom |awk '{print tolower($0)}'|sort -u | cut -d "\"" --fields=2|grep -v '\{'|grep -v '\}' | grep -v '\[' |grep -v '\]'| sed s/' '//g|grep -v "^$"`
 fi
+fi
 
 if [ -f "../abcs/$lang0/abc.properties" ]
 then
+if [ $file_format = "properties" ]
+then
 words_list=`cat ../abcs/$lang0/abc.properties|grep -v language| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
 letters_list=`cat ../abcs/$lang0/abc.properties|grep -v language| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=1 | cut -d ":" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
+fi
 fi
 
 if [ -z "$words_list" ]
