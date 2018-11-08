@@ -8,21 +8,137 @@
       "inheritsFrom" : "en/abc.json"
    },
    "letters": [
+	{"A": {
+		"misc": {
+		      "sound_pic": "airplane.ogg"
+		},
+		"instrument": {
+		      "sound_pic": "accordion.ogg"
+		}
+	}},
 	{"B": {
-                "animals": {
-                      "sound_pic": "bird.ogg"
+    	"animals": {
+    		"sound_pic": "bird.ogg"
                 }
         }},
-    	{"D": {
+	{"C": {
+		"toys": {
+		      "sound_pic": "chalkboard.ogg"
+		}
+	}},
+    {"D": {
 		"food": {
-		      "name": "DOUGHNUT"
+			"name": "DOUGHNUT"
+		}
+	}},
+	{"E": {
+		"misc": {
+		      "sound_pic": "earth.ogg"
+		},
+		"instrument": {
+		      "sound_pic": "electric_guitar.ogg"
+		}
+    }},
+	{"F": {
+		"misc": {
+		      "sound_pic": "fire.ogg"
+		}
+    }},
+	{"G": {
+		"misc": {
+		      "sound_pic": "grasshopper.ogg"
+		},
+		"instrument": {
+		      "sound_pic": "guitar.ogg"
+		}
+	}},
+	{"H": {
+		"animals": {
+		      "sound_pic": "horse.ogg"
+		},
+		"instrument": {
+		      "sound_pic": "harp.ogg"
+		},
+		"toys": {
+		      "sound_pic": "horn.ogg"
+		}
+	}},
+	{"J": {
+		"misc": {
+		      "sound_pic": "jar.ogg"
+		},
+		"animals": {
+		      "sound_pic": "jaguar.ogg"
+		}
+	}},
+	{"K": {
+		"misc": {
+		      "sound_pic": "keyboard.ogg"
+		}
+	}},
+	{"N": {
+		"misc": {
+		      "sound_pic": "newspaper.ogg"
+		}
+	}},
+	{"P": {
+		"misc": {
+		      "sound_pic": "paper_airplane.ogg"
+		}
+	}},
+	{"Q": {
+		"misc": {
+		      "sound_pic": "quarter.ogg"
 		}
 	}},
 	{"R": {
-		"sound_letter": "R.ogg"
+		"sound_letter": "R.ogg",
+		"animals": {
+		      "sound_pic": "rooster.ogg"
+		},
+		"instrument": {
+		      "sound_pic": "recorder.ogg"
+		},
+		"toys": {
+		      "sound_pic": "rocking_horse.ogg"
+		}
+	}},
+	{"S": {
+		"misc": {
+		      "sound_pic": "star.ogg"
+		}
+	}},
+	{"T": {
+		"food": {
+		      "sound_pic": "tomato.ogg"
+		},
+		"animals": {
+		      "sound_pic": "turtle.ogg"
+		}
+	}},
+	{"U": {
+		"animals": {
+		      "sound_pic": "urchin.ogg"
+		}
+	}},
+	{"V": {
+		"animals": {
+		      "sound_pic": "vulture.ogg"
+		}
+	}},
+ 	{"W": {
+		"food": {
+		      "sound_pic": "watermelon.ogg"
+		}
 	}},
 	{"Z": {
-		"sound_letter": "Z.ogg"
+		"sound_letter": "Z.ogg",
+		"misc": {
+		      "sound_pic": "zipper.ogg"
+		},
+		"instrument": {
+		      "sound_pic": "zurna.ogg"
+		}
 	}}
    ]
    
