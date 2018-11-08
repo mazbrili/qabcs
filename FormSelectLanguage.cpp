@@ -2,6 +2,7 @@
 #include "ui_FormSelectLanguage.h"
 
 #include <QDir>
+#include <QRegExp>
 
 #include "config_qabcs.h"
 #include "LoaderAbcFormats.h"
