@@ -1,3 +1,5 @@
+==========================ENGLISH==============================
+
 qABCs is copyright by DanSoft (dik@inbox.ru), 2018
 
 This program is licensed under the terms and conditions of
@@ -32,6 +34,56 @@ GUI and desktop file: https://www.transifex.com/Magic/qabcs
 ABC: create your own abs.json (more detailed format) or
 abs.properties (easier, but not detailed format). Use pictures
 from abcs/all/pics.
+
+Current languages:
+GUI translated on English, Russian, Dutch, Ukrainian, Estonian,
+Portuguese, Bulgarian.
+ABCs translated on American English (US), Russian, United
+Kingdom English (UK).
+
+==========================RUSSIAN==============================
+
+Авторское право на qABCs принадлежит DanSoft (dik@inbox.ru),
+2018
+
+Эта программа лицензирована в соответствии с положениями GNU
+General Public License (GPLv3+). Пожалуйста, прочитайте файл
+'COPYING' для получения дополнительной информации.
+
+qABCs - это образовательная утилита/игра, ориентированная на
+детей. Она призвана помочь в изучении алфавита с помощью
+визуальных и звуковых образцов. В качестве вспомогательной
+функции она также может помочь познакомиться с клавиатурой.
+
+Для сборки qABCs вам нужны Qt5 и qmake.
+Полный список зависимостей для linux: см. pkg/qabcs.spec.
+
+Сборка:
+qmake
+make
+
+Также вы можете использовать Qt Creator для сборки.
+Просто откройте qabcs.pro и соберите qABCs (`Ctrl+B`).
+
+Установка (под root):
+make install
+
+Тестирование без установки:
+qmake QMAKE_CXXFLAGS+='-DGLOBAL_PATH_USERDATA=\\\"..\\\"'
+make
+./Bin/qabcs
+
+Переводы:
+ГУИ и desktop файл: https://www.transifex.com/Magic/qabcs
+Алфавит: создайте ваш собственный abs.json (более детальный
+формат) или abs.properties (проще, но не детальный формат).
+Используйте картинки из abcs/all/pics.
+
+Текущие языки:
+ГУИ переведён на английский, русский,
+голландский, украинский, эстонский, португальский, болгарский.
+Алфавиты переведены на американский английский (US), русский,
+английский Соединённого Королевства (UK).
 
 ![screenshot1 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
 ![screenshot2 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
