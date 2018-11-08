@@ -2,6 +2,7 @@
 #define LOADERABCFORMATS_H
 
 #include <QString>
+#include <QVector>
 #include <QMap>
 
 struct ABC_CONFIG_LETTER {
@@ -22,6 +23,11 @@ struct ABC_CONFIG_GAME {
     QString noises;
 };
 
+struct ABC_CONFIG_ALPHA {
+    ABC_CONFIG_LETTER config_letter;
+    QMap<QString,ABC_CONFIG_GAME> games;
+};
+
 struct ABC_CONFIG {
     QString format;
     QString folder_lang;
@@ -33,8 +39,7 @@ struct ABC_CONFIG {
     QString inheritsFrom;
     QString visible;
 
-    ABC_CONFIG_LETTER config_letter;
-    QMap<QString,ABC_CONFIG_GAME> games;
+    QVector<ABC_CONFIG_ALPHA> letters;
 };
 
 class LoaderAbcFormats {
