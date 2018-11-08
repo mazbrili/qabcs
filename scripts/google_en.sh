@@ -62,8 +62,8 @@ if [ -f "../abcs/$lang0/abc.properties" ]
 then
 if [ $file_format = "properties" ]
 then
-words_list=`cat ../abcs/$lang0/abc.properties|grep -v language| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
-letters_list=`cat ../abcs/$lang0/abc.properties|grep -v language| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=1 | cut -d ":" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
+words_list=`cat ../abcs/$lang0/abc.properties|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
+letters_list=`cat ../abcs/$lang0/abc.properties|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=1 | cut -d ":" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
 fi
 fi
 
@@ -86,7 +86,7 @@ rm -f ../abcs/$lang0/sounds/words/*.$output
 for a in $words_list
 do
 filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |'|sed 's| |_|'`
-text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |'`
+text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |'|sed 's|_| |'`
 # fixing pronounce
 text=`echo "$text"|sed "s|ipu|eepoo|g"`
 curl -H "X-Goog-Api-Key: $key" \
