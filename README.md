@@ -3,7 +3,8 @@
 qABCs is copyright by DanSoft (dik@inbox.ru), 2018
 
 This program is licensed under the terms and conditions of
-the GNU General Public License (GPLv3+).
+the GNU General Public License (GPLv3+); either version
+3 of the License, or (at your option) any later version.
 Please read the 'COPYING' file for more information.
 
 qABCs is an educational tool/game targeted at children.
@@ -47,8 +48,10 @@ Kingdom English (UK).
 2018
 
 Эта программа лицензирована в соответствии с положениями GNU
-General Public License (GPLv3+). Пожалуйста, прочитайте файл
-'COPYING' для получения дополнительной информации.
+General Public License (GPLv3+); либо версии 3 Лицензии, либо
+(по вашему выбору) любой более поздней версии. Пожалуйста,
+прочитайте файл 'COPYING' для получения дополнительной
+информации.
 
 qABCs - это образовательная утилита/игра, ориентированная на
 детей. Она призвана помочь в изучении алфавита с помощью
