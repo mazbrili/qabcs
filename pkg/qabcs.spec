@@ -5,7 +5,7 @@ Summary:        Learn alphabet
 Group:          Education
 License:        GPLv3+
 Url:            https://bitbucket.org/admsasha/qabcs
-Source0:        https://bitbucket.org/admsasha/kroots/downloads/%{name}-%{version}.tar.gz
+Source0:        https://bitbucket.org/admsasha/qabcs/downloads/%{name}-%{version}.tar.gz
 
 BuildRequires:  qttools5
 BuildRequires:  pkgconfig(Qt5Core)
