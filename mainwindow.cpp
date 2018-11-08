@@ -237,7 +237,10 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         _espeak_params = root_general.value("espeak_params").toString();
     }
 
-    for (QString type:listTypes) listCollections[type]->setGlobalParam(root_general);
+    for (QString type:listTypes){
+        listCollections[type]->setGlobalParam(root_general);
+        listCollections[type]->setLastFileName(filename);
+    }
 
     QJsonArray arrLetters = root.value("letters").toArray();
     for (int i=0;i<arrLetters.size();i++){
