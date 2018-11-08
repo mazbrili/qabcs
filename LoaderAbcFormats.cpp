@@ -77,11 +77,11 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigJson(const QString &fileName){
         QString espeak_params = (objLetter.value("espeak_params").isString()) ? objLetter.value("espeak_params").toString().toUpper() : QString();
         QString espeak_words = (objLetter.value("espeak_words").isString()) ? objLetter.value("espeak_words").toString().toUpper() : QString();
 
-        configAlpha.config_letter.letter=letter;
-        configAlpha.config_letter.sound_letter=sound_letter;
-        configAlpha.config_letter.speak_method=speak_method;
-        configAlpha.config_letter.espeak_params=espeak_params;
-        configAlpha.config_letter.espeak_words=espeak_words;
+        configAlpha.letter=letter;
+        configAlpha.sound_letter=sound_letter;
+        configAlpha.speak_method=speak_method;
+        configAlpha.espeak_params=espeak_params;
+        configAlpha.espeak_words=espeak_words;
 
         for (QString type:listTypes){
             QJsonObject objTypeLetter = objLetter.value(type).toObject();
@@ -150,7 +150,53 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigProperties(const QString &fileName){
             QStringList params = pair.at(1).split("=");
             if (params.size()<4) continue;
 
+            QString noises = "";
+            QString type = pair.at(0);
 
+            QString letter = params.at(0);
+            QString str = params.at(1).toUpper();
+            QString espeak_words = params.at(2);
+            QString metka = params.at(3);
+            if (params.size()>=5) noises=params.at(4);
+
+            QString name = str;
+            QString pic = metka;
+            QString sound_pic = letter.toLower();
+            QString espeak_params = "";
+
+            int indexLetter=-1;
+            for (int inx=0;inx<result.letters.size();inx++) {
+                if (result.letters.at(inx).letter.toUpper()==letter.toUpper()){
+                    indexLetter=inx;
+                    break;
+                }
+            }
+
+
+            if (indexLetter==-1){
+                ABC_CONFIG_ALPHA configAlpha;
+                configAlpha.letter=letter;
+                configAlpha.sound_letter=letter;
+                configAlpha.speak_method="";
+                configAlpha.espeak_params="";
+                configAlpha.espeak_words=letter;
+
+                result.letters.push_back(configAlpha);
+                indexLetter=result.letters.size()-1;
+            }
+
+
+            ABC_CONFIG_ALPHA configAlpha=result.letters.at(indexLetter);
+
+            configAlpha.games[type].name=name;
+            configAlpha.games[type].pic=pic;
+            configAlpha.games[type].sound_pic=sound_pic;
+            configAlpha.games[type].speak_method="";
+            configAlpha.games[type].espeak_params="";
+            configAlpha.games[type].espeak_words=espeak_words;
+            configAlpha.games[type].noises=noises;
+
+            result.letters[indexLetter]=configAlpha;
         }
 
     }

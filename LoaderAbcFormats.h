@@ -5,14 +5,6 @@
 #include <QVector>
 #include <QMap>
 
-struct ABC_CONFIG_LETTER {
-    QString letter;
-    QString sound_letter;
-    QString speak_method;
-    QString espeak_params;
-    QString espeak_words;
-};
-
 struct ABC_CONFIG_GAME {
     QString pic;
     QString name;
@@ -24,7 +16,12 @@ struct ABC_CONFIG_GAME {
 };
 
 struct ABC_CONFIG_ALPHA {
-    ABC_CONFIG_LETTER config_letter;
+    QString letter;
+    QString sound_letter;
+    QString speak_method;
+    QString espeak_params;
+    QString espeak_words;
+
     QMap<QString,ABC_CONFIG_GAME> games;
 };
 
