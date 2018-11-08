@@ -25,6 +25,7 @@ class Collection{
 
         void setGlobalParam(QJsonObject params);
         void setGlobalParam(QString speak_method,QString espeak_params);
+        void setLastFileName(QString filename);
         void setLetter(QString letter, QString folderLang, QJsonObject params);
         void setLetter(QString letter, QString folderLang, LETTER_CONFIG config);
         void setLetter(QString letter, QString folderLang, QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises);
@@ -49,6 +50,8 @@ class Collection{
 
         QString _speak_method;
         QString _espeak_params;
+
+        QString _lastFileName;
 
 };
 

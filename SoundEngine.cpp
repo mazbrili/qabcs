@@ -17,6 +17,8 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
     QProcess proc;
     QString cmd_to_play = "play "+fileInfo.absoluteFilePath();
 
+    qDebug() << "[DEBUG] " << cmd_to_play;
+
 #if defined(_WIN32)
     cmd_to_play=QApplication::applicationDirPath()+"/3rdparty/sox/play.exe \""+fileInfo.absoluteFilePath()+"\"  -t waveaudio";
 

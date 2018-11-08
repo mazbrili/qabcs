@@ -305,6 +305,8 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             continue;
         }
 
+        for (QString type:listTypes) listCollections[type]->setLastFileName(filename);
+
         if (pair.size()==2){
             QStringList params = pair.at(1).split("=");
             if (params.size()<4) continue;

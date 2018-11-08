@@ -4,6 +4,7 @@
 
 #include "config_qabcs.h"
 #include "SoundEngine.h"
+#include "LoaderAbcFormats.h"
 
 Collection::Collection(QString abcLanguage) : _abcLanguage(abcLanguage){
 
@@ -69,6 +70,10 @@ void Collection::setGlobalParam(QString speak_method,QString espeak_params){
     _espeak_params = espeak_params;
 }
 
+void Collection::setLastFileName(QString filename){
+    _lastFileName=filename;
+}
+
 void Collection::clear(){
     listLetters.clear();
 
@@ -128,12 +133,34 @@ void Collection::playSoundPicture(QString letter){
         }
 
     } else if (speak_method=="properties"){
-        QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
-        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
+        bool isPlaySoundPic=false;
+        {
+            QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
+            QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
+            if (!filename.isEmpty() and QFile::exists(filename)){
+                SoundEngine::playSoundFromFile(filename);
+                isPlaySoundPic=true;
+            }
+        }
+        if (isPlaySoundPic==false){
+            // FIXME: replace all
+            ABC_CONFIG config_current = LoaderAbcFormats::LoadFilename(_lastFileName);
+            ABC_CONFIG config_inherits;
+            if (!config_current.inheritsFrom.isEmpty()){
+                config_inherits = LoaderAbcFormats::LoadFilename( QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.inheritsFrom);
+            }
+            if (!config_inherits.filename.isEmpty()){
+                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/words";
+                QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,listLetters[letter].sound_pic.toLower().replace(" ","_"));
+                if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+                    SoundEngine::playSoundFromFile(letterSoundLetterFilename);
+                    isPlaySoundPic=true;
+                }
+            }
 
-        if (!filename.isEmpty() and QFile::exists(filename)){
-            SoundEngine::playSoundFromFile(filename);
-        }else{
+        }
+
+        if (isPlaySoundPic==false){
             QString words = listLetters[letter].espeak_words;
             if (words.isEmpty()) words=letter;
             SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+words+"\"");
