@@ -2,13 +2,9 @@
 #include "ui_FormSelectLanguage.h"
 
 #include <QDir>
-#include <QSettings>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QRegExp>
-#include <QDebug>
 
 #include "config_qabcs.h"
+#include "LoaderAbcFormats.h"
 
 FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
     QDialog(parent),
@@ -24,7 +20,6 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
     confSettings = new QSettings(dirConfig.absoluteFilePath("settings.ini"), QSettings::IniFormat);
     confSettings->setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
-
 
 
     QDir dir(QString(GLOBAL_PATH_USERDATA)+"/abcs/");
@@ -44,15 +39,13 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
             if (lang_filename.indexOf(QRegExp("(.*)(.json|.properties)$"))==-1) continue;
 
             ABC_INFO lang_info;
+            ABC_CONFIG abcConfig = LoaderAbcFormats::LoadFilename(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+lang+"/"+lang_filename);
 
-            if (lang_filename.indexOf(QRegExp("(.*)(.json)$"))!=-1){
-                lang_info = getLangFromJson(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+lang+"/"+lang_filename);
-            }
-            if (lang_filename.indexOf(QRegExp("(.*)(.properties)$"))!=-1){
-                lang_info = getLangFromProperties(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+lang+"/"+lang_filename);
-            }
-            lang_info.folder=lang;
-            lang_info.filename=lang_filename;
+            lang_info.author = abcConfig.author;
+            lang_info.language = abcConfig.language;
+            lang_info.visible = (!abcConfig.visible.isNull()) ? abcConfig.visible : "true";
+            lang_info.folder = lang;
+            lang_info.filename = lang_filename;
 
             if (lang_info.visible=="false") continue;
 
@@ -71,60 +64,6 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
 FormSelectLanguage::~FormSelectLanguage(){
     delete ui;
-}
-
-FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromJson(QString filename){
-    ABC_INFO result;
-
-    QByteArray val;
-    QFile file;
-    file.setFileName(filename);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        return ABC_INFO();
-    }
-    val = file.readAll();
-    file.close();
-
-    QJsonDocument document = QJsonDocument::fromJson(val);
-    if (document.isEmpty()){
-        return ABC_INFO();
-    }
-    QJsonObject root = document.object();
-    QJsonObject root_general = root.value("general").toObject();
-
-    result.language = root_general.value("language").toString();
-    result.author = root_general.value("author").toString();
-    result.visible = root_general.value("visible").toString();
-
-    return result;
-}
-
-FormSelectLanguage::ABC_INFO FormSelectLanguage::getLangFromProperties(QString filename){
-    ABC_INFO result;
-
-    QRegExp rx("(.*)(:)(.*)");
-
-    QFile file(filename);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        return ABC_INFO();
-    }
-    while (!file.atEnd()) {
-        QByteArray line = file.readLine();
-        if (rx.indexIn(line)!=-1){
-            if (rx.cap(1)=="language"){
-                result.language = rx.cap(3).replace(QRegExp("(\\s*)$"),"");
-            }
-            if (rx.cap(1)=="author"){
-                result.author = rx.cap(3).replace(QRegExp("(\\s*)$"),"");
-            }
-            if (rx.cap(1)=="visible"){
-                result.visible = rx.cap(3).replace(QRegExp("(\\s*)$"),"");
-            }
-        }
-    }
-    file.close();
-
-    return result;
 }
 
 void FormSelectLanguage::saveLanguageAbc(){

@@ -31,9 +31,6 @@ class FormSelectLanguage : public QDialog {
 
         QVector<ABC_INFO> listAbcFiles;
 
-        ABC_INFO getLangFromJson(QString filename);
-        ABC_INFO getLangFromProperties(QString filename);
-
         QSettings *confSettings;
 
     private slots:
