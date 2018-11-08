@@ -39,6 +39,8 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigJson(const QString &fileName){
     file.close();
 
 
+    QStringList listTypes = QStringList() << "misc" << "rand" << "food" << "animals" << "instrument" << "toys";
+
     QStringList folders = fileName.split(QRegExp("[/\\\\]"));
     QString folder_lang = folders.at(folders.size()-2);
 
@@ -68,8 +70,40 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigJson(const QString &fileName){
         QString letter = arrLetters.at(i).toObject().keys().at(0);
         QJsonObject objLetter = arrLetters.at(i).toObject().value(letter).toObject();
 
+        ABC_CONFIG_ALPHA configAlpha;
 
+        QString sound_letter = (objLetter.value("sound_letter").isString()) ? objLetter.value("sound_letter").toString().toUpper() : QString();
+        QString speak_method = (objLetter.value("speak_method").isString()) ? objLetter.value("speak_method").toString().toUpper() : QString();
+        QString espeak_params = (objLetter.value("espeak_params").isString()) ? objLetter.value("espeak_params").toString().toUpper() : QString();
+        QString espeak_words = (objLetter.value("espeak_words").isString()) ? objLetter.value("espeak_words").toString().toUpper() : QString();
 
+        configAlpha.config_letter.letter=letter;
+        configAlpha.config_letter.sound_letter=sound_letter;
+        configAlpha.config_letter.speak_method=speak_method;
+        configAlpha.config_letter.espeak_params=espeak_params;
+        configAlpha.config_letter.espeak_words=espeak_words;
+
+        for (QString type:listTypes){
+            QJsonObject objTypeLetter = objLetter.value(type).toObject();
+
+            QString name = (objTypeLetter.value("name").isString()) ? objTypeLetter.value("name").toString().toUpper() : QString();
+            QString pic = (objTypeLetter.value("pic").isString()) ? objTypeLetter.value("pic").toString() : QString();
+            QString sound_pic = (objTypeLetter.value("sound_pic").isString()) ? objTypeLetter.value("sound_pic").toString() : QString();
+            QString speak_method = (objTypeLetter.value("speak_method").isString()) ? objTypeLetter.value("speak_method").toString() : QString();
+            QString espeak_params = (objTypeLetter.value("espeak_params").isString()) ? objTypeLetter.value("espeak_params").toString() : QString();
+            QString espeak_words = (objTypeLetter.value("espeak_words").isString()) ? objTypeLetter.value("espeak_words").toString() : QString();
+            QString noises = (objTypeLetter.value("noises").isString()) ? objTypeLetter.value("noises").toString() : QString();
+
+            configAlpha.games[type].name=name;
+            configAlpha.games[type].pic=pic;
+            configAlpha.games[type].sound_pic=sound_pic;
+            configAlpha.games[type].speak_method=speak_method;
+            configAlpha.games[type].espeak_params=espeak_params;
+            configAlpha.games[type].espeak_words=espeak_words;
+            configAlpha.games[type].noises=noises;
+        }
+
+        result.letters.push_back(configAlpha);
     }
 
 
