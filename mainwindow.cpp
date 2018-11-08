@@ -392,10 +392,20 @@ void MainWindow::refreshViewer(){
     text.replace("_"," ");
     text.replace(currentLetter,"<font color=\"red\">"+currentLetter+"</font>");
 
-    lblAbcLetter->setText(currentLetter.toUpper()+currentLetter.toLower());
-    lblAbcText->setText(text);
-
+    setLetterAndText(currentLetter.toUpper()+currentLetter.toLower(),text);
     setPixmapViewer(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
+}
+
+void MainWindow::setLetterAndText(QString letter,QString text){
+    QFont fontSizeLetter;
+    fontSizeLetter.setPointSize(45);
+
+    if (letter>15) fontSizeLetter.setPointSize(40);
+
+    lblAbcLetter->setFont(fontSizeLetter);
+    lblAbcLetter->setText(letter);
+
+    lblAbcText->setText(text);
 }
 
 void MainWindow::setPixmapViewer(QPixmap pixmap){
@@ -745,9 +755,8 @@ void MainWindow::clickButtonGameAnimals(){
         return;
     }
 
+    setLetterAndText(tr("Animals"),"");
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/turtle.png"));
-    lblAbcText->setText("");
-    lblAbcLetter->setText(tr("Animals"));
 }
 
 void MainWindow::clickButtonGameFood(){
@@ -768,8 +777,7 @@ void MainWindow::clickButtonGameFood(){
 
 
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/hot_dog.png"));
-    lblAbcText->setText("");
-    lblAbcLetter->setText(tr("Food"));
+    setLetterAndText(tr("Food"),"");
 }
 
 void MainWindow::clickButtonGameInstrument(){
@@ -788,9 +796,8 @@ void MainWindow::clickButtonGameInstrument(){
         return;
     }
 
+    setLetterAndText(tr("Music"),"");
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/guitar.png"));
-    lblAbcText->setText("");
-    lblAbcLetter->setText(tr("Music"));
 }
 
 void MainWindow::clickButtonGameToys(){
@@ -809,9 +816,8 @@ void MainWindow::clickButtonGameToys(){
         return;
     }
 
+    setLetterAndText(tr("Toys"),"");
     setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
-    lblAbcText->setText("");
-    lblAbcLetter->setText(tr("Toys"));
 }
 
 void MainWindow::clickButtonSound(){

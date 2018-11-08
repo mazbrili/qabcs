@@ -54,7 +54,8 @@ class MainWindow : public QMainWindow {
         QString typeGameToString(TYPE_GAME type);
 
         void setAbcLang(QString lang, QString filename);
-        void refreshViewer();
+        void refreshViewer();        
+        void setLetterAndText(QString letter, QString text);
         void setPixmapViewer(QPixmap pixmap);
 
         void updateletterToList(QString folder_lang, LETTER_INFO letter);
