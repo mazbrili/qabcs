@@ -75,6 +75,7 @@
 
 </source>
         <translation>Как да използваме:
+
 </translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-==========================ENGLISH==============================
++++ ENGLISH +++
 
 qABCs is copyright by DanSoft (dik@inbox.ru), 2018
 
@@ -41,7 +41,7 @@ Portuguese, Bulgarian.
 ABCs translated on American English (US), Russian, United
 Kingdom English (UK).
 
-==========================RUSSIAN==============================
++++ RUSSIAN +++
 
 Авторское право на qABCs принадлежит DanSoft (dik@inbox.ru),
 2018
