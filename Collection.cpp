@@ -112,7 +112,7 @@ QPixmap Collection::getPixmap(QString letter){
     QStringList listCombinationspaths;
 
     QStringList listTypes = QStringList() << "misc" << "food" << "animals" << "music" << "toys";
-    QStringList listExtensionFiles = QStringList() << "png" << "jpg" << "svg";
+    QStringList listExtensionFiles = QStringList() << "png" << "xpm" << "svg";
 
     listCombinationspaths.push_back(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/pics/"+listLetters[letter].pic.toLower());
     for (QString type:listTypes){
