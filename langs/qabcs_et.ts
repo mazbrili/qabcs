@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="et" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="et">
 <context>
     <name>FormAbout</name>
     <message>
@@ -9,7 +11,7 @@
     <message>
         <location filename="../FormAbout.ui" line="31"/>
         <source>qABCs</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -19,7 +21,7 @@
     <message>
         <location filename="../FormAbout.ui" line="190"/>
         <source>BitBucket</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -153,7 +155,7 @@
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
         language&quot; icon. Default language is American English.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -179,7 +181,7 @@
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../FormSelectLanguage.cpp" line="19"/>
+        <location filename="../FormSelectLanguage.cpp" line="16"/>
         <source>Select ABC language</source>
         <translation>Keele valimine</translation>
     </message>
@@ -187,150 +189,164 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="100"/>
         <location filename="../mainwindow.cpp" line="101"/>
-        <location filename="../mainwindow.cpp" line="600"/>
+        <location filename="../mainwindow.cpp" line="102"/>
+        <location filename="../mainwindow.cpp" line="673"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="105"/>
         <location filename="../mainwindow.cpp" line="106"/>
-        <location filename="../mainwindow.cpp" line="620"/>
+        <location filename="../mainwindow.cpp" line="107"/>
+        <location filename="../mainwindow.cpp" line="693"/>
         <source>Find the letter on the keyboard (randomly)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
         <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="112"/>
         <source>Show foods for each letter</source>
         <translation>Toidu näitamine iga tähe kohta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="115"/>
         <location filename="../mainwindow.cpp" line="116"/>
+        <location filename="../mainwindow.cpp" line="117"/>
         <source>Show animals for each letter</source>
         <translation>Looma näitamine iga tähe kohta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="120"/>
         <location filename="../mainwindow.cpp" line="121"/>
+        <location filename="../mainwindow.cpp" line="122"/>
         <source>Show musical instruments for each letter</source>
         <translation>Pilli näitamine iga tähe kohta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="125"/>
         <location filename="../mainwindow.cpp" line="126"/>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Show toys for each letter</source>
         <translation>Mänguasja näitamine iga tähe kohta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="130"/>
         <location filename="../mainwindow.cpp" line="131"/>
+        <location filename="../mainwindow.cpp" line="132"/>
         <source>Sound on/off</source>
         <translation>Heli sisse/välja</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="133"/>
         <location filename="../mainwindow.cpp" line="134"/>
+        <location filename="../mainwindow.cpp" line="135"/>
         <source>Select language</source>
         <translation>Keele valimine</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="136"/>
         <location filename="../mainwindow.cpp" line="137"/>
+        <location filename="../mainwindow.cpp" line="138"/>
         <source>Help</source>
         <translation>Abi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="139"/>
         <location filename="../mainwindow.cpp" line="140"/>
+        <location filename="../mainwindow.cpp" line="141"/>
         <source>About qABCs</source>
         <translation>Teave qABCs kohta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="142"/>
         <location filename="../mainwindow.cpp" line="143"/>
+        <location filename="../mainwindow.cpp" line="144"/>
         <source>Exit</source>
         <translation>Välju</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="208"/>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="211"/>
+        <location filename="../mainwindow.cpp" line="273"/>
         <source>Error while opening</source>
         <translation>Tõrge avamisel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="222"/>
         <source>is not valid</source>
         <translation>ei ole korrektne</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="314"/>
+        <location filename="../mainwindow.cpp" line="333"/>
         <source>Error str:</source>
         <translation>Veastring:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="534"/>
-        <location filename="../mainwindow.cpp" line="568"/>
+        <location filename="../mainwindow.cpp" line="607"/>
+        <location filename="../mainwindow.cpp" line="641"/>
         <source>CONGRATS!</source>
         <translation>ÕNNITLEME!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="535"/>
-        <location filename="../mainwindow.cpp" line="569"/>
+        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="642"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
         <translation>Uueks mänguks vajuta Enter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="609"/>
-        <location filename="../mainwindow.cpp" line="662"/>
-        <location filename="../mainwindow.cpp" line="681"/>
-        <location filename="../mainwindow.cpp" line="702"/>
-        <location filename="../mainwindow.cpp" line="724"/>
-        <location filename="../mainwindow.cpp" line="745"/>
+        <location filename="../mainwindow.cpp" line="682"/>
+        <location filename="../mainwindow.cpp" line="735"/>
+        <location filename="../mainwindow.cpp" line="754"/>
+        <location filename="../mainwindow.cpp" line="774"/>
+        <location filename="../mainwindow.cpp" line="795"/>
+        <location filename="../mainwindow.cpp" line="815"/>
         <source>ABC is not loaded</source>
         <translation>Tähestik ei ole laaditud</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="672"/>
+        <location filename="../mainwindow.cpp" line="745"/>
         <source>Press a Key to See an Animal</source>
         <translation>Looma nägemiseks vajuta klahvi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="688"/>
+        <location filename="../mainwindow.cpp" line="759"/>
         <source>Animals</source>
         <translation>Loomad</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="693"/>
+        <location filename="../mainwindow.cpp" line="765"/>
         <source>Press a Key to See a Food</source>
         <translation>Toidu nägemiseks vajuta klahvi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="../mainwindow.cpp" line="781"/>
         <source>Food</source>
         <translation>Toit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="715"/>
+        <location filename="../mainwindow.cpp" line="786"/>
         <source>Press a Key to See an Instrument</source>
         <translation>Pilli nägemiseks vajuta klahvi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="731"/>
+        <location filename="../mainwindow.cpp" line="800"/>
         <source>Music</source>
         <translation>Muusika</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="736"/>
+        <location filename="../mainwindow.cpp" line="806"/>
         <source>Press a Key to See a Toy</source>
         <translation>Mänguasja nägemiseks vajuta klahvi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="752"/>
+        <location filename="../mainwindow.cpp" line="820"/>
         <source>Toys</source>
         <translation>Mänguasjad</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../LoaderAbcFormats.cpp" line="35"/>
+        <location filename="../LoaderAbcFormats.cpp" line="119"/>
+        <source>Error while opening</source>
+        <translation type="unfinished">Tõrge avamisel</translation>
+    </message>
+    <message>
+        <location filename="../LoaderAbcFormats.cpp" line="49"/>
+        <source>is not valid</source>
+        <translation type="unfinished">ei ole korrektne</translation>
     </message>
 </context>
 </TS>
