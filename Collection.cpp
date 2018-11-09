@@ -39,6 +39,12 @@ void Collection::setLetter(QString letter,QString folderLang,QString name,QStrin
         if (noises.isEmpty()) noises=listLetters[letter].noises;
     }
 
+    if (!sound_pic.isEmpty()){
+        if (!QFile::exists(sound_pic)){
+            sound_pic=sound_pic.toLower().replace(" ","_");
+        }
+    }
+
 
     // find sounds file for letter
     if (!sound_pic.isEmpty() and !folderLang.isEmpty()){
