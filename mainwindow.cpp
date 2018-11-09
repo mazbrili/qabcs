@@ -400,7 +400,7 @@ void MainWindow::setLetterAndText(QString letter,QString text){
     QFont fontSizeLetter;
     fontSizeLetter.setPointSize(45);
 
-    if (letter>15) fontSizeLetter.setPointSize(40);
+    if (letter.size()>15) fontSizeLetter.setPointSize(40);
 
     lblAbcLetter->setFont(fontSizeLetter);
     lblAbcLetter->setText(letter);
