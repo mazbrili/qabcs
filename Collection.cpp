@@ -1,6 +1,7 @@
 #include "Collection.h"
 
 #include <QFile>
+#include <QDebug>
 
 #include "config_qabcs.h"
 #include "SoundEngine.h"
@@ -43,20 +44,6 @@ void Collection::setLetter(QString letter,QString folderLang,QString name,QStrin
         if (!QFile::exists(sound_pic)){
             sound_pic=sound_pic.toLower().replace(" ","_");
         }
-    }
-
-
-    // find sounds file for letter
-    if (!sound_pic.isEmpty() and !folderLang.isEmpty()){
-        QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+folderLang+"/sounds/words";
-        QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,sound_pic.toLower());
-        if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
-            sound_pic=letterSoundLetterFilename;
-        }else{
-            if (listLetters.contains(letter)) sound_pic=listLetters[letter].sound_pic;
-        }
-    }else{
-        if (listLetters.contains(letter)) sound_pic=listLetters[letter].sound_pic;
     }
 
     listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
@@ -176,9 +163,36 @@ void Collection::playSoundPicture(QString letter){
             SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+words+"\"");
         }
     }else{
-        QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
-        QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
-        SoundEngine::playSoundFromFile(filename);
+        // FIXME: replace all
+        bool isPlaySoundPic=false;
+        {
+            QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
+            QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
+            if (QFile::exists(filename)){
+                SoundEngine::playSoundFromFile(filename);
+                isPlaySoundPic=true;
+            }
+        }
+        if (isPlaySoundPic==false){
+            // FIXME: replace all
+            ABC_CONFIG config_current = LoaderAbcFormats::LoadFilename(_lastFileName);
+            ABC_CONFIG config_inherits;
+            if (!config_current.inheritsFrom.isEmpty()){
+                config_inherits = LoaderAbcFormats::LoadFilename( QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.inheritsFrom);
+            }
+            if (!config_inherits.filename.isEmpty()){
+                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/words";
+                QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,listLetters[letter].sound_pic.toLower().replace(" ","_"));
+
+                qDebug() << folderAlpha << listLetters[letter].sound_pic.toLower().replace(" ","_");
+                if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+                    SoundEngine::playSoundFromFile(letterSoundLetterFilename);
+                    isPlaySoundPic=true;
+                }
+            }
+        }
+
+
     }
 
     // play noises
