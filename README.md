@@ -42,6 +42,14 @@ Portuguese, Bulgarian.
 ABCs translated on American English (US), Russian, United
 Kingdom English (UK).
 
+Packages:
+Repository of your distribution is the first.
+Arch, CentOS, Debian, Fedora, Mageia, Suse, Ubuntu:
+https://build.opensuse.org/package/show/home:admsasha/qABCs
+
+Applications for Windows and sources:
+https://bitbucket.org/admsasha/qabcs/downloads
+
 +++ RUSSIAN +++
 
 Авторское право на qABCs принадлежит DanSoft (dik@inbox.ru),
@@ -87,6 +95,14 @@ make
 голландский, украинский, эстонский, португальский, болгарский.
 Алфавиты переведены на американский английский (US), русский,
 английский Соединённого Королевства (UK).
+
+Пакеты:
+Репозиторий вашего дистрибутива первичен.
+Arch, CentOS, Debian, Fedora, Mageia, Suse, Ubuntu:
+https://build.opensuse.org/package/show/home:admsasha/qABCs
+
+Приложения для Windows и сурсы:
+https://bitbucket.org/admsasha/qabcs/downloads
 
 ![screenshot1 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
 ![screenshot2 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
