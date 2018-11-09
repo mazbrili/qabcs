@@ -61,6 +61,9 @@ class MainWindow : public QMainWindow {
         void updateletterToList(QString folder_lang, LETTER_INFO letter);
         void playSoundLetter(QString letter, bool async=false);
 
+        bool isExistSox();
+        bool isExistEspeak();
+
         // for type game random
         int gameRandomGenerateNextIndex();
 

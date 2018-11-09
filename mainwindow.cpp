@@ -11,6 +11,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QRegExp>
+#include <QProcess>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -45,6 +46,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     if (confSettings->value("global/sound","true").toString()=="false"){
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
         soundStatus=false;
+    }
+
+    if (isExistSox()==false){
+        QMessageBox::critical(this,"qABCs",tr("the play command from the sox package was not found. Sound will be muted."));
+        accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
+        soundStatus=false;
+        accSound->setEnabled(false);
+    }
+
+    if (isExistEspeak()==false){
+        QMessageBox::critical(this,"qABCs",tr("espeak not found. Some features will not be available."));
     }
 
     setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
@@ -848,4 +860,27 @@ void MainWindow::clickButtonHelp(){
 void MainWindow::clickButtonInfo(){
     FormAbout form(this);
     form.exec();
+}
+
+
+bool MainWindow::isExistSox(){
+    QProcess proc;
+    proc.start("play --version");
+    proc.waitForFinished();
+    QString text = proc.readAll();
+
+   if (!text.isEmpty()) return true;
+
+    return false;
+}
+
+bool MainWindow::isExistEspeak(){
+    QProcess proc;
+    proc.start("espeak --version");
+    proc.waitForFinished();
+    QString text = proc.readAll();
+
+   if (!text.isEmpty()) return true;
+
+    return false;
 }
