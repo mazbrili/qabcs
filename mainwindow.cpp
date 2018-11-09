@@ -538,7 +538,8 @@ int MainWindow::gameRandomGenerateNextIndex(){
     }
     if (indexLetter==-1) return -1;
 
-    listCollections["rand"]->setLetter(letter,"",listLettersGameRand.at(gameRandomCurrentIndex));
+    listCollections["rand"]->clearLetter(letter);
+    listCollections["rand"]->setLetter(letter,currentLanguageAbc,listLettersGameRand.at(gameRandomCurrentIndex));
 
     return indexLetter;
 }

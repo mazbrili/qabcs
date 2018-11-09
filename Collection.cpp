@@ -56,6 +56,10 @@ void Collection::setLetter(QString letter,QString folderLang,QString name,QStrin
     listLetters[letter]={letter,name,pic,sound_pic,speak_method,espeak_params,espeak_words,noises};
 }
 
+void Collection::clearLetter(QString letter){
+    listLetters[letter]=LETTER_CONFIG();
+}
+
 void Collection::setGlobalParam(QJsonObject params){
     if (!params.value("speak_method").isNull()){
         _speak_method = params.value("speak_method").toString();
