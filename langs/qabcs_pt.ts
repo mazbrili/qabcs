@@ -4,7 +4,7 @@
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation>Janela</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="31"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../FormAbout.ui" line="208"/>
         <source>Visit web site</source>
-        <translation>Visitar o sítio web</translation>
+        <translation>Visitar site da Web</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="226"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation>DIálogo</translation>
+        <translation>Janela</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation>Janela</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
@@ -256,7 +256,7 @@
         <location filename="../mainwindow.cpp" line="535"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
-        <translation>Carrega na tecla &quot;ENTER&quot; para jogar outra vez</translation>
+        <translation>Pressione &quot;ENTER&quot; para Jogar Novamente</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="609"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="672"/>
         <source>Press a Key to See an Animal</source>
-        <translation>Carrega numa tecla para ver um animal</translation>
+        <translation>Pressione uma Tecla para Ver um Animal</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="688"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="693"/>
         <source>Press a Key to See a Food</source>
-        <translation>Carrega numa tecla para ver um alimento</translation>
+        <translation>Pressione uma Tecla para Ver um Alimento</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="710"/>
@@ -291,7 +291,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="715"/>
         <source>Press a Key to See an Instrument</source>
-        <translation>Carrega numa tecla para ver um instrumento</translation>
+        <translation>Pressione uma Tecla para Ver um Instrumento</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="731"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="736"/>
         <source>Press a Key to See a Toy</source>
-        <translation>Carrega numa tecla para ver um brinquedo</translation>
+        <translation>Pressione uma Tecla para Ver um Brinquedo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="752"/>
