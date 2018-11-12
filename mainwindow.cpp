@@ -56,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     }
 
     if (isExistEspeak()==false){
-        QMessageBox::critical(this,"qABCs",tr("espeak not found. Some features will not be available."));
+        QMessageBox::critical(this,"qABCs",tr("espeak was not found. Some features will not be available."));
     }
 
     setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
