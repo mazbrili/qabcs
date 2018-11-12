@@ -1,4 +1,4 @@
-+++ ENGLISH +++
+# ENGLISH #
 
 qABCs is copyright by DanSoft (dik@inbox.ru), 2018
 
@@ -15,34 +15,38 @@ familiarize one with a keyboard.
 To build qABCs you need Qt5 and qmake.
 Full list of dependencies for linux: see pkg/qabcs.spec.
 
-Building:
+### Building: ###
+~~~~
 qmake
 make
-
+~~~~
 Also you can use Qt Creator for building.
 Just open qabcs.pro and build qABCs (`Ctrl+B`).
 
-Installation (under root):
+### Installation (under root): ###
+~~~~
 make install
+~~~~
 
-Testing without installation:
+### Testing without installation: ###
+~~~~
 qmake QMAKE_CXXFLAGS+='-DGLOBAL_PATH_USERDATA=\\\"..\\\"'
 make
 ./Bin/qabcs
-
-Translations:
+~~~~
+### Translations: ###
 GUI and desktop file: https://www.transifex.com/Magic/qabcs
 ABC: create your own abs.json (more detailed format) or
 abs.properties (easier, but not detailed format). Use pictures
 from abcs/all/pics.
 
-Current languages:
+### Current languages: ###
 GUI translated on English, Russian, Dutch, Ukrainian, Estonian,
 Portuguese, Bulgarian.
 ABCs translated on American English (US), Russian, United
 Kingdom English (UK), Ukrainian.
 
-Packages:
+### Packages: ###
 Repository of your distribution is the first.
 Arch, CentOS, Debian, Fedora, Mageia, Suse, Ubuntu:
 https://build.opensuse.org/package/show/home:admsasha/qABCs
@@ -50,8 +54,9 @@ https://build.opensuse.org/package/show/home:admsasha/qABCs
 Applications for Windows and sources:
 https://bitbucket.org/admsasha/qabcs/downloads
 
-+++ RUSSIAN +++
+***
 
+# RUSSIAN #
 Авторское право на qABCs принадлежит DanSoft (dik@inbox.ru),
 2018
 
@@ -69,40 +74,46 @@ qABCs - это образовательная утилита/игра, орие�
 Для сборки qABCs вам нужны Qt5 и qmake.
 Полный список зависимостей для linux: см. pkg/qabcs.spec.
 
-Сборка:
+### Сборка: ###
+~~~~
 qmake
 make
-
+~~~~
 Также вы можете использовать Qt Creator для сборки.
 Просто откройте qabcs.pro и соберите qABCs (`Ctrl+B`).
 
-Установка (под root):
+### Установка (под root): ###
+~~~~
 make install
+~~~~
 
-Тестирование без установки:
+### Тестирование без установки: ###
+~~~~
 qmake QMAKE_CXXFLAGS+='-DGLOBAL_PATH_USERDATA=\\\"..\\\"'
 make
 ./Bin/qabcs
-
-Переводы:
+~~~~
+### Переводы: ###
 ГУИ и desktop файл: https://www.transifex.com/Magic/qabcs
 Алфавит: создайте ваш собственный abs.json (более детальный
 формат) или abs.properties (проще, но не детальный формат).
 Используйте картинки из abcs/all/pics.
 
-Текущие языки:
+### Текущие языки: ###
 ГУИ переведён на английский, русский,
 голландский, украинский, эстонский, португальский, болгарский.
 Алфавиты переведены на американский английский (US), русский,
 английский Соединённого Королевства (UK), украинский.
 
-Пакеты:
+### Пакеты: ###
 Репозиторий вашего дистрибутива первичен.
 Arch, CentOS, Debian, Fedora, Mageia, Suse, Ubuntu:
 https://build.opensuse.org/package/show/home:admsasha/qABCs
 
 Приложения для Windows и сурсы:
 https://bitbucket.org/admsasha/qabcs/downloads
+
+***
 
 ![screenshot1 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
 ![screenshot2 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
