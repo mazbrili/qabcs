@@ -15,6 +15,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QCoreApplication>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     this->setFixedSize(592,550);
@@ -864,8 +865,14 @@ void MainWindow::clickButtonInfo(){
 
 
 bool MainWindow::isExistSox(){
+    QString path_play ="play";
+
+#if defined(_WIN32)
+    path_play = QCoreApplication::applicationDirPath() + "/3rdparty/sox/play.exe";
+#endif
+
     QProcess proc;
-    proc.start("play --version");
+    proc.start(path_play+" --version");
     proc.waitForFinished();
     QString text = proc.readAll();
 

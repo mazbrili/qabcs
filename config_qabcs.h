@@ -3,7 +3,7 @@
 
 
 #define QABCS_VERSION "1.0.0"
-#define QABCS_DATEBUILD "9.11.2018"
+#define QABCS_DATEBUILD "12.11.2018"
 
 #if !defined(GLOBAL_PATH_USERDATA)
 #if defined(__WIN32__)
