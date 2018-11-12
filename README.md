@@ -40,7 +40,7 @@ Current languages:
 GUI translated on English, Russian, Dutch, Ukrainian, Estonian,
 Portuguese, Bulgarian.
 ABCs translated on American English (US), Russian, United
-Kingdom English (UK).
+Kingdom English (UK), Ukrainian.
 
 Packages:
 Repository of your distribution is the first.
@@ -94,7 +94,7 @@ make
 ГУИ переведён на английский, русский,
 голландский, украинский, эстонский, португальский, болгарский.
 Алфавиты переведены на американский английский (US), русский,
-английский Соединённого Королевства (UK).
+английский Соединённого Королевства (UK), украинский.
 
 Пакеты:
 Репозиторий вашего дистрибутива первичен.
