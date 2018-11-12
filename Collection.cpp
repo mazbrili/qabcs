@@ -126,7 +126,7 @@ void Collection::playSoundPicture(QString letter){
 
     if (speak_method=="espeak"){
         if (!listLetters[letter].espeak_words.isEmpty()){
-            SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
+            SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+listLetters[letter].espeak_words+"\"");
         }
 
     } else if (speak_method=="properties"){
@@ -160,7 +160,7 @@ void Collection::playSoundPicture(QString letter){
         if (isPlaySoundPic==false){
             QString words = listLetters[letter].espeak_words;
             if (words.isEmpty()) words=letter;
-            SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+words+"\"");
+            SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+words+"\"");
         }
     }else{
         // FIXME: replace all

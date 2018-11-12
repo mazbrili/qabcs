@@ -17,6 +17,9 @@
 #include <QJsonArray>
 #include <QCoreApplication>
 
+QString global_path_to_espeak;
+QString global_path_to_play;
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     this->setFixedSize(592,550);
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
@@ -515,19 +518,19 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                     }
                 }
 
-                SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
+                SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
 
             }else{
                 if (speak_method=="espeak"){
                     if (!l.espeak_words.isEmpty()){
-                        SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+l.espeak_words+"\"",async);
+                        SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
                     }
                 }else{
                     QString filename = l.sound_letter;
                     if (!filename.isEmpty() and QFile::exists(filename)){
                         SoundEngine::playSoundFromFile(filename,async);
                     }else{
-                        SoundEngine::playSoundFromSpeechSynthesizer("espeak "+espeak_params+" \""+letter+"\"",async);
+                        SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+letter+"\"",async);
                     }
                 }
             }
@@ -865,29 +868,48 @@ void MainWindow::clickButtonInfo(){
 
 
 bool MainWindow::isExistSox(){
-    QString path_play ="play";
+    QProcess proc;
+    global_path_to_play="play";
 
 #if defined(_WIN32)
-    path_play = QCoreApplication::applicationDirPath() + "/3rdparty/sox/play.exe";
+    global_path_to_play = "\""+QCoreApplication::applicationDirPath() + "/3rdparty/sox/play.exe\"";
 #endif
 
-    QProcess proc;
-    proc.start(path_play+" --version");
+    proc.start(global_path_to_play+" --version");
     proc.waitForFinished();
     QString text = proc.readAll();
 
-   if (!text.isEmpty()) return true;
+    if (!text.isEmpty()){
+        qDebug() << tr("play found:")+" "+global_path_to_play;
+        return true;
+    }
 
     return false;
 }
 
 bool MainWindow::isExistEspeak(){
     QProcess proc;
-    proc.start("espeak --version");
-    proc.waitForFinished();
-    QString text = proc.readAll();
+    global_path_to_espeak="espeak";
 
-   if (!text.isEmpty()) return true;
+    QStringList pathForSearch;
+    pathForSearch.push_back("espeak");
+
+#if defined(_WIN32)
+    pathForSearch.push_back("\""+QDir::rootPath()+"Program Files (x86)/eSpeak/command_line/espeak.exe\"");
+    pathForSearch.push_back("\""+QDir::rootPath()+"Program Files/eSpeak/command_line/espeak.exe\"");
+    pathForSearch.push_back("\""+QCoreApplication::applicationDirPath() + "/3rdparty/eSpeak/command_line/espeak.exe\"");
+#endif
+
+    for (QString pathEspeak:pathForSearch){
+        proc.start(pathEspeak+" --version");
+        proc.waitForFinished();
+        QString text = proc.readAll();
+        if (!text.isEmpty()){
+            global_path_to_espeak=pathEspeak;
+            qDebug() << tr("espeak found:")+" "+global_path_to_espeak;
+            return true;
+        }
+    }
 
     return false;
 }

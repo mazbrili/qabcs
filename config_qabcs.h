@@ -1,6 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <QString>
 
 #define QABCS_VERSION "1.0.0"
 #define QABCS_DATEBUILD "12.11.2018"
@@ -13,5 +14,7 @@
 #endif
 #endif
 
+extern QString global_path_to_espeak;
+extern QString global_path_to_play;
 
 #endif // CONFIG_H
