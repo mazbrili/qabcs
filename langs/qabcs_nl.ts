@@ -188,12 +188,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="52"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
-        <translation type="unfinished"/>
+        <translation>de opdracht &apos;play&apos; uit het pakket &apos;sox&apos; is niet aangetroffen. Het geluid wordt gedempt.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="59"/>
         <source>espeak was not found. Some features will not be available.</source>
-        <translation type="unfinished"/>
+        <translation>espeak is niet aangetroffen. Sommige functies zijn niet beschikbaar.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="113"/>

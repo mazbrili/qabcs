@@ -152,7 +152,9 @@
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
         language&quot; icon. Default language is American English.</source>
-        <translation type="unfinished"/>
+        <translation>Вибір мови абетки:
+        Змінити мову абетки можна натисканням піктограми
+        «Вибрати мову». Типовою мовою є американська англійська.</translation>
     </message>
 </context>
 <context>
@@ -188,26 +190,26 @@
     <message>
         <location filename="../mainwindow.cpp" line="52"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
-        <translation type="unfinished"/>
+        <translation>не знайдено програми play з пакунка sox. Звук буде вимкнено.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="59"/>
         <source>espeak was not found. Some features will not be available.</source>
-        <translation type="unfinished"/>
+        <translation>не знайдено espeak. Деякі з можливостей будуть недоступними.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="113"/>
         <location filename="../mainwindow.cpp" line="114"/>
         <location filename="../mainwindow.cpp" line="685"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
-        <translation type="unfinished"/>
+        <translation>Знайдіть літеру на клавіатурі (за абеткою)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="118"/>
         <location filename="../mainwindow.cpp" line="119"/>
         <location filename="../mainwindow.cpp" line="705"/>
         <source>Find the letter on the keyboard (randomly)</source>
-        <translation type="unfinished"/>
+        <translation>Знайдіть літеру на клавіатурі (випадковим чином)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="123"/>
