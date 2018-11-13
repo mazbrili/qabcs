@@ -159,7 +159,7 @@ void Collection::playSoundPicture(QString letter){
 
         if (isPlaySoundPic==false){
             QString words = listLetters[letter].espeak_words;
-            if (words.isEmpty()) words=letter;
+            if (words.isEmpty()) words=listLetters[letter].name;
             SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+words+"\"");
         }
     }else{
