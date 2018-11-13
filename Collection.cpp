@@ -184,7 +184,6 @@ void Collection::playSoundPicture(QString letter){
                 QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/words";
                 QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,listLetters[letter].sound_pic.toLower().replace(" ","_"));
 
-                qDebug() << folderAlpha << listLetters[letter].sound_pic.toLower().replace(" ","_");
                 if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
                     SoundEngine::playSoundFromFile(letterSoundLetterFilename);
                     isPlaySoundPic=true;
