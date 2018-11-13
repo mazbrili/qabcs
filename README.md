@@ -38,7 +38,8 @@ make
 GUI and desktop file: https://www.transifex.com/Magic/qabcs
 ABC: create your own abs.json (more detailed format) or
 abs.properties (easier, but not detailed format). Use pictures
-from abcs/all/pics.
+from abcs/all/pics. Use template scripts to generate sound
+files from text to speech or record voice.
 
 ### Current languages: ###
 GUI translated on English, Russian, Dutch, Ukrainian, Estonian,
@@ -46,7 +47,7 @@ Portuguese, Bulgarian.
 ABCs translated on American English (US), Russian, United
 Kingdom English (UK), Ukrainian.
 
-### Packages: ###
+### Packages and build specifications: ###
 Repository of your distribution is the first.
 Arch, CentOS, Debian, Fedora, Mageia, Suse, Ubuntu:
 https://build.opensuse.org/package/show/home:admsasha/qABCs
@@ -97,15 +98,17 @@ make
 ГУИ и desktop файл: https://www.transifex.com/Magic/qabcs
 Алфавит: создайте ваш собственный abs.json (более детальный
 формат) или abs.properties (проще, но не детальный формат).
-Используйте картинки из abcs/all/pics.
+Используйте картинки из abcs/all/pics. Используйте шаблонные
+скрипты для генерации звуковых файлов из текста в речь или
+запишите голос.
 
 ### Текущие языки: ###
-ГУИ переведён на английский, русский,
-голландский, украинский, эстонский, португальский, болгарский.
+ГУИ переведён на английский, русский, голландский, украинский,
+эстонский, португальский, болгарский.
 Алфавиты переведены на американский английский (US), русский,
 английский Соединённого Королевства (UK), украинский.
 
-### Пакеты: ###
+### Пакеты  и спецификации для сборки: ###
 Репозиторий вашего дистрибутива первичен.
 Arch, CentOS, Debian, Fedora, Mageia, Suse, Ubuntu:
 https://build.opensuse.org/package/show/home:admsasha/qABCs
