@@ -131,30 +131,11 @@ void Collection::playSoundPicture(QString letter){
 
     } else if (speak_method=="properties"){
         bool isPlaySoundPic=false;
-        {
-            QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
-            QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
-            if (!filename.isEmpty() and QFile::exists(filename)){
-                SoundEngine::playSoundFromFile(filename);
-                isPlaySoundPic=true;
-            }
-        }
-        if (isPlaySoundPic==false){
-            // FIXME: replace all
-            ABC_CONFIG config_current = LoaderAbcFormats::LoadFilename(_lastFileName);
-            ABC_CONFIG config_inherits;
-            if (!config_current.inheritsFrom.isEmpty()){
-                config_inherits = LoaderAbcFormats::LoadFilename( QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.inheritsFrom);
-            }
-            if (!config_inherits.filename.isEmpty()){
-                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/words";
-                QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,listLetters[letter].sound_pic.toLower().replace(" ","_"));
-                if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
-                    SoundEngine::playSoundFromFile(letterSoundLetterFilename);
-                    isPlaySoundPic=true;
-                }
-            }
 
+        QString soundFilename = SoundEngine::findSoundFile(_lastFileName,listLetters[letter].sound_pic,"");
+        if (!soundFilename.isEmpty()){
+            SoundEngine::playSoundFromFile(soundFilename);
+            isPlaySoundPic=true;
         }
 
         if (isPlaySoundPic==false){
@@ -163,35 +144,10 @@ void Collection::playSoundPicture(QString letter){
             SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+words+"\"");
         }
     }else{
-        // FIXME: replace all
-        bool isPlaySoundPic=false;
-        {
-            QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+_abcLanguage+"/sounds/words";
-            QString filename = SoundEngine::findSoundfile(folderWords,listLetters[letter].sound_pic.toLower().replace(" ","_"));
-            if (QFile::exists(filename)){
-                SoundEngine::playSoundFromFile(filename);
-                isPlaySoundPic=true;
-            }
+        QString soundFilename = SoundEngine::findSoundFile(_lastFileName,listLetters[letter].sound_pic,"");
+        if (!soundFilename.isEmpty()){
+            SoundEngine::playSoundFromFile(soundFilename);
         }
-        if (isPlaySoundPic==false){
-            // FIXME: replace all
-            ABC_CONFIG config_current = LoaderAbcFormats::LoadFilename(_lastFileName);
-            ABC_CONFIG config_inherits;
-            if (!config_current.inheritsFrom.isEmpty()){
-                config_inherits = LoaderAbcFormats::LoadFilename( QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.inheritsFrom);
-            }
-            if (!config_inherits.filename.isEmpty()){
-                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/words";
-                QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,listLetters[letter].sound_pic.toLower().replace(" ","_"));
-
-                if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
-                    SoundEngine::playSoundFromFile(letterSoundLetterFilename);
-                    isPlaySoundPic=true;
-                }
-            }
-        }
-
-
     }
 
     // play noises

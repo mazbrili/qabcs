@@ -8,6 +8,7 @@
 #include <QDebug>
 
 #include "config_qabcs.h"
+#include "LoaderAbcFormats.h"
 
 SoundEngine::SoundEngine(){
 
@@ -75,3 +76,37 @@ QString SoundEngine::findSoundfile(QString folder,QString string){
 
     return "";
 }
+
+
+
+QString SoundEngine::findSoundFile(QString filename,QString sound_pic,QString typeSearch){
+    ABC_CONFIG config_current = LoaderAbcFormats::LoadFilename(filename);
+
+    {
+        QString folderWords = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.folder_lang+"/sounds/words";
+        QString filename = SoundEngine::findSoundfile(folderWords,sound_pic.toLower().replace(" ","_"));
+        if (!filename.isEmpty() and QFile::exists(filename)){
+            return filename;
+        }
+    }
+
+    {
+        ABC_CONFIG config_inherits;
+        if (!config_current.inheritsFrom.isEmpty()){
+            config_inherits = LoaderAbcFormats::LoadFilename( QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.inheritsFrom);
+        }
+        if (!config_inherits.filename.isEmpty()){
+            QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/words";
+            QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,sound_pic.toLower().replace(" ","_"));
+
+            if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+                return filename;
+            }
+        }
+    }
+
+
+    return "";
+}
+
+
