@@ -321,7 +321,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         if (pair.at(0)=="speak_method"){
             if (pair.size()==2){
                 _speak_method=pair.at(1);
-                if (_speak_method=="file" or _speak_method="") _speak_method="properties";
+                if (_speak_method=="file" or _speak_method=="") _speak_method="properties";
                 for (QString type:listTypes) listCollections[type]->setGlobalParam(_speak_method,_espeak_params);
             }
             continue;
