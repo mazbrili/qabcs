@@ -892,7 +892,7 @@ bool MainWindow::isExistEspeak(){
 #if defined(_WIN32)
     pathForSearch.push_back("\""+QDir::rootPath()+"Program Files (x86)/eSpeak/command_line/espeak.exe\"");
     pathForSearch.push_back("\""+QDir::rootPath()+"Program Files/eSpeak/command_line/espeak.exe\"");
-    pathForSearch.push_back("\""+QCoreApplication::applicationDirPath() + "/3rdparty/eSpeak/command_line/espeak.exe\"");
+    pathForSearch.push_back("\""+QCoreApplication::applicationDirPath() + "/3rdparty/eSpeak/espeak.exe\"");
 #endif
 
     for (QString pathEspeak:pathForSearch){
