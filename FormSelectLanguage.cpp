@@ -59,6 +59,26 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
         }
     }
 
+
+
+    // loading languages
+    ui->comboBox_2->clear();
+    QDir dirLang(QString(GLOBAL_PATH_USERDATA)+"/langs/");
+    dirLang.setFilter(QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot);
+    QFileInfoList listLang = dirLang.entryInfoList();
+    for (int i = 0; i < listLang.size(); ++i) {
+        QFileInfo fileInfo = listLang.at(i);
+        QRegExp rx("(qabcs_)(.*)(.qm)");
+        if (rx.indexIn(fileInfo.fileName())!=-1){
+            QString lang_code = rx.cap(2);
+            QLocale loc(lang_code);
+            ui->comboBox_2->addItem(loc.nativeLanguageName(),lang_code);
+            if (confSettings->value("abc/lang",QLocale::system().bcp47Name()).toString()==lang_code){
+                ui->comboBox_2->setCurrentIndex(ui->comboBox_2->count()-1);
+            }
+        }
+    }
+
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close()));
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(saveLanguageAbc()));
 }
@@ -72,6 +92,7 @@ void FormSelectLanguage::saveLanguageAbc(){
 
     ABC_INFO abc_info = listAbcFiles.at(ui->comboBox->currentIndex());
 
+    confSettings->setValue("abc/lang",ui->comboBox_2->currentData());
     confSettings->setValue("abc/language",abc_info.folder);
     confSettings->setValue("abc/filename",abc_info.filename);
     accept();

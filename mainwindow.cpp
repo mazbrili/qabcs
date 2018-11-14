@@ -16,6 +16,8 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QCoreApplication>
+#include <QTranslator>
+#include <QLibraryInfo>
 
 QString global_path_to_espeak;
 QString global_path_to_play;
@@ -46,6 +48,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     initGUI();
     initToolBar();
+
+    refreshTranslate();
 
     // read status sound from config
     if (confSettings->value("global/sound","true").toString()=="false"){
@@ -201,6 +205,38 @@ void MainWindow::initLanguageAbc(){
     for (QString type:listTypes) listCollections[type]->setAbcLanguage(currentLanguageAbc);
 
     loadAbcConfig(globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc);
+}
+
+void MainWindow::refreshTranslate(){
+    QDir dirConfig(QDir::homePath()+"/.qabcs/");
+    if (dirConfig.exists()==false) dirConfig.mkpath(QDir::homePath()+"/.qabcs/");
+
+    QSettings confSettings(dirConfig.absoluteFilePath("settings.ini"), QSettings::IniFormat);
+    confSettings.setPath(QSettings::IniFormat, QSettings::UserScope, QDir::currentPath());
+
+    QString locale = confSettings.value("abc/lang",QLocale::system().bcp47Name()).toString();
+
+    qApp->removeTranslator(&translator);
+    qApp->removeTranslator(&qtTranslator);
+
+    // set translator for app
+    translator.load(QString(GLOBAL_PATH_USERDATA)+QString("/langs/qabcs_") + locale);
+    qApp->installTranslator(&translator);
+
+    // set translator for default widget's text (for example: QMessageBox's buttons)
+    qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qApp->installTranslator(&qtTranslator);
+
+
+    // retranslateUi
+    QList<QWidget*> l = this->findChildren<QWidget *>();
+    for (int i=0;i<l.size();i++){
+        QWidget *w = l[i];
+        if (!w->toolTip().isEmpty()) w->setToolTip(tr(w->toolTip().toStdString().c_str()));
+        if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(w->whatsThis().toStdString().c_str()));
+        if (!w->windowTitle().isEmpty()) w->setWindowTitle(tr(w->windowTitle().toStdString().c_str()));
+        if (!w->statusTip().isEmpty()) w->setStatusTip(tr(w->statusTip().toStdString().c_str()));
+    }
 }
 
 
@@ -874,6 +910,8 @@ void MainWindow::clickButtonSound(){
 void MainWindow::clickButtonLang(){
     FormSelectLanguage form(this);
     if (form.exec()){
+        refreshTranslate();
+
         setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
     }
 }

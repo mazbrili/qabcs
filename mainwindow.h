@@ -10,6 +10,7 @@
 #include <QMediaPlayer>
 #include <QStatusBar>
 #include <QLabel>
+#include <QTranslator>
 
 #include "Collection.h"
 
@@ -46,6 +47,8 @@ class MainWindow : public QMainWindow {
         void initGUI();
         void initToolBar();
         void initLanguageAbc();
+
+        void refreshTranslate();
 
         void loadAbcConfig(QString abcFilename);
         bool loadAbcConfigJson(QString filename);
@@ -118,6 +121,9 @@ class MainWindow : public QMainWindow {
 
         QStringList listTypes;
         QMap<QString,Collection*> listCollections;
+
+        QTranslator translator;
+        QTranslator qtTranslator;
 
     protected:
        virtual void keyPressEvent(QKeyEvent *event);
