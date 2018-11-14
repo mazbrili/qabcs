@@ -503,29 +503,11 @@ void MainWindow::playSoundLetter(QString letter,bool async){
             QString speak_method = (l.speak_method.isEmpty()) ? _speak_method : l.speak_method;
             QString espeak_params = (l.espeak_params.isEmpty()) ? _espeak_params : l.espeak_params;
 
-            // FIXME: very bad code. Rewriting required
             if (_lastFormatLoaded=="properties"){
-                qDebug() << currentFilenameAbc;
-                ABC_CONFIG config_current = LoaderAbcFormats::LoadFilename(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc);
-                ABC_CONFIG config_inherits;
-                if (!config_current.inheritsFrom.isEmpty()){
-                    config_inherits = LoaderAbcFormats::LoadFilename(globalPathUserResources+"/"+config_current.inheritsFrom);
-                }
-
-                QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_current.folder_lang+"/sounds/alpha";
-                QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,letter.toLower());
-                if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
+                QString letterSoundLetterFilename =  SoundEngine::findSoundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc,letter,"letter");
+                if (!letterSoundLetterFilename.isEmpty()){
                     SoundEngine::playSoundFromFile(letterSoundLetterFilename,async);
                     return;
-                }else{
-                    if (!config_inherits.filename.isEmpty()){
-                        QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+config_inherits.folder_lang+"/sounds/alpha";
-                        QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,letter.toLower());
-                        if (!letterSoundLetterFilename.isEmpty() and QFile::exists(letterSoundLetterFilename)){
-                            SoundEngine::playSoundFromFile(letterSoundLetterFilename,async);
-                            return;
-                        }
-                    }
                 }
 
                 SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
