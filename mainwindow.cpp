@@ -219,6 +219,19 @@ void MainWindow::refreshTranslate(){
     qApp->removeTranslator(&translator);
     qApp->removeTranslator(&qtTranslator);
 
+    // save original
+    if (listWidgetsRetranslateUi.size()==0){
+        QList<QWidget*> l2 = this->findChildren<QWidget *>();
+        for (auto &w:l2){
+            QMap<QString,QString> m;
+            m["toolTip"]=w->toolTip();
+            m["whatsThis"]=w->whatsThis();
+            m["windowTitle"]=w->windowTitle();
+            m["statusTip"]=w->statusTip();
+            listWidgetsRetranslateUi[w]=m;
+        }
+    }
+
     // set translator for app
     translator.load(QString(GLOBAL_PATH_USERDATA)+QString("/langs/qabcs_") + locale);
     qApp->installTranslator(&translator);
@@ -232,10 +245,10 @@ void MainWindow::refreshTranslate(){
     QList<QWidget*> l = this->findChildren<QWidget *>();
     for (int i=0;i<l.size();i++){
         QWidget *w = l[i];
-        if (!w->toolTip().isEmpty()) w->setToolTip(tr(w->toolTip().toStdString().c_str()));
-        if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(w->whatsThis().toStdString().c_str()));
-        if (!w->windowTitle().isEmpty()) w->setWindowTitle(tr(w->windowTitle().toStdString().c_str()));
-        if (!w->statusTip().isEmpty()) w->setStatusTip(tr(w->statusTip().toStdString().c_str()));
+        if (!w->toolTip().isEmpty()) w->setToolTip(tr(listWidgetsRetranslateUi[w]["toolTip"].toStdString().c_str()));
+        if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(listWidgetsRetranslateUi[w]["whatsThis"].toStdString().c_str()));
+        if (!w->windowTitle().isEmpty()) w->setWindowTitle(tr(listWidgetsRetranslateUi[w]["windowTitle"].toStdString().c_str()));
+        if (!w->statusTip().isEmpty()) w->setStatusTip(tr(listWidgetsRetranslateUi[w]["statusTip"].toStdString().c_str()));
     }
 }
 

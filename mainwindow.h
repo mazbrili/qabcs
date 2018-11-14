@@ -125,6 +125,8 @@ class MainWindow : public QMainWindow {
         QTranslator translator;
         QTranslator qtTranslator;
 
+        QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
+
     protected:
        virtual void keyPressEvent(QKeyEvent *event);
 
