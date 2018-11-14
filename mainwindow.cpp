@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     gameAbcFinish=false;
     _speak_method="";
     _espeak_params="";
+    _disable_additional_keys=false;
     soundStatus=true;       // sound on
 
     listTypes = QStringList() << "misc" << "rand" << "food" << "animals" << "instrument" << "toys";
@@ -252,6 +253,9 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     if (!root_general.value("espeak_params").isNull()){
         _espeak_params = root_general.value("espeak_params").toString();
     }
+    if (!root_general.value("disable_additional_keys").isNull()){
+        _disable_additional_keys = root_general.value("disable_additional_keys").toString()=="true" ? true:false;
+    }
 
     for (QString type:listTypes){
         listCollections[type]->setGlobalParam(root_general);
@@ -324,6 +328,12 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
                 if (_speak_method=="file" or _speak_method=="") _speak_method="properties";
                 if (_speak_method=="espeak") _speak_method="properties_espeak";
                 for (QString type:listTypes) listCollections[type]->setGlobalParam(_speak_method,_espeak_params);
+            }
+            continue;
+        }
+        if (pair.at(0)=="disable_additional_keys"){
+            if (pair.size()==2){
+                _disable_additional_keys= pair.at(1)=="true" ? true:false;
             }
             continue;
         }
@@ -608,7 +618,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
 
         if (currentIndexLetter<listLetters.size()){
-            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (key==Qt::Key_Enter or key==Qt::Key_Return)){
+            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return))){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 currentIndexLetter++;
             }
@@ -641,7 +651,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             currentIndexLetter = gameRandomGenerateNextIndex();
         }
         if (gameRandomCurrentIndex<listLettersGameRand.size()){
-            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (key==Qt::Key_Enter or key==Qt::Key_Return) or key==Qt::Key_Right){
+            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return or key==Qt::Key_Right))){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 gameRandomCurrentIndex++;
                 currentIndexLetter = gameRandomGenerateNextIndex();
@@ -666,21 +676,21 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
 
     } else {
-        if (key==Qt::Key_Enter or  key==Qt::Key_Return){
+        if (!_disable_additional_keys and (key==Qt::Key_Enter or  key==Qt::Key_Return)){
             if (currentIndexLetter<listLetters.size()-1 and currentIndexLetter!=-1){
                 currentIndexLetter++;
             }else{
                 currentIndexLetter=0;
             }
             playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
-        } else if (key==Qt::Key_Left){
+        } else if (!_disable_additional_keys and key==Qt::Key_Left){
             if (currentIndexLetter>0){
                 currentIndexLetter--;
             }else{
                 currentIndexLetter=listLetters.size()-1;
             }
             playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
-        } else if (key==Qt::Key_Right){
+        } else if (!_disable_additional_keys and key==Qt::Key_Right){
             if (currentIndexLetter<listLetters.size()-1 and currentIndexLetter!=-1){
                 currentIndexLetter++;
             }else{
