@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl">
 <context>
     <name>FormAbout</name>
     <message>
@@ -9,7 +11,7 @@
     <message>
         <location filename="../FormAbout.ui" line="31"/>
         <source>qABCs</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -19,7 +21,7 @@
     <message>
         <location filename="../FormAbout.ui" line="190"/>
         <source>BitBucket</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -163,9 +165,13 @@
         <translation>Dialoogvenster</translation>
     </message>
     <message>
-        <location filename="../FormSelectLanguage.ui" line="31"/>
         <source>Select ABC language:</source>
-        <translation>ABC-taal kiezen:</translation>
+        <translation type="vanished">ABC-taal kiezen:</translation>
+    </message>
+    <message>
+        <location filename="../FormSelectLanguage.ui" line="31"/>
+        <source>Select ABC:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
@@ -178,6 +184,11 @@
         <translation>Oké</translation>
     </message>
     <message>
+        <location filename="../FormSelectLanguage.ui" line="85"/>
+        <source>Select language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../FormSelectLanguage.cpp" line="16"/>
         <source>Select ABC language</source>
         <translation>ABC-taal kiezen</translation>
@@ -186,160 +197,170 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="52"/>
+        <location filename="../mainwindow.cpp" line="61"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
         <translation>de opdracht &apos;play&apos; uit het pakket &apos;sox&apos; is niet aangetroffen. Het geluid wordt gedempt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="59"/>
+        <location filename="../mainwindow.cpp" line="68"/>
         <source>espeak was not found. Some features will not be available.</source>
         <translation>espeak is niet aangetroffen. Sommige functies zijn niet beschikbaar.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="113"/>
-        <location filename="../mainwindow.cpp" line="114"/>
-        <location filename="../mainwindow.cpp" line="685"/>
+        <location filename="../mainwindow.cpp" line="122"/>
+        <location filename="../mainwindow.cpp" line="123"/>
+        <location filename="../mainwindow.cpp" line="760"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
         <translation>Vind de letter op het toetsenbord (alfabetisch)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
-        <location filename="../mainwindow.cpp" line="119"/>
-        <location filename="../mainwindow.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="127"/>
+        <location filename="../mainwindow.cpp" line="128"/>
+        <location filename="../mainwindow.cpp" line="780"/>
         <source>Find the letter on the keyboard (randomly)</source>
         <translation>Vind de letter op het toetsenbord (willekeurig)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="123"/>
-        <location filename="../mainwindow.cpp" line="124"/>
+        <location filename="../mainwindow.cpp" line="132"/>
+        <location filename="../mainwindow.cpp" line="133"/>
         <source>Show foods for each letter</source>
         <translation>Eten tonen bij elke letter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="128"/>
-        <location filename="../mainwindow.cpp" line="129"/>
+        <location filename="../mainwindow.cpp" line="137"/>
+        <location filename="../mainwindow.cpp" line="138"/>
         <source>Show animals for each letter</source>
         <translation>Dieren tonen bij elke letter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="133"/>
-        <location filename="../mainwindow.cpp" line="134"/>
+        <location filename="../mainwindow.cpp" line="142"/>
+        <location filename="../mainwindow.cpp" line="143"/>
         <source>Show musical instruments for each letter</source>
         <translation>Muziekinstrumenten tonen bij elke letter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="138"/>
-        <location filename="../mainwindow.cpp" line="139"/>
+        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="148"/>
         <source>Show toys for each letter</source>
         <translation>Speelgoed tonen bij elke letter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="143"/>
-        <location filename="../mainwindow.cpp" line="144"/>
+        <location filename="../mainwindow.cpp" line="152"/>
+        <location filename="../mainwindow.cpp" line="153"/>
         <source>Sound on/off</source>
         <translation>Geluid aan/uit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="155"/>
+        <location filename="../mainwindow.cpp" line="156"/>
         <source>Select language</source>
         <translation>Taal kiezen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="149"/>
-        <location filename="../mainwindow.cpp" line="150"/>
+        <location filename="../mainwindow.cpp" line="158"/>
+        <location filename="../mainwindow.cpp" line="159"/>
         <source>Help</source>
         <translation>Hulp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="152"/>
-        <location filename="../mainwindow.cpp" line="153"/>
+        <location filename="../mainwindow.cpp" line="161"/>
+        <location filename="../mainwindow.cpp" line="162"/>
         <source>About qABCs</source>
         <translation>Over qABCs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="155"/>
-        <location filename="../mainwindow.cpp" line="156"/>
+        <location filename="../mainwindow.cpp" line="164"/>
+        <location filename="../mainwindow.cpp" line="165"/>
         <source>Exit</source>
         <translation>Afsluiten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="223"/>
-        <location filename="../mainwindow.cpp" line="285"/>
+        <location filename="../mainwindow.cpp" line="277"/>
+        <location filename="../mainwindow.cpp" line="339"/>
         <source>Error while opening</source>
         <translation>Fout tijdens openen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="234"/>
+        <location filename="../mainwindow.cpp" line="288"/>
         <source>is not valid</source>
         <translation>is ongeldig</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="345"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>Error str:</source>
         <translation>Foutmelding:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="619"/>
-        <location filename="../mainwindow.cpp" line="653"/>
+        <location filename="../mainwindow.cpp" line="667"/>
+        <location filename="../mainwindow.cpp" line="701"/>
         <source>CONGRATS!</source>
         <translation>GOED GEDAAN!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="620"/>
-        <location filename="../mainwindow.cpp" line="654"/>
+        <location filename="../mainwindow.cpp" line="668"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
         <translation>Druk op &quot;ENTER&quot; om opnieuw te spelen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="694"/>
-        <location filename="../mainwindow.cpp" line="747"/>
-        <location filename="../mainwindow.cpp" line="766"/>
-        <location filename="../mainwindow.cpp" line="786"/>
-        <location filename="../mainwindow.cpp" line="807"/>
-        <location filename="../mainwindow.cpp" line="827"/>
+        <location filename="../mainwindow.cpp" line="769"/>
+        <location filename="../mainwindow.cpp" line="822"/>
+        <location filename="../mainwindow.cpp" line="841"/>
+        <location filename="../mainwindow.cpp" line="861"/>
+        <location filename="../mainwindow.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="902"/>
         <source>ABC is not loaded</source>
         <translation>ABC is niet geladen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="757"/>
+        <location filename="../mainwindow.cpp" line="832"/>
         <source>Press a Key to See an Animal</source>
         <translation>Druk op een toets om een dier te tonen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="771"/>
+        <location filename="../mainwindow.cpp" line="846"/>
         <source>Animals</source>
         <translation>Dieren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="777"/>
+        <location filename="../mainwindow.cpp" line="852"/>
         <source>Press a Key to See a Food</source>
         <translation>Druk op een toets om eten te tonen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="793"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Food</source>
         <translation>Eten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="798"/>
+        <location filename="../mainwindow.cpp" line="873"/>
         <source>Press a Key to See an Instrument</source>
         <translation>Druk op een toets om een instrument te tonen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="812"/>
+        <location filename="../mainwindow.cpp" line="887"/>
         <source>Music</source>
         <translation>Muziekinstrumenten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="818"/>
+        <location filename="../mainwindow.cpp" line="893"/>
         <source>Press a Key to See a Toy</source>
         <translation>Druk op een toets om speelgoed te tonen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="832"/>
+        <location filename="../mainwindow.cpp" line="907"/>
         <source>Toys</source>
         <translation>Speelgoed</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="956"/>
+        <source>play found:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="982"/>
+        <source>espeak found:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
