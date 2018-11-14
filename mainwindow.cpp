@@ -608,7 +608,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
 
         if (currentIndexLetter<listLetters.size()){
-            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key))){
+            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (key==Qt::Key_Enter or key==Qt::Key_Return)){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 currentIndexLetter++;
             }
@@ -635,13 +635,13 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             clickButtonGameRand();
             return;
         }
-        if (gameRandomCurrentIndex>0 and key==Qt::Key_Backspace){
+        if (gameRandomCurrentIndex>0 and (key==Qt::Key_Backspace or key==Qt::Key_Left)){
             gameAbcFinish=false;
             gameRandomCurrentIndex--;
             currentIndexLetter = gameRandomGenerateNextIndex();
         }
         if (gameRandomCurrentIndex<listLettersGameRand.size()){
-            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key))){
+            if (listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (key==Qt::Key_Enter or key==Qt::Key_Return) or key==Qt::Key_Right){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 gameRandomCurrentIndex++;
                 currentIndexLetter = gameRandomGenerateNextIndex();
@@ -666,14 +666,39 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
 
     } else {
-        for (int i=0;i<listLetters.size();i++){
-            if (listLetters.at(i).letter==QString(QChar(key))){
-                currentIndexLetter=i;
+        if (key==Qt::Key_Enter or  key==Qt::Key_Return){
+            if (currentIndexLetter<listLetters.size()-1 and currentIndexLetter!=-1){
+                currentIndexLetter++;
+            }else{
+                currentIndexLetter=0;
+            }
+            playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
+        } else if (key==Qt::Key_Left){
+            if (currentIndexLetter>0){
+                currentIndexLetter--;
+            }else{
+                currentIndexLetter=listLetters.size()-1;
+            }
+            playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
+        } else if (key==Qt::Key_Right){
+            if (currentIndexLetter<listLetters.size()-1 and currentIndexLetter!=-1){
+                currentIndexLetter++;
+            }else{
+                currentIndexLetter=0;
+            }
+            playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
+        }else{
+            for (int i=0;i<listLetters.size();i++){
+                if (listLetters.at(i).letter==QString(QChar(key))){
+                    currentIndexLetter=i;
 
-                playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
-                break;
+                    playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
+                    break;
+                }
             }
         }
+
+
     }
 
     refreshViewer();
