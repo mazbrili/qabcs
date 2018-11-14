@@ -143,6 +143,10 @@ void Collection::playSoundPicture(QString letter){
             if (words.isEmpty()) words=listLetters[letter].name;
             SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+words+"\"");
         }
+    }else if(speak_method=="properties_espeak"){
+        QString words = listLetters[letter].espeak_words;
+        if (words.isEmpty()) words=listLetters[letter].name;
+        SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+words+"\"");
     }else{
         QString soundFilename = SoundEngine::findSoundFile(_lastFileName,listLetters[letter].sound_pic,"");
         if (!soundFilename.isEmpty()){

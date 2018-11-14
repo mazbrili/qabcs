@@ -322,6 +322,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             if (pair.size()==2){
                 _speak_method=pair.at(1);
                 if (_speak_method=="file" or _speak_method=="") _speak_method="properties";
+                if (_speak_method=="espeak") _speak_method="properties_espeak";
                 for (QString type:listTypes) listCollections[type]->setGlobalParam(_speak_method,_espeak_params);
             }
             continue;
@@ -530,7 +531,7 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                 SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
 
             }else{
-                if (speak_method=="espeak"){
+                if (speak_method=="espeak" or speak_method=="properties_espeak"){
                     if (!l.espeak_words.isEmpty()){
                         SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
                     }

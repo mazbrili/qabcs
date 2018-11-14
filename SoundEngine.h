@@ -10,7 +10,7 @@ class SoundEngine {
         static void playSoundFromSpeechSynthesizer(QString cmdLine, bool async=false);
         static QString findSoundfile(QString folder, QString string);
 
-        static QString findSoundFile(QString filename, QString sound_pic, QString typeSearch);
+        static QString findSoundFile(QString filename, QString soundFile, QString typeSearch);
 
 };
 
