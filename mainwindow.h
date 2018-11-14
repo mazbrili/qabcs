@@ -112,6 +112,7 @@ class MainWindow : public QMainWindow {
 
         QString _speak_method;
         QString _espeak_params;
+        bool _disable_additional_keys;
         QString _lastFormatLoaded;
         QVector<LETTER_INFO> listLetters;
 
