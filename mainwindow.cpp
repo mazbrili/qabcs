@@ -526,6 +526,9 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                     }
                 }
             }
+
+
+            return;
         }
     }
 }
