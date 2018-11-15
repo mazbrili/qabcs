@@ -656,20 +656,20 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
 
         // return back
-        if (currentIndexLetter>0){
-            if ( (_disable_additional_keys and key==Qt::Key_Backspace)
-                 or (!_disable_additional_keys and key==Qt::Key_Left)){
+        if (currentIndexLetter>0 and key==Qt::Key_Backspace){
+            gameAbcFinish=false;
+            currentIndexLetter--;
+        }
 
-                gameAbcFinish=false;
-                currentIndexLetter--;
-                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
-
-            }
+        if (currentIndexLetter>0 and (!_disable_additional_keys and key==Qt::Key_Left)){
+            playSoundLetter(listLetters.at(currentIndexLetter).letter);
+            gameAbcFinish=false;
+            currentIndexLetter--;
         }
 
         // next picture
         if (currentIndexLetter<listLetters.size()){
-            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and (key==Qt::Key_Right))){
+            if (_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and key==Qt::Key_Right)){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 currentIndexLetter++;
             }
@@ -699,28 +699,26 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             clickButtonGameRand();
             return;
         }
-
         // return back
-        if (gameRandomCurrentIndex>0){
-            if ((_disable_additional_keys and key==Qt::Key_Backspace)
-                    or (!_disable_additional_keys and key==Qt::Key_Left)){
-
-                gameAbcFinish=false;
-                gameRandomCurrentIndex--;
-                currentIndexLetter = gameRandomGenerateNextIndex();
-                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
-            }
+        if (gameRandomCurrentIndex>0 and key==Qt::Key_Backspace){
+            gameAbcFinish=false;
+            gameRandomCurrentIndex--;
+            currentIndexLetter = gameRandomGenerateNextIndex();
         }
-
+        if (gameRandomCurrentIndex>0 and (!_disable_additional_keys and key==Qt::Key_Left)){
+            playSoundLetter(listLetters.at(currentIndexLetter).letter);
+            gameAbcFinish=false;
+            gameRandomCurrentIndex--;
+            currentIndexLetter = gameRandomGenerateNextIndex();
+        }
         // next picture
         if (gameRandomCurrentIndex<listLettersGameRand.size()){
-            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and (key==Qt::Key_Right))){
+            if (_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and key==Qt::Key_Right)){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 gameRandomCurrentIndex++;
                 currentIndexLetter = gameRandomGenerateNextIndex();
             }
         }
-
         // finish
         if (gameRandomCurrentIndex>=listLettersGameRand.size()){
             setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/ribbon.png"));
