@@ -57,6 +57,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
         soundStatus=false;
     }
 
+    // read status typing from config
+    if (confSettings->value("global/typing","true").toString()=="false"){
+        accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
+        _disable_additional_keys=false;
+    }
+
     if (isExistSox()==false){
         QMessageBox::critical(this,"qABCs",tr("the play command from the sox package was not found. Sound will be muted."));
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
@@ -152,6 +158,9 @@ void MainWindow::initToolBar(){
     accSound = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"), tr("Sound on/off"), this);
     accSound->setStatusTip(tr("Sound on/off"));
 
+    accTyping = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"), tr("Select typing on/off"), this);
+    accTyping->setStatusTip(tr("Select typing on/off"));
+
     accLang = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/languages.png"), tr("Select language"), this);
     accLang->setStatusTip(tr("Select language"));
 
@@ -172,6 +181,7 @@ void MainWindow::initToolBar(){
     toolBar->addAction(accGameToys);
     toolBar->addSeparator();
     toolBar->addAction(accSound);
+    toolBar->addAction(accTyping);
     toolBar->addAction(accLang);
     toolBar->addAction(accHelp);
     toolBar->addAction(accInfo);
@@ -186,6 +196,7 @@ void MainWindow::initToolBar(){
     connect(accGameInstrument,SIGNAL(changed()),this,SLOT(clickButtonGameInstrument()));
     connect(accGameToys,SIGNAL(changed()),this,SLOT(clickButtonGameToys()));
     connect(accSound,SIGNAL(triggered()),this,SLOT(clickButtonSound()));
+    connect(accTyping,SIGNAL(triggered()),this,SLOT(clickButtonTyping()));
     connect(accLang,SIGNAL(triggered()),this,SLOT(clickButtonLang()));
     connect(accHelp,SIGNAL(triggered()),this,SLOT(clickButtonHelp()));
     connect(accInfo,SIGNAL(triggered()),this,SLOT(clickButtonInfo()));
@@ -936,6 +947,18 @@ void MainWindow::clickButtonSound(){
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"));
         soundStatus=true;
         confSettings->setValue("global/sound","true");
+    }
+}
+
+void MainWindow::clickButtonTyping(){
+    if (_disable_additional_keys){
+        accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
+        _disable_additional_keys=false;
+        confSettings->setValue("global/typing","false");
+    }else{
+        accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"));
+        _disable_additional_keys=true;
+        confSettings->setValue("global/typing","true");
     }
 }
 
