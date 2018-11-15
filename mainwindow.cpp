@@ -241,6 +241,16 @@ void MainWindow::refreshTranslate(){
             m["statusTip"]=w->statusTip();
             listWidgetsRetranslateUi[w]=m;
         }
+
+        QList<QAction*> l = this->findChildren<QAction *>();
+        for (auto &w:l){
+            QMap<QString,QString> m;
+            m["toolTip"]=w->toolTip();
+            m["whatsThis"]=w->whatsThis();
+            m["statusTip"]=w->statusTip();
+            listActionsRetranslateUi[w]=m;
+        }
+
     }
 
     // set translator for app
@@ -253,13 +263,19 @@ void MainWindow::refreshTranslate(){
 
 
     // retranslateUi
-    QList<QWidget*> l = this->findChildren<QWidget *>();
-    for (int i=0;i<l.size();i++){
-        QWidget *w = l[i];
+    QList<QWidget*> l2 = this->findChildren<QWidget *>();
+    for (auto &w:l2){
         if (!w->toolTip().isEmpty()) w->setToolTip(tr(listWidgetsRetranslateUi[w]["toolTip"].toStdString().c_str()));
         if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(listWidgetsRetranslateUi[w]["whatsThis"].toStdString().c_str()));
         if (!w->windowTitle().isEmpty()) w->setWindowTitle(tr(listWidgetsRetranslateUi[w]["windowTitle"].toStdString().c_str()));
         if (!w->statusTip().isEmpty()) w->setStatusTip(tr(listWidgetsRetranslateUi[w]["statusTip"].toStdString().c_str()));
+    }
+
+    QList<QAction*> l = this->findChildren<QAction *>();
+    for (auto &w:l){
+        if (!w->toolTip().isEmpty()) w->setToolTip(tr(listActionsRetranslateUi[w]["toolTip"].toStdString().c_str()));
+        if (!w->whatsThis().isEmpty()) w->setWhatsThis(tr(listActionsRetranslateUi[w]["whatsThis"].toStdString().c_str()));
+        if (!w->statusTip().isEmpty()) w->setStatusTip(tr(listActionsRetranslateUi[w]["statusTip"].toStdString().c_str()));
     }
 }
 
