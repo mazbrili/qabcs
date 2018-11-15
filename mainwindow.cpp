@@ -23,7 +23,7 @@ QString global_path_to_espeak;
 QString global_path_to_play;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
-    this->setFixedSize(592,550);
+    this->setFixedSize(645,645);
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
     currentIndexLetter=0;   
@@ -158,8 +158,8 @@ void MainWindow::initToolBar(){
     accSound = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_on.png"), tr("Sound on/off"), this);
     accSound->setStatusTip(tr("Sound on/off"));
 
-    accTyping = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"), tr("Select typing on/off"), this);
-    accTyping->setStatusTip(tr("Select typing on/off"));
+    accTyping = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"), tr("Typing on/off"), this);
+    accTyping->setStatusTip(tr("Typing on/off"));
 
     accLang = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/languages.png"), tr("Select language"), this);
     accLang->setStatusTip(tr("Select language"));
