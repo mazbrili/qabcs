@@ -52,6 +52,8 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
 void SoundEngine::playSoundFromSpeechSynthesizer(QString cmdLine, bool async){
     if (cmdLine.isEmpty()) return;
 
+    qDebug() << "[DEBUG] " << cmdLine;
+
     if (async){
         QProcess::startDetached(cmdLine);
     }else{
