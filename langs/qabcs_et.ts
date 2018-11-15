@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="et">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="et" version="2.1">
 <context>
     <name>FormAbout</name>
     <message>
@@ -11,7 +9,7 @@
     <message>
         <location filename="../FormAbout.ui" line="31"/>
         <source>qABCs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -21,7 +19,7 @@
     <message>
         <location filename="../FormAbout.ui" line="190"/>
         <source>BitBucket</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -155,7 +153,7 @@
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
         language&quot; icon. Default language is American English.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -166,13 +164,9 @@
         <translation>Dialoog</translation>
     </message>
     <message>
-        <source>Select ABC language:</source>
-        <translation type="vanished">Keele valimine:</translation>
-    </message>
-    <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
-        <source>Select ABC:</source>
-        <translation type="unfinished"></translation>
+        <source>Select ABC language:</source>
+        <translation>Keele valimine:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
@@ -186,13 +180,13 @@
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
-        <source>Select language:</source>
-        <translation type="unfinished"></translation>
+        <source>Select GUI language:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="16"/>
-        <source>Select ABC language</source>
-        <translation>Keele valimine</translation>
+        <source>Select language</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -200,26 +194,26 @@
     <message>
         <location filename="../mainwindow.cpp" line="61"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="68"/>
         <source>espeak was not found. Some features will not be available.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="122"/>
         <location filename="../mainwindow.cpp" line="123"/>
         <location filename="../mainwindow.cpp" line="760"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="127"/>
         <location filename="../mainwindow.cpp" line="128"/>
         <location filename="../mainwindow.cpp" line="780"/>
         <source>Find the letter on the keyboard (randomly)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="132"/>
@@ -355,13 +349,13 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="956"/>
-        <source>play found:</source>
-        <translation type="unfinished"></translation>
+        <source>play was found:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="982"/>
-        <source>espeak found:</source>
-        <translation type="unfinished"></translation>
+        <source>espeak was found:</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

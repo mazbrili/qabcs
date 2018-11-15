@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>FormAbout</name>
     <message>
@@ -11,7 +9,7 @@
     <message>
         <location filename="../FormAbout.ui" line="31"/>
         <source>qABCs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -21,7 +19,7 @@
     <message>
         <location filename="../FormAbout.ui" line="190"/>
         <source>BitBucket</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -166,13 +164,9 @@
         <translation>Диалог</translation>
     </message>
     <message>
-        <source>Select ABC language:</source>
-        <translation type="vanished">Выберите язык алфавита:</translation>
-    </message>
-    <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
-        <source>Select ABC:</source>
-        <translation type="unfinished"></translation>
+        <source>Select ABC language:</source>
+        <translation>Выберите язык алфавита:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
@@ -186,13 +180,13 @@
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
-        <source>Select language:</source>
-        <translation type="unfinished"></translation>
+        <source>Select GUI language:</source>
+        <translation>Выберите язык интерфейса:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="16"/>
-        <source>Select ABC language</source>
-        <translation>Выберите язык алфавита</translation>
+        <source>Select language</source>
+        <translation>Выберите язык</translation>
     </message>
 </context>
 <context>
@@ -355,13 +349,13 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="956"/>
-        <source>play found:</source>
-        <translation type="unfinished"></translation>
+        <source>play was found:</source>
+        <translation>play был найден:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="982"/>
-        <source>espeak found:</source>
-        <translation type="unfinished"></translation>
+        <source>espeak was found:</source>
+        <translation>espeak был найден:</translation>
     </message>
 </context>
 <context>

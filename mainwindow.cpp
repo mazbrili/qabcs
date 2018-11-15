@@ -953,7 +953,7 @@ bool MainWindow::isExistSox(){
     QString text = proc.readAll();
 
     if (!text.isEmpty()){
-        qDebug() << tr("play found:")+" "+global_path_to_play;
+        qDebug() << tr("play was found:")+" "+global_path_to_play;
         return true;
     }
 
@@ -979,7 +979,7 @@ bool MainWindow::isExistEspeak(){
         QString text = proc.readAll();
         if (!text.isEmpty()){
             global_path_to_espeak=pathEspeak;
-            qDebug() << tr("espeak found:")+" "+global_path_to_espeak;
+            qDebug() << tr("espeak was found:")+" "+global_path_to_espeak;
             return true;
         }
     }

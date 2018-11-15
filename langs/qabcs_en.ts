@@ -141,7 +141,7 @@
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
-        <source>Select ABC:</source>
+        <source>Select ABC language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -156,12 +156,12 @@
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
-        <source>Select language:</source>
+        <source>Select GUI language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="16"/>
-        <source>Select ABC language</source>
+        <source>Select language</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -325,12 +325,12 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="956"/>
-        <source>play found:</source>
+        <source>play was found:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="982"/>
-        <source>espeak found:</source>
+        <source>espeak was found:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
