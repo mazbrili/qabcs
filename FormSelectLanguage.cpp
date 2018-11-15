@@ -71,8 +71,18 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
         QRegExp rx("(qabcs_)(.*)(.qm)");
         if (rx.indexIn(fileInfo.fileName())!=-1){
             QString lang_code = rx.cap(2);
-            QLocale loc(lang_code);
-            ui->comboBox_2->addItem(loc.nativeLanguageName(),lang_code);
+            QString lang_code_loc = lang_code;
+            if (lang_code_loc.indexOf("_")==-1){
+                lang_code_loc+="_"+lang_code_loc.toUpper();
+            }
+
+            QLocale loc(lang_code_loc);
+            QString languageName = loc.nativeLanguageName();
+            if (languageName.isEmpty()){
+                if (lang_code_loc=="ch_CH") languageName="Chamorro";
+            }
+
+            ui->comboBox_2->addItem(languageName,lang_code);
             if (confSettings->value("abc/lang",QLocale::system().bcp47Name()).toString()==lang_code){
                 ui->comboBox_2->setCurrentIndex(ui->comboBox_2->count()-1);
             }
