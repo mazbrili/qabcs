@@ -660,10 +660,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             if ( (_disable_additional_keys and key==Qt::Key_Backspace)
                  or (!_disable_additional_keys and key==Qt::Key_Left)){
 
-                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
-
                 gameAbcFinish=false;
                 currentIndexLetter--;
+                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
+
             }
         }
 
@@ -705,10 +705,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             if ((_disable_additional_keys and key==Qt::Key_Backspace)
                     or (!_disable_additional_keys and key==Qt::Key_Left)){
 
-                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 gameAbcFinish=false;
                 gameRandomCurrentIndex--;
                 currentIndexLetter = gameRandomGenerateNextIndex();
+                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
             }
         }
 
