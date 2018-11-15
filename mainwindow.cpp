@@ -662,7 +662,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
                 gameAbcFinish=false;
                 currentIndexLetter--;
-                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
+                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
 
             }
         }
@@ -708,7 +708,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
                 gameAbcFinish=false;
                 gameRandomCurrentIndex--;
                 currentIndexLetter = gameRandomGenerateNextIndex();
-                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
+                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
             }
         }
 
