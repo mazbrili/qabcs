@@ -684,7 +684,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             clickButtonGameRand();
             return;
         }
-        if (gameRandomCurrentIndex>0 and (key==Qt::Key_Backspace or key==Qt::Key_Left)){
+        if (gameRandomCurrentIndex>0 and ((_disable_additional_keys and key==Qt::Key_Backspace) or (!_disable_additional_keys and key==Qt::Key_Left))){
             gameAbcFinish=false;
             gameRandomCurrentIndex--;
             currentIndexLetter = gameRandomGenerateNextIndex();
