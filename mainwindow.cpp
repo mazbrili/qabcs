@@ -689,21 +689,25 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             return;
         }
     } else if (typeGame==TYPE_RAND){
+        // start over the game
         if (gameAbcFinish and (key==Qt::Key_Enter or key==Qt::Key_Return)){
             clickButtonGameRand();
             return;
         }
-        if (gameRandomCurrentIndex>0 and (_disable_additional_keys and key==Qt::Key_Backspace)){
-            gameAbcFinish=false;
-            gameRandomCurrentIndex--;
-            currentIndexLetter = gameRandomGenerateNextIndex();
+
+        // return back
+        if (gameRandomCurrentIndex>0){
+            if ((_disable_additional_keys and key==Qt::Key_Backspace)
+                    or (!_disable_additional_keys and key==Qt::Key_Left)){
+
+                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
+                gameAbcFinish=false;
+                gameRandomCurrentIndex--;
+                currentIndexLetter = gameRandomGenerateNextIndex();
+            }
         }
-        if (gameRandomCurrentIndex>0 and (!_disable_additional_keys and key==Qt::Key_Left)){
-            playSoundLetter(listLetters.at(currentIndexLetter).letter);
-            gameAbcFinish=false;
-            gameRandomCurrentIndex--;
-            currentIndexLetter = gameRandomGenerateNextIndex();
-        }
+
+        // next picture
         if (gameRandomCurrentIndex<listLettersGameRand.size()){
             if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return or key==Qt::Key_Right))){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
