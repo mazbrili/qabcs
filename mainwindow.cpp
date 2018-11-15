@@ -553,16 +553,19 @@ void MainWindow::playSoundLetter(QString letter,bool async){
             QString espeak_params = (l.espeak_params.isEmpty()) ? _espeak_params : l.espeak_params;
 
             if (_lastFormatLoaded=="properties"){
-                QString letterSoundLetterFilename =  SoundEngine::findSoundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc,letter,"letter");
-                if (!letterSoundLetterFilename.isEmpty()){
-                    SoundEngine::playSoundFromFile(letterSoundLetterFilename,async);
-                    return;
+                if (speak_method!="properties_espeak"){
+                    QString letterSoundLetterFilename =  SoundEngine::findSoundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc,letter,"letter");
+                    if (!letterSoundLetterFilename.isEmpty()){
+                        SoundEngine::playSoundFromFile(letterSoundLetterFilename,async);
+                        return;
+                    }
+                }
+                if (!l.espeak_words.isEmpty()){
+                    SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
                 }
 
-                SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
-
             }else{
-                if (speak_method=="espeak" or speak_method=="properties_espeak"){
+                if (speak_method=="espeak"){
                     if (!l.espeak_words.isEmpty()){
                         SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
                     }
