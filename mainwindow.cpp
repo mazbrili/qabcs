@@ -649,28 +649,33 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     }
 
     if (typeGame==TYPE_ABC){
+        // start over the game
         if (gameAbcFinish and (key==Qt::Key_Enter or key==Qt::Key_Return)){
             clickButtonGameAbc();
             return;
         }
 
-        if (currentIndexLetter>0 and (_disable_additional_keys and key==Qt::Key_Backspace)){
-            gameAbcFinish=false;
-            currentIndexLetter--;
+        // return back
+        if (currentIndexLetter>0){
+            if ( (_disable_additional_keys and key==Qt::Key_Backspace)
+                 or (!_disable_additional_keys and key==Qt::Key_Left)){
+
+                if (key==Qt::Key_Left) playSoundLetter(listLetters.at(currentIndexLetter).letter);
+
+                gameAbcFinish=false;
+                currentIndexLetter--;
+            }
         }
 
-        if (currentIndexLetter>0 and (!_disable_additional_keys and key==Qt::Key_Left)){
-            playSoundLetter(listLetters.at(currentIndexLetter).letter);
-            gameAbcFinish=false;
-            currentIndexLetter--;
-        }
-
+        // next picture
         if (currentIndexLetter<listLetters.size()){
             if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return or key==Qt::Key_Right))){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 currentIndexLetter++;
             }
         }
+
+        // finish
         if (currentIndexLetter>=listLetters.size()){
             setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/ribbon.png"));
             lblAbcLetter->setText(tr("CONGRATS!"));
@@ -715,6 +720,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
                 currentIndexLetter = gameRandomGenerateNextIndex();
             }
         }
+
+        // finish
         if (gameRandomCurrentIndex>=listLettersGameRand.size()){
             setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/ribbon.png"));
             lblAbcLetter->setText(tr("CONGRATS!"));
