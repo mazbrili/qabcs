@@ -657,7 +657,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
 
         if (currentIndexLetter<listLetters.size()){
-            if (_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return))){
+            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return))){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 currentIndexLetter++;
             }
@@ -690,7 +690,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             currentIndexLetter = gameRandomGenerateNextIndex();
         }
         if (gameRandomCurrentIndex<listLettersGameRand.size()){
-            if (_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return or key==Qt::Key_Right))){
+            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and (key==Qt::Key_Enter or key==Qt::Key_Return or key==Qt::Key_Right))){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter);
                 gameRandomCurrentIndex++;
                 currentIndexLetter = gameRandomGenerateNextIndex();
