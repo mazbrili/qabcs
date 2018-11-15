@@ -670,7 +670,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
         // next picture
         if (currentIndexLetter<listLetters.size()){
-            if (_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and key==Qt::Key_Right)){
+            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and key==Qt::Key_Right)){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
                 currentIndexLetter++;
             }
@@ -715,7 +715,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }
         // next picture
         if (gameRandomCurrentIndex<listLettersGameRand.size()){
-            if (_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key)) or (!_disable_additional_keys and key==Qt::Key_Right)){
+            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and key==Qt::Key_Right)){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
                 gameRandomCurrentIndex++;
                 currentIndexLetter = gameRandomGenerateNextIndex();
