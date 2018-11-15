@@ -661,6 +661,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             currentIndexLetter--;
         }
 
+        // previous picture by Key_Left
         if (currentIndexLetter>0 and (!_disable_additional_keys and key==Qt::Key_Left)){
             playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
             gameAbcFinish=false;
@@ -705,6 +706,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             gameRandomCurrentIndex--;
             currentIndexLetter = gameRandomGenerateNextIndex();
         }
+        // previous picture by Key_Left
         if (gameRandomCurrentIndex>0 and (!_disable_additional_keys and key==Qt::Key_Left)){
             playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
             gameAbcFinish=false;
