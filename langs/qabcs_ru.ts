@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>FormAbout</name>
     <message>
@@ -11,7 +9,7 @@
     <message>
         <location filename="../FormAbout.ui" line="31"/>
         <source>qABCs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -21,7 +19,7 @@
     <message>
         <location filename="../FormAbout.ui" line="190"/>
         <source>BitBucket</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -152,10 +150,21 @@
         <location filename="../FormHelp.cpp" line="42"/>
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
-        language&quot; icon. Default language is American English.</source>
+        language&quot; icon. Default language is American English.
+</source>
         <translation>Выбор языка алфавита:
         Вы можете выбрать язык алфавита, нажав на значке &quot;Выбрать
-        язык&quot;. Языком по-умолчанию является американский английский.</translation>
+        язык&quot;. Языком по-умолчанию является американский английский.
+</translation>
+    </message>
+    <message>
+        <location filename="../FormHelp.cpp" line="46"/>
+        <source>Typing on/off:
+        You can switch from typing of letters on using left/right keys
+        instead.</source>
+        <translation>Включить/выключить машинопись:
+        Вы можете перейти от ввода букв на использование клавиш
+        влево/вправо вместо этого.</translation>
     </message>
 </context>
 <context>
@@ -251,7 +260,7 @@
         <location filename="../mainwindow.cpp" line="161"/>
         <location filename="../mainwindow.cpp" line="162"/>
         <source>Typing on/off</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить/выключить машинопись</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="164"/>

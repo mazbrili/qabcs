@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
 <context>
     <name>FormAbout</name>
     <message>
@@ -11,7 +9,7 @@
     <message>
         <location filename="../FormAbout.ui" line="31"/>
         <source>qABCs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -21,7 +19,7 @@
     <message>
         <location filename="../FormAbout.ui" line="190"/>
         <source>BitBucket</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -87,7 +85,7 @@
         different modes. Use the &quot;Tab&quot; key to toggle between modes,
         or click on an icon with the mouse.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="21"/>
@@ -97,7 +95,7 @@
         cycle through alphabet. Press the &quot;Backspace&quot; key to move
         back one letter. Finish by finding all the letters.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="27"/>
@@ -107,7 +105,7 @@
         Press the &quot;Backspace&quot; key to move back one letter.
         Finish by finding all the letters.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="33"/>
@@ -115,7 +113,7 @@
         In all other modes, simply press a key on the keyboard to see
         a letter with a related image and description.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="37"/>
@@ -124,14 +122,22 @@
         You can turn on/off sounds by pressing on the &quot;Sound on/off&quot;
         icon.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="42"/>
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
-        language&quot; icon. Default language is American English.</source>
-        <translation type="unfinished"></translation>
+        language&quot; icon. Default language is American English.
+</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../FormHelp.cpp" line="46"/>
+        <source>Typing on/off:
+        You can switch from typing of letters on using left/right keys
+        instead.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -159,12 +165,12 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="16"/>
         <source>Select language</source>
-        <translation type="unfinished">Selecionar idioma</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -172,26 +178,26 @@
     <message>
         <location filename="../mainwindow.cpp" line="67"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="74"/>
         <source>espeak was not found. Some features will not be available.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="128"/>
         <location filename="../mainwindow.cpp" line="129"/>
         <location filename="../mainwindow.cpp" line="790"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="133"/>
         <location filename="../mainwindow.cpp" line="134"/>
         <location filename="../mainwindow.cpp" line="810"/>
         <source>Find the letter on the keyboard (randomly)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="138"/>
@@ -227,7 +233,7 @@
         <location filename="../mainwindow.cpp" line="161"/>
         <location filename="../mainwindow.cpp" line="162"/>
         <source>Typing on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="164"/>
@@ -334,12 +340,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="998"/>
         <source>play was found:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1024"/>
         <source>espeak was found:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

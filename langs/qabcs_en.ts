@@ -128,7 +128,15 @@
         <location filename="../FormHelp.cpp" line="42"/>
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
-        language&quot; icon. Default language is American English.</source>
+        language&quot; icon. Default language is American English.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FormHelp.cpp" line="46"/>
+        <source>Typing on/off:
+        You can switch from typing of letters on using left/right keys
+        instead.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

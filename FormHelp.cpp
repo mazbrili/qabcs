@@ -41,7 +41,11 @@ FormHelp::FormHelp(QWidget *parent) :
     "\n"+
       tr("Select ABC language:\n\
         You can change ABC language by pressing on the \"Select\n\
-        language\" icon. Default language is American English.")
+        language\" icon. Default language is American English.\n")+
+    "\n"+
+      tr("Typing on/off:\n\
+        You can switch from typing of letters on using left/right keys\n\
+        instead.")
     );
 
 

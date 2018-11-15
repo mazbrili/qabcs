@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="uk" version="2.1">
 <context>
     <name>FormAbout</name>
     <message>
@@ -11,7 +9,7 @@
     <message>
         <location filename="../FormAbout.ui" line="31"/>
         <source>qABCs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -21,7 +19,7 @@
     <message>
         <location filename="../FormAbout.ui" line="190"/>
         <source>BitBucket</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -153,10 +151,19 @@
         <location filename="../FormHelp.cpp" line="42"/>
         <source>Select ABC language:
         You can change ABC language by pressing on the &quot;Select
-        language&quot; icon. Default language is American English.</source>
+        language&quot; icon. Default language is American English.
+</source>
         <translation>Вибір мови абетки:
         Змінити мову абетки можна натисканням піктограми
-        «Вибрати мову». Типовою мовою є американська англійська.</translation>
+        «Вибрати мову». Типовою мовою є американська англійська.
+</translation>
+    </message>
+    <message>
+        <location filename="../FormHelp.cpp" line="46"/>
+        <source>Typing on/off:
+        You can switch from typing of letters on using left/right keys
+        instead.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -184,12 +191,12 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="16"/>
         <source>Select language</source>
-        <translation type="unfinished">Вибрати мову</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -252,7 +259,7 @@
         <location filename="../mainwindow.cpp" line="161"/>
         <location filename="../mainwindow.cpp" line="162"/>
         <source>Typing on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="164"/>
@@ -359,12 +366,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="998"/>
         <source>play was found:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1024"/>
         <source>espeak was found:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
