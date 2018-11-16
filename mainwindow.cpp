@@ -329,7 +329,15 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     if (!root_general.value("espeak_params").isNull()){
         _espeak_params = root_general.value("espeak_params").toString();
     }
-
+    if (!root_general.value("typing").isNull()){
+        if ( root_general.value("typing").toString()=="false"){
+            _disable_additional_keys= false;
+            accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
+        }else{
+            _disable_additional_keys= true;
+            accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"));
+        }
+    }
     for (QString type:listTypes){
         listCollections[type]->setGlobalParam(root_general);
         listCollections[type]->setLastFileName(filename);
@@ -404,6 +412,19 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             }
             continue;
         }
+
+        if (pair.at(0)=="typing"){
+            if (pair.size()==2){
+                if (pair.at(1)=="false"){
+                    _disable_additional_keys= false;
+                    accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
+                }else{
+                    _disable_additional_keys= true;
+                    accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"));
+                }
+            }
+        }
+
 
         if (pair.at(0)=="inheritsFrom"){
             loadAbcConfig(globalPathUserResources+"/"+pair.at(1));
