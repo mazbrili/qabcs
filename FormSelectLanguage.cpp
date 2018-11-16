@@ -78,9 +78,13 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
             QLocale loc(lang_code_loc);
             QString languageName = loc.nativeLanguageName();
+            if (lang_code_loc=="en_EN") languageName="English";
             if (languageName.isEmpty()){
-                if (lang_code_loc=="ch_CH") languageName="Chamorro";
+                if (lang_code_loc=="ch_CH") languageName="Chamoru";
             }
+
+            languageName=languageName.toLower();
+            languageName[0]=languageName[0].toUpper();
 
             ui->comboBox_2->addItem(languageName,lang_code);
             if (confSettings->value("abc/lang",QLocale::system().bcp47Name()).toString()==lang_code){
