@@ -8,6 +8,7 @@ FormHelp::FormHelp(QWidget *parent) :
     ui(new Ui::FormHelp)
 {
     ui->setupUi(this);
+    ui->textEdit->setReadOnly(true);
     this->setWindowTitle(tr("Help"));
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
