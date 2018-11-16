@@ -215,6 +215,11 @@ void MainWindow::initLanguageAbc(){
     // reinit path to resource
     for (QString type:listTypes) listCollections[type]->setAbcLanguage(currentLanguageAbc);
 
+
+    accTyping->disconnect(SIGNAL(triggered()));
+    connect(accTyping,SIGNAL(triggered()),this,SLOT(clickButtonTyping()));
+
+
     loadAbcConfig(globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc);
 }
 
@@ -330,6 +335,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         _espeak_params = root_general.value("espeak_params").toString();
     }
     if (!root_general.value("typing").isNull()){
+        accTyping->disconnect(SIGNAL(triggered()));
         if ( root_general.value("typing").toString()=="false"){
             _disable_additional_keys= false;
             accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
@@ -415,6 +421,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
         if (pair.at(0)=="typing"){
             if (pair.size()==2){
+                accTyping->disconnect(SIGNAL(triggered()));
                 if (pair.at(1)=="false"){
                     _disable_additional_keys= false;
                     accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
