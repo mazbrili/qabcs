@@ -78,8 +78,13 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
             QLocale loc(lang_code_loc);
             QString languageName = loc.nativeLanguageName();
+
+            // force language name
             if (lang_code_loc=="en_EN") languageName="English";
-            if (languageName.isEmpty()){
+
+            if (languageName.isEmpty()) languageName=QLocale::languageToString(loc.language());
+
+            if (languageName.isEmpty() or languageName=="C"){
                 if (lang_code_loc=="aa_AA") languageName="Afar";
                 if (lang_code_loc=="ab_AB") languageName="Abkhazian";
                 if (lang_code_loc=="ae_AE") languageName="Avestan";
