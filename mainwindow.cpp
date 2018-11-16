@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     _espeak_params="";
     _disable_additional_keys=true;
     soundStatus=true;       // sound on
+    blockButtonTyping=false;    //
 
     listTypes = QStringList() << "misc" << "rand" << "food" << "animals" << "instrument" << "toys";
 
@@ -212,13 +213,10 @@ void MainWindow::initLanguageAbc(){
     _speak_method = "";
     _espeak_params = "";
 
+    blockButtonTyping=false;
+
     // reinit path to resource
     for (QString type:listTypes) listCollections[type]->setAbcLanguage(currentLanguageAbc);
-
-
-    accTyping->disconnect(SIGNAL(triggered()));
-    connect(accTyping,SIGNAL(triggered()),this,SLOT(clickButtonTyping()));
-
 
     loadAbcConfig(globalPathUserResources+"/"+currentLanguageAbc+"/"+currentFilenameAbc);
 }
@@ -335,7 +333,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         _espeak_params = root_general.value("espeak_params").toString();
     }
     if (!root_general.value("typing").isNull()){
-        accTyping->disconnect(SIGNAL(triggered()));
+        blockButtonTyping=true;
         if ( root_general.value("typing").toString()=="false"){
             _disable_additional_keys= false;
             accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
@@ -421,7 +419,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
         if (pair.at(0)=="typing"){
             if (pair.size()==2){
-                accTyping->disconnect(SIGNAL(triggered()));
+                blockButtonTyping=true;
                 if (pair.at(1)=="false"){
                     _disable_additional_keys= false;
                     accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
@@ -1001,6 +999,8 @@ void MainWindow::clickButtonSound(){
 }
 
 void MainWindow::clickButtonTyping(){
+    if (blockButtonTyping) return;
+
     if (_disable_additional_keys){
         accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
         _disable_additional_keys=false;

@@ -108,6 +108,8 @@ class MainWindow : public QMainWindow {
         bool soundStatus;
         QMediaPlayer soundEffect;
 
+        bool blockButtonTyping;
+
         bool gameAbcFinish;
 
         // for type game random
