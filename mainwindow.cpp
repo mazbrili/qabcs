@@ -694,6 +694,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             gameAbcFinish=false;
             currentIndexLetter--;
         }
+        else if (currentIndexLetter==0 and (!_disable_additional_keys and key==Qt::Key_Left)){
+            if (!gameAbcFinish) playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
+        }
 
         // next picture
         if (currentIndexLetter<listLetters.size()){
@@ -739,6 +742,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
             gameAbcFinish=false;
             gameRandomCurrentIndex--;
             currentIndexLetter = gameRandomGenerateNextIndex();
+        }
+        else if (gameRandomCurrentIndex==0 and (!_disable_additional_keys and key==Qt::Key_Left)){
+            if (!gameAbcFinish) playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
         }
         // next picture
         if (gameRandomCurrentIndex<listLettersGameRand.size()){
