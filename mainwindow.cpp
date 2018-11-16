@@ -340,6 +340,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         }else{
             _disable_additional_keys= true;
             accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"));
+            blockButtonTyping= false;
         }
     }
     for (QString type:listTypes){
@@ -426,6 +427,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
                 }else{
                     _disable_additional_keys= true;
                     accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"));
+                    blockButtonTyping= false;
                 }
             }
         }
