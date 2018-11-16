@@ -215,7 +215,17 @@ void MainWindow::initLanguageAbc(){
     _speak_method = "";
     _espeak_params = "";
 
+    // default status typing
     blockButtonTyping=false;
+    _disable_additional_keys=true;
+    accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"));
+
+    if (confSettings->value("global/typing","true").toString()=="false"){
+        accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
+        _disable_additional_keys=false;
+    }
+
+
 
     // reinit path to resource
     for (QString type:listTypes) listCollections[type]->setAbcLanguage(currentLanguageAbc);
@@ -335,8 +345,8 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         _espeak_params = root_general.value("espeak_params").toString();
     }
     if (root_general.value("typing").isString()){
-        blockButtonTyping=true;
         if ( root_general.value("typing").toString()=="false"){
+            blockButtonTyping=true;
             _disable_additional_keys= false;
             accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
         }else{
@@ -423,8 +433,8 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
         if (pair.at(0)=="typing"){
             if (pair.size()==2){
-                blockButtonTyping=true;
                 if (pair.at(1)=="false"){
+                    blockButtonTyping=true;
                     _disable_additional_keys= false;
                     accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
                 }else{
