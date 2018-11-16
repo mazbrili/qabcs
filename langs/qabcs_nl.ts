@@ -161,7 +161,9 @@
         <source>Typing on/off:
         You can switch from typing of letters on using left/right keys
         instead.</source>
-        <translation type="unfinished"/>
+        <translation>Typen aan/uit:
+        Je kunt overschakelen van het typen van letters naar het gebruiken van pijltje
+        links/rechts.</translation>
     </message>
 </context>
 <context>
@@ -189,12 +191,12 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation type="unfinished"/>
+        <translation>Kies de applicatietaal:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="16"/>
         <source>Select language</source>
-        <translation type="unfinished"/>
+        <translation>Taal kiezen</translation>
     </message>
 </context>
 <context>
@@ -257,7 +259,7 @@
         <location filename="../mainwindow.cpp" line="161"/>
         <location filename="../mainwindow.cpp" line="162"/>
         <source>Typing on/off</source>
-        <translation type="unfinished"/>
+        <translation>Typen aan/uit</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="164"/>
@@ -364,12 +366,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="998"/>
         <source>play was found:</source>
-        <translation type="unfinished"/>
+        <translation>play is aangetroffen:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1024"/>
         <source>espeak was found:</source>
-        <translation type="unfinished"/>
+        <translation>espeak is aangetroffen:</translation>
     </message>
 </context>
 <context>

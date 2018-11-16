@@ -690,7 +690,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
         // previous picture by Key_Left
         if (currentIndexLetter>0 and (!_disable_additional_keys and key==Qt::Key_Left)){
-            playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
+            if (!gameAbcFinish) playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
             gameAbcFinish=false;
             currentIndexLetter--;
         }
