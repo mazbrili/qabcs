@@ -54,10 +54,10 @@ void Collection::clearLetter(QString letter){
 }
 
 void Collection::setGlobalParam(QJsonObject params){
-    if (!params.value("speak_method").isNull()){
+    if (params.value("speak_method").isString()){
         _speak_method = params.value("speak_method").toString();
     }
-    if (!params.value("espeak_params").isNull()){
+    if (params.value("espeak_params").isString()){
         _espeak_params = params.value("espeak_params").toString();
     }
 }
