@@ -83,7 +83,6 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
                 if (lang_code_loc=="ch_CH") languageName="Chamoru";
             }
 
-            languageName=languageName.toLower();
             languageName[0]=languageName[0].toUpper();
 
             ui->comboBox_2->addItem(languageName,lang_code);
