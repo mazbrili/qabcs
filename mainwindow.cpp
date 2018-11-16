@@ -328,13 +328,13 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         loadAbcConfig(globalPathUserResources+"/"+inheritsFrom);
     }
 
-    if (!root_general.value("speak_method").isNull()){
+    if (!root_general.value("speak_method").isString()){
         _speak_method = root_general.value("speak_method").toString();
     }
-    if (!root_general.value("espeak_params").isNull()){
+    if (!root_general.value("espeak_params").isString()){
         _espeak_params = root_general.value("espeak_params").toString();
     }
-    if (!root_general.value("typing").isNull()){
+    if (root_general.value("typing").isString()){
         blockButtonTyping=true;
         if ( root_general.value("typing").toString()=="false"){
             _disable_additional_keys= false;
@@ -345,6 +345,7 @@ bool MainWindow::loadAbcConfigJson(QString filename){
             blockButtonTyping= false;
         }
     }
+
     for (QString type:listTypes){
         listCollections[type]->setGlobalParam(root_general);
         listCollections[type]->setLastFileName(filename);
