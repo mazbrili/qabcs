@@ -24,6 +24,7 @@ QString global_path_to_play;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     this->setFixedSize(645,645);
+    this->setContextMenuPolicy(Qt::PreventContextMenu);
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
 
     currentIndexLetter=0;   
