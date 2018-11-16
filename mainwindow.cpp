@@ -120,6 +120,7 @@ void MainWindow::initGUI(){
 void MainWindow::initToolBar(){
     toolBar = new QToolBar("User");
     toolBar->setMovable(false);
+    toolBar->setContextMenuPolicy(Qt::PreventContextMenu);
     addToolBar(Qt::TopToolBarArea, toolBar);
 
     toolBar->setIconSize(QSize(40, 40));
