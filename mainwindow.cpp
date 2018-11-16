@@ -328,10 +328,10 @@ bool MainWindow::loadAbcConfigJson(QString filename){
         loadAbcConfig(globalPathUserResources+"/"+inheritsFrom);
     }
 
-    if (!root_general.value("speak_method").isString()){
+    if (root_general.value("speak_method").isString()){
         _speak_method = root_general.value("speak_method").toString();
     }
-    if (!root_general.value("espeak_params").isString()){
+    if (root_general.value("espeak_params").isString()){
         _espeak_params = root_general.value("espeak_params").toString();
     }
     if (root_general.value("typing").isString()){
