@@ -110,13 +110,13 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
                     languageName=QLocale::languageToString(loc.language());
                 }
 
-                if (languageName.isEmpty() or languageName=="C"){
-                    languageName=lang_code;
-                }
-
             }
 
             languageName[0]=languageName[0].toUpper();
+
+            if (languageName.isEmpty() or languageName=="C"){
+                    languageName=lang_code;
+            }
 
             ui->comboBox_2->addItem(languageName,lang_code);
             if (confSettings->value("abc/lang",QLocale::system().bcp47Name()).toString()==lang_code){

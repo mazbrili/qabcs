@@ -109,7 +109,7 @@
     },
     "cs": {
         "name": "Czech",
-        "nativeName": "česky"
+        "nativeName": "čeština"
     },
     "cu": {
         "name": "Old Church Slavonic, Church Slavic, Church Slavonic, Old Bulgarian, Old Slavonic",
@@ -117,7 +117,7 @@
     },
     "cv": {
         "name": "Chuvash",
-        "nativeName": "чӑваш"
+        "nativeName": "чӑвашла"
     },
     "cy": {
         "name": "Welsh",
@@ -205,7 +205,7 @@
     },
     "gn": {
         "name": "Guaraní",
-        "nativeName": "avañeẽ"
+        "nativeName": "avañe'ẽ"
     },
     "gu": {
         "name": "Gujarati",
@@ -217,7 +217,7 @@
     },
     "ha": {
         "name": "Hausa",
-        "nativeName": "haoussa"
+        "nativeName": "هَوُسَ"
     },
     "he": {
         "name": "Hebrew (modern)",
@@ -317,7 +317,7 @@
     },
     "kk": {
         "name": "Kazakh",
-        "nativeName": "қазақ"
+        "nativeName": "қазақша"
     },
     "kl": {
         "name": "Kalaallisut, Greenlandic",
@@ -339,17 +339,25 @@
         "name": "Kanuri",
         "nativeName": "kanuri"
     },
+    "ks": {
+        "name": "Kashmiri",
+        "nativeName": "कॉशुर"
+    },
+    "ku": {
+        "name": "Kurdish",
+        "nativeName": "Kurdî"
+    },
     "kv": {
         "name": "Komi",
         "nativeName": "коми"
     },
     "kw": {
         "name": "Cornish",
-        "nativeName": "kernewek"
+        "nativeName": "kernowek"
     },
     "ky": {
         "name": "Kirghiz, Kyrgyz",
-        "nativeName": "кыргыз"
+        "nativeName": "кыргызча"
     },
     "la": {
         "name": "Latin",
@@ -365,7 +373,7 @@
     },
     "li": {
         "name": "Limburgish, Limburgan, Limburger",
-        "nativeName": "limburgs"
+        "nativeName": "lèmburgs"
     },
     "ln": {
         "name": "Lingala",
@@ -429,11 +437,11 @@
     },
     "nb": {
         "name": "Norwegian Bokmål",
-        "nativeName": "norsk bokmål"
+        "nativeName": "bokmål"
     },
     "nd": {
         "name": "North Ndebele",
-        "nativeName": "isiNdebele saseNyakatho"
+        "nativeName": "siNdebele saseNyakatho"
     },
     "ne": {
         "name": "Nepali",
@@ -441,7 +449,7 @@
     },
     "ng": {
         "name": "Ndonga",
-        "nativeName": "owambo"
+        "nativeName": "ndonga"
     },
     "nl": {
         "name": "Dutch",
@@ -449,7 +457,7 @@
     },
     "nn": {
         "name": "Norwegian Nynorsk",
-        "nativeName": "norsk nynorsk"
+        "nativeName": "nynorsk"
     },
     "no": {
         "name": "Norwegian",
@@ -465,7 +473,7 @@
     },
     "ny": {
         "name": "Chichewa; Chewa; Nyanja",
-        "nativeName": "chiCheŵa"
+        "nativeName": "chiсheŵa"
     },
     "oc": {
         "name": "Occitan",
@@ -535,6 +543,10 @@
         "name": "Sardinian",
         "nativeName": "sardu"
     },
+    "sd": {
+        "name": "Sindhi",
+        "nativeName": "سنڌي"
+    },
     "se": {
         "name": "Northern Sami",
         "nativeName": "davvisámegiella"
@@ -603,6 +615,10 @@
         "name": "Telugu",
         "nativeName": "తెలుగు"
     },
+    "tg": {
+        "name": "Tajik",
+        "nativeName": "тоҷикӣ"
+    },
     "th": {
         "name": "Thai",
         "nativeName": "ไทย"
@@ -613,7 +629,7 @@
     },
     "tk": {
         "name": "Turkmen",
-        "nativeName": "türkmen"
+        "nativeName": "türkmençe"
     },
     "tl": {
         "name": "Tagalog",
@@ -635,6 +651,10 @@
         "name": "Tsonga",
         "nativeName": "xitsonga"
     },
+    "tt": {
+        "name": "Tatar",
+        "nativeName": "татарча"
+    },
     "tw": {
         "name": "Twi",
         "nativeName": "twi"
@@ -643,6 +663,10 @@
         "name": "Tahitian",
         "nativeName": "reo Tahiti"
     },
+    "ug": {
+        "name": "Uighur; Uyghur",
+        "nativeName": "Uyghurche"
+    },
     "uk": {
         "name": "Ukrainian",
         "nativeName": "українська"
@@ -650,6 +674,10 @@
     "ur": {
         "name": "Urdu",
         "nativeName": "اردو"
+    },
+    "uz": {
+        "name": "Uzbek",
+        "nativeName": "ўзбекча"
     },
     "ve": {
         "name": "Venda",
@@ -669,7 +697,7 @@
     },
     "wo": {
         "name": "Wolof",
-        "nativeName": "wollof"
+        "nativeName": "wolof"
     },
     "xh": {
         "name": "Xhosa",
@@ -690,5 +718,8 @@
     "zh": {
         "name": "Chinese",
         "nativeName": "中文"
-    }
+    },
+    "zu": {
+        "name": "Zulu",
+        "nativeName": "isiZulu"
 }
