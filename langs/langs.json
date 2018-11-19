@@ -37,11 +37,11 @@
     },
     "av": {
         "name": "Avaric",
-        "nativeName": "авар мацӀ"
+        "nativeName": "авар"
     },
     "ay": {
         "name": "Aymara",
-        "nativeName": "aymar aru"
+        "nativeName": "aymar"
     },
     "az": {
         "name": "Azerbaijani",
@@ -132,8 +132,12 @@
         "nativeName": "deutsch"
     },
     "dv": {
-        "name": "Divehi; Dhivehi; Maldivian;",
+        "name": "Divehi; Dhivehi; Maldivian",
         "nativeName": "ދިވެހި"
+    },
+    "dz": {
+        "name": "Dzongkha",
+        "nativeName": "རྫོང་ཁ"
     },
     "ee": {
         "name": "Ewe",
@@ -423,6 +427,10 @@
         "name": "Marathi (Marāṭhī)",
         "nativeName": "मराठी"
     },
+    "ms": {
+        "name": "Malay",
+        "nativeName": "bahasa Melayu"
+    },
     "mt": {
         "name": "Maltese",
         "nativeName": "malti"
@@ -433,7 +441,7 @@
     },
     "na": {
         "name": "Nauru",
-        "nativeName": "ekakairũ Naoero"
+        "nativeName": "ekakairũ naoero"
     },
     "nb": {
         "name": "Norwegian Bokmål",
@@ -441,7 +449,7 @@
     },
     "nd": {
         "name": "North Ndebele",
-        "nativeName": "siNdebele saseNyakatho"
+        "nativeName": "isiNdebele saseNyakatho"
     },
     "ne": {
         "name": "Nepali",
@@ -449,7 +457,7 @@
     },
     "ng": {
         "name": "Ndonga",
-        "nativeName": "ndonga"
+        "nativeName": "owambo"
     },
     "nl": {
         "name": "Dutch",
@@ -493,7 +501,11 @@
     },
     "os": {
         "name": "Ossetian, Ossetic",
-        "nativeName": "ирон"
+        "nativeName": "иронау"
+    },
+    "pa": {
+        "name": "Panjabi; Punjabi",
+        "nativeName": "ਪੰਜਾਬੀ"
     },
     "pi": {
         "name": "Pāli",
@@ -512,15 +524,15 @@
         "nativeName": "português"
     },
     "qu": {
-        "name": "Quechua",
-        "nativeName": "runasimi"
+        "name": "Runa Simi, Kichwa",
+        "nativeName": "quechua"
     },
     "rm": {
         "name": "Romansh",
         "nativeName": "rumantsch"
     },
     "rn": {
-        "name": "Kirundi",
+        "name": "Kirundi; Rundi",
         "nativeName": "ikirundi"
     },
     "ro": {
@@ -533,7 +545,7 @@
     },
     "rw": {
         "name": "Kinyarwanda",
-        "nativeName": "ikinyarwanda"
+        "nativeName": "kinyarwanda"
     },
     "sa": {
         "name": "Sanskrit (Saṁskṛta)",
@@ -554,6 +566,10 @@
     "sg": {
         "name": "Sango",
         "nativeName": "sängö"
+    },
+    "sh": {
+        "name": "Serbo-Croatian",
+        "nativeName": "српскохрватски"
     },
     "si": {
         "name": "Sinhala, Sinhalese",
@@ -577,7 +593,7 @@
     },
     "so": {
         "name": "Somali",
-        "nativeName": "soomaali"
+        "nativeName": "soomaaliga"
     },
     "sq": {
         "name": "Albanian",
@@ -633,7 +649,7 @@
     },
     "tl": {
         "name": "Tagalog",
-        "nativeName": "tagalog"
+        "nativeName": "tagálog"
     },
     "tn": {
         "name": "Tswana",
@@ -665,7 +681,7 @@
     },
     "ug": {
         "name": "Uighur; Uyghur",
-        "nativeName": "Uyghurche"
+        "nativeName": "ئۇيغۇرچە"
     },
     "uk": {
         "name": "Ukrainian",
@@ -722,4 +738,5 @@
     "zu": {
         "name": "Zulu",
         "nativeName": "isiZulu"
+    }
 }
