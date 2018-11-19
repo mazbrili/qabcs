@@ -37,8 +37,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     listTypes = QStringList() << "misc" << "rand" << "food" << "animals" << "instrument" << "toys";
 
-    qDebug() << "Using path: " << QString(GLOBAL_PATH_USERDATA);
-
     // open ini user config
     QDir dirConfig(QDir::homePath()+"/.qabcs/");
     if (dirConfig.exists()==false) dirConfig.mkpath(QDir::homePath()+"/.qabcs/");
@@ -52,6 +50,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     initToolBar();
 
     refreshTranslate();
+
+    qDebug() << tr("Using path:")+" "+QString(GLOBAL_PATH_USERDATA);
 
     // read status sound from config
     if (confSettings->value("global/sound","true").toString()=="false"){

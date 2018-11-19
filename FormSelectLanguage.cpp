@@ -69,14 +69,14 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
     QFile file;
     file.setFileName(QString(GLOBAL_PATH_USERDATA)+"/langs/langs.json");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug() << tr("error open")+" langs.json" << file.errorString();
+        qDebug() << tr("Error while opening")+" langs.json" << file.errorString();
     }else{
         QByteArray val = file.readAll();
         file.close();
 
         QJsonDocument document = QJsonDocument::fromJson(val);
         if (document.isEmpty()){
-            qDebug() << "langs.json "+QObject::tr("is not valid");
+            qDebug() << "langs.json "+tr("is not valid");
         }else{
             rootLangs = document.object();
         }
