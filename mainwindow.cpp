@@ -273,7 +273,11 @@ void MainWindow::refreshTranslate(){
     qApp->installTranslator(&translator);
 
     // set translator for default widget's text (for example: QMessageBox's buttons)
+#ifdef __WIN32
+    qtTranslator.load("qt_"+locale,QString(GLOBAL_PATH_USERDATA)+"/translations");
+#else
     qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+#endif
     qApp->installTranslator(&qtTranslator);
 
 
