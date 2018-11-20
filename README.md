@@ -60,7 +60,7 @@ https://bitbucket.org/admsasha/qabcs/downloads
 
 ***
 
-# RUSSIAN #
+# RUSSIAN/РУССКИЙ #
 Авторское право на qABCs принадлежит DanSoft (dik@inbox.ru),
 2018
 
@@ -120,5 +120,3 @@ https://build.opensuse.org/package/show/home:admsasha/qABCs
 https://bitbucket.org/admsasha/qabcs/downloads
 
 ![screenshot2 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
-
-***
