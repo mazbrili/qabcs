@@ -21,12 +21,6 @@ qABCs familiarizes children with the alphabet and a keyboard.
 Children can play with qABCs to learn about the alphabet and words
 associated with it.
 
-How to play:
-* In ABC mode, press the key on the keyboard that is shown on the screen
-to advance through the alphabet, press "Backspace" to go back
-* In any other mode, press a key on the keyboard to display that letter
-* To hear the word displayed on the screen, press the spacebar
-
 %prep
 %setup -q
 
