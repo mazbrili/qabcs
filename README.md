@@ -38,8 +38,9 @@ make
 GUI and desktop file: https://www.transifex.com/Magic/qabcs
 ABC: create your own abs.json (more detailed format) or
 abs.properties (easier, but not detailed format). Use pictures
-from abcs/all/pics. Use template scripts to generate sound
-files from text to speech or record voice.
+from abcs/all/pics. Use noises from abcs/all/noises. Use
+template scripts to generate sound files from text to speech or
+record voice.
 
 ### Current languages: ###
 GUI translated on English, Russian, Dutch, Ukrainian, Estonian,
@@ -54,6 +55,8 @@ https://build.opensuse.org/package/show/home:admsasha/qABCs
 
 Applications for Windows and sources:
 https://bitbucket.org/admsasha/qabcs/downloads
+
+![screenshot1 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
 
 ***
 
@@ -98,9 +101,9 @@ make
 ГУИ и desktop файл: https://www.transifex.com/Magic/qabcs
 Алфавит: создайте ваш собственный abs.json (более детальный
 формат) или abs.properties (проще, но не детальный формат).
-Используйте картинки из abcs/all/pics. Используйте шаблонные
-скрипты для генерации звуковых файлов из текста в речь или
-запишите голос.
+Используйте картинки из abcs/all/pics. Используйте шумы из
+abcs/all/noises. Используйте шаблонные скрипты для генерации
+звуковых файлов из текста в речь или запишите голос.
 
 ### Текущие языки: ###
 ГУИ переведён на английский, русский, голландский, украинский,
@@ -116,7 +119,6 @@ https://build.opensuse.org/package/show/home:admsasha/qABCs
 Приложения для Windows и сурсы:
 https://bitbucket.org/admsasha/qabcs/downloads
 
-***
-
-![screenshot1 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot1.png)
 ![screenshot2 images](https://bitbucket.org/admsasha/qabcs/raw/master/screenshots/screenshot2.png)
+
+***
