@@ -214,7 +214,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="40"/>
         <source>Using path:</source>
-        <translation type="unfinished"/>
+        <translation>Gebruikmakend van pad:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="69"/>
