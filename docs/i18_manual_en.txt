@@ -1,0 +1,121 @@
++++ Instructions for localizing the alphabet +++
+
+To add the alphabet to the qABCs program, you need to write an abc.json or abc.properties file.
+Samples of these files can be found in the abcs directory.
+abc.json allows you to write in detail all the nuances, and abc.properties is more focused on automation and ease of writing.
+Which of these formats to choose - the translator decides for himself. The program supports both formats equally well.
+
++++ Description of abc.properties format +++
+The global parameter inheritsFrom describes language inheritance, it is used for dialects (see below), it is optional. Format:
+inheritsFrom: parent_language/abc.properties.
+The global parameter language describes the language, a required parameter.
+The global parameter author describes the author and email address, an optional, but highly desirable parameter.
+The global parameter espeak_params describes the parameters for espeak, an optional parameter.
+The global parameter visible describes the visibility of the current file in the language selection dialog, has the values true (visible), false (invisible); if not specified, the file is visible.
+The global parameter speak_method specifies which method in priority (file or espeak) to generate speech: via file (file) or via espeak (espeak); by default, if the parameter is not specified, then file.
+The global parameter typing, when set to false, forces the input mode to use the right/left arrows, prohibiting the user from entering the typing mode; this mode is needed for rare languages for which there are not even layouts in operating systems, what makes it absolutely impossible to use typing mode; this parameter is optional; by default, if not specified, it is true.
+
+misc:a=airplane==airplane=airplane
+food:a=apple==apple
+misc:а=АККОРДЕОН=АКОР-ДИ-ОН=accordion=accordion
+
+the first parameter misc means the name of the game, at the moment there are 6 games in the program: misc (in alphabetical order), food (products), animals (animals), instrument (music), toys (toys), and game rand (in random order) does not require a description.
+the second parameter a is the letter of the alphabet (you can write it in any case); if there is a file with the same name in the abcs/your_lang/sounds/alpha directory, it is played, otherwise, if it does not exist and there is no inheritance, then this is pronunciation for espeak; for the case of inheritance, the file from the abcs/your_lang/sounds/alpha directory is first searched and played; if it is missing, but exists in the parent directory, the that is played; if the sound file is not found anywhere, then this is the pronunciation via espeak; so, a letter has a pronunciation always.
+the third parameter АККОРДЕОН is the word displayed by the program (you can write it in any case), the underscore characters will be automatically replaced with spaces; inheritor overrides parent; this is also the name of the sound file from the abcs/your_lang/sounds/words directory, or if there is inheritance, the name of the sound file of the parent is from a similar directory that is used if the inheritor does not have a sound file but the parent has; if there is no sound file, and there is no inheritance, then if the pronunciation is specified in the fourth parameter, then espeak says it, otherwise nothing is said; if there is no sound file, and there is inheritance, then if there is a sound file in the corresponding directory of the parent, then it is played, otherwise, if the sound file is not found anywhere, then if the pronunciation is specified in the fourth parameter, then espeak pronounces it, otherwise nothing is said.
+the fourth parameter of АКОР-ДИ-ОН is optional (you can write it in any case), it describes the pronunciation of the word for espeak; if espeak should work, but the value of this parameter is not specified, then nothing will be spoken; inheritor overrides parent.
+the fifth parameter in English describes the name of the image file from the abcs/all/pics directory.
+the sixth parameter is optional, it describes the sound effect (noise), it is the file name from the abcs/all/noises directory.
+
++++ Description of abc.json format +++
+In the general section, global parameters are specified.
+The global parameter inheritsFrom describes language inheritance, it is used for dialects (see below), it is optional. Format:
+inheritsFrom : "parent_language/abc.json".
+The global parameter language describes the language, a required parameter.
+The global parameter author describes the author and email address, an optional, but highly desirable parameter.
+The global parameter espeak_params describes the parameters for espeak, an optional parameter.
+The global parameter visible describes the visibility of the current file in the language selection dialog, has the values true (visible), false (invisible); if not specified, the file is visible.
+The global parameter speak_method indicates which method (file or espeak) to generate speech: via file (file) or via espeak (espeak).
+The global parameter typing, when set to false, forces the input mode to use the right/left arrows, prohibiting the user from entering the typing mode; this mode is needed for rare languages for which there are not even layouts in operating systems, what makes it absolutely impossible to use typing mode; this parameter is optional; by default, if not specified, it is true.
+
+Global parameters espeak_params, speak_method can be overridden by local parameters.
+
+The letters section describes everything. It consists the structures of the following form:
+
+	{"А": {
+        "espeak_words": "А",
+		"misc": {
+		      "pic": "music/accordion.png",
+		      "name": "АККОРДЕОН",
+		      "espeak_words": "АКОР-ДИ-ОН",
+		      "noises": "accordion.ogg"
+		},
+		"food": {
+		      "pic": "food/watermelon.png",
+		      "name": "АРБУЗ",
+		      "espeak_words": "АР-БУЗ"
+		},
+		"animals": {
+		      "pic": "animals/stork.png",
+		      "name": "АИСТ",
+		      "espeak_words": "АИСТ",
+		      "noises": "stork.ogg"
+		},
+		"instrument": {
+		      "pic": "music/harp.png",
+		      "name": "АРФА",
+		      "espeak_words": "АРФА",
+		      "noises": "harp.ogg"
+		},
+		"toys": {
+		      "pic": "toys/watercolor.png",
+		      "name": "АКВАРЕЛЬ",
+		      "espeak_words": "АКВА-РЕЛЬ"
+		}
+	}},
+
+or:
+
+	{"A": {
+		"sound_letter": "A.ogg",
+		"misc": {
+		      "pic": "misc/airplane.png",
+		      "name": "AIRPLANE",
+		      "sound_pic": "airplane.ogg",
+		      "noises": "airplane.ogg"
+		},
+		"food": {
+		      "pic": "food/apple.png",
+		      "name": "APPLE",
+		      "sound_pic": "apple.ogg"
+		},
+		"animals": {
+		      "pic": "animals/angelfish.png",
+		      "name": "ANGELFISH",
+		      "sound_pic": "angelfish.ogg"
+		},
+		"instrument": {
+		      "pic": "music/accordion.png",
+		      "name": "ACCORDION",
+		      "sound_pic": "accordion.ogg",
+		      "noises": "accordion.ogg"
+		},
+		"toys": {
+		      "pic": "toys/anklet.png",
+		      "name": "ANKLET",
+		      "sound_pic": "anklet.ogg"
+		}
+	}},
+
+at the moment there are 6 games in the program: misc (in alphabetical order), food (products), animals (animals), instrument (music), toys (toys), and game rand (in random order) does not require a description.
+the parameter A is the letter of the alphabet (you can write it in any case).
+the parameter sound_letter describes a sound file in the abcs/your_lang/sounds/alpha directory, it is played if available.
+the parameter espeak_words describes the pronunciation via espeak.
+the parameter name is the word displayed by the program (you can write it in any case), and the underscore characters will be automatically replaced with spaces.
+the parameter pic describes the name of the image file from the abcs/all/pics directory.
+the parameter sound_pic describes the name of the sound file from the abcs/your_lang/sounds/words directory.
+the parameter noises is optional, it describes the sound effect (noise), it is the file name from the abcs/all/noises directory.
+inheritance requires explicit redefinition of parent parameters; if something is not overridden by the inheritor, then it is used from the parent.
+
++++ General notes +++
+When writing a file it is important to place the letters in alphabetical order.
+All the names of the program files are in lower case, you can write in any case, the program will use lower case automatically; the file extension is not required, and the underscore should be used instead of a space in the file name.
