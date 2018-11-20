@@ -1,7 +1,7 @@
 #/bin/sh
 # Author: Alexey Loginov
 # Licence: GPLv3+
-# Description: convert text and letters into .ogg using Google Cloud Text-to-Speech
+# Description: convert text and letters into .ogg (vorbis) using Google Cloud Text-to-Speech
 # https://cloud.google.com/text-to-speech/docs
 # You need curl, ffmpeg installed
 

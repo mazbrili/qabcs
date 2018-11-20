@@ -1,7 +1,7 @@
 #/bin/sh
 # Author: Alexey Loginov
 # Licence: GPLv3+
-# Description: convert text and letters into .ogg using Yandex SpeechKit Cloud
+# Description: convert text and letters into .ogg (vorbis) using Yandex SpeechKit Cloud
 # https://tech.yandex.ru/speechkit/cloud/doc/guide/common/speechkit-common-tts-http-request-docpage/
 # You need curl, ffmpeg installed
 

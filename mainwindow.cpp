@@ -53,13 +53,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     qDebug() << tr("Using path:")+" "+QString(GLOBAL_PATH_USERDATA);
 
-    // read status sound from config
+    // read status of sound from config
     if (confSettings->value("global/sound","true").toString()=="false"){
         accSound->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/sound_off.png"));
         soundStatus=false;
     }
 
-    // read status typing from config
+    // read status of typing from config
     if (confSettings->value("global/typing","true").toString()=="false"){
         accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
         _disable_additional_keys=false;
@@ -215,7 +215,7 @@ void MainWindow::initLanguageAbc(){
     _speak_method = "";
     _espeak_params = "";
 
-    // default status typing
+    // default status of typing
     blockButtonTyping=false;
     _disable_additional_keys=true;
     accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"));
@@ -277,7 +277,7 @@ void MainWindow::refreshTranslate(){
     qApp->installTranslator(&qtTranslator);
 
 
-    // retranslateUi
+    // retranslate UI
     QList<QWidget*> l2 = this->findChildren<QWidget *>();
     for (auto &w:l2){
         if (!w->toolTip().isEmpty()) w->setToolTip(tr(listWidgetsRetranslateUi[w]["toolTip"].toStdString().c_str()));
@@ -590,7 +590,7 @@ void MainWindow::updateletterToList(QString folder_lang,LETTER_INFO letter){
     }
 
 
-    // find sounds file for letter
+    // find sound file for letter
     if (!letter.sound_letter.isEmpty()){
         QString folderAlpha = QString(GLOBAL_PATH_USERDATA)+"/abcs/"+folder_lang+"/sounds/alpha";
         QString letterSoundLetterFilename =  SoundEngine::findSoundfile(folderAlpha,letter.sound_letter.toLower());

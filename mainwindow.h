@@ -67,7 +67,7 @@ class MainWindow : public QMainWindow {
         bool isExistSox();
         bool isExistEspeak();
 
-        // for type game random
+        // for random type of game
         int gameRandomGenerateNextIndex();
 
         QString globalPathUserResources;
@@ -112,7 +112,7 @@ class MainWindow : public QMainWindow {
 
         bool gameAbcFinish;
 
-        // for type game random
+        // for random type of game
         int gameRandomCurrentIndex;
         QVector<LETTER_CONFIG> listLettersGameRand;
 
