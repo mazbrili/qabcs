@@ -9,18 +9,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FormAbout.ui" line="31"/>
-        <source>qABCs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../FormAbout.ui" line="131"/>
         <source>License: GPLv3+</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../FormAbout.ui" line="190"/>
-        <source>BitBucket</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -186,7 +176,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="40"/>
+        <location filename="../mainwindow.cpp" line="54"/>
         <source>Using path:</source>
         <translation type="unfinished"></translation>
     </message>
