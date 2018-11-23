@@ -9,7 +9,7 @@
     <message>
         <location filename="../FormAbout.ui" line="131"/>
         <source>License: GPLv3+</source>
-        <translation type="unfinished"/>
+        <translation>Лиценз: GPLv3+</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Отказ</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
@@ -262,7 +262,7 @@
         <location filename="../mainwindow.cpp" line="176"/>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Exit</source>
-        <translation type="unfinished"/>
+        <translation>Изход</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="319"/>

@@ -153,7 +153,9 @@
         <source>Typing on/off:
         You can switch from typing of letters on using left/right keys
         instead.</source>
-        <translation type="unfinished"/>
+        <translation>Ввімкнути/вимкнути машинопис:
+        Ви можете перейти від друкування літер на використання клавіш
+        вліво/вправо натомість.</translation>
     </message>
 </context>
 <context>
@@ -181,7 +183,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation type="unfinished"/>
+        <translation>Виберіть мову інтерфейсу:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="20"/>
@@ -204,7 +206,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="54"/>
         <source>Using path:</source>
-        <translation type="unfinished"/>
+        <translation>Використовується шлях:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="69"/>
@@ -264,7 +266,7 @@
         <location filename="../mainwindow.cpp" line="164"/>
         <location filename="../mainwindow.cpp" line="165"/>
         <source>Typing on/off</source>
-        <translation type="unfinished"/>
+        <translation>Ввімкнути/вимкнути машинопис</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="167"/>
@@ -346,7 +348,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="961"/>
         <source>Food</source>
-        <translation>Продукт</translation>
+        <translation>Їжа</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="966"/>
@@ -371,12 +373,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
         <source>play was found:</source>
-        <translation type="unfinished"/>
+        <translation>play було знайдено:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1089"/>
         <source>espeak was found:</source>
-        <translation type="unfinished"/>
+        <translation>espeak було знайдено:</translation>
     </message>
 </context>
 <context>
