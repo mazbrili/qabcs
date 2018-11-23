@@ -25,7 +25,7 @@ void SndPlayer::open() {
     CoInitialize(0);
 #endif
 
-    mp = new QMediaPlayer(this);
+    mp = new QMediaPlayer;
     connect(mp, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)), this, SLOT(mediaStatusChanged(QMediaPlayer::MediaStatus)), Qt::QueuedConnection);
     mp->setMedia(QUrl::fromLocalFile(fileName));
 }
