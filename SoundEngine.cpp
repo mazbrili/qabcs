@@ -25,6 +25,7 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
     if (!QFile::exists(filename)) return;
     QFileInfo fileInfo(filename);
 
+#if defined(_WIN32)
     QCoreApplication::instance()->processEvents();
 
     if (async){
@@ -35,9 +36,7 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
         SndPlayer player(0,fileInfo.absoluteFilePath());
         player.wait();
     }
-
-
-/*
+#else
     QProcess proc;
     QString cmd_to_play = global_path_to_play+" "+fileInfo.absoluteFilePath();
 
@@ -67,7 +66,8 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
     }else{
         proc.execute(cmd_to_play);
     }
-*/
+#endif
+
 }
 
 void SoundEngine::playSoundFromSpeechSynthesizer(QString cmdLine, bool async){
