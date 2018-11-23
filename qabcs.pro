@@ -36,6 +36,10 @@ gcc {
     QMAKE_CXXFLAGS += -Wall -Wextra -Wformat -Wformat-security -Wno-unused-variable -Wno-unused-parameter
 }
 
+win32 {
+    LIBS += -lole32 -loleaut32
+}
+
 exists( langs/qabcs_en.ts ) {
       TRANSLATIONS = $$files(langs/qabcs_*.ts)
 } else {
@@ -107,7 +111,8 @@ SOURCES += main.cpp \
     Collection.cpp \
     FormSelectLanguage.cpp \
     SoundEngine.cpp \
-    LoaderAbcFormats.cpp
+    LoaderAbcFormats.cpp \
+    sndplayer.cpp
 
 FORMS += \
     FormAbout.ui \
@@ -122,4 +127,5 @@ HEADERS += \
     FormSelectLanguage.h \
     config_qabcs.h \
     SoundEngine.h \
-    LoaderAbcFormats.h
+    LoaderAbcFormats.h \
+    sndplayer.h

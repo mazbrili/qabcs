@@ -9,15 +9,35 @@
 
 #include "config_qabcs.h"
 #include "LoaderAbcFormats.h"
+#include "sndplayer.h"
+
+QMediaPlayer *playerBackgroud=nullptr;
 
 SoundEngine::SoundEngine(){
 
+}
+
+void SoundEngine::init(){
+    playerBackgroud = new QMediaPlayer();
 }
 
 void SoundEngine::playSoundFromFile(QString filename, bool async){
     if (!QFile::exists(filename)) return;
     QFileInfo fileInfo(filename);
 
+    QCoreApplication::instance()->processEvents();
+
+    if (async){
+        playerBackgroud->stop();
+        playerBackgroud->setMedia(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
+        playerBackgroud->play();
+    }else{
+        SndPlayer player(0,fileInfo.absoluteFilePath());
+        player.wait();
+    }
+
+
+/*
     QProcess proc;
     QString cmd_to_play = global_path_to_play+" "+fileInfo.absoluteFilePath();
 
@@ -47,6 +67,7 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
     }else{
         proc.execute(cmd_to_play);
     }
+*/
 }
 
 void SoundEngine::playSoundFromSpeechSynthesizer(QString cmdLine, bool async){

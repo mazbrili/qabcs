@@ -46,6 +46,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // init collections
     for (QString type:listTypes) listCollections[type] = new Collection(confSettings->value("abc/language","en").toString());
 
+    SoundEngine::init();
+
     initGUI();
     initToolBar();
 
