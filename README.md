@@ -44,7 +44,7 @@ record voice.
 
 ### Current languages: ###
 GUI translated on English, Russian, Dutch, Ukrainian, Estonian,
-Portuguese, Bulgarian.
+Portuguese, Bulgarian, Malay.
 ABCs translated on American English (US), Russian, United
 Kingdom English (UK), Ukrainian.
 
@@ -107,7 +107,7 @@ abcs/all/noises. Используйте шаблонные скрипты для
 
 ### Текущие языки: ###
 ГУИ переведён на английский, русский, голландский, украинский,
-эстонский, португальский, болгарский.
+эстонский, португальский, болгарский, малайский.
 Алфавиты переведены на американский английский (US), русский,
 английский Соединённого Королевства (UK), украинский.
 
