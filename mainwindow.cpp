@@ -1058,7 +1058,8 @@ bool MainWindow::isExistSox(){
     global_path_to_play="play";
 
 #if defined(_WIN32)
-    global_path_to_play = "\""+QCoreApplication::applicationDirPath() + "/3rdparty/sox/play.exe\"";
+    return true;
+    //global_path_to_play = "\""+QCoreApplication::applicationDirPath() + "/3rdparty/sox/play.exe\"";
 #endif
 
     proc.start(global_path_to_play+" --version");
