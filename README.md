@@ -1,6 +1,6 @@
 # ENGLISH #
 
-qABCs is copyright by DanSoft (dik@inbox.ru), 2018
+qABCs is copyright by DanSoft (dik@inbox.ru), 2019
 
 This program is licensed under the terms and conditions of
 the GNU General Public License (GPLv3+); either version
@@ -62,7 +62,7 @@ https://bitbucket.org/admsasha/qabcs/downloads
 
 # RUSSIAN/РУССКИЙ #
 Авторское право на qABCs принадлежит DanSoft (dik@inbox.ru),
-2018
+2019
 
 Эта программа лицензирована в соответствии с положениями GNU
 General Public License (GPLv3+); либо версии 3 Лицензии, либо
