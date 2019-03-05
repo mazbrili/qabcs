@@ -92,8 +92,8 @@
         <translation>Mode alphabet:
          La première icône à gauche est le mode alphabet. appuyez sur la
          lettre sur le clavier qui est affichée à l&apos;écran pour
-         faire défiler l&apos;alphabet. Appuyez sur la touche &quot;Retour arrière&quot; pour vous déplacer
-         en arrière une lettre. Terminez en trouvant toutes les lettres.
+         faire défiler l&apos;alphabet. Appuyez sur la touche &quot;Retour arrière&quot; pour vous
+         déplacer en arrière une lettre. Terminez en trouvant toutes les lettres.
 </translation>
     </message>
     <message>
@@ -118,8 +118,8 @@
         a letter with a related image and description.
 </source>
         <translation>Autres modes:
-         Dans tous les autres modes, appuyez simplement sur une touche du clavier pour voir
-         une lettre avec une image associée et une description.
+         Dans tous les autres modes, appuyez simplement sur une touche du clavier
+         pour voir une lettre avec une image associée et une description.
 </translation>
     </message>
     <message>
@@ -131,8 +131,8 @@
 </source>
         <translation>Sons:
          Appuyez sur la barre d&apos;espace pour entendre le nom de l&apos;objet illustré.
-         Vous pouvez activer / désactiver les sons en appuyant sur le bouton &quot;Son activé / désactivé&quot;.
-         icône.
+         Vous pouvez activer / désactiver les sons en appuyant sur le bouton &quot;Son
+         activé / désactivé&quot; icône.
 </translation>
     </message>
     <message>
@@ -141,7 +141,7 @@
         You can change ABC language by pressing on the &quot;Select
         language&quot; icon. Default language is American English.
 </source>
-        <translation>choisir la langue ABC:
+        <translation>Choisir la langue ABC:
          Vous pouvez changer la langue ABC en appuyant sur le bouton &quot;Sélectionner
          &quot;langue&quot;. La langue par défaut est l&apos;anglais américain.
 </translation>

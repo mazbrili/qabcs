@@ -112,7 +112,8 @@ Druhá ikona zleva je Náhodný mód. Stiskni takové písmeno na klávesnici, j
         a letter with a related image and description.
 </source>
         <translation>Ostatní módy:
-V ostatních módech jednoduše stiskni klávesu s písmenem, které souvisí s obrázkem, zvukem nebo popisem.</translation>
+V ostatních módech jednoduše stiskni klávesu s písmenem, které souvisí s obrázkem, zvukem nebo popisem.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="38"/>
