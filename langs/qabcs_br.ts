@@ -1,45 +1,45 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="bg" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="br" version="2.1">
 <context>
     <name>FormAbout</name>
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
         <source>License: GPLv3+</source>
-        <translation>Лиценз: GPLv3+</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
         <source>Visit web site</source>
-        <translation>Посетете сайта</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="226"/>
         <source>Close</source>
-        <translation>Затворете</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="16"/>
         <source>About</source>
-        <translation>Относно</translation>
+        <translation>Diwar benn</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="19"/>
         <source>Version:</source>
-        <translation>Версия:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="20"/>
         <source>Date build:</source>
-        <translation>Дата:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="21"/>
         <source>All rights reserved.</source>
-        <translation>Всички права запазени.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -47,26 +47,24 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
         <source>OK</source>
-        <translation>Добре</translation>
+        <translation>Mat eo</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation>Помощ</translation>
+        <translation>Skoazell</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
         <source>How to use:
 
 </source>
-        <translation>Как да използваме:
-
-</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="17"/>
@@ -135,7 +133,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
@@ -145,12 +143,12 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
         <source>Cancel</source>
-        <translation>Отказ</translation>
+        <translation>Nullañ</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation>Добре</translation>
+        <translation>Mat eo</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
@@ -250,19 +248,19 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation>Помощ</translation>
+        <translation>Skoazell</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>
         <location filename="../mainwindow.cpp" line="174"/>
         <source>About qABCs</source>
-        <translation>Относно qABCs</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="176"/>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Exit</source>
-        <translation>Изход</translation>
+        <translation>Kuitaat</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="319"/>
