@@ -3,8 +3,8 @@
 
 #include <QString>
 
-#define QABCS_VERSION "1.0.0"
-#define QABCS_DATEBUILD "11.02.2019"
+#define QABCS_VERSION "1.0.1"
+#define QABCS_DATEBUILD "05.03.2019"
 
 #if !defined(GLOBAL_PATH_USERDATA)
 #if defined(__WIN32__)
