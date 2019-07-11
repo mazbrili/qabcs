@@ -64,7 +64,9 @@
         <source>How to use:
 
 </source>
-        <translation type="unfinished"/>
+        <translation>Benutzeranleitung:
+
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="17"/>
@@ -73,7 +75,11 @@
         different modes. Use the &quot;Tab&quot; key to toggle between modes,
         or click on an icon with the mouse.
 </source>
-        <translation type="unfinished"/>
+        <translation>Einen Modus auswählen:
+        Die 6 Icons auf der linken Seite der Symbolleiste repräsentieren die
+        verschiedenen Modi. Benutze die &quot;Tab&quot; Taste um zwischen Modi umzuschalten,
+        oder klicke auf ein Icon mit der Maus.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="22"/>
@@ -83,7 +89,12 @@
         cycle through alphabet. Press the &quot;Backspace&quot; key to move
         back one letter. Finish by finding all the letters.
 </source>
-        <translation type="unfinished"/>
+        <translation>Alphabet Modus:
+        Das erste Icon links ist der Alphabet Modus. Drücke den
+        Buchstaben auf der Tastatur, welcher auf dem Bildschirm angezeigt wird,
+        um durch das Alphabet zu schalten. Drücke die &quot;Rücktaste&quot; um einen
+        Buchstaben zurückzuschalten. Finde alle Buchstaben um abzuschließen.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="28"/>
@@ -93,7 +104,12 @@
         Press the &quot;Backspace&quot; key to move back one letter.
         Finish by finding all the letters.
 </source>
-        <translation type="unfinished"/>
+        <translation>Zufalls-Modus:
+       Das zweite Icon links ist der Zufalls-Modus. Drücke den
+       Buchstaben auf der Tastatur, welcher auf dem Bildschirm angezeigt wird.
+       Drücke die &quot;Rücktaste&quot; um einen Buchstaben zurückzuschalten.
+       Finde alle Buchstaben um abzuschließen.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="34"/>
@@ -101,7 +117,10 @@
         In all other modes, simply press a key on the keyboard to see
         a letter with a related image and description.
 </source>
-        <translation type="unfinished"/>
+        <translation>Andere Modi:
+         Drücke einfach eine Taste auf der Tastatur in allen anderen Modi, um einen
+         Buchstaben mit einem damit verbundenen Bild und Beschreibung zu sehen.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="38"/>
@@ -110,7 +129,11 @@
         You can turn on/off sounds by pressing on the &quot;Sound on/off&quot;
         icon.
 </source>
-        <translation type="unfinished"/>
+        <translation>Ton:
+        Drücke die Leertaste, um den Namen des angezeigten Objekts zu hören.
+        Du kannst den Ton an- und abschalten, indem du auf das &quot;Ton an/aus&quot;
+        Icon klickst.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="43"/>
@@ -118,14 +141,19 @@
         You can change ABC language by pressing on the &quot;Select
         language&quot; icon. Default language is American English.
 </source>
-        <translation type="unfinished"/>
+        <translation>ABC Sprache auswählen:
+         Du kannst die ABC Sprache wechseln, indem du auf das &quot;Sprache
+         auswählen&quot; Icon klickst. Standardsprache ist amerikanisches Englisch.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="47"/>
         <source>Typing on/off:
         You can switch from typing of letters on using left/right keys
         instead.</source>
-        <translation type="unfinished"/>
+        <translation>Tippen an/aus:
+       Du kannst vom Tippen der Buchstaben auf die Benutzung der links/rechts Tasten
+       wechseln.</translation>
     </message>
 </context>
 <context>
@@ -276,7 +304,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
         <source>Error str:</source>
-        <translation type="unfinished"/>
+        <translation>Fehlerzeichenfolge:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="753"/>
