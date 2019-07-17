@@ -47,7 +47,6 @@ for dir in `dir abcs/all/pics`
 do
   for filename in `dir -1 abcs/all/pics/$dir|cut -d "." -f 1`
   do
-    dir=`echo "$dir"|sed 's|music|instrument|g'`
     word=`cat $file|grep "^$filename="|cut -d "=" -f 2|sed "s|_| |g"`
     if [ ! -z "$word" ]
     then
@@ -73,7 +72,6 @@ do
   echo "#$letter" >> $result_file
   for dir in `dir abcs/all/pics`
   do
-    dir=`echo "$dir"|sed 's|music|instrument|g'`
     a=`cat $result_file.sorted|grep "$dir:$letter="`
     if [ ! -z "$a" ]
     then

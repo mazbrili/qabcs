@@ -42,7 +42,7 @@ misc:а=АККОРДЕОН=АКОР-ДИ-ОН=accordion=accordion
 	{"А": {
         "espeak_words": "А",
 		"misc": {
-		      "pic": "music/accordion.png",
+		      "pic": "instrument/accordion.png",
 		      "name": "АККОРДЕОН",
 		      "espeak_words": "АКОР-ДИ-ОН",
 		      "noises": "accordion.ogg"
@@ -59,7 +59,7 @@ misc:а=АККОРДЕОН=АКОР-ДИ-ОН=accordion=accordion
 		      "noises": "stork.ogg"
 		},
 		"instrument": {
-		      "pic": "music/harp.png",
+		      "pic": "instrument/harp.png",
 		      "name": "АРФА",
 		      "espeak_words": "АРФА",
 		      "noises": "harp.ogg"
@@ -92,7 +92,7 @@ misc:а=АККОРДЕОН=АКОР-ДИ-ОН=accordion=accordion
 		      "sound_pic": "angelfish.ogg"
 		},
 		"instrument": {
-		      "pic": "music/accordion.png",
+		      "pic": "instrument/accordion.png",
 		      "name": "ACCORDION",
 		      "sound_pic": "accordion.ogg",
 		      "noises": "accordion.ogg"

@@ -15,7 +15,6 @@ rm -f langs/$lang.properties
 
 for dir in `dir abcs/all/pics`
 do
-  dir=`echo "$dir"|sed 's|music|instrument|g'`
   cat abcs/$lang/abc.properties|grep "$dir:" >> langs/$lang.properties.tmp
 done
 

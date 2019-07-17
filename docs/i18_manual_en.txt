@@ -19,7 +19,7 @@ misc:a=airplane==airplane=airplane
 food:a=apple==apple
 misc:а=АККОРДЕОН=АКОР-ДИ-ОН=accordion=accordion
 
-the first parameter misc means the name of the game, at the moment there are 6 games in the program: misc (in alphabetical order), food (products), animals (animals), instrument (music), toys (toys), and game rand (in random order) does not require a description.
+the first parameter misc means the name of the game, at the moment there are 6 games in the program: misc (in alphabetical order), food (products), animals (animals), instrument (instrument), toys (toys), and game rand (in random order) does not require a description.
 the second parameter a is the letter of the alphabet (you can write it in any case); if there is a file with the same name in the abcs/your_lang/sounds/alpha directory, it is played, otherwise, if it does not exist and there is no inheritance, then this is pronunciation for espeak; for the case of inheritance, the file from the abcs/your_lang/sounds/alpha directory is first searched and played; if it is missing, but exists in the parent directory, the that is played; if the sound file is not found anywhere, then this is the pronunciation via espeak; so, a letter has a pronunciation always.
 the third parameter АККОРДЕОН is the word displayed by the program (you can write it in any case), the underscore characters will be automatically replaced with spaces; inheritor overrides parent; this is also the name of the sound file from the abcs/your_lang/sounds/words directory, or if there is inheritance, the name of the sound file of the parent is from a similar directory that is used if the inheritor does not have a sound file but the parent has; if there is no sound file, and there is no inheritance, then if the pronunciation is specified in the fourth parameter, then espeak says it, otherwise nothing is said; if there is no sound file, and there is inheritance, then if there is a sound file in the corresponding directory of the parent, then it is played, otherwise, if the sound file is not found anywhere, then if the pronunciation is specified in the fourth parameter, then espeak pronounces it, otherwise nothing is said.
 the fourth parameter of АКОР-ДИ-ОН is optional (you can write it in any case), it describes the pronunciation of the word for espeak; if espeak should work, but the value of this parameter is not specified, then nothing will be spoken; inheritor overrides parent.
@@ -44,7 +44,7 @@ The letters section describes everything. It consists the structures of the foll
 	{"А": {
         "espeak_words": "А",
 		"misc": {
-		      "pic": "music/accordion.png",
+		      "pic": "instrument/accordion.png",
 		      "name": "АККОРДЕОН",
 		      "espeak_words": "АКОР-ДИ-ОН",
 		      "noises": "accordion.ogg"
@@ -61,7 +61,7 @@ The letters section describes everything. It consists the structures of the foll
 		      "noises": "stork.ogg"
 		},
 		"instrument": {
-		      "pic": "music/harp.png",
+		      "pic": "instrument/harp.png",
 		      "name": "АРФА",
 		      "espeak_words": "АРФА",
 		      "noises": "harp.ogg"
@@ -94,7 +94,7 @@ or:
 		      "sound_pic": "angelfish.ogg"
 		},
 		"instrument": {
-		      "pic": "music/accordion.png",
+		      "pic": "instrument/accordion.png",
 		      "name": "ACCORDION",
 		      "sound_pic": "accordion.ogg",
 		      "noises": "accordion.ogg"
@@ -106,7 +106,7 @@ or:
 		}
 	}},
 
-at the moment there are 6 games in the program: misc (in alphabetical order), food (products), animals (animals), instrument (music), toys (toys), and game rand (in random order) does not require a description.
+at the moment there are 6 games in the program: misc (in alphabetical order), food (products), animals (animals), instrument (instrument), toys (toys), and game rand (in random order) does not require a description.
 the parameter A is the letter of the alphabet (you can write it in any case).
 the parameter sound_letter describes a sound file in the abcs/your_lang/sounds/alpha directory, it is played if available.
 the parameter espeak_words describes the pronunciation via espeak.

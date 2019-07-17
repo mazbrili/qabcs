@@ -10,7 +10,7 @@
 	{"А": {
         "espeak_words": "А",
 		"misc": {
-		      "pic": "music/accordion.png",
+		      "pic": "instrument/accordion.png",
 		      "name": "АККОРДЕОН",
 		      "espeak_words": "АКОР-ДИ-ОН",
 		      "noises": "accordion.ogg"
@@ -27,7 +27,7 @@
 		      "noises": "stork.ogg"
 		},
 		"instrument": {
-		      "pic": "music/harp.png",
+		      "pic": "instrument/harp.png",
 		      "name": "АРФА",
 		      "espeak_words": "АРФА",
 		      "noises": "harp.ogg"
@@ -57,7 +57,7 @@
 		      "noises": "ladybug.ogg"
 		},
 		"instrument": {
-		      "pic": "music/drums.png",
+		      "pic": "instrument/drums.png",
 		      "name": "БАРАБАНЫ",
 		      "espeak_words": "БАРА-БАНЫ",
 		      "noises": "drums.ogg"
@@ -87,7 +87,7 @@
 		      "noises": "crow.ogg"
 		},
 		"instrument": {
-		      "pic": "music/bagpipes.png",
+		      "pic": "instrument/bagpipes.png",
 		      "name": "ВОЛЫНКА",
 		      "espeak_words": "ВО-ЛЫНКА",
 		      "noises": "bagpipes.ogg"
@@ -119,7 +119,7 @@
 		      "noises": "hyena.ogg"
 		},
 		"instrument": {
-		      "pic": "music/guitar.png",
+		      "pic": "instrument/guitar.png",
 		      "name": "ГИТАРА",
 		      "espeak_words": "ГИТАРА",
 		      "noises": "guitar.ogg"
@@ -150,7 +150,7 @@
 		      "noises": "dolphin.ogg"
 		},
 		"instrument": {
-		      "pic": "music/jug.png",
+		      "pic": "instrument/jug.png",
 		      "name": "ДЖАГ",
 		      "espeak_words": "ДЖАГ",
 		      "noises": "jug.ogg"
@@ -181,7 +181,7 @@
 		      "noises": "raccoon.ogg"
 		},
 		"instrument": {
-		      "pic": "music/erhu.png",
+		      "pic": "instrument/erhu.png",
 		      "name": "ЕХУ",
 		      "espeak_words": "ЕХУ",
 		      "noises": "erhu.ogg"
@@ -213,7 +213,7 @@
 		      "noises": "hedgehog.ogg"
 		},
 		"instrument": {
-		      "pic": "music/iotshin.png",
+		      "pic": "instrument/iotshin.png",
 		      "name": "ЁОЧИН",
 		      "espeak_words": "ЁОЧИН",
 		      "noises": "iotshin.ogg"
@@ -245,7 +245,7 @@
 		      "noises": "giraffe.ogg"
 		},
 		"instrument": {
-		      "pic": "music/zhaleyka.png",
+		      "pic": "instrument/zhaleyka.png",
 		      "name": "ЖАЛЕЙКА",
 		      "espeak_words": "ЖАЛЕЙКА",
 		      "noises": "zhaleyka.ogg"
@@ -275,7 +275,7 @@
 		      "noises": "zebra.ogg"
 		},
 		"instrument": {
-		      "pic": "music/zurna.png",
+		      "pic": "instrument/zurna.png",
 		      "name": "ЗУРНА",
 		      "espeak_words": "ЗУ-РНА",
 		      "noises": "zurna.ogg"
@@ -304,7 +304,7 @@
 		      "espeak_words": "ИГУА-НА"
 		},
 		"instrument": {
-		      "pic": "music/ipu.png",
+		      "pic": "instrument/ipu.png",
 		      "name": "ИПУ",
 		      "espeak_words": "И-ПУ",
 		      "noises": "ipu.ogg"
@@ -335,7 +335,7 @@
 		      "noises": "york.ogg"
 		},
 		"instrument": {
-		      "pic": "music/youhikko.png",
+		      "pic": "instrument/youhikko.png",
 		      "name": "ЙОУХИККО",
 		      "espeak_words": "ЙОУheККО",
 		      "noises": "youhikko.ogg"
@@ -365,7 +365,7 @@
 		      "noises": "whale.ogg"
 		},
 		"instrument": {
-		      "pic": "music/clarinet.png",
+		      "pic": "instrument/clarinet.png",
 		      "name": "КЛАРНЕТ",
 		      "espeak_words": "КЛАР-НЕТ",
 		      "noises": "clarinet.ogg"
@@ -395,7 +395,7 @@
 		      "noises": "lion.ogg"
 		},
 		"instrument": {
-		      "pic": "music/lute.png",
+		      "pic": "instrument/lute.png",
 		      "name": "ЛЮТНЯ",
 		      "espeak_words": "ЛЮТНЯ",
 		      "noises": "lute.ogg"
@@ -425,7 +425,7 @@
 		      "espeak_words": "МЕ-ЧЕ-НОС"
 		},
 		"instrument": {
-		      "pic": "music/maracas.png",
+		      "pic": "instrument/maracas.png",
 		      "name": "МАРАКАСЫ",
 		      "espeak_words": "МАРАКАСЫ",
 		      "noises": "maracas.ogg"
@@ -456,7 +456,7 @@
 		      "noises": "rhinoceros.ogg"
 		},
 		"instrument": {
-		      "pic": "music/ney.png",
+		      "pic": "instrument/ney.png",
 		      "name": "НЕЙ",
 		      "espeak_words": "НЕЙ",
 		      "noises": "ney.ogg"
@@ -488,7 +488,7 @@
 		      "noises": "sheep.ogg"
 		},
 		"instrument": {
-		      "pic": "music/organ.png",
+		      "pic": "instrument/organ.png",
 		      "name": "ОРГАН",
 		      "espeak_words": "ОР-ГАН",
 		      "noises": "organ.ogg"
@@ -519,7 +519,7 @@
 		      "noises": "bird.ogg"
 		},
 		"instrument": {
-		      "pic": "music/piano.png",
+		      "pic": "instrument/piano.png",
 		      "name": "ПИАНИНО",
 		      "espeak_words": "ПИА-НИНО",
 		      "noises": "piano.ogg"
@@ -548,7 +548,7 @@
 		      "espeak_words": "РЫБА"
 		},
 		"instrument": {
-		      "pic": "music/rozhok.png",
+		      "pic": "instrument/rozhok.png",
 		      "name": "РОЖОК",
 		      "espeak_words": "РОЖОК",
 		      "noises": "rozhok.ogg"
@@ -580,7 +580,7 @@
 		      "noises": "owl.ogg"
 		},
 		"instrument": {
-		      "pic": "music/violin.png",
+		      "pic": "instrument/violin.png",
 		      "name": "СКРИПКА",
 		      "espeak_words": "СКРИПКА",
 		      "noises": "violin.ogg"
@@ -609,7 +609,7 @@
 		      "espeak_words": "ТРИ-ТОН"
 		},
 		"instrument": {
-		      "pic": "music/trumpet.png",
+		      "pic": "instrument/trumpet.png",
 		      "name": "ТРУБА",
 		      "espeak_words": "ТРУ-БА",
 		      "noises": "trumpet.ogg"
@@ -640,7 +640,7 @@
 		      "noises": "duck.ogg"
 		},
 		"instrument": {
-		      "pic": "music/ukulele.png",
+		      "pic": "instrument/ukulele.png",
 		      "name": "УКУЛЕЛЕ",
 		      "espeak_words": "УКУ-ЛЕЛЕ",
 		      "noises": "ukulele.ogg"
@@ -671,7 +671,7 @@
 		      "noises": "pheasant.ogg"
 		},
 		"instrument": {
-		      "pic": "music/flute.png",
+		      "pic": "instrument/flute.png",
 		      "name": "ФЛЕЙТА",
 		      "espeak_words": "ФЛЕЙТА",
 		      "noises": "flute.ogg"
@@ -685,7 +685,7 @@
  	{"Х": {
 		"espeak_words": "Х",
 		"misc": {
-		      "pic": "music/hang.png",
+		      "pic": "instrument/hang.png",
 		      "name": "ХАНГ",
 		      "espeak_words": "ХАНГ",
 		      "noises": "hang.ogg"
@@ -702,7 +702,7 @@
 		      "noises": "pig.ogg"
 		},
 		"instrument": {
-		      "pic": "music/hang.png",
+		      "pic": "instrument/hang.png",
 		      "name": "ХАНГ",
 		      "espeak_words": "ХАНГ",
 		      "noises": "hang.ogg"
@@ -732,7 +732,7 @@
 		      "noises": "heron.ogg"
 		},
 		"instrument": {
-		      "pic": "music/cymbals.png",
+		      "pic": "instrument/cymbals.png",
 		      "name": "ЦИМБАЛЫ",
 		      "espeak_words": "ЦИ-МБАЛЫ",
 		      "noises": "cymbals.ogg"
@@ -763,7 +763,7 @@
 		      "espeak_words": "ЧЕ-РЕ-ПАХА"
 		},
 		"instrument": {
-		      "pic": "music/changu.png",
+		      "pic": "instrument/changu.png",
 		      "name": "ЧАНГУ",
 		      "espeak_words": "ЧАНГУ",
 		      "noises": "changu.ogg"
@@ -777,7 +777,7 @@
  	{"Ш": {
 		"espeak_words": "Ш",
 		"misc": {
-		      "pic": "music/hand_organ.png",
+		      "pic": "instrument/hand_organ.png",
 		      "name": "ШАРМАНКА",
 		      "espeak_words": "ШАРМАНКА",
 		      "noises": "hand_organ.ogg"
@@ -794,7 +794,7 @@
 		      "noises": "chimpanzee.ogg"
 		},
 		"instrument": {
-		      "pic": "music/hand_organ.png",
+		      "pic": "instrument/hand_organ.png",
 		      "name": "ШАРМАНКА",
 		      "espeak_words": "ШАРМАНКА",
 		      "noises": "hand_organ.ogg"
@@ -824,7 +824,7 @@
 		      "noises": "dog.ogg"
 		},
 		"instrument": {
-		      "pic": "music/slit_drum.png",
+		      "pic": "instrument/slit_drum.png",
 		      "name": "ЩЕЛЕВОЙ БАРАБАН",
 		      "espeak_words": "ЩЕЛЕ-ВОЙ БАРА-БАН",
 		      "noises": "slit_drum.ogg"
@@ -853,7 +853,7 @@
 		      "espeak_words": "ПО-ДЪЯ-ЗОК"
 		},
 		"instrument": {
-		      "pic": "music/jack.png",
+		      "pic": "instrument/jack.png",
 		      "name": "РАЗЪЁМ",
 		      "espeak_words": "РАЗЪЁМ"
 		},
@@ -866,7 +866,7 @@
  	{"Ы": {
 		"espeak_words": "Ы",
 		"misc": {
-		      "pic": "music/topshuur.png",
+		      "pic": "instrument/topshuur.png",
 		      "name": "ЫЫХ",
 		      "espeak_words": "ЫЫХ",
 		      "noises": "topshuur.ogg"
@@ -883,7 +883,7 @@
 		      "noises": "mouse.ogg"
 		},
 		"instrument": {
-		      "pic": "music/topshuur.png",
+		      "pic": "instrument/topshuur.png",
 		      "name": "ЫЫХ",
 		      "espeak_words": "ЫЫХ",
 		      "noises": "topshuur.ogg"
@@ -914,7 +914,7 @@
 		      "noises": "horse.ogg"
 		},
 		"instrument": {
-		      "pic": "music/xun.png",
+		      "pic": "instrument/xun.png",
 		      "name": "СЮНЬ",
 		      "espeak_words": "СЮНЬ",
 		      "noises": "xun.ogg"
@@ -944,7 +944,7 @@
 		      "noises": "emu.ogg"
 		},
 		"instrument": {
-		      "pic": "music/electric_guitar.png",
+		      "pic": "instrument/electric_guitar.png",
 		      "name": "ЭЛЕКТРОГИТАРА",
 		      "espeak_words": "ЭЛЕКТРО-ГИТАРА",
 		      "noises": "electric_guitar.ogg"
@@ -976,7 +976,7 @@
 		      "noises": "sparrow.ogg"
 		},
 		"instrument": {
-		      "pic": "music/yueqin.png",
+		      "pic": "instrument/yueqin.png",
 		      "name": "ЮЭЦИНЬ",
 		      "espeak_words": "ЮЭ-ЦИНЬ",
 		      "noises": "yueqin.ogg"
@@ -1007,7 +1007,7 @@
 		      "noises": "jaguar.ogg"
 		},
 		"instrument": {
-		      "pic": "music/yangqin.png",
+		      "pic": "instrument/yangqin.png",
 		      "name": "ЯНЦИНЬ",
 		      "espeak_words": "ЯН-ЦИНЬ",
 		      "noises": "yangqin.ogg"
