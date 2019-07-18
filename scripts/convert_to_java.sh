@@ -21,7 +21,7 @@ done
 while read line
 do
   key=`echo $line|cut -d "=" -f 4`
-  word=`echo $line|cut -d "=" -f 2|sed "s|_| |g"| awk '{print tolower($0)}'`
+  word=`echo $line|cut -d "=" -f 2|sed "s|_| |g"|awk '{print tolower($0)}'`
   echo "$key=$word" >> langs/$lang.properties
 done < langs/$lang.properties.tmp
 

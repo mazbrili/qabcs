@@ -48,7 +48,7 @@ for dir in `dir abcs/all/pics`
 do
   for filename in `dir -1 abcs/all/pics/$dir|cut -d "." -f 1`
   do
-    word=`cat $file|grep "^$filename="|cut -d "=" -f 2|sed "s|_| |g"`
+    word=`cat $file|grep "^$filename="|cut -d "=" -f 2|sed "s|_| |g"|awk '{print tolower($0)}'`
     if [ ! -z "$word" ]
     then
       letter=`echo $word|cut -c 1`
