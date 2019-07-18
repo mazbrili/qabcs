@@ -7,11 +7,11 @@
 
 key="$1"
 # https://cloud.google.com/text-to-speech/docs/voices
-languageCode="en-US"
+languageCode="de-DE"
 # https://cloud.google.com/text-to-speech/docs/voices
-name="en-US-Standard-E"
+name="de-DE-Standard-B"
 # https://cloud.google.com/text-to-speech/docs/voices
-ssmlGender="FEMALE"
+ssmlGender="MALE"
 # FLAC, LINEAR16, MULAW, AMR, AMR_WB, OGG_OPUS, SPEEX_WITH_HEADER_BYTE (https://cloud.google.com/speech-to-text/docs/encoding)
 audioEncoding="LINEAR16"
 # WAV for LINEAR16 and MULAW
@@ -19,7 +19,7 @@ format="wav"
 # output format
 output="ogg"
 # abcs directory of your language
-lang0="en"
+lang0="de"
 # file format: properties or json
 file_format="properties"
 
@@ -88,7 +88,7 @@ do
 filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |'|sed 's| |_|'`
 text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |'|sed 's|_| |'`
 # adding ◌́  for stress, - for pause, fixing pronounce
-text=`echo "$text"|sed "s|ipu|eepoo|g"`
+
 curl -H "X-Goog-Api-Key: $key" \
   -H "Content-Type: application/json; charset=utf-8" \
   --data "{

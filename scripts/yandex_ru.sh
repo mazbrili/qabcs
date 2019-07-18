@@ -65,7 +65,7 @@ if [ -f "../abcs/$lang0/abc.properties" ]
 then
 if [ $file_format = "properties" ]
 then
-words_list=`cat ../abcs/$lang0/abc.properties|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
+words_list=`cat ../abcs/$lang0/abc.properties|grep -v '\[missing\]'|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
 letters_list=`cat ../abcs/$lang0/abc.properties|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params| grep -v "#"|cut -d "=" --fields=1 | cut -d ":" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
 fi
 fi

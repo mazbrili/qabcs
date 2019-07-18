@@ -41,6 +41,7 @@ then
   exit 1
 fi
 
+mkdir -p abcs/$lang
 rm -f $result_file
 
 for dir in `dir abcs/all/pics`
