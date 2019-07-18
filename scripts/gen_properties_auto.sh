@@ -10,6 +10,50 @@ case $lang in
        abc="abcdefghijklmnopqrstuvwxyz"
        language="English"
        ;;
+     it)
+       abc="abcdefghijklmnopqrstuvwxyz"
+       language="Italiano"
+       ;;
+     tr)
+       abc="abcçdefgğhıijklmnoöprsştuüvyz"
+       language="Türkçe"
+       ;;
+     sv)
+       abc="abcdefghijklmnopqrstuvwxyzåäö"
+       language="Svenska"
+       ;;
+     sk)
+       abc="aáäbcčdďeéfghiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž"
+       language="Slovenčina"
+       ;;
+     pt)
+       abc="abcdefghijklmnopqrstuvwxyz"
+       language="Português"
+       ;;
+     es)
+       abc="abcdefghijklmnñopqrstuvwxyz"
+       language="Español"
+       ;;
+     pl)
+       abc="aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
+       language="Polski"
+       ;;
+     nb)
+       abc="abcdefghijklmnopqrstuvwxyzæøå"
+       language="Norsk"
+       ;;
+     fr)
+       abc="abcdefghijklmnopqrstuvwxyz"
+       language="Français"
+       ;;
+     nl)
+       abc="abcdefghijklmnopqrstuvwxyz"
+       language="Nederlands"
+       ;;
+     da)
+       abc="abcdefghijklmnopqrstuvwxyzæøå"
+       language="Dansk"
+       ;;
      ru)
        abc="абвгдежзийклмнопрстуфхцчшщъыьэюя"
        language="Русский"
