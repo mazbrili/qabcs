@@ -2,8 +2,7 @@
 # Author: Alexey Loginov
 # Licence: GPLv3+
 # Description: get translated words from properties file
-# This script is not in use
-# You need it only to convert already translated properties file into
+# You need this script to convert already translated properties file into
 # JAVA UTF8 format and upload resulted file into transifex
 
 lang="ru"

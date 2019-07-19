@@ -8,63 +8,48 @@ lang="ru"
 case $lang in
      en*)
        abc="abcdefghijklmnopqrstuvwxyz"
-       language="English"
        ;;
      it)
        abc="abcdefghijklmnopqrstuvwxyz"
-       language="Italiano"
        ;;
      tr)
        abc="abcçdefgğhıijklmnoöprsştuüvyz"
-       language="Türkçe"
        ;;
      sv)
        abc="abcdefghijklmnopqrstuvwxyzåäö"
-       language="Svenska"
        ;;
      sk)
        abc="aáäbcčdďeéfghiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž"
-       language="Slovenčina"
        ;;
      pt)
        abc="abcdefghijklmnopqrstuvwxyz"
-       language="Português"
        ;;
      es)
        abc="abcdefghijklmnñopqrstuvwxyz"
-       language="Español"
        ;;
      pl)
        abc="aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
-       language="Polski"
        ;;
      nb)
        abc="abcdefghijklmnopqrstuvwxyzæøå"
-       language="Norsk"
        ;;
      fr)
        abc="abcdefghijklmnopqrstuvwxyz"
-       language="Français"
        ;;
      nl)
        abc="abcdefghijklmnopqrstuvwxyz"
-       language="Nederlands"
        ;;
      da)
        abc="abcdefghijklmnopqrstuvwxyzæøå"
-       language="Dansk"
        ;;
      ru)
        abc="абвгдежзийклмнопрстуфхцчшщъыьэюя"
-       language="Русский"
        ;;
      uk)
        abc="абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
-       language="Українська"
        ;;
      de)
        abc="aäbcdefghijklmnoöpqrsßtuüvwxyz"
-       language="Deutsch"
        ;;
 esac
 
@@ -77,6 +62,8 @@ then
 fi
 
 pushd ..
+
+declare -c language=`awk -F=":" -v RS="}" '$1'"~/\"$lang\"/ {print}" langs/langs.json|grep nativeName|cut -d ":" -f 2|cut -d "\"" -f 2`
 
 if [ ! -f "$file" ]
 then
