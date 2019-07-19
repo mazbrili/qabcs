@@ -43,7 +43,7 @@ case $lang in
        abc="abcdefghijklmnopqrstuvwxyzæøå"
        ;;
      ru)
-       abc="абвгдежзийклмнопрстуфхцчшщъыьэюя"
+       abc="абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
        ;;
      uk)
        abc="абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
@@ -105,6 +105,7 @@ do
   for dir in `dir abcs/all/pics`
   do
     a=`cat $result_file.sorted|grep "$dir:$letter="`
+    sed -i "/$dir:$letter=/d" $result_file.sorted
     if [ ! -z "$a" ]
     then
       echo "$a" >> $result_file
@@ -113,6 +114,14 @@ do
     fi
   done
 done
+
+a=`cat $result_file.sorted`
+
+if [ ! -z "$a" ]
+then
+  echo "#unknown" >> $result_file
+  echo "$a" >> $result_file
+fi
 
 sed -i -e "1 s/^/author:Name <email>\n/;" $result_file
 sed -i -e "1 s/^/language:$language\n/;" $result_file
