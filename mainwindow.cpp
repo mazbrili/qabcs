@@ -511,16 +511,16 @@ void MainWindow::setAbcLang(QString lang,QString filename){
     if (type_game=="rand"){
         accGameRand->setChecked(true);
         clickButtonGameRand();
-    } else if (type_game=="food"){
+    } else if (type_game=="food" and listCollections["food"]->countLetters()>0){
         accGameFood->setChecked(true);
         clickButtonGameFood();
-    } else if (type_game=="animals"){
+    } else if (type_game=="animals" and listCollections["animals"]->countLetters()>0){
         accGameAnimals->setChecked(true);
         clickButtonGameAnimals();
-    } else if (type_game=="instrument"){
+    } else if (type_game=="instrument" and listCollections["instrument"]->countLetters()>0){
         accGameInstrument->setChecked(true);
         clickButtonGameInstrument();
-    } else if (type_game=="toys"){
+    } else if (type_game=="toys" and listCollections["toys"]->countLetters()>0){
         accGameToys->setChecked(true);
         clickButtonGameToys();
     }else{
@@ -529,6 +529,24 @@ void MainWindow::setAbcLang(QString lang,QString filename){
     }
 
 
+    accGameFood->setEnabled(true);
+    accGameAnimals->setEnabled(true);
+    accGameInstrument->setEnabled(true);
+    accGameToys->setEnabled(true);
+
+    //
+    if (listCollections["food"]->countLetters()==0){
+        accGameFood->setEnabled(false);
+    }
+    if (listCollections["animals"]->countLetters()==0){
+        accGameAnimals->setEnabled(false);
+    }
+    if (listCollections["instrument"]->countLetters()==0){
+        accGameInstrument->setEnabled(false);
+    }
+    if (listCollections["toys"]->countLetters()==0){
+        accGameToys->setEnabled(false);
+    }
 
 }
 

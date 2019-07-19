@@ -53,6 +53,10 @@ void Collection::clearLetter(QString letter){
     listLetters[letter]=LETTER_CONFIG();
 }
 
+int Collection::countLetters(){
+    return listLetters.size();
+}
+
 void Collection::setGlobalParam(QJsonObject params){
     if (params.value("speak_method").isString()){
         _speak_method = params.value("speak_method").toString();

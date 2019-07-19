@@ -31,6 +31,8 @@ class Collection{
         void setLetter(QString letter, QString folderLang, QString name,QString pic,QString sound_pic,QString speak_method,QString espeak_params,QString espeak_words,QString noises);
         void clearLetter(QString letter);
 
+        int countLetters();
+
         void clear();
         void setAbcLanguage(QString abcLanguage);
 
