@@ -162,6 +162,12 @@ case $lang in
 esac
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
 ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+if [ ! -f ../abcs/$lang0/sounds/words/"$filename.$output" ]
+then
+  echo "Error while creating "$filename.$output""
+  rm -f ../abcs/$lang0/sounds/words/*.$format
+  exit 1
+fi
 done
 
 mkdir -p ../abcs/$lang0/sounds/alpha
@@ -185,6 +191,12 @@ case $lang in
 esac
 curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/alpha/"$filename.$format"
 ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
+if [ ! -f ../abcs/$lang0/sounds/alpha/"$filename.$output" ]
+then
+  echo "Error while creating "$filename.$output""
+  rm -f ../abcs/$lang0/sounds/alpha/*.$format
+  exit 1
+fi
 done
 
 # sometimes using other languages instead of native because of better pronounce
@@ -197,30 +209,60 @@ then
     rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
     curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/alpha/"$filename.$format"
     ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/alpha/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/alpha/*.$format
+      exit 1
+    fi
     filename="у"
     text="у"
     rm -f ../abcs/$lang0/sounds/alpha/$filename.$format
     rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
     curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/alpha/"$filename.$format"
     ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/alpha/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/alpha/*.$format
+      exit 1
+    fi
     filename="иглу"
     text="іґлу"
     rm -f ../abcs/$lang0/sounds/words/$filename.$format
     rm -f ../abcs/$lang0/sounds/words/$filename.$output
     curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
     ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/words/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/words/*.$format
+      exit 1
+    fi
     filename="ы"
     text="и"
     rm -f ../abcs/$lang0/sounds/words/$filename.$format
     rm -f ../abcs/$lang0/sounds/words/$filename.$output
     curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
     ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/words/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/words/*.$format
+      exit 1
+    fi
     filename="ыых"
     text="и-их"
     rm -f ../abcs/$lang0/sounds/words/$filename.$format
     rm -f ../abcs/$lang0/sounds/words/$filename.$output
     curl "https://tts.voicetech.yandex.net/generate?format=$format&lang=$lang&speaker=$speaker&emotion=$emotion&key=$key&quality=$quality&speed=$speed" -G --data-urlencode "text=$text" > ../abcs/$lang0/sounds/words/"$filename.$format"
     ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/words/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/words/*.$format
+      exit 1
+    fi
 fi
 
 #clean up

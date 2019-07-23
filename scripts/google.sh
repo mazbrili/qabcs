@@ -24,7 +24,7 @@ key="$1"
 # file format: properties or json
 #file_format="properties"
 
-lang="de"
+lang="ru"
 
 case $lang in
      en)
@@ -175,6 +175,12 @@ echo `cat synthesize-text.txt | grep audioContent|cut -d ":" --fields=2|cut -d "
 base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/words/"$filename.$format"
 rm -f synthesize-text.txt synthesize-output-base64.txt
 ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+if [ ! -f ../abcs/$lang0/sounds/words/"$filename.$output" ]
+then
+  echo "Error while creating "$filename.$output""
+  rm -f ../abcs/$lang0/sounds/words/*.$format
+  exit 1
+fi
 done
 
 mkdir -p ../abcs/$lang0/sounds/alpha
@@ -204,6 +210,12 @@ echo `cat synthesize-text.txt | grep audioContent|cut -d ":" --fields=2|cut -d "
 base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/alpha/"$filename.$format"
 rm -f synthesize-text.txt synthesize-output-base64.txt
 ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
+if [ ! -f ../abcs/$lang0/sounds/alpha/"$filename.$output" ]
+then
+  echo "Error while creating "$filename.$output""
+  rm -f ../abcs/$lang0/sounds/alpha/*.$format
+  exit 1
+fi
 done
 
 # sometimes using other languages instead of native because of better pronounce
@@ -234,6 +246,12 @@ then
     base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/alpha/"$filename.$format"
     rm -f synthesize-text.txt synthesize-output-base64.txt
     ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/alpha/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/alpha/*.$format
+      exit 1
+    fi
 
     languageCode="uk-UA"
     name="uk-UA-Standard-A"
@@ -260,6 +278,12 @@ then
     base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/words/"$filename.$format"
     rm -f synthesize-text.txt synthesize-output-base64.txt
     ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/words/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/words/*.$format
+      exit 1
+    fi
 fi
 
 #clean up
