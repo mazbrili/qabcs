@@ -16,4 +16,7 @@ do
   done
 done
 
+cat langs/qabcs_en.properties|sort -u > langs/qabcs_en_tmp.properties
+mv -f langs/qabcs_en_tmp.properties langs/qabcs_en.properties
+
 popd
