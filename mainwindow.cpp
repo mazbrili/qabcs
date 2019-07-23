@@ -216,6 +216,7 @@ void MainWindow::initLanguageAbc(){
 
     _speak_method = "";
     _espeak_params = "";
+    _view_letters = "";
 
     // default status of typing
     blockButtonTyping=false;
@@ -350,6 +351,9 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     if (root_general.value("espeak_params").isString()){
         _espeak_params = root_general.value("espeak_params").toString();
     }
+    if (root_general.value("view_letters").isString()){
+        _view_letters = root_general.value("view_letters").toString();
+    }
     if (root_general.value("typing").isString()){
         if ( root_general.value("typing").toString()=="false"){
             blockButtonTyping=true;
@@ -451,6 +455,12 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             }
         }
 
+        if (pair.at(0)=="view_letters"){
+            if (pair.size()==2){
+                _view_letters=pair.at(1);
+            }
+        }
+
 
         if (pair.at(0)=="inheritsFrom"){
             loadAbcConfig(globalPathUserResources+"/"+pair.at(1));
@@ -546,6 +556,12 @@ void MainWindow::setAbcLang(QString lang,QString filename){
     }
     if (listCollections["toys"]->countLetters()==0){
         accGameToys->setEnabled(false);
+    }
+
+    if (_view_letters=="false"){
+        lblAbcLetter->setVisible(false);
+    }else{
+        lblAbcLetter->setVisible(true);
     }
 
 }

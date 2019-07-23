@@ -62,6 +62,7 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigJson(const QString &fileName){
     result.espeak_params = (root_general.value("espeak_params").isString()) ? root_general.value("espeak_params").toString(): QString();
     result.inheritsFrom = (root_general.value("inheritsFrom").isString()) ? root_general.value("inheritsFrom").toString(): QString();
     result.visible = (root_general.value("visible").isString()) ? root_general.value("visible").toString(): QString();
+    result.view_letters = (root_general.value("view_letters").isString()) ? root_general.value("view_letters").toString(): QString("true");
 
 
 
@@ -144,6 +145,7 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigProperties(const QString &fileName){
         if (pair.at(0)=="speak_method") result.speak_method = pair.at(1);
         if (pair.at(0)=="espeak_params") result.espeak_params = pair.at(1);
         if (pair.at(0)=="visible") result.visible = pair.at(1);
+        if (pair.at(0)=="view_letters") result.view_letters = pair.at(1);
 
 
         if (pair.size()==2){

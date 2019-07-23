@@ -35,6 +35,7 @@ struct ABC_CONFIG {
     QString espeak_params;
     QString inheritsFrom;
     QString visible;
+    QString view_letters;
 
     QVector<ABC_CONFIG_ALPHA> letters;
 };
