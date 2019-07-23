@@ -6,22 +6,68 @@
 # You need curl, ffmpeg installed
 
 key="$1"
+
 # https://cloud.google.com/text-to-speech/docs/voices
-languageCode="ru-RU"
+#languageCode="en-US"
 # https://cloud.google.com/text-to-speech/docs/voices
-name="ru-RU-Standard-A"
+#name="en-US-Standard-E"
 # https://cloud.google.com/text-to-speech/docs/voices
-ssmlGender="FEMALE"
+#ssmlGender="FEMALE"
 # FLAC, LINEAR16, MULAW, AMR, AMR_WB, OGG_OPUS, SPEEX_WITH_HEADER_BYTE (https://cloud.google.com/speech-to-text/docs/encoding)
-audioEncoding="LINEAR16"
+#audioEncoding="LINEAR16"
 # WAV for LINEAR16 and MULAW
-format="wav"
+#format="wav"
 # output format
-output="ogg"
+#output="ogg"
 # abcs directory of your language
-lang0="ru"
+#lang0="en"
 # file format: properties or json
-file_format="properties"
+#file_format="properties"
+
+lang="de"
+
+case $lang in
+     en)
+       languageCode="en-US"
+       name="en-US-Standard-E"
+       ssmlGender="FEMALE"
+       audioEncoding="LINEAR16"
+       format="wav"
+       output="ogg"
+       lang0="en"
+       file_format="properties"
+       ;;
+     ru)
+       languageCode="ru-RU"
+       name="ru-RU-Standard-A"
+       ssmlGender="FEMALE"
+       audioEncoding="LINEAR16"
+       format="wav"
+       output="ogg"
+       lang0="ru"
+       file_format="properties"
+       ;;
+     uk)
+       languageCode="uk-UA"
+       name="uk-UA-Standard-A"
+       ssmlGender="FEMALE"
+       audioEncoding="LINEAR16"
+       format="wav"
+       output="ogg"
+       lang0="uk"
+       file_format="properties"
+       ;;
+     de)
+       languageCode="de-DE"
+       name="de-DE-Standard-B"
+       ssmlGender="MALE"
+       audioEncoding="LINEAR16"
+       format="wav"
+       output="ogg"
+       lang0="de"
+       file_format="properties"
+       ;;
+esac
 
 if [ -z "$key" ]
 then
@@ -85,24 +131,31 @@ rm -f ../abcs/$lang0/sounds/words/*.$output
 
 for a in $words_list
 do
-filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |'|sed 's| |_|'`
-text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |'|sed 's|_| |'`
+filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's| |_|'`
+text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's|_| |'`
 # adding ◌́  for stress, - for pause, fixing pronounce
-text=`echo "$text"|sed "s|жар-птица|жарптица|g"`
-text=`echo "$text"|sed "s|адъютант|адъйутант|g"`
-text=`echo "$text"|sed "s|ёочин|ё́очин|g"`
-text=`echo "$text"|sed "s|еху|йеху|g"`
-text=`echo "$text"|sed "s|жаркое|жарко́е|g"`
-text=`echo "$text"|sed "s|удон|удо́н|g"`
-text=`echo "$text"|sed "s|шары|шары́|g"`
-text=`echo "$text"|sed "s|иглу|и́глу|g"`
-text=`echo "$text"|sed "s|йогурт|йо́гурт|g"`
-text=`echo "$text"|sed "s|кларнет|кларнэт|g"`
-text=`echo "$text"|sed "s|маракасы|мара́касы|g"`
-text=`echo "$text"|sed "s|орган|орга́н|g"`
-text=`echo "$text"|sed "s|подъязок|подъйазок|g"`
-text=`echo "$text"|sed "s|подъёлочник|подъё́лочник|g"`
-text=`echo "$text"|sed "s|цуккини|цукини|g"`
+case $lang in
+     en)
+       text=`echo "$text"|sed "s|ipu|eepoo|g"`
+       ;;
+     ru)
+       text=`echo "$text"|sed "s|жар-птица|жарптица|g"`
+       text=`echo "$text"|sed "s|адъютант|адъйутант|g"`
+       text=`echo "$text"|sed "s|ёочин|ё́очин|g"`
+       text=`echo "$text"|sed "s|еху|йеху|g"`
+       text=`echo "$text"|sed "s|жаркое|жарко́е|g"`
+       text=`echo "$text"|sed "s|удон|удо́н|g"`
+       text=`echo "$text"|sed "s|шары|шары́|g"`
+       text=`echo "$text"|sed "s|иглу|и́глу|g"`
+       text=`echo "$text"|sed "s|йогурт|йо́гурт|g"`
+       text=`echo "$text"|sed "s|кларнет|кларнэт|g"`
+       text=`echo "$text"|sed "s|маракасы|мара́касы|g"`
+       text=`echo "$text"|sed "s|орган|орга́н|g"`
+       text=`echo "$text"|sed "s|подъязок|подъйазок|g"`
+       text=`echo "$text"|sed "s|подъёлочник|подъё́лочник|g"`
+       text=`echo "$text"|sed "s|цуккини|цукини|g"`
+       ;;
+esac
 curl -H "X-Goog-Api-Key: $key" \
   -H "Content-Type: application/json; charset=utf-8" \
   --data "{
@@ -154,57 +207,60 @@ ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../a
 done
 
 # sometimes using other languages instead of native because of better pronounce
-languageCode="uk-UA"
-name="uk-UA-Standard-A"
-filename="ы"
-text="и"
-rm -f ../abcs/$lang0/sounds/alpha/$filename.$format
-rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
-curl -H "X-Goog-Api-Key: $key" \
-  -H "Content-Type: application/json; charset=utf-8" \
-  --data "{
-    'input':{
-      'text':'$text'
-    },
-    'voice':{
-      'languageCode':'$languageCode',
-      'name':'$name',
-      'ssmlGender':'$ssmlGender'
-    },
-    'audioConfig':{
-      'audioEncoding':'$audioEncoding'
-    }
-  }" "https://texttospeech.googleapis.com/v1/text:synthesize" > synthesize-text.txt
-echo `cat synthesize-text.txt | grep audioContent|cut -d ":" --fields=2|cut -d "\"" --fields=2` > synthesize-output-base64.txt
-base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/alpha/"$filename.$format"
-rm -f synthesize-text.txt synthesize-output-base64.txt
-ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
+if [ "$lang" = "ru" ]
+then
+    languageCode="uk-UA"
+    name="uk-UA-Standard-A"
+    filename="ы"
+    text="и"
+    rm -f ../abcs/$lang0/sounds/alpha/$filename.$format
+    rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
+    curl -H "X-Goog-Api-Key: $key" \
+    -H "Content-Type: application/json; charset=utf-8" \
+    --data "{
+        'input':{
+        'text':'$text'
+        },
+        'voice':{
+        'languageCode':'$languageCode',
+        'name':'$name',
+        'ssmlGender':'$ssmlGender'
+        },
+        'audioConfig':{
+        'audioEncoding':'$audioEncoding'
+        }
+    }" "https://texttospeech.googleapis.com/v1/text:synthesize" > synthesize-text.txt
+    echo `cat synthesize-text.txt | grep audioContent|cut -d ":" --fields=2|cut -d "\"" --fields=2` > synthesize-output-base64.txt
+    base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/alpha/"$filename.$format"
+    rm -f synthesize-text.txt synthesize-output-base64.txt
+    ffmpeg -i ../abcs/$lang0/sounds/alpha/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/alpha/"$filename.$output"
 
-languageCode="uk-UA"
-name="uk-UA-Standard-A"
-filename="ы"
-text="и"
-rm -f ../abcs/$lang0/sounds/words/$filename.$format
-rm -f ../abcs/$lang0/sounds/words/$filename.$output
-curl -H "X-Goog-Api-Key: $key" \
-  -H "Content-Type: application/json; charset=utf-8" \
-  --data "{
-    'input':{
-      'text':'$text'
-    },
-    'voice':{
-      'languageCode':'$languageCode',
-      'name':'$name',
-      'ssmlGender':'$ssmlGender'
-    },
-    'audioConfig':{
-      'audioEncoding':'$audioEncoding'
-    }
-  }" "https://texttospeech.googleapis.com/v1/text:synthesize" > synthesize-text.txt
-echo `cat synthesize-text.txt | grep audioContent|cut -d ":" --fields=2|cut -d "\"" --fields=2` > synthesize-output-base64.txt
-base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/words/"$filename.$format"
-rm -f synthesize-text.txt synthesize-output-base64.txt
-ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+    languageCode="uk-UA"
+    name="uk-UA-Standard-A"
+    filename="ы"
+    text="и"
+    rm -f ../abcs/$lang0/sounds/words/$filename.$format
+    rm -f ../abcs/$lang0/sounds/words/$filename.$output
+    curl -H "X-Goog-Api-Key: $key" \
+    -H "Content-Type: application/json; charset=utf-8" \
+    --data "{
+        'input':{
+        'text':'$text'
+        },
+        'voice':{
+        'languageCode':'$languageCode',
+        'name':'$name',
+        'ssmlGender':'$ssmlGender'
+        },
+        'audioConfig':{
+        'audioEncoding':'$audioEncoding'
+        }
+    }" "https://texttospeech.googleapis.com/v1/text:synthesize" > synthesize-text.txt
+    echo `cat synthesize-text.txt | grep audioContent|cut -d ":" --fields=2|cut -d "\"" --fields=2` > synthesize-output-base64.txt
+    base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/words/"$filename.$format"
+    rm -f synthesize-text.txt synthesize-output-base64.txt
+    ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+fi
 
 #clean up
 rm -f ../abcs/$lang0/sounds/words/*.$format
