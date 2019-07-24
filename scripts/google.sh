@@ -31,47 +31,38 @@ case $lang in
        languageCode="en-US"
        name="en-US-Standard-E"
        ssmlGender="FEMALE"
-       audioEncoding="LINEAR16"
-       format="wav"
-       output="ogg"
-       lang0="en"
-       file_format="properties"
+       ;;
+     nl)
+       languageCode="nl-NL"
+       name="nl-NL-Standard-A"
+       ssmlGender="FEMALE"
        ;;
      ru)
        languageCode="ru-RU"
        name="ru-RU-Standard-A"
        ssmlGender="FEMALE"
-       audioEncoding="LINEAR16"
-       format="wav"
-       output="ogg"
-       lang0="ru"
-       file_format="properties"
        ;;
      uk)
        languageCode="uk-UA"
        name="uk-UA-Standard-A"
        ssmlGender="FEMALE"
-       audioEncoding="LINEAR16"
-       format="wav"
-       output="ogg"
-       lang0="uk"
-       file_format="properties"
        ;;
      de)
        languageCode="de-DE"
        name="de-DE-Standard-B"
        ssmlGender="MALE"
-       audioEncoding="LINEAR16"
-       format="wav"
-       output="ogg"
-       lang0="de"
-       file_format="properties"
        ;;
      *)
        echo "Unknown language!"
        exit 1
        ;;
 esac
+
+lang0=$lang
+audioEncoding="LINEAR16"
+format="wav"
+output="ogg"
+file_format="properties"
 
 if [ -z "$key" ]
 then
@@ -261,6 +252,38 @@ then
     name="uk-UA-Standard-A"
     filename="ы"
     text="и"
+    rm -f ../abcs/$lang0/sounds/words/$filename.$format
+    rm -f ../abcs/$lang0/sounds/words/$filename.$output
+    curl -H "X-Goog-Api-Key: $key" \
+    -H "Content-Type: application/json; charset=utf-8" \
+    --data "{
+        'input':{
+        'text':'$text'
+        },
+        'voice':{
+        'languageCode':'$languageCode',
+        'name':'$name',
+        'ssmlGender':'$ssmlGender'
+        },
+        'audioConfig':{
+        'audioEncoding':'$audioEncoding'
+        }
+    }" "https://texttospeech.googleapis.com/v1/text:synthesize" > synthesize-text.txt
+    echo `cat synthesize-text.txt | grep audioContent|cut -d ":" --fields=2|cut -d "\"" --fields=2` > synthesize-output-base64.txt
+    base64 synthesize-output-base64.txt --decode > ../abcs/$lang0/sounds/words/"$filename.$format"
+    rm -f synthesize-text.txt synthesize-output-base64.txt
+    ffmpeg -i ../abcs/$lang0/sounds/words/"$filename.$format" -acodec libvorbis ../abcs/$lang0/sounds/words/"$filename.$output"
+    if [ ! -f ../abcs/$lang0/sounds/words/"$filename.$output" ]
+    then
+      echo "Error while creating "$filename.$output""
+      rm -f ../abcs/$lang0/sounds/words/*.$format
+      exit 1
+    fi
+
+    languageCode="uk-UA"
+    name="uk-UA-Standard-A"
+    filename="ыых"
+    text="и-их"
     rm -f ../abcs/$lang0/sounds/words/$filename.$format
     rm -f ../abcs/$lang0/sounds/words/$filename.$output
     curl -H "X-Goog-Api-Key: $key" \
