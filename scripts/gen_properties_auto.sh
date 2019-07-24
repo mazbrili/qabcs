@@ -55,6 +55,10 @@ case $lang in
      chk)
        abc="abcdefghijklmnopqrstuvwxyz"
        ;;
+     *)
+       echo "Unknown language!"
+       exit 1
+       ;;
 esac
 
 file="langs/qabcs_$lang.properties"
@@ -149,6 +153,12 @@ fi
 sed -i -e "1 s/^/author:Name <email>\n/;" $result_file
 # add language field in head of resulted file
 sed -i -e "1 s/^/language:$language\n/;" $result_file
+
+# language does not have instrument names
+if [ "$lang" = "chk" ]
+then
+  sed -i "/instrument:/d" $result_file
+fi
 
 rm -f $result_file.sorted
 

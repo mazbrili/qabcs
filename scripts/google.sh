@@ -67,6 +67,10 @@ case $lang in
        lang0="de"
        file_format="properties"
        ;;
+     *)
+       echo "Unknown language!"
+       exit 1
+       ;;
 esac
 
 if [ -z "$key" ]
