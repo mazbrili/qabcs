@@ -24,7 +24,7 @@
     <message>
         <location filename="../FormAbout.cpp" line="16"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>Aangaande</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="19"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
@@ -248,7 +248,7 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>

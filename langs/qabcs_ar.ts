@@ -4,7 +4,7 @@
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>مربع حوار</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>مربع حوار</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>مربع حوار</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>

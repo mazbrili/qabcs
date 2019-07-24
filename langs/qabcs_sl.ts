@@ -57,7 +57,7 @@
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Pomoč</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
@@ -248,7 +248,7 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Pomoč</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>

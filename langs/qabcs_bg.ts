@@ -160,17 +160,17 @@
     <message>
         <location filename="../FormSelectLanguage.cpp" line="20"/>
         <source>Select language</source>
-        <translation type="unfinished"/>
+        <translation>Изберете език</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="72"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Появи грешка по време на отварянето</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="79"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>не е валиден</translation>
     </message>
 </context>
 <context>
@@ -244,7 +244,7 @@
         <location filename="../mainwindow.cpp" line="167"/>
         <location filename="../mainwindow.cpp" line="168"/>
         <source>Select language</source>
-        <translation type="unfinished"/>
+        <translation>Изберете език</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="170"/>
@@ -268,12 +268,12 @@
         <location filename="../mainwindow.cpp" line="319"/>
         <location filename="../mainwindow.cpp" line="392"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Появи грешка по време на отварянето</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="330"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>не е валиден</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
@@ -359,12 +359,12 @@
         <location filename="../LoaderAbcFormats.cpp" line="35"/>
         <location filename="../LoaderAbcFormats.cpp" line="119"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Появи грешка по време на отварянето</translation>
     </message>
     <message>
         <location filename="../LoaderAbcFormats.cpp" line="49"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>не е валиден</translation>
     </message>
 </context>
 </TS>

@@ -39,7 +39,7 @@
     <message>
         <location filename="../FormAbout.cpp" line="21"/>
         <source>All rights reserved.</source>
-        <translation type="unfinished"/>
+        <translation>Tots els drets reservats.</translation>
     </message>
 </context>
 <context>
@@ -163,12 +163,12 @@
     <message>
         <location filename="../FormSelectLanguage.cpp" line="72"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;ha produït un error en obrir</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="79"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>no és vàlida</translation>
     </message>
 </context>
 <context>
@@ -260,18 +260,18 @@
         <location filename="../mainwindow.cpp" line="176"/>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Exit</source>
-        <translation type="unfinished"/>
+        <translation>Surt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="319"/>
         <location filename="../mainwindow.cpp" line="392"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;ha produït un error en obrir</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="330"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>no és vàlida</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
@@ -357,12 +357,12 @@
         <location filename="../LoaderAbcFormats.cpp" line="35"/>
         <location filename="../LoaderAbcFormats.cpp" line="119"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;ha produït un error en obrir</translation>
     </message>
     <message>
         <location filename="../LoaderAbcFormats.cpp" line="49"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>no és vàlida</translation>
     </message>
 </context>
 </TS>

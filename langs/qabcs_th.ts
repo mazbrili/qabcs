@@ -4,7 +4,7 @@
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>โต้ตอบ</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>โต้ตอบ</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>วิธีใช้</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>โต้ตอบ</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
@@ -248,7 +248,7 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>วิธีใช้</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>

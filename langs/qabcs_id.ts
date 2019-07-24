@@ -52,12 +52,12 @@
     <message>
         <location filename="../FormHelp.ui" line="48"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Bantuan</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
@@ -248,7 +248,7 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Bantuan</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>

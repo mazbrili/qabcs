@@ -52,7 +52,7 @@
     <message>
         <location filename="../FormHelp.ui" line="48"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>U redu</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>U redu</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>

@@ -4,7 +4,7 @@
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -47,12 +47,12 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>

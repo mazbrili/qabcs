@@ -39,7 +39,7 @@
     <message>
         <location filename="../FormAbout.cpp" line="21"/>
         <source>All rights reserved.</source>
-        <translation type="unfinished"/>
+        <translation>Tutti i diritti riservati.</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../FormHelp.ui" line="48"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
@@ -163,12 +163,12 @@
     <message>
         <location filename="../FormSelectLanguage.cpp" line="72"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Errore durante l&apos;apertura</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="79"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>non valido</translation>
     </message>
 </context>
 <context>
@@ -266,12 +266,12 @@
         <location filename="../mainwindow.cpp" line="319"/>
         <location filename="../mainwindow.cpp" line="392"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Errore durante l&apos;apertura</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="330"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>non valido</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
@@ -357,12 +357,12 @@
         <location filename="../LoaderAbcFormats.cpp" line="35"/>
         <location filename="../LoaderAbcFormats.cpp" line="119"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Errore durante l&apos;apertura</translation>
     </message>
     <message>
         <location filename="../LoaderAbcFormats.cpp" line="49"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>non valido</translation>
     </message>
 </context>
 </TS>

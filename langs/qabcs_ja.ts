@@ -4,7 +4,7 @@
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../FormAbout.cpp" line="16"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>について</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="19"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
@@ -242,7 +242,7 @@
         <location filename="../mainwindow.cpp" line="167"/>
         <location filename="../mainwindow.cpp" line="168"/>
         <source>Select language</source>
-        <translation type="unfinished"/>
+        <translation>言語の選択</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="170"/>

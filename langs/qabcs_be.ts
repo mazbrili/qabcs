@@ -19,7 +19,7 @@
     <message>
         <location filename="../FormAbout.ui" line="226"/>
         <source>Close</source>
-        <translation type="unfinished"/>
+        <translation>Закрыць</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="16"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Даведка</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
@@ -248,7 +248,7 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Даведка</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>

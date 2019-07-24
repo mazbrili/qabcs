@@ -148,7 +148,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>យល់ព្រម</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>

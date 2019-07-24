@@ -4,7 +4,7 @@
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
@@ -47,17 +47,17 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
@@ -143,12 +143,12 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Thôi</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
@@ -248,7 +248,7 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>

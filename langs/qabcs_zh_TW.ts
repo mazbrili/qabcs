@@ -29,7 +29,7 @@
     <message>
         <location filename="../FormAbout.cpp" line="19"/>
         <source>Version:</source>
-        <translation type="unfinished"/>
+        <translation>版本:</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="20"/>

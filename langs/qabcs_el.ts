@@ -4,12 +4,12 @@
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
         <source>License: GPLv3+</source>
-        <translation type="unfinished"/>
+        <translation>Άδεια χρήσης: GPLv3+</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../FormAbout.cpp" line="21"/>
         <source>All rights reserved.</source>
-        <translation type="unfinished"/>
+        <translation>Με επιφύλαξη παντός νομίμου δικαιώματος.</translation>
     </message>
 </context>
 <context>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
@@ -163,12 +163,12 @@
     <message>
         <location filename="../FormSelectLanguage.cpp" line="72"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Σφάλμα στο άνοιγμα</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="79"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>δεν είναι έγκυρο</translation>
     </message>
 </context>
 <context>
@@ -248,7 +248,7 @@
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>
@@ -260,18 +260,18 @@
         <location filename="../mainwindow.cpp" line="176"/>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Exit</source>
-        <translation type="unfinished"/>
+        <translation>Έξοδος</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="319"/>
         <location filename="../mainwindow.cpp" line="392"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Σφάλμα στο άνοιγμα</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="330"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>δεν είναι έγκυρο</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
@@ -357,12 +357,12 @@
         <location filename="../LoaderAbcFormats.cpp" line="35"/>
         <location filename="../LoaderAbcFormats.cpp" line="119"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Σφάλμα στο άνοιγμα</translation>
     </message>
     <message>
         <location filename="../LoaderAbcFormats.cpp" line="49"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>δεν είναι έγκυρο</translation>
     </message>
 </context>
 </TS>
