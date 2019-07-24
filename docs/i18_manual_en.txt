@@ -10,6 +10,7 @@ The global parameter inheritsFrom describes language inheritance, it is used for
 inheritsFrom: parent_language/abc.properties.
 The global parameter language describes the language, a required parameter.
 The global parameter author describes the author and email address, an optional, but highly desirable parameter.
+The global parameter view_letters describes the visibility of the letters of the alphabet, has the values true (visible), false (invisible); if not specified, the letters of the alphabet are visible; used for languages that do not have an alphabet, in particular, for hieroglyphic languages.
 The global parameter espeak_params describes the parameters for espeak, an optional parameter.
 The global parameter visible describes the visibility of the current file in the language selection dialog, has the values true (visible), false (invisible); if not specified, the file is visible.
 The global parameter speak_method specifies which method in priority (file or espeak) to generate speech: via file (file) or via espeak (espeak); by default, if the parameter is not specified, then file.
@@ -32,6 +33,7 @@ The global parameter inheritsFrom describes language inheritance, it is used for
 inheritsFrom : "parent_language/abc.json".
 The global parameter language describes the language, a required parameter.
 The global parameter author describes the author and email address, an optional, but highly desirable parameter.
+The global parameter view_letters describes the visibility of the letters of the alphabet, has the values true (visible), false (invisible); if not specified, the letters of the alphabet are visible; used for languages that do not have an alphabet, in particular, for hieroglyphic languages.
 The global parameter espeak_params describes the parameters for espeak, an optional parameter.
 The global parameter visible describes the visibility of the current file in the language selection dialog, has the values true (visible), false (invisible); if not specified, the file is visible.
 The global parameter speak_method indicates which method (file or espeak) to generate speech: via file (file) or via espeak (espeak).
