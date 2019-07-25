@@ -18,5 +18,6 @@ done
 
 cat langs/qabcs_en_tmp.properties|sort -u > langs/qabcs_en_tmp0.properties
 mv -f langs/qabcs_en_tmp0.properties langs/qabcs_en_tmp.properties
+mv -f langs/qabcs_en_tmp.properties langs/qabcs_en.properties
 
 popd
