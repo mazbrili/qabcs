@@ -71,6 +71,18 @@ fi
 
 pushd ..
 
+rm -rf abcs/all/pics/dummy
+
+# create dummy pictures
+for filename in `cat langs/qabcs_en.properties|cut -d "=" -f 1`
+do
+  if [ -z `find abcs/all/pics -name "$filename.*"` ]
+  then
+    mkdir -p abcs/all/pics/dummy
+    touch abcs/all/pics/dummy/$filename.png
+  fi
+done
+
 # get native language name from langs.json
 declare -c language=`awk -F=":" -v RS="}" '$1'"~/\"$lang\"/ {print}" langs/langs.json|grep nativeName|cut -d ":" -f 2|cut -d "\"" -f 2`
 
@@ -161,6 +173,9 @@ then
 fi
 
 rm -f $result_file.sorted
+
+# delete dummy pictures
+rm -rf abcs/all/pics/dummy
 
 popd
 
