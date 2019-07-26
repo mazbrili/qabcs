@@ -26,6 +26,8 @@ done < langs/$lang.properties.tmp
 
 sed -i "/^=$/d" langs/$lang.properties
 
+echo "File langs/$lang.properties was written!"
+
 rm -f langs/$lang.properties.tmp
 
 popd
