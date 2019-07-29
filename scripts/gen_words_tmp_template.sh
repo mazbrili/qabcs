@@ -10,7 +10,7 @@ file="abcs/de/abc.properties"
 
 rm -f langs/qabcs_en_tmp.properties
 
-for filename in `cat $file|grep -v ^language|grep -v ^author|grep -v ^#|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2; cat langs/qabcs_en.properties|cut -d "=" -f 1`
+for filename in `cat $file|grep -v ^language|grep -v ^author|grep -v ^#|grep -v '\[missing\]'|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2; cat langs/qabcs_en.properties|cut -d "=" -f 1`
 do
   word=`echo $filename|sed "s|_| |g"`
   echo "$filename=$word" >> langs/qabcs_en_tmp.properties
@@ -19,5 +19,7 @@ done
 cat langs/qabcs_en_tmp.properties|sort -u > langs/qabcs_en_tmp0.properties
 mv -f langs/qabcs_en_tmp0.properties langs/qabcs_en_tmp.properties
 mv -f langs/qabcs_en_tmp.properties langs/qabcs_en.properties
+
+echo "File langs/qabcs_en.properties was written!"
 
 popd
