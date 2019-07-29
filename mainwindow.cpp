@@ -353,8 +353,14 @@ bool MainWindow::loadAbcConfigJson(QString filename){
     }
     if (root_general.value("view_letters").isString()){
         _view_letters = root_general.value("view_letters").toString();
+
+        if (_view_letters=="false"){
+            blockButtonTyping=true;
+            _disable_additional_keys= false;
+            accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
+        }
     }
-    if (root_general.value("typing").isString()){
+    if (root_general.value("typing").isString() and _view_letters!="false"){
         if ( root_general.value("typing").toString()=="false"){
             blockButtonTyping=true;
             _disable_additional_keys= false;
@@ -441,7 +447,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             continue;
         }
 
-        if (pair.at(0)=="typing"){
+        if (pair.at(0)=="typing" and _view_letters!="false"){
             if (pair.size()==2){
                 if (pair.at(1)=="false"){
                     blockButtonTyping=true;
@@ -458,6 +464,11 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
         if (pair.at(0)=="view_letters"){
             if (pair.size()==2){
                 _view_letters=pair.at(1);
+                if (_view_letters=="false"){
+                    blockButtonTyping=true;
+                    _disable_additional_keys= false;
+                    accTyping->setIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_off.png"));
+                }
             }
         }
 
