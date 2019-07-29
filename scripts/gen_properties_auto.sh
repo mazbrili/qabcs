@@ -29,7 +29,7 @@ case $lang in
        abc="abcdefghijklmnñopqrstuvwxyz"
        ;;
      pl)
-       abc="aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż"
+       abc="aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
        ;;
      nb)
        abc="abcdefghijklmnopqrstuvwxyzæøå"
