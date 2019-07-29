@@ -3,7 +3,9 @@
 # Licence: GPLv3+
 # Description: searching for pictures that must be added based on properties file
 
-file="abcs/nl/abc.properties"
+lang="nl"
+
+file="abcs/$lang/abc.properties"
 
 pushd ..
 

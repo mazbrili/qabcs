@@ -35,6 +35,9 @@ case $lang in
        ssmlGender="FEMALE"
        api=true
        ;;
+     cs)
+       api=false
+       ;;
      nl)
        languageCode="nl-NL"
        name="nl-NL-Standard-A"

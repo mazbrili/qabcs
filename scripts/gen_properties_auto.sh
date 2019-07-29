@@ -55,6 +55,9 @@ case $lang in
      chk)
        abc="abcdefghijklmnopqrstuvwxyz"
        ;;
+     cs)
+       abc="aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzž"
+       ;;
      *)
        echo "Unknown language!"
        exit 1
