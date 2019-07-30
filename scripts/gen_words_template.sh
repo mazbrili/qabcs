@@ -19,6 +19,6 @@ done
 cat langs/qabcs_en.properties|sort -u > langs/qabcs_en_tmp.properties
 mv -f langs/qabcs_en_tmp.properties langs/qabcs_en.properties
 
-echo "File langs/qabcs_en.properties was written!"
-
 popd
+
+echo "File langs/qabcs_en.properties was written!"
