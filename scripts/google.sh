@@ -26,7 +26,7 @@ key="$1"
 # using Google Cloud Text-to-Speech API or not
 #api=true
 
-lang="ru"
+lang="de"
 
 case $lang in
      en)
@@ -207,6 +207,20 @@ do
      en)
        text=`echo "$text"|sed "s|ipu|eepoo|g"`
        ;;
+     de)
+       text=`echo "$text"|sed "s|x-keks|x-kiks|g"`
+       text=`echo "$text"|sed "s|umka|oomka|g"`
+       text=`echo "$text"|sed "s|luftballons|luft-ballons|g"`
+       text=`echo "$text"|sed "s|xun|ksoon|g"`
+       text=`echo "$text"|sed "s|yangqin|yang--qin|g"`
+       text=`echo "$text"|sed "s|äoline|äolinne|g"`
+       text=`echo "$text"|sed "s|jug|jugg|g"`
+       text=`echo "$text"|sed "s|kazoo|kazuu|g"`
+       text=`echo "$text"|sed "s|ödephon|ödephoon|g"`
+       text=`echo "$text"|sed "s|öse|ösae|g"`
+       text=`echo "$text"|sed "s|python|pyton|g"`
+       text=`echo "$text"|sed "s|wagon|wa-gon|g"`
+       ;;
      ru)
        text=`echo "$text"|sed "s|жар-птица|жарптица|g"`
        text=`echo "$text"|sed "s|адъютант|адъйутант|g"`
@@ -265,6 +279,17 @@ then
     name="uk-UA-Standard-A"
     filename="ыых"
     text="и-их"
+    rm -f ../abcs/$lang0/sounds/words/$filename.$format
+    rm -f ../abcs/$lang0/sounds/words/$filename.$output
+    get_sound "words"
+fi
+if [ "$lang" = "de" ]
+then
+    lang="pl"
+    languageCode="pl-PL"
+    name="pl-PL-Standard-B"
+    filename="ipu"
+    text="ipu"
     rm -f ../abcs/$lang0/sounds/words/$filename.$format
     rm -f ../abcs/$lang0/sounds/words/$filename.$output
     get_sound "words"
