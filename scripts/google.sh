@@ -80,6 +80,18 @@ case $lang in
        ssmlGender="FEMALE"
        api=true
        ;;
+     pt)
+       languageCode="pt-PT"
+       name="pt-PT-Standard-A"
+       ssmlGender="FEMALE"
+       api=true
+       ;;
+     fr)
+       languageCode="fr-FR"
+       name="fr-FR-Standard-C"
+       ssmlGender="FEMALE"
+       api=true
+       ;;
      *)
        echo "Unknown language!"
        exit 1
