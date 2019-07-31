@@ -209,11 +209,11 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigProperties(const QString &fileName){
 
 QString LoaderAbcFormats::upperString(QString string){
 
-    string.replace("ß","[00DF]");
+    string.replace("ß","[C39F]");
 
     string = string.toUpper();
 
-    string.replace("[00DF]","ẞ");
+    string.replace("[C39F]","ẞ");
 
     return string;
 }
