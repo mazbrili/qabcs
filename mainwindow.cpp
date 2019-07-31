@@ -792,7 +792,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 
         // next picture
         if (currentIndexLetter<listLetters.size()){
-            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter==QString(QChar(key))) or (!_disable_additional_keys and key==Qt::Key_Right)){
+            if ((_disable_additional_keys and listLetters.at(currentIndexLetter).letter.at(0)==QChar(key)) or (!_disable_additional_keys and key==Qt::Key_Right)){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
                 currentIndexLetter++;
             }
@@ -883,7 +883,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         }else{
             if (_disable_additional_keys){
                 for (int i=0;i<listLetters.size();i++){
-                    if (listLetters.at(i).letter==QString(QChar(key))){
+                    if (listLetters.at(i).letter.at(0)==QChar(key)){
                         currentIndexLetter=i;
 
                         playSoundLetter(listLetters.at(currentIndexLetter).letter,true);
