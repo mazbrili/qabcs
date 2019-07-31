@@ -486,7 +486,7 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
             QString type = pair.at(0);
 
             QString letter = params.at(0);
-            QString str = params.at(1).toUpper();
+            QString str = LoaderAbcFormats::upperString(params.at(1));
             QString espeak_words = params.at(2);
             QString metka = params.at(3);
             QString espeak_params = "";
@@ -496,9 +496,9 @@ bool MainWindow::loadAbcConfigProperties(QString filename){
 
             if (params.size()>=5) noises=params.at(4);
 
-            updateletterToList(folder_lang,{letter.toUpper(),letter_sound,"","",letter});
+            updateletterToList(folder_lang,{LoaderAbcFormats::upperString(letter),letter_sound,"","",letter});
 
-            listCollections[type]->setLetter(letter.toUpper(),folder_lang,str,metka,str.toLower(),"",espeak_params,espeak_words,noises);
+            listCollections[type]->setLetter(LoaderAbcFormats::upperString(letter),folder_lang,str,metka,str.toLower(),"",espeak_params,espeak_words,noises);
         }else{
             qDebug() << tr("Error str:")+" "+line;
         }

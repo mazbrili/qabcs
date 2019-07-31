@@ -45,6 +45,8 @@ class LoaderAbcFormats {
         static ABC_CONFIG LoadFilename(const QString &fileName);
         static ABC_CONFIG loadAbcConfigJson(const QString &fileName);
         static ABC_CONFIG loadAbcConfigProperties(const QString &fileName);
+
+        static QString upperString(QString pstring);
 };
 
 #endif // LOADERABCFORMATS_H
