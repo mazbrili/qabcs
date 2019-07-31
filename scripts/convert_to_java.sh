@@ -5,7 +5,13 @@
 # You need this script to convert already translated properties file into
 # JAVA UTF8 format and upload resulted file into transifex
 
-lang="ru"
+lang="$1"
+
+if [ -z "$lang" ]
+then
+   echo "Parameter 'lang' is mandatory!"
+   exit 1
+fi
 
 pushd ..
 

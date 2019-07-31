@@ -5,8 +5,6 @@
 # https://cloud.google.com/text-to-speech/docs
 # You need curl, ffmpeg or wget installed
 
-key="$1"
-
 # https://cloud.google.com/text-to-speech/docs/voices
 #languageCode="en-US"
 # https://cloud.google.com/text-to-speech/docs/voices
@@ -26,7 +24,15 @@ key="$1"
 # using Google Cloud Text-to-Speech API or not
 #api=true
 
-lang="de"
+lang="$1"
+
+if [ -z "$lang" ]
+then
+   echo "Parameter 'lang' is mandatory!"
+   exit 1
+fi
+
+key="$2"
 
 case $lang in
      en)

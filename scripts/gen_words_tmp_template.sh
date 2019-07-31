@@ -4,7 +4,13 @@
 # Description: get words to be translated by transifex based on resulted properties file (JAVA UTF8 format)
 # if pictures are not available yet, otherwise use gen_words_template.sh script
 
-lang="de"
+lang="$1"
+
+if [ -z "$lang" ]
+then
+   echo "Parameter 'lang' is mandatory!"
+   exit 1
+fi
 
 pushd ..
 

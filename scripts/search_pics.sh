@@ -3,13 +3,26 @@
 # Licence: GPLv3+
 # Description: searching for pictures that must be added based on properties file
 
-lang="nl"
+lang="$1"
 
-file="abcs/$lang/abc.properties"
+if [ -z "$lang" ]
+then
+   echo "Parameter 'lang' is mandatory!"
+   exit 1
+fi
 
 pushd ..
 
-for filename in `cat $file|grep -v ^language|grep -v ^author|grep -v ^#|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2`
+file="abcs/$lang/abc.properties"
+
+if [ ! -f "$file" ]
+then
+  popd
+  echo "File abcs/$lang/abc.properties does not exist!"
+  exit 1
+fi
+
+for filename in `cat $file|grep -v ^espeak_params|grep -v ^visible|grep -v ^language|grep -v ^author|grep -v ^#|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2`
 do
   if [ -z `find abcs/all/pics -name "$filename.*"` ]
   then

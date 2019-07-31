@@ -11,7 +11,13 @@
 # "4" is equal with "ng"
 # "5" is equal with "pw"
 
-lang="cs"
+lang="$1"
+
+if [ -z "$lang" ]
+then
+   echo "Parameter 'lang' is mandatory!"
+   exit 1
+fi
 
 case $lang in
      en*)
@@ -101,8 +107,8 @@ declare -c language=`awk -F=":" -v RS="}" '$1'"~/\"$lang\"/ {print}" langs/langs
 
 if [ ! -f "$file" ]
 then
-  echo "Missing $file"
   popd
+  echo "Missing $file"
   exit 1
 fi
 

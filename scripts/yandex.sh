@@ -27,7 +27,15 @@ key="$1"
 # file format: properties or json
 #file_format="properties"
 
-lang="ru"
+lang="$1"
+
+if [ -z "$lang" ]
+then
+   echo "Parameter 'lang' is mandatory!"
+   exit 1
+fi
+
+key="$2"
 
 case $lang in
      en)
