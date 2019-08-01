@@ -256,6 +256,7 @@ rm -rf abcs/all/pics/dummy
 
 popd
 
-echo "File $result_file was generated."
+echo "Correcting same noises if needed..."
+./add_noises.sh $result_file
 
-./add_noises.sh
+echo "File $result_file was generated."

@@ -3,13 +3,32 @@
 # Licence: GPLv3+
 # Description: adding noises in properties and properties.auto files automatically
 
-echo "Adding noises automatically..."
-
 pushd ..
 
-for file in `find abcs -name abc.properties*`
+file="$1"
+
+if [ -z "$file" ]
+then
+  echo "Adding noises automatically for all files..."
+  files=`find abcs -name abc.properties*`
+else
+  if [ -f "$file" ]
+  then
+    echo "Adding noises automatically for $file..."
+    files=$file
+  else
+    popd
+    echo "File $file does not exists!"
+    exit 1
+  fi
+fi
+
+for file in $files
 do
-  echo "Working on $file..."
+  if [ -z "$1" ]
+  then
+    echo "Working on $file..."
+  fi
   for line in `cat $file|grep "="|cut -d "=" -f 4,5`
   do
     word=`echo $line|cut -d "=" -f 1`
@@ -29,4 +48,4 @@ done
 
 popd
 
-echo "Done."
+echo "Adding noises was done."
