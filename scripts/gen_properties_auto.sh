@@ -127,8 +127,7 @@ do
     then
       # get first letter of word
       letter=`echo $word|cut -c 1`
-      # some words have noises from other words
-      noise=`echo $filename|sed "s|york|dog|g"|sed "s|yi|train|g"`
+      noise=$filename
       if [ -f "abcs/all/noises/$noise.ogg" ]
       then
         # if noise was found
@@ -258,3 +257,5 @@ rm -rf abcs/all/pics/dummy
 popd
 
 echo "File $result_file was generated."
+
+./add_noises.sh
