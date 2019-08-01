@@ -92,6 +92,12 @@ case $lang in
        ssmlGender="FEMALE"
        api=true
        ;;
+     it)
+       languageCode="it-IT"
+       name="it-IT-Standard-A"
+       ssmlGender="FEMALE"
+       api=true
+       ;;
      *)
        echo "Unknown language!"
        exit 1
