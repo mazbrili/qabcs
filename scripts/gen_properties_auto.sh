@@ -82,6 +82,7 @@ esac
 
 file="langs/qabcs_$lang.properties"
 result_file="abcs/$lang/abc.properties.auto"
+orig_file="abcs/$lang/abc.properties"
 
 if [ "$lang" = "en_gb" ]
 then
@@ -210,6 +211,8 @@ then
   echo "$a" >> $result_file
 fi
 
+# add visible field in head of resulted file
+sed -i -e "1 s/^/visible:false\n/;" $result_file
 # add author field in head of resulted file
 sed -i -e "1 s/^/author:Name <email>\n/;" $result_file
 # add language field in head of resulted file
@@ -259,4 +262,14 @@ popd
 echo "Correcting same noises if needed..."
 ./add_noises.sh $result_file
 
-echo "File $result_file was generated."
+pushd ..
+
+if [ ! -f "$orig_file" ]
+then
+  mv -f $result_file $orig_file
+  popd
+  echo "File $orig_file was generated."
+else
+  popd
+  echo "File $result_file was generated."
+fi
