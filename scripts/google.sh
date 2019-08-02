@@ -237,7 +237,7 @@ do
        text=`echo "$text"|sed "s|luftballons|luft-ballons|g"`
        text=`echo "$text"|sed "s|xun|ksoon|g"`
        text=`echo "$text"|sed "s|yangqin|yang--qin|g"`
-       text=`echo "$text"|sed "s|äoline|äolinne|g"`
+       text=`echo "$text"|sed "s|äoline|äoliene|g"`
        text=`echo "$text"|sed "s|jug|jugg|g"`
        text=`echo "$text"|sed "s|kazoo|kazuu|g"`
        text=`echo "$text"|sed "s|ödephon|ödephoon|g"`
