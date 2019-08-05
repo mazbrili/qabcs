@@ -18,9 +18,16 @@ file="abcs/$lang/abc.properties"
 
 rm -f langs/qabcs_en_tmp.properties
 
-for filename in `cat $file|grep -v ^language|grep -v ^visible|grep -v ^author|grep -v ^#|grep -v '\[missing\]'|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2; cat langs/qabcs_en.properties|cut -d "=" -f 1`
+for filename in `cat $file|grep -v ^language|grep -v ^espeak_params|grep -v ^visible|grep -v ^author|grep -v ^#|grep -v '\[missing\]'|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2; cat langs/qabcs_en.properties|cut -d "=" -f 1`
 do
   word=`echo $filename|sed "s|_| |g"`
+  if [ ! -z `echo $word|grep '='` ]
+  then
+    rm -f langs/qabcs_en_tmp.properties
+    popd
+    echo "Syntax error: $word"
+    exit 1
+  fi
   echo "$filename=$word" >> langs/qabcs_en_tmp.properties
 done
 

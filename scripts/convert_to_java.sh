@@ -27,6 +27,14 @@ while read line
 do
   key=`echo $line|cut -d "=" -f 4`
   word=`echo $line|cut -d "=" -f 2|sed "s|_| |g"|awk '{print tolower($0)}'`
+  if [ -z "$key" ]
+  then
+    rm -f langs/$lang.properties.tmp
+    rm -f langs/$lang.properties
+    popd
+    echo "Syntax error in line: $line"
+    exit 1
+  fi
   echo "$key=$word" >> langs/$lang.properties
 done < langs/$lang.properties.tmp
 
