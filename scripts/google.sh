@@ -224,8 +224,8 @@ rm -f ../abcs/$lang0/sounds/words/*.$output
 
 for a in $words_list
 do
-  filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's| |_|'`
-  text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's|_| |'`
+  filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's| |_|g'`
+  text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's|_| |g'`
   # adding ◌́  for stress, - for pause, fixing pronounce
   case $lang in
      en)

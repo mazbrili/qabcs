@@ -45,7 +45,7 @@ record voice.
 ### Current languages: ###
 GUI translated into many popular languages.
 ABCs translated on American English (US), Russian, United
-Kingdom English (UK), Ukrainian.
+Kingdom English (UK), Ukrainian, German.
 
 ### Packages and build specifications: ###
 Repository of your distribution is the first.
@@ -107,7 +107,7 @@ abcs/all/noises. Используйте шаблонные скрипты для
 ### Текущие языки: ###
 ГУИ переведён на многие популярные языки.
 Алфавиты переведены на американский английский (US), русский,
-английский Соединённого Королевства (UK), украинский.
+английский Соединённого Королевства (UK), украинский, немецкий.
 
 ### Пакеты  и спецификации для сборки: ###
 Репозиторий вашего дистрибутива первичен.
