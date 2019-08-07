@@ -44,6 +44,9 @@ case $lang in
      cs)
        api=false
        ;;
+     is)
+       api=false
+       ;;
      nl)
        languageCode="nl-NL"
        name="nl-NL-Standard-A"
@@ -66,6 +69,12 @@ case $lang in
        languageCode="de-DE"
        name="de-DE-Standard-B"
        ssmlGender="MALE"
+       api=true
+       ;;
+     da)
+       languageCode="da-DK"
+       name="da-DK-Standard-A"
+       ssmlGender="FEMALE"
        api=true
        ;;
      es)

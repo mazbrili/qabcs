@@ -74,6 +74,9 @@ case $lang in
      ch)
        abc="'aåb0defghiklmnñ4oprstuy"
        ;;
+     is)
+       abc="aábdðeéfghiíjklmnoóprstuúvxyýþæö"
+       ;;
      *)
        echo "Unknown language!"
        exit 1
