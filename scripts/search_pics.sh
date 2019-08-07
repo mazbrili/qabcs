@@ -22,7 +22,7 @@ then
   exit 1
 fi
 
-for filename in `cat $file|grep -v ^espeak_params|grep -v ^visible|grep -v ^language|grep -v ^author|grep -v ^#|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2`
+for filename in `cat $file|grep -v ^language|grep -v ^espeak_params|grep -v ^visible|grep -v ^author|grep -v ^inheritsFrom|grep -v ^view_letters|grep -v ^speak_method|grep -v ^typing|grep -v ^#|grep -v '\[missing\]'|sed "s|:.*=.*=.*=|:|g"|sort|cut -d ":" -f 2`
 do
   if [ -z `find abcs/all/pics -name "$filename.*"` ]
   then

@@ -32,8 +32,10 @@ do
   for line in `cat $file|grep "="|cut -d "=" -f 4,5`
   do
     word=`echo $line|cut -d "=" -f 1`
+    noise=$word
     # some words have noises from other words
-    noise=`echo $word|sed "s|york|dog|g"|sed "s|yi|train|g"`
+    noise=`echo $noise|sed "s|york|dog|g"`
+    noise=`echo $noise|sed "s|yi|train|g"`
     if [ -f "abcs/all/noises/$noise.ogg" ]
     then
       # if noise was found
