@@ -9,12 +9,12 @@
     <message>
         <location filename="../FormAbout.ui" line="131"/>
         <source>License: GPLv3+</source>
-        <translation type="unfinished"/>
+        <translation>Notkunarleyfi: GPLv3+</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
         <source>Visit web site</source>
-        <translation type="unfinished"/>
+        <translation>Heimsækja vefsvæði</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="226"/>
@@ -24,22 +24,22 @@
     <message>
         <location filename="../FormAbout.cpp" line="16"/>
         <source>About</source>
-        <translation>Um</translation>
+        <translation>Um hugbúnaðinn</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="19"/>
         <source>Version:</source>
-        <translation type="unfinished"/>
+        <translation>Útgáfa:</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="20"/>
         <source>Date build:</source>
-        <translation type="unfinished"/>
+        <translation>Samsetningardagsetning:</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="21"/>
         <source>All rights reserved.</source>
-        <translation type="unfinished"/>
+        <translation>Allur réttur áskilinn.</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,9 @@
         <source>How to use:
 
 </source>
-        <translation type="unfinished"/>
+        <translation>Hvernig á að nota:
+
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="17"/>
@@ -138,7 +140,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
         <source>Select ABC language:</source>
-        <translation type="unfinished"/>
+        <translation>Veldu ABC-tungumál</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
@@ -153,7 +155,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation type="unfinished"/>
+        <translation>Veldu tungumál viðmóts:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="20"/>
@@ -163,12 +165,12 @@
     <message>
         <location filename="../FormSelectLanguage.cpp" line="72"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Villa við að opna</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="79"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>er ekki gilt</translation>
     </message>
 </context>
 <context>
@@ -176,67 +178,67 @@
     <message>
         <location filename="../mainwindow.cpp" line="54"/>
         <source>Using path:</source>
-        <translation type="unfinished"/>
+        <translation>Nota slóðina:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="69"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
-        <translation type="unfinished"/>
+        <translation>Skipunin &apos;play&apos;úr sox-pakkanum fannst ekki. Ekkert hljóð verður notað.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
         <source>espeak was not found. Some features will not be available.</source>
-        <translation type="unfinished"/>
+        <translation>espeak fannst ekki. Sumir eiginleikar verða þá ekki til taks.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="131"/>
         <location filename="../mainwindow.cpp" line="132"/>
         <location filename="../mainwindow.cpp" line="853"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
-        <translation type="unfinished"/>
+        <translation>Finndu stafinn á lyklaborðinu (í stafrófsröð)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="136"/>
         <location filename="../mainwindow.cpp" line="137"/>
         <location filename="../mainwindow.cpp" line="873"/>
         <source>Find the letter on the keyboard (randomly)</source>
-        <translation type="unfinished"/>
+        <translation>Finndu stafinn á lyklaborðinu (í handahófskenndri röð)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="141"/>
         <location filename="../mainwindow.cpp" line="142"/>
         <source>Show foods for each letter</source>
-        <translation type="unfinished"/>
+        <translation>Birta mat fyrir hvern staf</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="146"/>
         <location filename="../mainwindow.cpp" line="147"/>
         <source>Show animals for each letter</source>
-        <translation type="unfinished"/>
+        <translation>Birta dýr fyrir hvern staf</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="151"/>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Show musical instruments for each letter</source>
-        <translation type="unfinished"/>
+        <translation>Birta hljóðfæri fyrir hvern staf</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="156"/>
         <location filename="../mainwindow.cpp" line="157"/>
         <source>Show toys for each letter</source>
-        <translation type="unfinished"/>
+        <translation>Birta leikfang fyrir hvern staf</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="161"/>
         <location filename="../mainwindow.cpp" line="162"/>
         <source>Sound on/off</source>
-        <translation type="unfinished"/>
+        <translation>Hljóð af/á</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="164"/>
         <location filename="../mainwindow.cpp" line="165"/>
         <source>Typing on/off</source>
-        <translation type="unfinished"/>
+        <translation>Ritun af/á</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="167"/>
@@ -254,7 +256,7 @@
         <location filename="../mainwindow.cpp" line="173"/>
         <location filename="../mainwindow.cpp" line="174"/>
         <source>About qABCs</source>
-        <translation type="unfinished"/>
+        <translation>Um qABCs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="176"/>
@@ -266,29 +268,29 @@
         <location filename="../mainwindow.cpp" line="319"/>
         <location filename="../mainwindow.cpp" line="392"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Villa við að opna</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="330"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>er ekki gilt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
         <source>Error str:</source>
-        <translation type="unfinished"/>
+        <translation>Villustrengur:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="753"/>
         <location filename="../mainwindow.cpp" line="801"/>
         <source>CONGRATS!</source>
-        <translation type="unfinished"/>
+        <translation>TIL HAMINGJU!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="754"/>
         <location filename="../mainwindow.cpp" line="802"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
-        <translation type="unfinished"/>
+        <translation>Ýttu á &quot;ENTER&quot; til að spila aftur</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="862"/>
@@ -298,57 +300,57 @@
         <location filename="../mainwindow.cpp" line="975"/>
         <location filename="../mainwindow.cpp" line="995"/>
         <source>ABC is not loaded</source>
-        <translation type="unfinished"/>
+        <translation>ABC er ekki hlaðið inn</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="925"/>
         <source>Press a Key to See an Animal</source>
-        <translation type="unfinished"/>
+        <translation>Ýttu á lykil til að sjá dýr</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="939"/>
         <source>Animals</source>
-        <translation type="unfinished"/>
+        <translation>Dýr</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="945"/>
         <source>Press a Key to See a Food</source>
-        <translation type="unfinished"/>
+        <translation>Ýttu á lykil til að sjá mat</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="961"/>
         <source>Food</source>
-        <translation type="unfinished"/>
+        <translation>Matur</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="966"/>
         <source>Press a Key to See an Instrument</source>
-        <translation type="unfinished"/>
+        <translation>Ýttu á lykil til að sjá hljóðfæri</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="980"/>
         <source>Music</source>
-        <translation type="unfinished"/>
+        <translation>Tónlist</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="986"/>
         <source>Press a Key to See a Toy</source>
-        <translation type="unfinished"/>
+        <translation>Ýttu á lykil til að sjá leikfang</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1000"/>
         <source>Toys</source>
-        <translation type="unfinished"/>
+        <translation>Leikföng</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
         <source>play was found:</source>
-        <translation type="unfinished"/>
+        <translation>play fannst:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1089"/>
         <source>espeak was found:</source>
-        <translation type="unfinished"/>
+        <translation>espeak fannst:</translation>
     </message>
 </context>
 <context>
@@ -357,12 +359,12 @@
         <location filename="../LoaderAbcFormats.cpp" line="35"/>
         <location filename="../LoaderAbcFormats.cpp" line="119"/>
         <source>Error while opening</source>
-        <translation type="unfinished"/>
+        <translation>Villa við að opna</translation>
     </message>
     <message>
         <location filename="../LoaderAbcFormats.cpp" line="49"/>
         <source>is not valid</source>
-        <translation type="unfinished"/>
+        <translation>er ekki gilt</translation>
     </message>
 </context>
 </TS>
