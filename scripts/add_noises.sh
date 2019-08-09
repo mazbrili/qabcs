@@ -10,7 +10,7 @@ file="$1"
 if [ -z "$file" ]
 then
   echo "Adding noises automatically for all files..."
-  files=`find abcs -name abc.properties*`
+  files=`find abcs -name abc*.properties*`
 else
   if [ -f "$file" ]
   then

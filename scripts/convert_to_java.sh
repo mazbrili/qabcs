@@ -1,8 +1,8 @@
 #/bin/sh
 # Author: Alexey Loginov
 # Licence: GPLv3+
-# Description: get translated words from properties file
-# You need this script to convert already translated properties file into
+# Description: get translated words from properties files
+# You need this script to convert already translated properties files into
 # JAVA UTF8 format and upload resulted file into transifex
 
 lang="$1"
@@ -20,7 +20,7 @@ rm -f langs/$lang.properties
 
 for dir in `dir abcs/all/pics`
 do
-  cat abcs/$lang/abc.properties|grep "$dir:" >> langs/$lang.properties.tmp
+  cat abcs/$lang/abc*.properties|grep "$dir:" >> langs/$lang.properties.tmp
 done
 
 while read line

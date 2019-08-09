@@ -1,7 +1,7 @@
 #/bin/sh
 # Author: Alexey Loginov
 # Licence: GPLv3+
-# Description: searching for pictures that must be added based on properties file
+# Description: searching for pictures that must be added based on properties files
 
 lang="$1"
 
@@ -13,12 +13,12 @@ fi
 
 pushd ..
 
-file="abcs/$lang/abc.properties"
+file="abcs/$lang/abc*.properties"
 
-if [ ! -f "$file" ]
+if [ -z `find abcs/$lang -name *.properties` ]
 then
   popd
-  echo "File abcs/$lang/abc.properties does not exist!"
+  echo "File abcs/$lang/abc*.properties does not exist!"
   exit 1
 fi
 

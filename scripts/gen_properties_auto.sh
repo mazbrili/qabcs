@@ -85,7 +85,8 @@ esac
 
 file="langs/qabcs_$lang.properties"
 result_file="abcs/$lang/abc.properties.auto"
-orig_file="abcs/$lang/abc.properties"
+orig_file="abcs/$lang/abc1.properties"
+intersection="true"
 
 if [ "$lang" = "en_gb" ]
 then
@@ -119,6 +120,17 @@ fi
 mkdir -p abcs/$lang
 rm -f $result_file
 
+string=""
+
+# use words from other dictionaries or not
+if [ "$intersection" = "true" ]
+then
+  if [ ! -z `find abcs/$lang -name *.properties` ]
+  then
+    string="`cat abcs/$lang/abc*.properties|grep -v "^#"|awk '{print tolower($0)}'|cut -d ":" -f 2|cut -d "=" -f 4`"
+  fi
+fi
+
 # get directories names/categories names
 for dir in `dir abcs/all/pics`
 do
@@ -127,7 +139,7 @@ do
   do
     # get translated words in lowercase
     word=`cat $file|grep "^$filename="|cut -d "=" -f 2|sed "s|_| |g"|awk '{print tolower($0)}'`
-    if [ ! -z "$word" ]
+    if [ ! -z "$word" ] && [ -z "`echo "$string"|grep "^$filename$"`" ]
     then
       # get first letter of word
       letter=`echo $word|cut -c 1`

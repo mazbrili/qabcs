@@ -1,7 +1,7 @@
 #/bin/sh
 # Author: Alexey Loginov
 # Licence: GPLv3+
-# Description: get words to be translated by transifex based on resulted properties file (JAVA UTF8 format)
+# Description: get words to be translated by transifex based on resulted properties files (JAVA UTF8 format)
 # if pictures are not available yet, otherwise use gen_words_template.sh script
 
 lang="$1"
@@ -14,7 +14,7 @@ fi
 
 pushd ..
 
-file="abcs/$lang/abc.properties"
+file="abcs/$lang/abc*.properties"
 
 rm -f langs/qabcs_en_tmp.properties
 

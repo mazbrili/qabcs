@@ -1,13 +1,13 @@
 +++ Instructions for localizing the alphabet +++
 
-To add the alphabet to the qABCs program, you need to write an abc.json or abc.properties file.
+To add the alphabet to the qABCs program, you need to write an abc*.json or abc*.properties file.
 Samples of these files can be found in the abcs directory.
-abc.json allows you to write in detail all the nuances, and abc.properties is more focused on automation and ease of writing.
+abc*.json allows you to write in detail all the nuances, and abc*.properties is more focused on automation and ease of writing.
 Which of these formats to choose - the translator decides for himself. The program supports both formats equally well.
 
-+++ Description of abc.properties format +++
++++ Description of abc*.properties format +++
 The global parameter inheritsFrom describes language inheritance, it is used for dialects (see below), it is optional. Format:
-inheritsFrom: parent_language/abc.properties.
+inheritsFrom: parent_language/abc*.properties.
 The global parameter language describes the language, a required parameter.
 The global parameter author describes the author and email address, an optional, but highly desirable parameter.
 The global parameter view_letters describes the visibility of the letters of the alphabet, has the values true (visible), false (invisible); if not specified, the letters of the alphabet are visible; used for languages that do not have an alphabet, in particular, for hieroglyphic languages.
@@ -27,10 +27,10 @@ the fourth parameter of АКОР-ДИ-ОН is optional (you can write it in any 
 the fifth parameter in English describes the name of the image file from the abcs/all/pics directory.
 the sixth parameter is optional, it describes the sound effect (noise), it is the file name from the abcs/all/noises directory.
 
-+++ Description of abc.json format +++
++++ Description of abc*.json format +++
 In the general section, global parameters are specified.
 The global parameter inheritsFrom describes language inheritance, it is used for dialects (see below), it is optional. Format:
-inheritsFrom : "parent_language/abc.json".
+inheritsFrom : "parent_language/abc*.json".
 The global parameter language describes the language, a required parameter.
 The global parameter author describes the author and email address, an optional, but highly desirable parameter.
 The global parameter view_letters describes the visibility of the letters of the alphabet, has the values true (visible), false (invisible); if not specified, the letters of the alphabet are visible; used for languages that do not have an alphabet, in particular, for hieroglyphic languages.

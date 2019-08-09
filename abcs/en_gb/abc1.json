@@ -5,7 +5,7 @@
       "speak_method": "file",
       "espeak_params": "",
       "visible": "false",
-      "inheritsFrom" : "en/abc.json"
+      "inheritsFrom" : "en/abc1.json"
    },
    "letters": [
 	{"A": {
