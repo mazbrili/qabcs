@@ -12,6 +12,10 @@ Keywords=abc;learn;alphabet;educational;edu;lang;language
 
 
 # Translations
+Comment[de]=Lerne das Alphabet
+GenericName[de]=Alphabet
+Comment[he]=לימוד אלפבית
+GenericName[he]=אלפבית
 Comment[hi]=अक्षर सीखें
 GenericName[hi]=अक्षर
 Comment[pl]=Naucz się alfabetu
@@ -26,8 +30,8 @@ Comment[is]=Lærðu stafrófið
 GenericName[is]=Stafróf
 Comment[cs]=Nauč se abecedu
 GenericName[cs]=Abeceda
-Comment[de]=Lerne das Alphabet
-GenericName[de]=Alphabet
+Comment[sv]=Lär dig alfabetet
+GenericName[sv]=Alfabet
 Comment[ru]=Изучение алфавита
 GenericName[ru]=Алфавит
 Comment[et]=Tähestiku õppimine

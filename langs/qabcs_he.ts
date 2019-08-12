@@ -1,45 +1,45 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="he" version="2.1">
 <context>
     <name>FormAbout</name>
     <message>
         <location filename="../FormAbout.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>דו־שיח</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="131"/>
         <source>License: GPLv3+</source>
-        <translation>Licens: GPLv3+</translation>
+        <translation>רישיון: GPLv3+‎</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="208"/>
         <source>Visit web site</source>
-        <translation>Besök hemsidan</translation>
+        <translation>ביקור באתר</translation>
     </message>
     <message>
         <location filename="../FormAbout.ui" line="226"/>
         <source>Close</source>
-        <translation>Stäng</translation>
+        <translation>סגירה</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="16"/>
         <source>About</source>
-        <translation>Om</translation>
+        <translation>על אודות</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="19"/>
         <source>Version:</source>
-        <translation>Version:</translation>
+        <translation>גרסה:</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="20"/>
         <source>Date build:</source>
-        <translation>Datum för byggnation:</translation>
+        <translation>מועד בנייה:</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="21"/>
         <source>All rights reserved.</source>
-        <translation>Alla rättigheter är reserverade.</translation>
+        <translation>כל הזכויות שמורות.</translation>
     </message>
 </context>
 <context>
@@ -47,24 +47,24 @@
     <message>
         <location filename="../FormHelp.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>דו־שיח</translation>
     </message>
     <message>
         <location filename="../FormHelp.ui" line="48"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>אישור</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="12"/>
         <source>Help</source>
-        <translation>Hjälp</translation>
+        <translation>עזרה</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="16"/>
         <source>How to use:
 
 </source>
-        <translation>Så här använder du:
+        <translation>כיצד להשתמש:
 
 </translation>
     </message>
@@ -135,42 +135,42 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>דו־שיח</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
         <source>Select ABC language:</source>
-        <translation>Välj ABC-språk:</translation>
+        <translation>בחירת השפה של ABC:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
         <source>Cancel</source>
-        <translation>Avbryt</translation>
+        <translation>ביטול</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="67"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>אישור</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation>Välj språk för gränssnittet:</translation>
+        <translation>בחירת שפת המנשק:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="20"/>
         <source>Select language</source>
-        <translation>Välj språk</translation>
+        <translation>בחירת שפה</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="72"/>
         <source>Error while opening</source>
-        <translation>Fel uppstod vid öppning</translation>
+        <translation>שגיאה בפתיחה</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="79"/>
         <source>is not valid</source>
-        <translation>är inte giltigt</translation>
+        <translation>לא תקני</translation>
     </message>
 </context>
 <context>
@@ -178,7 +178,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="54"/>
         <source>Using path:</source>
-        <translation>Använder genväg:</translation>
+        <translation>נתיב בשימוש:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="69"/>
@@ -188,51 +188,51 @@
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
         <source>espeak was not found. Some features will not be available.</source>
-        <translation>espeak hittades inte. Några funktioner kommer inte finnas tillgängliga.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="131"/>
         <location filename="../mainwindow.cpp" line="132"/>
         <location filename="../mainwindow.cpp" line="853"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
-        <translation>Hitta bokstaven på tangentbordet (alfabetiskt)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="136"/>
         <location filename="../mainwindow.cpp" line="137"/>
         <location filename="../mainwindow.cpp" line="873"/>
         <source>Find the letter on the keyboard (randomly)</source>
-        <translation>Hitta bokstaven på tangentbordet (slumpartat)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="141"/>
         <location filename="../mainwindow.cpp" line="142"/>
         <source>Show foods for each letter</source>
-        <translation>Visa mat för varje bokstav</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="146"/>
         <location filename="../mainwindow.cpp" line="147"/>
         <source>Show animals for each letter</source>
-        <translation>Visa djur för varje bokstav</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="151"/>
         <location filename="../mainwindow.cpp" line="152"/>
         <source>Show musical instruments for each letter</source>
-        <translation>Visa instrument för varje bokstav</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="156"/>
         <location filename="../mainwindow.cpp" line="157"/>
         <source>Show toys for each letter</source>
-        <translation>Visa leksaker för varje bokstav</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="161"/>
         <location filename="../mainwindow.cpp" line="162"/>
         <source>Sound on/off</source>
-        <translation>Ljud av/på</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="164"/>
@@ -244,53 +244,53 @@
         <location filename="../mainwindow.cpp" line="167"/>
         <location filename="../mainwindow.cpp" line="168"/>
         <source>Select language</source>
-        <translation>Välj språk</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
         <source>Help</source>
-        <translation>Hjälp</translation>
+        <translation>עזרה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="173"/>
         <location filename="../mainwindow.cpp" line="174"/>
         <source>About qABCs</source>
-        <translation>Om qABCs</translation>
+        <translation>על אודות qABCs</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="176"/>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation>יציאה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="319"/>
         <location filename="../mainwindow.cpp" line="392"/>
         <source>Error while opening</source>
-        <translation>Fel uppstod vid öppning</translation>
+        <translation>שגיאה בפתיחה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="330"/>
         <source>is not valid</source>
-        <translation>är inte giltigt</translation>
+        <translation>לא תקני</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="476"/>
         <source>Error str:</source>
-        <translation>Fel-str:</translation>
+        <translation>שגיאת מחרוזת:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="753"/>
         <location filename="../mainwindow.cpp" line="801"/>
         <source>CONGRATS!</source>
-        <translation>GRATTIS!</translation>
+        <translation>ברכות!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="754"/>
         <location filename="../mainwindow.cpp" line="802"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
-        <translation>Tryck på &quot;ENTER&quot; för att spela igen</translation>
+        <translation>יש ללחוץ על „ENTER” כדי לשחק שוב</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="862"/>
@@ -300,47 +300,47 @@
         <location filename="../mainwindow.cpp" line="975"/>
         <location filename="../mainwindow.cpp" line="995"/>
         <source>ABC is not loaded</source>
-        <translation>ABC är inte laddat</translation>
+        <translation>ABC לא נטען</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="925"/>
         <source>Press a Key to See an Animal</source>
-        <translation>Tryck en tangent för att se ett djur</translation>
+        <translation>נא ללחוץ על מקש כדי לראות חיה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="939"/>
         <source>Animals</source>
-        <translation>Djur</translation>
+        <translation>חיות</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="945"/>
         <source>Press a Key to See a Food</source>
-        <translation>Var vänlig tryck på en tangent för att se en maträtt</translation>
+        <translation>נא ללחוץ על מקש כדי לראות מאכל</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="961"/>
         <source>Food</source>
-        <translation>Mat</translation>
+        <translation>אוכל</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="966"/>
         <source>Press a Key to See an Instrument</source>
-        <translation type="unfinished"/>
+        <translation>נא ללחוץ על מקש כדי לראות כלי נגינה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="980"/>
         <source>Music</source>
-        <translation>Musik</translation>
+        <translation>מוזיקה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="986"/>
         <source>Press a Key to See a Toy</source>
-        <translation type="unfinished"/>
+        <translation>נא ללחוץ על מקש כדי לראות צעצוע</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1000"/>
         <source>Toys</source>
-        <translation>Leksaker</translation>
+        <translation>צעצועים</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
@@ -350,7 +350,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1089"/>
         <source>espeak was found:</source>
-        <translation>espeak hittade:</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -359,12 +359,12 @@
         <location filename="../LoaderAbcFormats.cpp" line="35"/>
         <location filename="../LoaderAbcFormats.cpp" line="119"/>
         <source>Error while opening</source>
-        <translation>Fel uppstod vid öppnandet</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../LoaderAbcFormats.cpp" line="49"/>
         <source>is not valid</source>
-        <translation>är inte giltigt</translation>
+        <translation>לא תקני</translation>
     </message>
 </context>
 </TS>
