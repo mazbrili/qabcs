@@ -235,6 +235,11 @@ for a in $words_list
 do
   filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's| |_|g'`
   text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's|_| |g'`
+  if [ "$api" = "true" ]
+  then
+    text=`echo "$text"|sed "s|'|-|g"`
+    echo $text
+  fi
   # adding ◌́  for stress, - for pause, fixing pronounce
   case $lang in
      en)
