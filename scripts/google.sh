@@ -250,9 +250,6 @@ do
   fi
   # adding ◌́  for stress, - for pause, fixing pronounce
   case $lang in
-     en)
-       text=`echo "$text"|sed "s|ipu|eepoo|g"`
-       ;;
      de)
        text=`echo "$text"|sed "s|x-keks|x-kiks|g"`
        text=`echo "$text"|sed "s|umka|oomka|g"`
@@ -336,6 +333,26 @@ then
     name="pl-PL-Standard-B"
     filename="ipu"
     text="ipu"
+    rm -f ../abcs/$lang0/sounds/words/$filename.$format
+    rm -f ../abcs/$lang0/sounds/words/$filename.$output
+    get_sound "words"
+fi
+if [ "$lang" = "en" ]
+then
+    lang="ru"
+    languageCode="ru-RU"
+    name="ru-RU-Standard-A"
+    filename="ipu"
+    text="ипу"
+    rm -f ../abcs/$lang0/sounds/words/$filename.$format
+    rm -f ../abcs/$lang0/sounds/words/$filename.$output
+    get_sound "words"
+
+    lang="fr"
+    languageCode="fr-FR"
+    name="fr-FR-Standard-C"
+    filename="xun"
+    text="xun"
     rm -f ../abcs/$lang0/sounds/words/$filename.$format
     rm -f ../abcs/$lang0/sounds/words/$filename.$output
     get_sound "words"
