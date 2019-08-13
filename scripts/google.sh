@@ -281,6 +281,34 @@ do
        text=`echo "$text"|sed "s|подъёлочник|подъё́лочник|g"`
        text=`echo "$text"|sed "s|цуккини|цукини|g"`
        ;;
+     uk)
+       #acute accent does not work with uk yet
+       text=`echo "$text"|sed "s|аґрус|а́ґрус|g"`
+       text=`echo "$text"|sed "s|горох|горо́х|g"`
+       text=`echo "$text"|sed "s|дзиґа|дзи́ґа|g"`
+       text=`echo "$text"|sed "s|еклер|екле́р|g"`
+       text=`echo "$text"|sed "s|єнот|єно́т|g"`
+       text=`echo "$text"|sed "s|жаба|жа́ба|g"`
+       text=`echo "$text"|sed "s|зурна|зурна́|g"`
+       text=`echo "$text"|sed "s|iрга|iрга́|g"`
+       text=`echo "$text"|sed "s|йоухікко|йоухíкко|g"`
+       text=`echo "$text"|sed "s|магніт|магнíт|g"`
+       text=`echo "$text"|sed "s|маракаси|мара́каси|g"`
+       text=`echo "$text"|sed "s|мольберт|мольбе́рт|g"`
+       text=`echo "$text"|sed "s|незнайка|незна́йка|g"`
+       text=`echo "$text"|sed "s|носоріг|носорíг|g"`
+       text=`echo "$text"|sed "s|орган|орга́н|g"`
+       text=`echo "$text"|sed "s|пелікан|пеліка́н|g"`
+       text=`echo "$text"|sed "s|редис|реди́с|g"`
+       text=`echo "$text"|sed "s|ріжок|ріжо́к|g"`
+       text=`echo "$text"|sed "s|тритон|трито́н|g"`
+       text=`echo "$text"|sed "s|труба|труба́|g"`
+       text=`echo "$text"|sed "s|халва|халва́|g"`
+       text=`echo "$text"|sed "s|цукіні|цукíні|g"`
+       text=`echo "$text"|sed "s|чаньго|ча́ньго|g"`
+       text=`echo "$text"|sed "s|шарманка|шарма́нка|g"`
+       text=`echo "$text"|sed "s|шимпанзе|шимпанзе́|g"`
+       ;;
   esac
   get_sound "words"
 done
