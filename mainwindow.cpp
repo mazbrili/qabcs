@@ -614,13 +614,13 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
 
 
     if (lblAbcPicture->height()>maxHeight){
-        double deltaH = (double)lblAbcPicture->height()/(double)maxHeight;
+        double deltaH = static_cast<double>(lblAbcPicture->height())/static_cast<double>(maxHeight);
         lblAbcPicture->setFixedWidth(lblAbcPicture->width()/deltaH);
         lblAbcPicture->setFixedHeight(maxHeight);
     }
 
     if (lblAbcPicture->width()>maxWidth){
-        double deltaW = (double)lblAbcPicture->width()/(double)maxWidth;
+        double deltaW = static_cast<double>(lblAbcPicture->width())/static_cast<double>(maxWidth);
         lblAbcPicture->setFixedWidth(maxWidth);
         lblAbcPicture->setFixedHeight(lblAbcPicture->height()/deltaW);
     }
