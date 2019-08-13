@@ -244,12 +244,12 @@ for a in $words_list
 do
   filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's| |_|g'`
   text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's|_| |g'`
-  if [ "$api" = "true" ]
-  then
-    text=${text//\'/\\\'}
-  fi
   # adding ◌́  for stress, - for pause, fixing pronounce
   case $lang in
+     en)
+       text=`echo "$text"|sed "s|quena|qweena|g"`
+       text=`echo "$text"|sed "s|yangqin|yang ch'in|g"`
+       ;;
      de)
        text=`echo "$text"|sed "s|x-keks|x-kiks|g"`
        text=`echo "$text"|sed "s|umka|oomka|g"`
@@ -310,6 +310,10 @@ do
        text=`echo "$text"|sed "s|шимпанзе|шимпанзе́|g"`
        ;;
   esac
+  if [ "$api" = "true" ]
+  then
+    text=${text//\'/\\\'}
+  fi
   get_sound "words"
 done
 
