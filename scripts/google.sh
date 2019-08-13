@@ -237,8 +237,7 @@ do
   text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's|_| |g'`
   if [ "$api" = "true" ]
   then
-    text=`echo "$text"|sed "s|'|-|g"`
-    echo $text
+    text=${text//\'/\\\'}
   fi
   # adding ◌́  for stress, - for pause, fixing pronounce
   case $lang in
