@@ -128,7 +128,7 @@ string=""
 # use words from other dictionaries or not
 if [ "$intersection" = "true" ]
 then
-  if [ ! -z `find abcs/$lang -name *.properties` ]
+  if [ ! -z "`find abcs/$lang -name *.properties`" ]
   then
     string="`cat abcs/$lang/abc*.properties|grep -v "^#"|awk '{print tolower($0)}'|cut -d ":" -f 2|cut -d "=" -f 4`"
   fi
@@ -160,7 +160,12 @@ do
 done
 
 # sort file by modify it on 2 columns and sort by 2nd column, modify back on using 1 column
-cat $result_file|sed "s|:|: |g"|sort -k 2|sed "s|: |:|g" > $result_file.sorted
+if [ -f "$result_file" ]
+then
+  cat $result_file|sed "s|:|: |g"|sort -k 2|sed "s|: |:|g" > $result_file.sorted
+else
+  touch $result_file.sorted
+fi
 
 # for all letters of abc
 for ((i=0; $i<${#abc}; i=$(($i+1))))
