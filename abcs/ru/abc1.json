@@ -202,7 +202,7 @@
 		      "noises": "hedgehog.ogg"
 		},
 		"food": {
-		      "pic": "food/ruff.png",
+		      "pic": "food/ruffe.png",
 		      "name": "ЁРШ",
 		      "espeak_words": "ЁРШ"
 		},
@@ -889,7 +889,7 @@
 		      "noises": "topshuur.ogg"
 		},
 		"toys": {
-		      "pic": "toys/yi.png",
+		      "pic": "toys/steam_locomotive.png",
 		      "name": "Ы",
 		      "espeak_words": "Ы",
 		      "noises": "train.ogg"

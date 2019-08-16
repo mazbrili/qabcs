@@ -35,7 +35,7 @@ do
     noise=$word
     # some words have noises from other words
     noise=`echo $noise|sed "s|york|dog|g"`
-    noise=`echo $noise|sed "s|yi|train|g"`
+    noise=`echo $noise|sed "s|steam_locomotive|train|g"`
     noise=`echo $noise|sed "s|instrument|guitar|g"`
     if [ -f "abcs/all/noises/$noise.ogg" ]
     then
