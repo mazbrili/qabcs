@@ -1,6 +1,7 @@
 #include "Collection.h"
 
 #include <QFile>
+#include <QFileInfo>
 #include <QDebug>
 
 #include "config_qabcs.h"
@@ -114,7 +115,8 @@ QPixmap Collection::getPixmap(QString letter){
     }
 
     for (QString filename:listCombinationspaths){
-        if (QFile::exists(filename)) return QPixmap(filename);
+        QFileInfo fileInfo(filename);
+        if (QFile::exists(filename) and fileInfo.isFile()) return QPixmap(filename);
     }
 
     return QPixmap();
