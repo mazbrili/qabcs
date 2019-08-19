@@ -78,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
         QMessageBox::critical(this,"qABCs",tr("espeak was not found. Some features will not be available."));
     }
 
-    setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc.json").toString());
+    setAbcLang(confSettings->value("abc/language","en").toString(),confSettings->value("abc/filename","abc1.json").toString());
 }
 
 MainWindow::~MainWindow(){
