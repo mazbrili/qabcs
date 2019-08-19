@@ -294,6 +294,31 @@ do
        text=`echo "$text"|sed "s|подъязок|подъйазок|g"`
        text=`echo "$text"|sed "s|подъёлочник|подъё́лочник|g"`
        text=`echo "$text"|sed "s|цуккини|цукини|g"`
+       text=`echo "$text"|sed "s|аэолин|аэоли́н|g"`
+       text=`echo "$text"|sed "s|белка|бе́лка|g"`
+       text=`echo "$text"|sed "s|васаби|васа́би|g"`
+       text=`echo "$text"|sed "s|вибраслэп|вибраслэ́п|g"`
+       text=`echo "$text"|sed "s|видеонаблюдение|видео-наблюдение|g"`
+       text=`echo "$text"|sed "s|воппер|во́ппер|g"`
+       text=`echo "$text"|sed "s|дулзайна|дулза́йна|g"`
+       text=`echo "$text"|sed "s|идефикс|иде́фикс|g"`
+       text=`echo "$text"|sed "s|йора|йё́ра|g"`
+       text=`echo "$text"|sed "s|казу|казу́|g"`
+       text=`echo "$text"|sed "s|квазимодо|квазимо́до|g"`
+       text=`echo "$text"|sed "s|кетчуп|ке́тчуп|g"`
+       text=`echo "$text"|sed "s|княженика|княжени́ка|g"`
+       text=`echo "$text"|sed "s|ксифактин|ксифакти́н|g"`
+       text=`echo "$text"|sed "s|ксоубас|ксо́убас|g"`
+       text=`echo "$text"|sed "s|лазанья|лаза́нья|g"`
+       text=`echo "$text"|sed "s|перепел|пе́репел|g"`
+       text=`echo "$text"|sed "s|тальятелле|тальяте́лле|g"`
+       text=`echo "$text"|sed "s|уакари|уака́ри|g"`
+       text=`echo "$text"|sed "s|урсула|у́рсула|g"`
+       text=`echo "$text"|sed "s|флейта бёма|флейта бё́ма|g"`
+       text=`echo "$text"|sed "s|цельнозерновой хлеб|цельно-зерновой хлеб|g"`
+       text=`echo "$text"|sed "s|шалюмо|шалюмо́|g"`
+       text=`echo "$text"|sed "s|юринг|ю́ринг|g"`
+       text=`echo "$text"|sed "s|янорнис|яно́рнис|g"`
        ;;
      uk)
        #acute accent does not work with uk yet
@@ -350,27 +375,49 @@ then
     name="uk-UA-Standard-A"
     filename="ы"
     text="и"
-    rm -f ../abcs/$lang0/sounds/alpha/$filename.$format
-    rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
-    get_sound "alpha"
+    if [ -f "../abcs/$lang0/sounds/alpha/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/alpha/$filename.$format
+      rm -f ../abcs/$lang0/sounds/alpha/$filename.$output
+      get_sound "alpha"
+    fi
 
     lang="uk"
     languageCode="uk-UA"
     name="uk-UA-Standard-A"
     filename="ы"
     text="и"
-    rm -f ../abcs/$lang0/sounds/words/$filename.$format
-    rm -f ../abcs/$lang0/sounds/words/$filename.$output
-    get_sound "words"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
 
     lang="uk"
     languageCode="uk-UA"
     name="uk-UA-Standard-A"
     filename="ыых"
     text="и-их"
-    rm -f ../abcs/$lang0/sounds/words/$filename.$format
-    rm -f ../abcs/$lang0/sounds/words/$filename.$output
-    get_sound "words"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
+
+    lang="uk"
+    languageCode="uk-UA"
+    name="uk-UA-Standard-A"
+    filename="ямс"
+    text="ямс"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
+
 fi
 if [ "$lang" = "de" ]
 then
@@ -379,9 +426,12 @@ then
     name="pl-PL-Standard-B"
     filename="ipu"
     text="ipu"
-    rm -f ../abcs/$lang0/sounds/words/$filename.$format
-    rm -f ../abcs/$lang0/sounds/words/$filename.$output
-    get_sound "words"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
 fi
 if [ "$lang" = "en" ]
 then
@@ -390,18 +440,24 @@ then
     name="ru-RU-Standard-A"
     filename="ipu"
     text="ипу"
-    rm -f ../abcs/$lang0/sounds/words/$filename.$format
-    rm -f ../abcs/$lang0/sounds/words/$filename.$output
-    get_sound "words"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
 
     lang="fr"
     languageCode="fr-FR"
     name="fr-FR-Standard-C"
     filename="xun"
     text="xun"
-    rm -f ../abcs/$lang0/sounds/words/$filename.$format
-    rm -f ../abcs/$lang0/sounds/words/$filename.$output
-    get_sound "words"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
 fi
 
 #clean up
