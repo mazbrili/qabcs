@@ -39,6 +39,10 @@ FormHelp::FormHelp(QWidget *parent) :
         Press the spacebar to hear the name of the pictured object.\n\
         You can turn on/off sounds by pressing on the \"Sound on/off\"\n\
         icon.\n")+
+      tr("\
+        Click on the letter to hear pronunciation of the letter.\n\
+        Click on the word to hear pronunciation of the word.\n\
+        Click on the pictured object to hear the sound effect.\n")+
     "\n"+
       tr("Select ABC language:\n\
         You can change ABC language by pressing on the \"Select\n\
