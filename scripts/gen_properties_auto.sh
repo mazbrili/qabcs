@@ -164,7 +164,10 @@ if [ -f "$result_file" ]
 then
   cat $result_file|sed "s|:|: |g"|sort -k 2|sed "s|: |:|g" > $result_file.sorted
 else
-  touch $result_file.sorted
+  rm -rf abcs/all/pics/dummy
+  popd
+  echo "Nothing to do!"
+  exit 0
 fi
 
 # for all letters of abc
