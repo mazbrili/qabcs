@@ -28,12 +28,14 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
 #if defined(_WIN32)
     QCoreApplication::instance()->processEvents();
 
+    qDebug() << "[DEBUG] play " << fileInfo.absoluteFilePath();
+
     if (async){
         playerBackgroud->stop();
         playerBackgroud->setMedia(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
         playerBackgroud->play();
     }else{
-        SndPlayer player(0,fileInfo.absoluteFilePath());
+        SndPlayer player(nullptr,fileInfo.absoluteFilePath());
         player.wait();
     }
 #else

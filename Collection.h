@@ -44,9 +44,10 @@ class Collection{
 
         LETTER_CONFIG getLetterConfig(QString letter);
 
-        void playSoundPicture(QString letter);
+        void playSoundPicture(QString letter,bool playNoises=true);
+        void playSoundNoises(QString letter);
 
-    private:
+private:
         QMap<QString,LETTER_CONFIG> listLetters;
 
         QString _abcLanguage;

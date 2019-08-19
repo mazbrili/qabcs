@@ -100,19 +100,24 @@ void MainWindow::initGUI(){
     lblAbcPicture =  new QLabel(this);
     lblAbcPicture->setGeometry(QRect(130, 20, 290, 290));
     lblAbcPicture->setScaledContents(true);
+    lblAbcPicture->installEventFilter(this);
     //lblAbcPicture->setFrameShape(QFrame::Box);
 
     lblAbcText = new QLabel(this);
     lblAbcText->setFont(fontSizeText);
     lblAbcText->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
     lblAbcText->setGeometry(0, this->height()-statusbar->height()-101, this->width(), 91);
+    lblAbcText->installEventFilter(this);
     //lblAbcText->setFrameShape(QFrame::Box);
 
     lblAbcLetter = new QLabel(this);
     lblAbcLetter->setFont(fontSizeLetter);
     lblAbcLetter->setAlignment(Qt::AlignCenter);
     lblAbcLetter->setGeometry(0,lblAbcText->y()-50,this->width(),101);
+    lblAbcLetter->installEventFilter(this);
     //lblAbcLetter->setFrameShape(QFrame::Box);
+
+    lblAbcText->stackUnder(lblAbcLetter);
 
     blockForm = new QLabel(this);
     blockForm->setGeometry(0,0,this->width(),this->height());
@@ -724,6 +729,36 @@ int MainWindow::gameRandomGenerateNextIndex(){
     listCollections["rand"]->setLetter(letter,currentLanguageAbc,listLettersGameRand.at(gameRandomCurrentIndex));
 
     return indexLetter;
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event){
+    if (event->type() == QEvent::MouseButtonRelease){
+
+        if (obj==lblAbcPicture){
+            if ((typeGame==TYPE_ABC or typeGame==TYPE_RAND) and gameAbcFinish==true){
+                return QMainWindow::eventFilter(obj, event);
+            }
+
+            if (soundStatus){
+                listCollections[typeGameToString(typeGame)]->playSoundNoises(listLetters.at(currentIndexLetter).letter);
+            }
+        }
+
+        if (obj==lblAbcLetter){
+            if (!gameAbcFinish and soundStatus){
+                playSoundLetter(listLetters.at(currentIndexLetter).letter,false);
+            }
+        }
+
+        if (obj==lblAbcText){
+            if (!gameAbcFinish and soundStatus) {
+                listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter,false);
+            }
+        }
+
+    }
+
+     return QMainWindow::eventFilter(obj, event);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event) {

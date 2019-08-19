@@ -132,6 +132,9 @@ class MainWindow : public QMainWindow {
         QMap<QWidget*,QMap<QString,QString>> listWidgetsRetranslateUi;
         QMap<QAction*,QMap<QString,QString>> listActionsRetranslateUi;
 
+    private:
+        bool eventFilter(QObject *obj, QEvent *event);
+
     protected:
        virtual void keyPressEvent(QKeyEvent *event);
 

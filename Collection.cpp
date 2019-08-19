@@ -126,7 +126,7 @@ LETTER_CONFIG Collection::getLetterConfig(QString letter){
     return listLetters[letter];
 }
 
-void Collection::playSoundPicture(QString letter){
+void Collection::playSoundPicture(QString letter, bool playNoises){
     QString speak_method = (listLetters[letter].speak_method.isEmpty()) ? _speak_method : listLetters[letter].speak_method;
     QString espeak_params = (listLetters[letter].espeak_params.isEmpty()) ? _espeak_params : listLetters[letter].espeak_params;   
 
@@ -167,10 +167,14 @@ void Collection::playSoundPicture(QString letter){
     }
 
     // play noises
+    if (playNoises) playSoundNoises(letter);
+}
+
+void Collection::playSoundNoises(QString letter){
+    // play noises
     if (!listLetters[letter].noises.isEmpty()){
         QString folderNoises =  QString(GLOBAL_PATH_USERDATA)+"/abcs/all/noises";
         QString filename = SoundEngine::findSoundfile(folderNoises,listLetters[letter].noises.toLower());
         SoundEngine::playSoundFromFile(filename);
     }
-
 }
