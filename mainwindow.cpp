@@ -734,28 +734,27 @@ int MainWindow::gameRandomGenerateNextIndex(){
 bool MainWindow::eventFilter(QObject *obj, QEvent *event){
     if (event->type() == QEvent::MouseButtonRelease){
 
-        if (obj==lblAbcPicture){
+        if (obj==lblAbcPicture or obj==lblAbcLetter or obj==lblAbcText){
             if ((typeGame==TYPE_ABC or typeGame==TYPE_RAND) and gameAbcFinish==true){
                 return QMainWindow::eventFilter(obj, event);
             }
 
-            if (soundStatus){
+            if (!soundStatus or currentIndexLetter==-1){
+                return QMainWindow::eventFilter(obj, event);
+            }
+
+
+            if (obj==lblAbcPicture){
                 listCollections[typeGameToString(typeGame)]->playSoundNoises(listLetters.at(currentIndexLetter).letter);
             }
-        }
-
-        if (obj==lblAbcLetter){
-            if (!gameAbcFinish and soundStatus){
+            if (obj==lblAbcLetter){
                 playSoundLetter(listLetters.at(currentIndexLetter).letter,false);
             }
-        }
-
-        if (obj==lblAbcText){
-            if (!gameAbcFinish and soundStatus) {
+            if (obj==lblAbcText){
                 listCollections[typeGameToString(typeGame)]->playSoundPicture(listLetters.at(currentIndexLetter).letter,false);
             }
-        }
 
+        }
     }
 
      return QMainWindow::eventFilter(obj, event);
