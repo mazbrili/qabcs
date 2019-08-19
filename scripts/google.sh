@@ -262,6 +262,7 @@ do
        text=`echo "$text"|sed "s|walkie-talkie|łoki-toki|g"`
        text=`echo "$text"|sed "s|kastaniety|kasta-niety|g"`
        text=`echo "$text"|sed "s|luwers|luvers|g"`
+       text=`echo "$text"|sed "s|ćwierć dolara|ćwierć dollara|g"`
        ;;
      de)
        text=`echo "$text"|sed "s|x-keks|x-kiks|g"`
