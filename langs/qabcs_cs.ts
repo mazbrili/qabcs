@@ -24,7 +24,7 @@
     <message>
         <location filename="../FormAbout.cpp" line="16"/>
         <source>About</source>
-        <translation>O ...</translation>
+        <translation>O programu...</translation>
     </message>
     <message>
         <location filename="../FormAbout.cpp" line="19"/>
@@ -75,9 +75,9 @@
         different modes. Use the &quot;Tab&quot; key to toggle between modes,
         or click on an icon with the mouse.
 </source>
-        <translation>Výběr módu:
+        <translation>Výběr režimu:
 Šest ikon na levé straně panelu nástrojů nabízí šest módů. 
-Pro jejich přepnutí použij klávesu &quot;TAB&quot; nebo klikni myší na ikonu.
+Pro jejich přepnutí použijte klávesu &quot;TAB&quot; nebo klikněte myší na ikonu.
 </translation>
     </message>
     <message>
@@ -89,8 +89,8 @@ Pro jejich přepnutí použij klávesu &quot;TAB&quot; nebo klikni myší na iko
         back one letter. Finish by finding all the letters.
 </source>
         <translation>Abecední mód:
-První ikona nalevo je Abecední mód. Stiskni takové písmeno na klávesnici, jaké vidíš na obrazovce. Písmena se budou zobrazovat v abecedním pořadí.
-Stiskni &quot;Backspace&quot; pro návrat o písmeno zpět. Najdi všechna písmena! 
+První ikona nalevo je Abecední mód. Stiskněte takové písmeno na klávesnici, jaké vidíte na obrazovce. Písmena se budou zobrazovat v abecedním pořadí.
+Stiskněte &quot;Backspace&quot; pro návrat o písmeno zpět. Najděte všechna písmena! 
 </translation>
     </message>
     <message>
@@ -102,7 +102,7 @@ Stiskni &quot;Backspace&quot; pro návrat o písmeno zpět. Najdi všechna písm
         Finish by finding all the letters.
 </source>
         <translation>Náhodný mód:
-Druhá ikona zleva je Náhodný mód. Stiskni takové písmeno na klávesnici, jaké vidíš na obrazovce. Písmena se budou zobrazovat v náhodném pořadí.Stiskni &quot;Backspace&quot; pro návrat o písmeno zpět. Najdi všechna písmena!
+Druhá ikona zleva je Náhodný mód. Stiskněte takové písmeno na klávesnici, jaké vidíte na obrazovce. Písmena se budou zobrazovat v náhodném pořadí.Stiskni &quot;Backspace&quot; pro návrat o písmeno zpět. Najděte všechna písmena!
 </translation>
     </message>
     <message>
@@ -111,8 +111,8 @@ Druhá ikona zleva je Náhodný mód. Stiskni takové písmeno na klávesnici, j
         In all other modes, simply press a key on the keyboard to see
         a letter with a related image and description.
 </source>
-        <translation>Ostatní módy:
-V ostatních módech jednoduše stiskni klávesu s písmenem, které souvisí s obrázkem, zvukem nebo popisem.
+        <translation>Ostatní režimy:
+V ostatních režimech jednoduše stiskněte klávesu s písmenem, které souvisí s obrázkem, zvukem nebo popisem.
 </translation>
     </message>
     <message>
@@ -123,7 +123,7 @@ V ostatních módech jednoduše stiskni klávesu s písmenem, které souvisí s 
         icon.
 </source>
         <translation>Zvuky:
-Stiskni mezerník pro poslech názvu objektu na obrázku. Zvuky můžeš zapnout nebo vypnout pomocí ikony na ovládacím panelu.
+Stiskněte mezerník pro poslech názvu objektu na obrázku. Zvuky můžete zapnout nebo vypnout pomocí ikony na ovládacím panelu.
 </translation>
     </message>
     <message>
@@ -133,7 +133,7 @@ Stiskni mezerník pro poslech názvu objektu na obrázku. Zvuky můžeš zapnout
         language&quot; icon. Default language is American English.
 </source>
         <translation>Volba ABC jazyka:
-Můžeš si změnit ABC jazyk pomocí ikony &quot;Vyber jazyk&quot;. Výchozí jazyk je americká angličtina.
+Můžete si změnit ABC jazyk pomocí ikony &quot;Vybrat jazyk&quot;. Výchozí jazyk je americká angličtina.
 </translation>
     </message>
     <message>
@@ -142,7 +142,7 @@ Můžeš si změnit ABC jazyk pomocí ikony &quot;Vyber jazyk&quot;. Výchozí j
         You can switch from typing of letters on using left/right keys
         instead.</source>
         <translation>Psaní zapnout/vypnout:
-Můžeš si přepnout ovládání programu na šipky doleva a doprava místo psaní písmen.</translation>
+Můžete si přepnout ovládání programu na šipky doleva a doprava místo psaní písmen.</translation>
     </message>
 </context>
 <context>
@@ -155,7 +155,7 @@ Můžeš si přepnout ovládání programu na šipky doleva a doprava místo psa
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
         <source>Select ABC language:</source>
-        <translation>Vyber ABC jazyk:</translation>
+        <translation>Vyberte ABC jazyk:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
@@ -170,12 +170,12 @@ Můžeš si přepnout ovládání programu na šipky doleva a doprava místo psa
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation>Vyber jazyk grafického rozhraní:</translation>
+        <translation>Vyberte jazyk grafického rozhraní:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="20"/>
         <source>Select language</source>
-        <translation>Vyber jazyk</translation>
+        <translation>Vybrat jazyk</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="72"/>
@@ -198,7 +198,7 @@ Můžeš si přepnout ovládání programu na šipky doleva a doprava místo psa
     <message>
         <location filename="../mainwindow.cpp" line="69"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
-        <translation>příkaz přehraj v sox balíčku nenalezen. Zvuky budou vypnuty.</translation>
+        <translation>příkaz pro přehrání v sox balíčku nenalezen. Zvuky budou vypnuty.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
@@ -259,7 +259,7 @@ Můžeš si přepnout ovládání programu na šipky doleva a doprava místo psa
         <location filename="../mainwindow.cpp" line="167"/>
         <location filename="../mainwindow.cpp" line="168"/>
         <source>Select language</source>
-        <translation>Vyber jazyk</translation>
+        <translation>Vybrat jazyk</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="170"/>
@@ -299,7 +299,7 @@ Můžeš si přepnout ovládání programu na šipky doleva a doprava místo psa
         <location filename="../mainwindow.cpp" line="753"/>
         <location filename="../mainwindow.cpp" line="801"/>
         <source>CONGRATS!</source>
-        <translation>GRATULUJEME!</translation>
+        <translation>BLAHOPŘEJEME!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="754"/>
