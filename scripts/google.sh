@@ -250,6 +250,13 @@ do
        text=`echo "$text"|sed "s|quena|qweena|g"`
        text=`echo "$text"|sed "s|yangqin|yang ch'in|g"`
        ;;
+     fr)
+       text=`echo "$text"|sed "s|dulzaina|doulzaina|g"`
+       text=`echo "$text"|sed "s|ipu|ipou|g"`
+       text=`echo "$text"|sed "s|yochin|yotchine|g"`
+       text=`echo "$text"|sed "s|yueqin|uétchine|g"`
+       text=`echo "$text"|sed "s|yangqin|yangchin|g"`
+       ;;
      pl)
        text=`echo "$text"|sed "s|zozulka|zo-zulka|g"`
        text=`echo "$text"|sed "s|walkie-talkie|łoki-toki|g"`
