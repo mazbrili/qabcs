@@ -311,13 +311,16 @@ do
        text=`echo "$text"|sed "s|ксоубас|ксо́убас|g"`
        text=`echo "$text"|sed "s|лазанья|лаза́нья|g"`
        text=`echo "$text"|sed "s|перепел|пе́репел|g"`
+       text=`echo "$text"|sed "s|равел|раве́л|g"`
        text=`echo "$text"|sed "s|тальятелле|тальяте́лле|g"`
        text=`echo "$text"|sed "s|уакари|уака́ри|g"`
        text=`echo "$text"|sed "s|урсула|у́рсула|g"`
        text=`echo "$text"|sed "s|флейта бёма|флейта бё́ма|g"`
        text=`echo "$text"|sed "s|цельнозерновой хлеб|цельно-зерновой хлеб|g"`
        text=`echo "$text"|sed "s|шалюмо|шалюмо́|g"`
+       text=`echo "$text"|sed "s|эстрагон|э-страгон|g"`
        text=`echo "$text"|sed "s|юринг|ю́ринг|g"`
+       text=`echo "$text"|sed "s|якульт|йаку́льт|g"`
        text=`echo "$text"|sed "s|янорнис|яно́рнис|g"`
        ;;
      uk)
@@ -411,6 +414,42 @@ then
     name="uk-UA-Standard-A"
     filename="ямс"
     text="ямс"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
+
+    lang="uk"
+    languageCode="uk-UA"
+    name="uk-UA-Standard-A"
+    filename="воппер"
+    text="воппєр"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
+
+    lang="uk"
+    languageCode="uk-UA"
+    name="uk-UA-Standard-A"
+    filename="моноцикл"
+    text="моноцикл"
+    if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
+    then
+      rm -f ../abcs/$lang0/sounds/words/$filename.$format
+      rm -f ../abcs/$lang0/sounds/words/$filename.$output
+      get_sound "words"
+    fi
+
+    lang="uk"
+    languageCode="uk-UA"
+    name="uk-UA-Standard-A"
+    filename="лиса"
+    text="лi-са"
     if [ -f "../abcs/$lang0/sounds/words/$filename.$output" ]
     then
       rm -f ../abcs/$lang0/sounds/words/$filename.$format
