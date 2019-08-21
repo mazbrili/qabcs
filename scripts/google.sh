@@ -210,7 +210,7 @@ if [ ! -z `find ../abcs/$lang0 -name *.json` ]
 then
   if [ $file_format = "json" ]
   then
-    words_list=`cat ../abcs/$lang0/abc*.json|grep \"name\"|cut -d ":" --fields=2 |cut -d "\"" --fields=2|awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
+    words_list=`cat ../abcs/$lang0/abc*.json|grep \"name\"|cut -d ":" --fields=2 |cut -d "\"" --fields=2|awk '{print tolower($0)}'|sed "s| |YYY|g"|sort -u`
     letters_list=`cat ../abcs/$lang0/abc*.json|grep -v espeak_words|grep -v visible|grep -v sound_letter|grep -v general|grep -v language |grep -v author|grep -v speak_method |grep -v espeak_params|grep -v view_letters|grep -v typing| grep -v letters | grep -v misc |grep -v pic | grep -v name |grep -v noises |grep -v food | grep -v animals | grep -v instrument | grep -v toys | grep -v inheritsFrom |awk '{print tolower($0)}'|sort -u | cut -d "\"" --fields=2|grep -v '\{'|grep -v '\}' | grep -v '\[' |grep -v '\]'| sed s/' '//g|grep -v "^$"`
   fi
 fi
@@ -219,8 +219,8 @@ if [ ! -z `find ../abcs/$lang0 -name *.properties` ]
 then
   if [ $file_format = "properties" ]
   then
-    words_list=`cat ../abcs/$lang0/abc*.properties|grep -v '\[missing\]'|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params|grep -v view_letters|grep -v speak_method|grep -v typing| grep -v "#"|cut -d "=" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
-    letters_list=`cat ../abcs/$lang0/abc*.properties|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params|grep -v view_letters|grep -v speak_method|grep -v typing| grep -v "#"|cut -d "=" --fields=1 | cut -d ":" --fields=2 |awk '{print tolower($0)}'|sed "s| |yyy|g"|sort -u`
+    words_list=`cat ../abcs/$lang0/abc*.properties|grep -v '\[missing\]'|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params|grep -v view_letters|grep -v speak_method|grep -v typing| grep -v "#"|cut -d "=" --fields=2 |awk '{print tolower($0)}'|sed "s| |YYY|g"|sort -u`
+    letters_list=`cat ../abcs/$lang0/abc*.properties|grep -v language|grep -v visible| grep -v inheritsFrom | grep -v author|grep -v espeak_params|grep -v view_letters|grep -v speak_method|grep -v typing| grep -v "#"|cut -d "=" --fields=1 | cut -d ":" --fields=2 |awk '{print tolower($0)}'|sed "s| |YYY|g"|sort -u`
   fi
 fi
 
@@ -242,13 +242,26 @@ rm -f ../abcs/$lang0/sounds/words/*.$output
 
 for a in $words_list
 do
-  filename=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's| |_|g'`
-  text=`echo "$a"|cut -d "=" --fields=1|sed 's|yyy| |g'|sed 's|_| |g'`
+  filename=`echo "$a"|cut -d "=" --fields=1|sed 's|YYY| |g'|sed 's| |_|g'`
+  text=`echo "$a"|cut -d "=" --fields=1|sed 's|YYY| |g'|sed 's|_| |g'`
   # adding ◌́  for stress, - for pause, fixing pronounce
   case $lang in
      en)
        text=`echo "$text"|sed "s|quena|qweena|g"`
        text=`echo "$text"|sed "s|yangqin|yang ch'in|g"`
+       text=`echo "$text"|sed "s|emelya|yemyelya|g"`
+       text=`echo "$text"|sed "s|guanaco|guanako|g"`
+       text=`echo "$text"|sed "s|iotshin|yot ch'in|g"`
+       text=`echo "$text"|sed "s|lirone|lironi|g"`
+       text=`echo "$text"|sed "s|oedephon|oedeephon|g"`
+       text=`echo "$text"|sed "s|rozhok|rojok|g"`
+       text=`echo "$text"|sed "s|uszka|uzhka|g"`
+       text=`echo "$text"|sed "s|yaga|yagaw|g"`
+       text=`echo "$text"|sed "s|yakult|yakoolt|g"`
+       text=`echo "$text"|sed "s|youhikko|your-hikko|g"`
+       text=`echo "$text"|sed "s|yueqin|yuee ch'in|g"`
+       text=`echo "$text"|sed "s|yupka|yoopka|g"`
+       text=`echo "$text"|sed "s|zhaleyka|zhaaleyka|g"`
        ;;
      fr)
        text=`echo "$text"|sed "s|dulzaina|doulzaina|g"`
