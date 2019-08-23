@@ -23,6 +23,9 @@ case $lang in
      en*)
        abc="abcdefghijklmnopqrstuvwxyz"
        ;;
+     el)
+       abc="αβγδεζηθικλμνξοπρστυφχψω"
+       ;;
      he)
        abc="תשרקצפעסנמלכיטחזוהדגבא"
        ;;
@@ -158,6 +161,20 @@ do
     fi
   done
 done
+
+# correcting for different written letters, but they are same
+if [ -f "langs/variants.txt" ]
+then
+   while read line
+   do
+     letter=`echo $line|cut -d "=" -f 1`
+     letter_var=`echo $line|cut -d "=" -f 2`
+     if [ ! -z "$letter_var" ]
+     then
+       sed -i "s|:$letter_var=|:$letter=|g" $result_file
+     fi
+   done < langs/variants.txt
+fi
 
 # sort file by modify it on 2 columns and sort by 2nd column, modify back on using 1 column
 if [ -f "$result_file" ]

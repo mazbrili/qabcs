@@ -41,6 +41,9 @@ case $lang in
        ssmlGender="FEMALE"
        api=true
        ;;
+     el)
+       api=false
+       ;;
      cs)
        api=false
        ;;
