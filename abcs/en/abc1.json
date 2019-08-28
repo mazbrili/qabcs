@@ -65,7 +65,8 @@
 		"toys": {
 		      "pic": "toys/balloons.png",
 		      "name": "BALLOONS",
-		      "sound_pic": "balloons.ogg"
+		      "sound_pic": "balloons.ogg",
+		      "noises": "balloons.ogg"
 		}
 	}},	
 	{"C": {
@@ -73,7 +74,8 @@
 		"misc": {
 		      "pic": "misc/clock.png",
 		      "name": "CLOCK",
-		      "sound_pic": "clock.ogg"
+		      "sound_pic": "clock.ogg",
+		      "noises": "clock.ogg"
 		},
 		"food": {
 		      "pic": "food/cherries.png",
@@ -95,7 +97,8 @@
 		"toys": {
 		      "pic": "toys/chalkboard.png",
 		      "name": "CHALKBOARD",
-		      "sound_pic": "chalkboard.ogg"
+		      "sound_pic": "chalkboard.ogg",
+		      "noises": "chalkboard.ogg"
 		}
 	}},
 	{"D": {
@@ -499,7 +502,8 @@
 		"misc": {
 		      "pic": "misc/quarter.png",
 		      "name": "QUARTER",
-		      "sound_pic": "quarter.ogg"
+		      "sound_pic": "quarter.ogg",
+		      "noises": "quarter.ogg"
 		},
 		"food": {
 		      "pic": "food/quiche.png",
@@ -552,7 +556,8 @@
 		"toys": {
 		      "pic": "toys/rocking_horse.png",
 		      "name": "ROCKING HORSE",
-		      "sound_pic": "rocking_horse.ogg"
+		      "sound_pic": "rocking_horse.ogg",
+		      "noises": "rocking_horse.ogg"
 		}
 	}},
 	{"S": {
@@ -620,7 +625,8 @@
 		"misc": {
 		      "pic": "misc/umbrella.png",
 		      "name": "UMBRELLA",
-		      "sound_pic": "umbrella.ogg"
+		      "sound_pic": "umbrella.ogg",
+		      "noises": "umbrella.ogg"
 		},
 		"food": {
 		      "pic": "food/udon.png",
