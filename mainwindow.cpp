@@ -1022,7 +1022,7 @@ void MainWindow::clickButtonGameAnimals(){
     }
 
     setLetterAndText(tr("Animals"),"");
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/turtle.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/animals.png"));
 }
 
 void MainWindow::clickButtonGameFood(){
@@ -1042,7 +1042,7 @@ void MainWindow::clickButtonGameFood(){
     }
 
 
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/hot_dog.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/food.png"));
     setLetterAndText(tr("Food"),"");
 }
 
@@ -1063,7 +1063,7 @@ void MainWindow::clickButtonGameInstrument(){
     }
 
     setLetterAndText(tr("Music"),"");
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/guitar.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/instrument.png"));
 }
 
 void MainWindow::clickButtonGameToys(){
@@ -1083,7 +1083,7 @@ void MainWindow::clickButtonGameToys(){
     }
 
     setLetterAndText(tr("Toys"),"");
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/wagon.png"));
+    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/toys.png"));
 }
 
 void MainWindow::clickButtonSound(){
