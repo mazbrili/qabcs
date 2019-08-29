@@ -85,7 +85,7 @@ void SoundEngine::playSoundFromSpeechSynthesizer(QString cmdLine, bool async){
 }
 
 QString SoundEngine::findSoundfile(QString folder,QString string){
-    QStringList listExtensionFiles = QStringList() << "wav" << "ogg" << "mp3";
+    QStringList listExtensionFiles = QStringList() << "wav" << "ogg" << "mp3" << "flac";
 
     string = string.toLower();
 
