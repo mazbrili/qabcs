@@ -119,6 +119,12 @@ case $lang in
        ssmlGender="FEMALE"
        api=true
        ;;
+     tr)
+       languageCode="tr-TR"
+       name="tr-TR-Standard-D"
+       ssmlGender="FEMALE"
+       api=true
+       ;;
      sv)
        languageCode="sv-SE"
        name="sv-SE-Standard-A"
