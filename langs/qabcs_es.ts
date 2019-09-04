@@ -64,7 +64,9 @@
         <source>How to use:
 
 </source>
-        <translation type="unfinished"/>
+        <translation>Cómo usarlo:
+
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="17"/>
@@ -73,7 +75,11 @@
         different modes. Use the &quot;Tab&quot; key to toggle between modes,
         or click on an icon with the mouse.
 </source>
-        <translation type="unfinished"/>
+        <translation>Seleccionar un modo:
+        Los seis iconos de la parte izquierda de la barra de herramientas representan los
+        diferentes modos. Usa la tecla &quot;Tabulador&quot; para cambiar entre los distintos modos,
+        o pulsa en un icono con el ratón.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="22"/>
@@ -83,7 +89,12 @@
         cycle through alphabet. Press the &quot;Backspace&quot; key to move
         back one letter. Finish by finding all the letters.
 </source>
-        <translation type="unfinished"/>
+        <translation>Modo alfabeto:
+        El primer icon ode la izquierda es el Modo alfabeto. Teclea la
+        letra del teclado que se muestra en la pantalla para
+        recorrer por el alfabeto. Pulsa la tecla &quot;Retroceso&quot; para moverte
+        una letra atrás.Termina cuando encuentres todas las letras.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="28"/>
@@ -93,7 +104,12 @@
         Press the &quot;Backspace&quot; key to move back one letter.
         Finish by finding all the letters.
 </source>
-        <translation type="unfinished"/>
+        <translation>Modo azar:
+        El segundo icono por la izquierda es el Modo azar. Pulsa la
+        letra del tecaldo que se muestre en la pantalla.
+        Pulsa la tecla &quot;Retroceso&quot; para cambiar a la letra anterior.
+        Termina cuando encuentres todas las letras.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="34"/>
@@ -101,7 +117,10 @@
         In all other modes, simply press a key on the keyboard to see
         a letter with a related image and description.
 </source>
-        <translation type="unfinished"/>
+        <translation>Otros modos:
+        En todos los restantes modos simplemente pulsa un tecla del teclado para ver
+        una letra con una imagen y una descripción relacionados.
+</translation>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="38"/>
@@ -110,22 +129,39 @@
         You can turn on/off sounds by pressing on the &quot;Sound on/off&quot;
         icon.
 </source>
-        <translation type="unfinished"/>
+        <translation>Sonidos:
+        Pulsa la barra espaciadora para oír el nombre del objeto de la imagen.
+        Puedes encender y apagar el sonido pulsando en el icono de
+        &quot;Sonido sí/no&quot;.
+</translation>
     </message>
     <message>
-        <location filename="../FormHelp.cpp" line="43"/>
-        <source>Select ABC language:
-        You can change ABC language by pressing on the &quot;Select
-        language&quot; icon. Default language is American English.
+        <location filename="../FormHelp.cpp" line="42"/>
+        <source>        Click on the letter to hear pronunciation of the letter.
+        Click on the word to hear pronunciation of the word.
+        Click on the pictured object to hear the sound effect.
 </source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../FormHelp.cpp" line="47"/>
+        <source>Select ABC language:
+        You can change ABC language by pressing on the &quot;Select
+        language&quot; icon. Default language is American English.
+</source>
+        <translation>Elegir el idioma de ABC:
+        Puedes cambiar el idioma de ABC pulsando en el icono
+        &quot;Elegir idioma&quot;. El idioma predeterminado es el inglés americano.
+</translation>
+    </message>
+    <message>
+        <location filename="../FormHelp.cpp" line="51"/>
         <source>Typing on/off:
         You can switch from typing of letters on using left/right keys
         instead.</source>
-        <translation type="unfinished"/>
+        <translation>Tecleo sí/no:
+        Puedes desactivar el tecleo de la letras para usar las flechas izquierda/derecha
+        en su lugar.</translation>
     </message>
 </context>
 <context>
@@ -138,7 +174,7 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="31"/>
         <source>Select ABC language:</source>
-        <translation type="unfinished"/>
+        <translation>Seleccionar el idioma de ABC:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.ui" line="54"/>
@@ -153,20 +189,20 @@
     <message>
         <location filename="../FormSelectLanguage.ui" line="85"/>
         <source>Select GUI language:</source>
-        <translation type="unfinished"/>
+        <translation>Seleccionar el idioma de la interfaz gráfica:</translation>
     </message>
     <message>
         <location filename="../FormSelectLanguage.cpp" line="20"/>
         <source>Select language</source>
-        <translation type="unfinished"/>
+        <translation>Seleccionar el idioma</translation>
     </message>
     <message>
-        <location filename="../FormSelectLanguage.cpp" line="72"/>
+        <location filename="../FormSelectLanguage.cpp" line="77"/>
         <source>Error while opening</source>
         <translation>Error al abrir</translation>
     </message>
     <message>
-        <location filename="../FormSelectLanguage.cpp" line="79"/>
+        <location filename="../FormSelectLanguage.cpp" line="84"/>
         <source>is not valid</source>
         <translation>no es válido</translation>
     </message>
@@ -174,188 +210,188 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="54"/>
+        <location filename="../mainwindow.cpp" line="56"/>
         <source>Using path:</source>
-        <translation type="unfinished"/>
+        <translation>Usando la ruta:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="69"/>
+        <location filename="../mainwindow.cpp" line="71"/>
         <source>the play command from the sox package was not found. Sound will be muted.</source>
-        <translation type="unfinished"/>
+        <translation>no se ha encontrado la orden &quot;play&quot; del paquete sox. No habrá sonido.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="76"/>
+        <location filename="../mainwindow.cpp" line="78"/>
         <source>espeak was not found. Some features will not be available.</source>
-        <translation type="unfinished"/>
+        <translation>no se ha encontrado espeak. Algunas características no estarán disponibles.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="131"/>
-        <location filename="../mainwindow.cpp" line="132"/>
-        <location filename="../mainwindow.cpp" line="853"/>
+        <location filename="../mainwindow.cpp" line="138"/>
+        <location filename="../mainwindow.cpp" line="139"/>
+        <location filename="../mainwindow.cpp" line="939"/>
         <source>Find the letter on the keyboard (alphabetically)</source>
-        <translation type="unfinished"/>
+        <translation>Buscar la letra en el teclado (alfabéticamente)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="136"/>
-        <location filename="../mainwindow.cpp" line="137"/>
-        <location filename="../mainwindow.cpp" line="873"/>
+        <location filename="../mainwindow.cpp" line="143"/>
+        <location filename="../mainwindow.cpp" line="144"/>
+        <location filename="../mainwindow.cpp" line="959"/>
         <source>Find the letter on the keyboard (randomly)</source>
-        <translation type="unfinished"/>
+        <translation>Buscar la letra en el teclado (al azar)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="141"/>
-        <location filename="../mainwindow.cpp" line="142"/>
+        <location filename="../mainwindow.cpp" line="148"/>
+        <location filename="../mainwindow.cpp" line="149"/>
         <source>Show foods for each letter</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar los alimentos correspondientes a cada letra</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="153"/>
+        <location filename="../mainwindow.cpp" line="154"/>
         <source>Show animals for each letter</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar los animales correspondientes a cada letra</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="151"/>
-        <location filename="../mainwindow.cpp" line="152"/>
+        <location filename="../mainwindow.cpp" line="158"/>
+        <location filename="../mainwindow.cpp" line="159"/>
         <source>Show musical instruments for each letter</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar los instrumentos musicales correspondientes a cada letra</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="156"/>
-        <location filename="../mainwindow.cpp" line="157"/>
-        <source>Show toys for each letter</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="161"/>
-        <location filename="../mainwindow.cpp" line="162"/>
-        <source>Sound on/off</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
+        <location filename="../mainwindow.cpp" line="163"/>
         <location filename="../mainwindow.cpp" line="164"/>
-        <location filename="../mainwindow.cpp" line="165"/>
-        <source>Typing on/off</source>
-        <translation type="unfinished"/>
+        <source>Show toys for each letter</source>
+        <translation>Mostrar los juguetes correspondientes a cada letra</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="167"/>
         <location filename="../mainwindow.cpp" line="168"/>
-        <source>Select language</source>
-        <translation type="unfinished"/>
+        <location filename="../mainwindow.cpp" line="169"/>
+        <source>Sound on/off</source>
+        <translation>Sonido sí/no</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="170"/>
         <location filename="../mainwindow.cpp" line="171"/>
+        <location filename="../mainwindow.cpp" line="172"/>
+        <source>Typing on/off</source>
+        <translation>Tecleo sí/no</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="174"/>
+        <location filename="../mainwindow.cpp" line="175"/>
+        <source>Select language</source>
+        <translation>Elegir idioma</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../mainwindow.cpp" line="178"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="173"/>
-        <location filename="../mainwindow.cpp" line="174"/>
+        <location filename="../mainwindow.cpp" line="180"/>
+        <location filename="../mainwindow.cpp" line="181"/>
         <source>About qABCs</source>
         <translation>Acerca de qABCs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="176"/>
-        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../mainwindow.cpp" line="183"/>
+        <location filename="../mainwindow.cpp" line="184"/>
         <source>Exit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="319"/>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="331"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Error while opening</source>
         <translation>Error al abrir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="330"/>
+        <location filename="../mainwindow.cpp" line="342"/>
         <source>is not valid</source>
         <translation>no es válido</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="508"/>
         <source>Error str:</source>
-        <translation type="unfinished"/>
+        <translation>Str de error:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="753"/>
-        <location filename="../mainwindow.cpp" line="801"/>
+        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="887"/>
         <source>CONGRATS!</source>
-        <translation type="unfinished"/>
+        <translation>¡ENHORABUENA!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="754"/>
-        <location filename="../mainwindow.cpp" line="802"/>
+        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="../mainwindow.cpp" line="888"/>
         <source>Press &quot;ENTER&quot; to Play Again</source>
-        <translation type="unfinished"/>
+        <translation>Pulsa &quot;INTRO&quot; para volver a jugar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="862"/>
-        <location filename="../mainwindow.cpp" line="915"/>
-        <location filename="../mainwindow.cpp" line="934"/>
-        <location filename="../mainwindow.cpp" line="954"/>
-        <location filename="../mainwindow.cpp" line="975"/>
-        <location filename="../mainwindow.cpp" line="995"/>
+        <location filename="../mainwindow.cpp" line="948"/>
+        <location filename="../mainwindow.cpp" line="1001"/>
+        <location filename="../mainwindow.cpp" line="1020"/>
+        <location filename="../mainwindow.cpp" line="1040"/>
+        <location filename="../mainwindow.cpp" line="1061"/>
+        <location filename="../mainwindow.cpp" line="1081"/>
         <source>ABC is not loaded</source>
-        <translation type="unfinished"/>
+        <translation>No se ha cargado ABC</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="925"/>
+        <location filename="../mainwindow.cpp" line="1011"/>
         <source>Press a Key to See an Animal</source>
-        <translation type="unfinished"/>
+        <translation>Pulsa en una tecla para ver un animal</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="939"/>
+        <location filename="../mainwindow.cpp" line="1025"/>
         <source>Animals</source>
-        <translation type="unfinished"/>
+        <translation>Animales</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="945"/>
+        <location filename="../mainwindow.cpp" line="1031"/>
         <source>Press a Key to See a Food</source>
-        <translation type="unfinished"/>
+        <translation>Pulsa en una tecla para ver un alimento</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="961"/>
+        <location filename="../mainwindow.cpp" line="1047"/>
         <source>Food</source>
-        <translation type="unfinished"/>
+        <translation>Alimentos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="966"/>
+        <location filename="../mainwindow.cpp" line="1052"/>
         <source>Press a Key to See an Instrument</source>
-        <translation type="unfinished"/>
+        <translation>Pulsa en una tecla para ver un instrumento</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="980"/>
+        <location filename="../mainwindow.cpp" line="1066"/>
         <source>Music</source>
-        <translation type="unfinished"/>
+        <translation>Música</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="986"/>
+        <location filename="../mainwindow.cpp" line="1072"/>
         <source>Press a Key to See a Toy</source>
-        <translation type="unfinished"/>
+        <translation>Pulsa en una tecla para ver un juguete</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1000"/>
+        <location filename="../mainwindow.cpp" line="1086"/>
         <source>Toys</source>
-        <translation type="unfinished"/>
+        <translation>Juguetes</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1063"/>
+        <location filename="../mainwindow.cpp" line="1150"/>
         <source>play was found:</source>
-        <translation type="unfinished"/>
+        <translation>encontrado &quot;play&quot;:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1089"/>
+        <location filename="../mainwindow.cpp" line="1176"/>
         <source>espeak was found:</source>
-        <translation type="unfinished"/>
+        <translation>encontrado &quot;espeak&quot;:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <location filename="../LoaderAbcFormats.cpp" line="35"/>
-        <location filename="../LoaderAbcFormats.cpp" line="119"/>
+        <location filename="../LoaderAbcFormats.cpp" line="120"/>
         <source>Error while opening</source>
         <translation>Error al abrir</translation>
     </message>
