@@ -42,10 +42,16 @@ case $lang in
        api=true
        ;;
      el)
-       api=false
+       languageCode="el-GR"
+       name="el-GR-Standard-A"
+       ssmlGender="FEMALE"
+       api=true
        ;;
      cs)
-       api=false
+       languageCode="cs-CZ"
+       name="cs-CZ-Standard-A"
+       ssmlGender="FEMALE"
+       api=true
        ;;
      he)
        api=false
