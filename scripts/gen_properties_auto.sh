@@ -80,6 +80,9 @@ case $lang in
      ch)
        abc="'aåb0defghiklmnñ4oprstuy"
        ;;
+     tl)
+       abc="abcdefghijklmnñ4opqrstuvwxyz"
+       ;;
      is)
        abc="aábdðeéfghiíjklmnoóprstuúvxyýþæö"
        ;;
