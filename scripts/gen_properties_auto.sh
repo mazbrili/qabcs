@@ -81,7 +81,7 @@ case $lang in
        abc="'aåb0defghiklmnñ4oprstuy"
        ;;
      tl)
-       abc="abcdefghijklmnñ4opqrstuvwxyz"
+       abc="abcdefghijklmn4opqrstuvwxyz"
        ;;
      is)
        abc="aábdðeéfghiíjklmnoóprstuúvxyýþæö"
