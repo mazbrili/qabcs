@@ -68,6 +68,9 @@ case $lang in
      uk)
        abc="абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
        ;;
+     be)
+       abc="абвгдеёжзійклмнопрстуўфхцчшыьэюя"
+       ;;
      de)
        abc="aäbcdefghijklmnoöpqrsßtuüvwxyz"
        ;;
@@ -183,6 +186,11 @@ fi
 if [ -f "$result_file" ]
 then
   cat $result_file|sed "s|:|: |g"|sort -k 2|sed "s|: |:|g" > $result_file.sorted
+  # belarusian keyboard does not have ґ, delete all words with ґ
+  if [ "$lang" = "be" ]
+  then
+    sed -i "/ґ/d" $result_file.sorted
+  fi
 else
   rm -rf abcs/all/pics/dummy
   popd
