@@ -487,7 +487,7 @@ do
        text=`echo "$text"|sed "s|насарог|на-са-рог|g"`
        text=`echo "$text"|sed "s|нектарын|нэктары́н|g"`
        text=`echo "$text"|sed "s|нутрыя|ну́трыя|g"`
-       text=`echo "$text"|sed "s|віяланчэль|вия-лян-чэ́ль|g"`
+       text=`echo "$text"|sed "s|віяланчэль|вия-лан-чэ́ль|g"`
        text=`echo "$text"|sed "s|нязнайка|ня-знайка|g"`
        text=`echo "$text"|sed "s|паветраны|паве́траны|g"`
        text=`echo "$text"|sed "s|павук|паву́к|g"`
@@ -521,7 +521,7 @@ do
        text=`echo "$text"|sed "s|угал|у-гал|g"`
        text=`echo "$text"|sed "s|урсула|у́рсула|g"`
        text=`echo "$text"|sed "s|фартэпіяна|фартэ-піяна|g"`
-       text=`echo "$text"|sed "s|фламінга|фля-мінга|g"`
+       text=`echo "$text"|sed "s|фламінга|фла-мінга|g"`
        text=`echo "$text"|sed "s|флейта бёма|флейта бё́ма|g"`
        text=`echo "$text"|sed "s|фрула|фру́ла|g"`
        text=`echo "$text"|sed "s|фенек|фэнэк|g"`
@@ -534,13 +534,12 @@ do
        text=`echo "$text"|sed "s|часнок|час-нок|g"`
        text=`echo "$text"|sed "s|чвэрць долара|чвэррць долара|g"`
        text=`echo "$text"|sed "s|чэлеста|чэ-леста|g"`
-       text=`echo "$text"|sed "s|шакаляд|шакаля́д|g"`
+       text=`echo "$text"|sed "s|шакалад|шакала́д|g"`
        text=`echo "$text"|sed "s|шары|шары́|g"`
        text=`echo "$text"|sed "s|шчавель|шча-вель|g"`
        text=`echo "$text"|sed "s|шчаўкунчык|шчаў-кунчык|g"`
        text=`echo "$text"|sed "s|шчупак|шчу-пак|g"`
        text=`echo "$text"|sed "s|шымпанзэ|шымпанзэ́|g"`
-       text=`echo "$text"|sed "s|хамелеон|хамеляон|g"`
        text=`echo "$text"|sed "s|эаліна|эалі́на|g"`
        text=`echo "$text"|sed "s|экскаватар|эк-скава́тар|g"`
        text=`echo "$text"|sed "s|электрагітара|э-лект-ра-гітара|g"`
