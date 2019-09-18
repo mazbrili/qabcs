@@ -175,25 +175,40 @@ be_into_ru() {
   fi
 }
 
-get_sound(){
-case $lang in
-   be)
-     if [ -z "`echo $filename|grep -v '^ў$'|grep ў`" ] && [ -z "`echo $filename|grep г`" ] && [ -z "`echo $filename|grep шч`" ] && [ -z "`echo $filename|grep чы`" ] && [ -z "`echo $filename|grep чэ`" ] && [ -z "`echo $filename|grep чу`" ] && [ -z "`echo $filename|grep -v 'качаня'|grep -v 'часнок'|grep -v 'часопіс'|grep ча`" ] && [ -z "`echo $filename|grep -v 'кручок'|grep чо`" ] && [ -z "`echo $filename|grep ця`" ] && [ ! "$filename" = "ы" ] && [ ! "$filename" = "ыых" ] && [ ! "$filename" = "ямс" ] && [ ! "$filename" = "воппер" ] && [ ! "$filename" = "абялікс" ] && [ ! "$filename" = "марскі_цмок" ] && [ ! "$filename" = "мядзведзь" ] && [ ! "$filename" = "чвэрць_долара" ] && [ ! "$filename" = "фенек" ]
-     then
-       lang="ru"
-       languageCode="ru-RU"
-       name="ru-RU-Standard-A"
-       ssmlGender="FEMALE"
-       be_into_ru "$text"
-     else
-       lang="uk"
-       languageCode="uk-UA"
-       name="uk-UA-Standard-A"
-       ssmlGender="FEMALE"
-       be_into_uk "$text"
-     fi
-     ;;
+lang_runtime() {
+case $1 in
+   use)
+      case $lang in
+      be)
+          if [ -z "`echo $filename|grep -v '^ў$'|grep 'ў'`" ] && [ -z "`echo $filename|grep 'г'`" ] && [ -z "`echo $filename|grep 'шч'`" ] && [ -z "`echo $filename|grep 'чы'`" ] && [ -z "`echo $filename|grep 'чэ'`" ] && [ -z "`echo $filename|grep 'чу'`" ] && [ -z "`echo $filename|grep -v 'качаня'|grep -v 'часнок'|grep -v 'часопіс'|grep 'ча'`" ] && [ -z "`echo $filename|grep -v 'кручок'|grep 'чо'`" ] && [ -z "`echo $filename|grep 'ця'`" ] && [ ! "$filename" = "ы" ] && [ ! "$filename" = "ыых" ] && [ ! "$filename" = "ямс" ] && [ ! "$filename" = "воппер" ] && [ ! "$filename" = "абялікс" ] && [ ! "$filename" = "марскі_цмок" ] && [ ! "$filename" = "мядзведзь" ] && [ ! "$filename" = "чвэрць_долара" ] && [ ! "$filename" = "фенек" ]
+          then
+            lang="ru"
+            languageCode="ru-RU"
+            name="ru-RU-Standard-A"
+            ssmlGender="FEMALE"
+            be_into_ru "$text"
+          else
+            lang="uk"
+            languageCode="uk-UA"
+            name="uk-UA-Standard-A"
+            ssmlGender="FEMALE"
+            be_into_uk "$text"
+          fi
+      ;;
+      esac
+      ;;
+   reset)
+      case $lang0 in
+      be)
+        lang=$lang0
+      ;;
+      esac
+;;
 esac
+}
+
+get_sound(){
+lang_runtime "use"
 if [ "$api" = "true" ]
 then
   curl -H "X-Goog-Api-Key: $key" \
@@ -224,11 +239,7 @@ then
   rm -f ../abcs/$lang0/sounds/$1/*.$format
   exit 1
 fi
-case $lang0 in
-   be)
-     lang=$lang0
-     ;;
-esac
+lang_runtime "reset"
 }
 
 lang0=$lang
@@ -444,7 +455,6 @@ do
        text=`echo "$text"|sed "s|дурыян|дурыя́н|g"`
        text=`echo "$text"|sed "s|духі|духі́|g"`
        text=`echo "$text"|sed "s|емуранчык|ему-ранчык|g"`
-       text=`echo "$text"|sed "s|ёухікко|ёухі́кко|g"`
        text=`echo "$text"|sed "s|еці|е́ці|g"`
        text=`echo "$text"|sed "s|зебра|зэбра|g"`
        text=`echo "$text"|sed "s|зубная шчотка|зуб-ная шчотка|g"`
@@ -524,7 +534,7 @@ do
        text=`echo "$text"|sed "s|часнок|час-нок|g"`
        text=`echo "$text"|sed "s|чвэрць долара|чвэррць долара|g"`
        text=`echo "$text"|sed "s|чэлеста|чэ-леста|g"`
-       text=`echo "$text"|sed "s|шакалад|шакаля́д|g"`
+       text=`echo "$text"|sed "s|шакаляд|шакаля́д|g"`
        text=`echo "$text"|sed "s|шары|шары́|g"`
        text=`echo "$text"|sed "s|шчавель|шча-вель|g"`
        text=`echo "$text"|sed "s|шчаўкунчык|шчаў-кунчык|g"`
