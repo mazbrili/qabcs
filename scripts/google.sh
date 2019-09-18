@@ -487,7 +487,7 @@ do
        text=`echo "$text"|sed "s|насарог|на-са-рог|g"`
        text=`echo "$text"|sed "s|нектарын|нэктары́н|g"`
        text=`echo "$text"|sed "s|нутрыя|ну́трыя|g"`
-       text=`echo "$text"|sed "s|віяланчэль|вия-лан-чэ́ль|g"`
+       text=`echo "$text"|sed "s|віяланчэль|віялан-чэ́ль|g"`
        text=`echo "$text"|sed "s|нязнайка|ня-знайка|g"`
        text=`echo "$text"|sed "s|паветраны|паве́траны|g"`
        text=`echo "$text"|sed "s|павук|паву́к|g"`
