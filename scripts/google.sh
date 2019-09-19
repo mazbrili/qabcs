@@ -426,7 +426,6 @@ do
        ;;
      be)
        text=`echo "$text"|sed "s|абедзенная|абед-зенная|g"`
-       text=`echo "$text"|sed "s|абруч|а́бруч|g"`
        text=`echo "$text"|sed "s|абялікс|абя-лікс|g"`
        text=`echo "$text"|sed "s|аліў'е|алів'е́|g"`
        text=`echo "$text"|sed "s|ад'ютант|ад'йутант|g"`
@@ -450,7 +449,6 @@ do
        text=`echo "$text"|sed "s|гуанака|гуа-нака|g"`
        text=`echo "$text"|sed "s|даніё рэрыё|да́нійо рэ́рыйо|g"`
        text=`echo "$text"|sed "s|дзікабраз|дзікабра́з|g"`
-       text=`echo "$text"|sed "s|дуды|ду́ды|g"`
        text=`echo "$text"|sed "s|дулзайна|дульза́йна|g"`
        text=`echo "$text"|sed "s|дурыян|дурыя́н|g"`
        text=`echo "$text"|sed "s|духі|духі́|g"`
@@ -464,6 +462,7 @@ do
        text=`echo "$text"|sed "s|кларнет|кларнэт|g"`
        text=`echo "$text"|sed "s|каала|каа́ла|g"`
        text=`echo "$text"|sed "s|казу|казу́|g"`
+       text=`echo "$text"|sed "s|кавалак|кава́лак|g"`
        text=`echo "$text"|sed "s|каркадэ|каркадэ́|g"`
        text=`echo "$text"|sed "s|касцяніца|касця-ніца|g"`
        text=`echo "$text"|sed "s|камертон|камэртон|g"`
@@ -553,6 +552,14 @@ do
        text=`echo "$text"|sed "s|яхідна|йахідна|g"`
        text=`echo "$text"|sed "s|інструмент|інструмэнт|g"`
        text=`echo "$text"|sed "s|мелатрон|мэлатрон|g"`
+       text=`echo "$text"|sed "s|цяля|ця-ля|g"`
+       text=`echo "$text"|sed "s|блазан|бла́зан|g"`
+       text=`echo "$text"|sed "s|гваздзік|гвазд-зік|g"`
+       text=`echo "$text"|sed "s|качаня|качаня́|g"`
+       text=`echo "$text"|sed "s|жарабя|жарабя́|g"`
+       text=`echo "$text"|sed "s|пацеркі|па́церкі|g"`
+       text=`echo "$text"|sed "s|шкляная|шкля-ная|g"`
+       text=`echo "$text"|sed "s|вадзянік|вадзяні́к|g"`
        ;;
      uk)
        #acute accent does not work with uk yet
