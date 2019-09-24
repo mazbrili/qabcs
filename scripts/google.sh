@@ -155,10 +155,10 @@ be_into_uk() {
   text=`echo "$text"|sed "s|ё́|йо́|g"`
   text=`echo "$text"|sed "s|и|і|g"`
   text=`echo "$text"|sed "s|и́|і́|g"`
-  text=`echo "$text"|sed "s|ў|ув|g"`
+  text=`echo "$text"|sed "s|ў|у|g"`
   text=`echo "$text"|sed "s|ы|и|g"`
   text=`echo "$text"|sed "s|ы́|и́|g"`
-  if [ ! "$filename" = "о" ]
+  if [ ! "$filename" = "о" ] && [ ! "$filename" = "верталёт" ] && [ ! "$filename" = "блокфлейта" ]
   then
     text=`echo "$text"|sed "s|о|о́|g"`
   fi
@@ -167,9 +167,9 @@ be_into_uk() {
 be_into_ru() {
   text=`echo "$text"|sed "s|і|и|g"`
   text=`echo "$text"|sed "s|і́|и́|g"`
-  text=`echo "$text"|sed "s|ў|ув|g"`
+  text=`echo "$text"|sed "s|ў|у|g"`
   text=`echo "$text"|sed "s|'|ъ|g"`
-  if [ ! "$filename" = "о" ]
+  if [ ! "$filename" = "о" ] && [ ! "$filename" = "верталёт" ] && [ ! "$filename" = "блокфлейта" ]
   then
     text=`echo "$text"|sed "s|о|о́|g"`
   fi
@@ -180,7 +180,7 @@ case $1 in
    use)
       case $lang in
       be)
-          if [ -z "`echo $filename|grep -v '^ў$'|grep 'ў'`" ] && [ -z "`echo $filename|grep 'г'`" ] && [ -z "`echo $filename|grep 'шч'`" ] && [ -z "`echo $filename|grep 'чы'`" ] && [ -z "`echo $filename|grep 'чэ'`" ] && [ -z "`echo $filename|grep 'чу'`" ] && [ -z "`echo $filename|grep -v 'качаня'|grep -v 'часнок'|grep -v 'часопіс'|grep 'ча'`" ] && [ -z "`echo $filename|grep -v 'кручок'|grep 'чо'`" ] && [ -z "`echo $filename|grep 'ця'`" ] && [ ! "$filename" = "ы" ] && [ ! "$filename" = "ыых" ] && [ ! "$filename" = "ямс" ] && [ ! "$filename" = "воппер" ] && [ ! "$filename" = "абялікс" ] && [ ! "$filename" = "марскі_цмок" ] && [ ! "$filename" = "мядзведзь" ] && [ ! "$filename" = "чвэрць_долара" ] && [ ! "$filename" = "фенек" ]
+          if [ -z "`echo $filename|grep '^ч$'`" ] && [ -z "`echo $filename|grep -v '^ў$'|grep 'ў'`" ] && [ -z "`echo $filename|grep 'г'`" ] && [ -z "`echo $filename|grep 'шч'`" ] && [ -z "`echo $filename|grep 'чы'`" ] && [ -z "`echo $filename|grep 'чэ'`" ] && [ -z "`echo $filename|grep 'чу'`" ] && [ -z "`echo $filename|grep 'ці'`" ] && [ -z "`echo $filename|grep -v 'формачка'|grep 'чк'`" ] && [ -z "`echo $filename|grep -v 'качаня'|grep 'ча'`" ] && [ -z "`echo $filename|grep 'чо'`" ] && [ -z "`echo $filename|grep 'ця'`" ] && [ ! "$filename" = "ы" ] && [ ! "$filename" = "ыых" ] && [ ! "$filename" = "ямс" ] && [ ! "$filename" = "воппер" ] && [ ! "$filename" = "абялікс" ] && [ ! "$filename" = "марскі_цмок" ] && [ ! "$filename" = "мядзведзь" ] && [ ! "$filename" = "чвэрць_долара" ] && [ ! "$filename" = "абедзенная_скрынка" ] && [ ! "$filename" = "абруч" ] && [ ! "$filename" = "смятана" ]
           then
             lang="ru"
             languageCode="ru-RU"
@@ -425,21 +425,25 @@ do
        text=`echo "$text"|sed "s|янорнис|яно́рнис|g"`
        ;;
      be)
-       text=`echo "$text"|sed "s|абедзенная|абед-зенная|g"`
+       text=`echo "$text"|sed "s|абедзенная|а-бедзенная|g"`
+       text=`echo "$text"|sed "s|авечка|а-вечка|g"`
+       text=`echo "$text"|sed "s|агеньчык|а-геньчык|g"`
        text=`echo "$text"|sed "s|абялікс|абя-лікс|g"`
-       text=`echo "$text"|sed "s|аліў'е|алів'е́|g"`
+       text=`echo "$text"|sed "s|аліў'е|аліў-е|g"`
        text=`echo "$text"|sed "s|ад'ютант|ад'йутант|g"`
        text=`echo "$text"|sed "s|акарына|ака́рына|g"`
        text=`echo "$text"|sed "s|арган|ар-ган|g"`
        text=`echo "$text"|sed "s|арыгамі|ары-гамі|g"`
        text=`echo "$text"|sed "s|піяніна|піяні́на|g"`
-       text=`echo "$text"|sed "s|блокфлейта|бло́к-фле́йта|g"`
+       text=`echo "$text"|sed "s|бачкавое|бачка-вое|g"`
        text=`echo "$text"|sed "s|бульба|бу́льба|g"`
-       text=`echo "$text"|sed "s|вагнэрская|вагнэр-ская|g"`
+       text=`echo "$text"|sed "s|васьміног|вась-міног|g"`
        text=`echo "$text"|sed "s|ваўчок|ваў--чок|g"`
+       text=`echo "$text"|sed "s|гародніна|га-родніна|g"`
+       text=`echo "$text"|sed "s|гарох|га-рох|g"`
        text=`echo "$text"|sed "s|васабі|васа́бі|g"`
        text=`echo "$text"|sed "s|вермішэль|вермішэ́ль|g"`
-       text=`echo "$text"|sed "s|верталёт|верта--лёт|g"`
+       text=`echo "$text"|sed "s|верталёт|вертолёт|g"`
        text=`echo "$text"|sed "s|віктарына|віктары́на|g"`
        text=`echo "$text"|sed "s|вінягрэт|віняг-рэт|g"`
        text=`echo "$text"|sed "s|выбраслэп|выбраслэ́п|g"`
@@ -453,25 +457,21 @@ do
        text=`echo "$text"|sed "s|дурыян|дурыя́н|g"`
        text=`echo "$text"|sed "s|духі|духі́|g"`
        text=`echo "$text"|sed "s|емуранчык|ему-ранчык|g"`
-       text=`echo "$text"|sed "s|еці|е́ці|g"`
-       text=`echo "$text"|sed "s|зебра|зэбра|g"`
+       text=`echo "$text"|sed "s|жэлацін|жэла-цін|g"`
        text=`echo "$text"|sed "s|зубная шчотка|зуб-ная шчотка|g"`
        text=`echo "$text"|sed "s|ідэфікс|іде́фікс|g"`
        text=`echo "$text"|sed "s|ірга|ір-га|g"`
        text=`echo "$text"|sed "s|йора|йё́ра|g"`
-       text=`echo "$text"|sed "s|кларнет|кларнэт|g"`
        text=`echo "$text"|sed "s|каала|каа́ла|g"`
        text=`echo "$text"|sed "s|казу|казу́|g"`
        text=`echo "$text"|sed "s|кавалак|кава́лак|g"`
        text=`echo "$text"|sed "s|каркадэ|каркадэ́|g"`
        text=`echo "$text"|sed "s|касцяніца|касця-ніца|g"`
-       text=`echo "$text"|sed "s|камертон|камэртон|g"`
        text=`echo "$text"|sed "s|кісанджы|кісанджі|g"`
        text=`echo "$text"|sed "s|ксіфактын|ксіфакты́н|g"`
        text=`echo "$text"|sed "s|лазанья|лаза́нья|g"`
        text=`echo "$text"|sed "s|літаўры|лі-таўры|g"`
        text=`echo "$text"|sed "s|ляжак|ляжа́к|g"`
-       text=`echo "$text"|sed "s|малпачка|ма́лпачка|g"`
        text=`echo "$text"|sed "s|малы барабан|ма́лы барабан|g"`
        text=`echo "$text"|sed "s|маракасы|мара́касы|g"`
        text=`echo "$text"|sed "s|марская|марска́я|g"`
@@ -483,8 +483,9 @@ do
        text=`echo "$text"|sed "s|мурашкаед|мурашкае́д|g"`
        text=`echo "$text"|sed "s|бранзалет|бранзале́т|g"`
        text=`echo "$text"|sed "s|нажніцы|нажні́цы|g"`
+       text=`echo "$text"|sed "s|цырк|цирк|g"`
        text=`echo "$text"|sed "s|насарог|на-са-рог|g"`
-       text=`echo "$text"|sed "s|нектарын|нэктары́н|g"`
+       text=`echo "$text"|sed "s|нектарын|нектары́н|g"`
        text=`echo "$text"|sed "s|нутрыя|ну́трыя|g"`
        text=`echo "$text"|sed "s|віяланчэль|віялан-чэ́ль|g"`
        text=`echo "$text"|sed "s|нязнайка|ня-знайка|g"`
@@ -499,7 +500,6 @@ do
        text=`echo "$text"|sed "s|радыска|рады́ска|g"`
        text=`echo "$text"|sed "s|рацыя|ра́цыя|g"`
        text=`echo "$text"|sed "s|раяль|ра-я́ль|g"`
-       text=`echo "$text"|sed "s|резак|рэзак|g"`
        text=`echo "$text"|sed "s|рэнтгенаўскае выпраменьванне|рэнтге-наўскае выпра-меньваньне|g"`
        text=`echo "$text"|sed "s|ручная|ручна́я|g"`
        text=`echo "$text"|sed "s|сава|сава́|g"`
@@ -508,14 +508,13 @@ do
        text=`echo "$text"|sed "s|спадніца|спадні́ца|g"`
        text=`echo "$text"|sed "s|сцярвятнік|сцяр-вятнік|g"`
        text=`echo "$text"|sed "s|сэмплер|семплер|g"`
-       text=`echo "$text"|sed "s|смятана|сьмята́на|g"`
        text=`echo "$text"|sed "s|свіння|сьвіньня|g"`
        text=`echo "$text"|sed "s|талеркі|та-леркі|g"`
        text=`echo "$text"|sed "s|танжэла|танжэ́ла|g"`
        text=`echo "$text"|sed "s|тархун|тарху́н|g"`
        text=`echo "$text"|sed "s|трактар|тра́ктар|g"`
        text=`echo "$text"|sed "s|трашчотка|траш--чотка|g"`
-       text=`echo "$text"|sed "s|тэрменвокс|тэр-мэнвокс|g"`
+       text=`echo "$text"|sed "s|тэрменвокс|тэр-менвокс|g"`
        text=`echo "$text"|sed "s|туалетная шчотка|туа-летная шчотка|g"`
        text=`echo "$text"|sed "s|угал|у-гал|g"`
        text=`echo "$text"|sed "s|урсула|у́рсула|g"`
@@ -523,7 +522,6 @@ do
        text=`echo "$text"|sed "s|фламінга|фла-мінга|g"`
        text=`echo "$text"|sed "s|флейта бёма|флейта бё́ма|g"`
        text=`echo "$text"|sed "s|фрула|фру́ла|g"`
-       text=`echo "$text"|sed "s|фенек|фэнэк|g"`
        text=`echo "$text"|sed "s|цацарка|цаца́рка|g"`
        text=`echo "$text"|sed "s|цыбуля|цыбу́ля|g"`
        text=`echo "$text"|sed "s|цытра|цы́тра|g"`
@@ -533,10 +531,9 @@ do
        text=`echo "$text"|sed "s|часнок|час-нок|g"`
        text=`echo "$text"|sed "s|чвэрць долара|чвэррць долара|g"`
        text=`echo "$text"|sed "s|чэлеста|чэ-леста|g"`
-       text=`echo "$text"|sed "s|шакалад|шакала́д|g"`
+       text=`echo "$text"|sed "s|шакалад|ша-кала́д|g"`
        text=`echo "$text"|sed "s|шары|шары́|g"`
        text=`echo "$text"|sed "s|шчавель|шча-вель|g"`
-       text=`echo "$text"|sed "s|шчаўкунчык|шчаў-кунчык|g"`
        text=`echo "$text"|sed "s|шчупак|шчу-пак|g"`
        text=`echo "$text"|sed "s|шымпанзэ|шымпанзэ́|g"`
        text=`echo "$text"|sed "s|эаліна|эалі́на|g"`
@@ -548,10 +545,8 @@ do
        text=`echo "$text"|sed "s|якульт|йаку́льт|g"`
        text=`echo "$text"|sed "s|ялец|яле́ц|g"`
        text=`echo "$text"|sed "s|ямеля|яме́ля|g"`
-       text=`echo "$text"|sed "s|ятаган|йа-та--ган|g"`
+       text=`echo "$text"|sed "s|ятаган|йа-та-ган|g"`
        text=`echo "$text"|sed "s|яхідна|йахідна|g"`
-       text=`echo "$text"|sed "s|інструмент|інструмэнт|g"`
-       text=`echo "$text"|sed "s|мелатрон|мэлатрон|g"`
        text=`echo "$text"|sed "s|цяля|ця-ля|g"`
        text=`echo "$text"|sed "s|блазан|бла́зан|g"`
        text=`echo "$text"|sed "s|гваздзік|гвазд-зік|g"`
@@ -560,6 +555,9 @@ do
        text=`echo "$text"|sed "s|пацеркі|па́церкі|g"`
        text=`echo "$text"|sed "s|шкляная|шкля-ная|g"`
        text=`echo "$text"|sed "s|вадзянік|вадзяні́к|g"`
+       text=`echo "$text"|sed "s|часопіс|ча-сопіс|g"`
+       text=`echo "$text"|sed "s|кручок|кру--чок|g"`
+       text=`echo "$text"|sed "s|смятана|сьмя-тана|g"`
        ;;
      uk)
        #acute accent does not work with uk yet
