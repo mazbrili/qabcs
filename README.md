@@ -40,7 +40,8 @@ ABC, GUI and desktop file: https://www.transifex.com/Magic/qabcs
 ### Current languages: ###
 GUI translated into many popular languages.
 ABCs translated on American English (US), Russian, United
-Kingdom English (UK), Ukrainian, German, Polish, French.
+Kingdom English (UK), Ukrainian, German, Polish, French,
+Belarusian.
 
 ### Packages and build specifications: ###
 Repository of your distribution is the first.
@@ -98,7 +99,7 @@ make
 ГУИ переведён на многие популярные языки.
 Алфавиты переведены на американский английский (US), русский,
 английский Соединённого Королевства (UK), украинский, немецкий,
-польский, французский.
+польский, французский, белорусский.
 
 ### Пакеты  и спецификации для сборки: ###
 Репозиторий вашего дистрибутива первичен.
