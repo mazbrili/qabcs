@@ -558,6 +558,7 @@ do
        text=`echo "$text"|sed "s|часопіс|ча-сопіс|g"`
        text=`echo "$text"|sed "s|кручок|кру--чок|g"`
        text=`echo "$text"|sed "s|смятана|сьмя-тана|g"`
+       text=`echo "$text"|sed "s|запяканка|запя-канка|g"`
        ;;
      uk)
        #acute accent does not work with uk yet
