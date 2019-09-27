@@ -38,6 +38,12 @@ do
     noise=`echo $noise|sed "s|steam_locomotive|train|g"`
     noise=`echo $noise|sed "s|instrument|guitar|g"`
     noise=`echo $noise|sed "s|xenopus|frog|g"`
+    noise=`echo $noise|sed "s|jellyfish|fish|g"`
+    noise=`echo $noise|sed "s|shark|fish|g"`
+    noise=`echo $noise|sed "s|misgurnus|fish|g"`
+    noise=`echo $noise|sed "s|xiphias|fish|g"`
+    noise=`echo $noise|sed "s|angelfish|fish|g"`
+    noise=`echo $noise|sed "s|pike|fish|g"`
     if [ -f "abcs/all/noises/$noise.ogg" ]
     then
       # if noise was found

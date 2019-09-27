@@ -35,7 +35,8 @@
 		"toys": {
 		      "pic": "toys/watercolor.png",
 		      "name": "АКВАРЕЛЬ",
-		      "espeak_words": "АКВА-РЕЛЬ"
+		      "espeak_words": "АКВА-РЕЛЬ",
+		      "noises": "watercolor.ogg"
 		}
 	}},
 	{"Б": {
@@ -43,7 +44,8 @@
 		"misc": {
 		      "pic": "misc/jar.png",
 		      "name": "БАНКА",
-		      "espeak_words": "БАНКА"
+		      "espeak_words": "БАНКА",
+		      "noises": "jar.ogg"
 		},
 		"food": {
 		      "pic": "food/bananas.png",
@@ -73,7 +75,8 @@
 		"misc": {
 		      "pic": "misc/vase.png",
 		      "name": "ВАЗА",
-		      "espeak_words": "ВАЗА"
+		      "espeak_words": "ВАЗА",
+		      "noises": "vase.ogg"
 		},
 		"food": {
 		      "pic": "food/grapes.png",
@@ -253,7 +256,8 @@
 		"toys": {
 		      "pic": "toys/firebird.png",
 		      "name": "ЖАР-ПТИЦА",
-		      "espeak_words": "ЖАР-ПТИЦА"
+		      "espeak_words": "ЖАР-ПТИЦА",
+		      "noises": "firebird.ogg"
 		}
 	}},
 	{"З": {
@@ -283,7 +287,8 @@
 		"toys": {
 		      "pic": "toys/kite.png",
 		      "name": "ЗМЕЙ",
-		      "espeak_words": "ЗМЕЙ"
+		      "espeak_words": "ЗМЕЙ",
+		      "noises": "kite.ogg"
 		}
 	}},
 	{"И": {
@@ -291,7 +296,8 @@
 		"misc": {
 		      "pic": "misc/igloo.png",
 		      "name": "ИГЛУ",
-		      "espeak_words": "ИГЛУ"
+		      "espeak_words": "ИГЛУ",
+		      "noises": "igloo.ogg"
 		},
 		"food": {
 		      "pic": "food/shadberry.png",
@@ -301,7 +307,8 @@
 		"animals": {
 		      "pic": "animals/iguana.png",
 		      "name": "ИГУАНА",
-		      "espeak_words": "ИГУА-НА"
+		      "espeak_words": "ИГУА-НА",
+		      "noises": "iguana.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/ipu.png",
@@ -343,7 +350,8 @@
 		"toys": {
 		      "pic": "toys/yoyo.png",
 		      "name": "ЙО-ЙО",
-		      "espeak_words": "ЙО-ЙО"
+		      "espeak_words": "ЙО-ЙО",
+		      "noises": "yoyo.ogg"
 		}
 	}},
 	{"К": {
@@ -351,7 +359,8 @@
 		"misc": {
 		      "pic": "misc/hat.png",
 		      "name": "КЕПКА",
-		      "espeak_words": "КЕПКА"
+		      "espeak_words": "КЕПКА",
+		      "noises": "hat.ogg"
 		},
 		"food": {
 		      "pic": "food/strawberry.png",
@@ -373,7 +382,8 @@
 		"toys": {
 		      "pic": "toys/paint.png",
 		      "name": "КРАСКИ",
-		      "espeak_words": "КРАСКИ"
+		      "espeak_words": "КРАСКИ",
+		      "noises": "paint.ogg"
 		}
 	}},
 	{"Л": {
@@ -381,7 +391,8 @@
 		"misc": {
 		      "pic": "misc/magnifying_glass.png",
 		      "name": "ЛУПА",
-		      "espeak_words": "ЛУПА"
+		      "espeak_words": "ЛУПА",
+		      "noises": "magnifying_glass.ogg"
 		},
 		"food": {
 		      "pic": "food/onion.png",
@@ -422,7 +433,8 @@
 		"animals": {
 		      "pic": "animals/xiphias.png",
 		      "name": "МЕЧЕНОС",
-		      "espeak_words": "МЕ-ЧЕ-НОС"
+		      "espeak_words": "МЕ-ЧЕ-НОС",
+		      "noises": "fish.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/maracas.png",
@@ -433,7 +445,8 @@
 		"toys": {
 		      "pic": "toys/magnet.png",
 		      "name": "МАГНИТ",
-		      "espeak_words": "МАГНИТ"
+		      "espeak_words": "МАГНИТ",
+		      "noises": "magnet.ogg"
 		}
 	}},
 	{"Н": {
@@ -496,7 +509,8 @@
 		"toys": {
 		      "pic": "toys/origami.png",
 		      "name": "ОРИГАМИ",
-		      "espeak_words": "ОРИ-ГАМИ"
+		      "espeak_words": "ОРИ-ГАМИ",
+		      "noises": "origami.ogg"
 		}
 	}},
 	{"П": {
@@ -527,7 +541,8 @@
 		"toys": {
 		      "pic": "toys/glove.png",
 		      "name": "ПЕРЧАТКА",
-		      "espeak_words": "ПЕРЧАТКА"
+		      "espeak_words": "ПЕРЧАТКА",
+		      "noises": "glove.ogg"
 		}
 	}},
 	{"Р": {
@@ -535,7 +550,8 @@
 		"misc": {
 		      "pic": "misc/x-ray.png",
 		      "name": "РЕНТГЕН",
-		      "espeak_words": "РЕН-ГЕН"
+		      "espeak_words": "РЕН-ГЕН",
+		      "noises": "x-ray.ogg"
 		},
 		"food": {
 		      "pic": "food/radishes.png",
@@ -545,7 +561,8 @@
 		"animals": {
 		      "pic": "animals/angelfish.png",
 		      "name": "РЫБА",
-		      "espeak_words": "РЫБА"
+		      "espeak_words": "РЫБА",
+		      "noises": "fish.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/rozhok.png",
@@ -588,7 +605,8 @@
 		"toys": {
 		      "pic": "toys/paper_airplane.png",
 		      "name": "САМОЛЁТИК",
-		      "espeak_words": "САМОЛЁТИК"
+		      "espeak_words": "САМОЛЁТИК",
+		      "noises": "paper_airplane.ogg"
 		}
 	}},
 	{"Т": {
@@ -596,7 +614,8 @@
 		"misc": {
 		      "pic": "toys/wagon.png",
 		      "name": "ТЕЛЕЖКА",
-		      "espeak_words": "ТЕЛЕЖКА"
+		      "espeak_words": "ТЕЛЕЖКА",
+		      "noises": "wagon.ogg"
 		},
 		"food": {
 		      "pic": "food/tomato.png",
@@ -606,7 +625,8 @@
 		"animals": {
 		      "pic": "animals/newt.png",
 		      "name": "ТРИТОН",
-		      "espeak_words": "ТРИ-ТОН"
+		      "espeak_words": "ТРИ-ТОН",
+		      "noises": "newt.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/trumpet.png",
@@ -617,7 +637,8 @@
 		"toys": {
 		      "pic": "toys/wagon.png",
 		      "name": "ТЕЛЕЖКА",
-		      "espeak_words": "ТЕЛЕЖКА"
+		      "espeak_words": "ТЕЛЕЖКА",
+		      "noises": "wagon.ogg"
 		}
 	}},
 	{"У": {
@@ -679,7 +700,8 @@
 		"toys": {
 		      "pic": "toys/football.png",
 		      "name": "ФУТБОЛ",
-		      "espeak_words": "ФУТ-БОЛ"
+		      "espeak_words": "ФУТ-БОЛ",
+		      "noises": "football.ogg"
 		}
 	}},
  	{"Х": {
@@ -710,7 +732,8 @@
 		"toys": {
 		      "pic": "toys/hockey.png",
 		      "name": "ХОККЕЙ",
-		      "espeak_words": "ХОК-КЕЙ"
+		      "espeak_words": "ХОК-КЕЙ",
+		      "noises": "hockey.ogg"
 		}
 	}},
  	{"Ц": {
@@ -760,7 +783,8 @@
 		"animals": {
 		      "pic": "animals/turtle.png",
 		      "name": "ЧЕРЕПАХА",
-		      "espeak_words": "ЧЕ-РЕ-ПАХА"
+		      "espeak_words": "ЧЕ-РЕ-ПАХА",
+		      "noises": "turtle.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/changu.png",
@@ -771,7 +795,8 @@
 		"toys": {
 		      "pic": "toys/lunchbox.png",
 		      "name": "ЧЕМОДАН",
-		      "espeak_words": "ЧЕМО-ДАН"
+		      "espeak_words": "ЧЕМО-ДАН",
+		      "noises": "lunchbox.ogg"
 		}
 	}},
  	{"Ш": {
@@ -832,7 +857,8 @@
 		"toys": {
 		      "pic": "toys/shield.png",
 		      "name": "ЩИТ",
-		      "espeak_words": "ЩИТ"
+		      "espeak_words": "ЩИТ",
+		      "noises": "shield.ogg"
 		}
 	}},
  	{"Ъ": {
@@ -840,7 +866,8 @@
 		"misc": {
 		      "pic": "toys/adjutant.png",
 		      "name": "АДЪЮТАНТ",
-		      "espeak_words": "АДЪЮТАНТ"
+		      "espeak_words": "АДЪЮТАНТ",
+		      "noises": "adjutant.ogg"
 		},
 		"food": {
 		      "pic": "food/saffron_milk_cap.png",
@@ -850,17 +877,20 @@
 		"animals": {
 		      "pic": "animals/fish.png",
 		      "name": "ПОДЪЯЗОК",
-		      "espeak_words": "ПО-ДЪЯ-ЗОК"
+		      "espeak_words": "ПО-ДЪЯ-ЗОК",
+		      "noises": "fish.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/jack.png",
 		      "name": "РАЗЪЁМ",
-		      "espeak_words": "РАЗЪЁМ"
+		      "espeak_words": "РАЗЪЁМ",
+		      "noises": "jack.ogg"
 		},
 		"toys": {
 		      "pic": "toys/adjutant.png",
 		      "name": "АДЪЮТАНТ",
-		      "espeak_words": "АДЪЮТАНТ"
+		      "espeak_words": "АДЪЮТАНТ",
+		      "noises": "adjutant.ogg"
 		}
 	}},
  	{"Ы": {
@@ -900,7 +930,8 @@
 		"misc": {
 		      "pic": "toys/easel.png",
 		      "name": "МОЛЬБЕРТ",
-		      "espeak_words": "МОЛЬБЕРТ"
+		      "espeak_words": "МОЛЬБЕРТ",
+		      "noises": "easel.ogg"
 		},
 		"food": {
 		      "pic": "food/x-cookie.png",
@@ -922,7 +953,8 @@
 		"toys": {
 		      "pic": "toys/ice_skate.png",
 		      "name": "КОНЬКИ",
-		      "espeak_words": "КОНЬ-КИ"
+		      "espeak_words": "КОНЬ-КИ",
+		      "noises": "ice_skate.ogg"
 		}
 	}},
  	{"Э": {

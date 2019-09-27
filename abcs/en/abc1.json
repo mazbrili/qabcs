@@ -23,7 +23,8 @@
 		"animals": {
 		      "pic": "animals/angelfish.png",
 		      "name": "ANGELFISH",
-		      "sound_pic": "angelfish.ogg"
+		      "sound_pic": "angelfish.ogg",
+		      "noises": "fish.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/accordion.png",
@@ -34,7 +35,8 @@
 		"toys": {
 		      "pic": "toys/anklet.png",
 		      "name": "ANKLET",
-		      "sound_pic": "anklet.ogg"
+		      "sound_pic": "anklet.ogg",
+		      "noises": "anklet.ogg"
 		}
 	}},
 	{"B": {
@@ -129,7 +131,8 @@
 		"toys": {
 		      "pic": "toys/doll.png",
 		      "name": "DOLL",
-		      "sound_pic": "doll.ogg"
+		      "sound_pic": "doll.ogg",
+		      "noises": "doll.ogg"
 		}
 	}},
 	{"E": {
@@ -159,7 +162,8 @@
 		"toys": {
 		      "pic": "toys/easel.png",
 		      "name": "EASEL",
-		      "sound_pic": "easel.ogg"
+		      "sound_pic": "easel.ogg",
+		      "noises": "easel.ogg"
 		}
 	}},
 	{"F": {
@@ -190,7 +194,8 @@
 		"toys": {
 		      "pic": "toys/football.png",
 		      "name": "FOOTBALL",
-		      "sound_pic": "football.ogg"
+		      "sound_pic": "football.ogg",
+		      "noises": "football.ogg"
 		}
 	}},
 	{"G": {
@@ -221,7 +226,8 @@
 		"toys": {
 		      "pic": "toys/glove.png",
 		      "name": "GLOVE",
-		      "sound_pic": "glove.ogg"
+		      "sound_pic": "glove.ogg",
+		      "noises": "glove.ogg"
 		}
 	}},
 	{"H": {
@@ -229,7 +235,8 @@
 		"misc": {
 		      "pic": "misc/hat.png",
 		      "name": "HAT",
-		      "sound_pic": "hat.ogg"
+		      "sound_pic": "hat.ogg",
+		      "noises": "hat.ogg"
 		},
 		"food": {
 		      "pic": "food/hot_dog.png",
@@ -260,7 +267,8 @@
 		"misc": {
 		      "pic": "misc/igloo.png",
 		      "name": "IGLOO",
-		      "sound_pic": "igloo.ogg"
+		      "sound_pic": "igloo.ogg",
+		      "noises": "igloo.ogg"
 		},
 		"food": {
 		      "pic": "food/ice_cream.png",
@@ -270,7 +278,8 @@
 		"animals": {
 		      "pic": "animals/iguana.png",
 		      "name": "IGUANA",
-		      "sound_pic": "iguana.ogg"
+		      "sound_pic": "iguana.ogg",
+		      "noises": "iguana.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/ipu.png",
@@ -281,7 +290,8 @@
 		"toys": {
 		      "pic": "toys/ice_skate.png",
 		      "name": "ICE SKATE",
-		      "sound_pic": "ice_skate.ogg"
+		      "sound_pic": "ice_skate.ogg",
+		      "noises": "ice_skate.ogg"
 		}
 	}},
 	{"J": {
@@ -289,7 +299,8 @@
 		"misc": {
 		      "pic": "misc/jar.png",
 		      "name": "JAR",
-		      "sound_pic": "jar.ogg"
+		      "sound_pic": "jar.ogg",
+		      "noises": "jar.ogg"
 		},
 		"food": {
 		      "pic": "food/juice.png",
@@ -343,7 +354,8 @@
 		"toys": {
 		      "pic": "toys/kite.png",
 		      "name": "KITE",
-		      "sound_pic": "kite.ogg"
+		      "sound_pic": "kite.ogg",
+		      "noises": "kite.ogg"
 		}
 	}},
 	{"L": {
@@ -374,7 +386,8 @@
 		"toys": {
 		      "pic": "toys/lunchbox.png",
 		      "name": "LUNCHBOX",
-		      "sound_pic": "lunchbox.ogg"
+		      "sound_pic": "lunchbox.ogg",
+		      "noises": "lunchbox.ogg"
 		}
 	}},
 	{"M": {
@@ -382,7 +395,8 @@
 		"misc": {
 		      "pic": "misc/magnifying_glass.png",
 		      "name": "MAGNIFYING GLASS",
-		      "sound_pic": "magnifying_glass.ogg"
+		      "sound_pic": "magnifying_glass.ogg",
+		      "noises": "magnifying_glass.ogg"
 		},
 		"food": {
 		      "pic": "food/mushroom.png",
@@ -404,7 +418,8 @@
 		"toys": {
 		      "pic": "toys/magnet.png",
 		      "name": "MAGNET",
-		      "sound_pic": "magnet.ogg"
+		      "sound_pic": "magnet.ogg",
+		      "noises": "magnet.ogg"
 		}
 	}},
 	{"N": {
@@ -423,7 +438,8 @@
 		"animals": {
 		      "pic": "animals/newt.png",
 		      "name": "NEWT",
-		      "sound_pic": "newt.ogg"
+		      "sound_pic": "newt.ogg",
+		      "noises": "newt.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/ney.png",
@@ -434,7 +450,8 @@
 		"toys": {
 		      "pic": "toys/necklace.png",
 		      "name": "NECKLACE",
-		      "sound_pic": "necklace.ogg"
+		      "sound_pic": "necklace.ogg",
+		      "noises": "necklace.ogg"
 		}
 	}},
 	{"O": {
@@ -464,7 +481,8 @@
 		"toys": {
 		      "pic": "toys/origami.png",
 		      "name": "ORIGAMI",
-		      "sound_pic": "origami.ogg"
+		      "sound_pic": "origami.ogg",
+		      "noises": "origami.ogg"
 		}
 	}},
 	{"P": {
@@ -472,7 +490,8 @@
 		"misc": {
 		      "pic": "toys/paper_airplane.png",
 		      "name": "PAPER AIRPLANE",
-		      "sound_pic": "paper_airplane.ogg"
+		      "sound_pic": "paper_airplane.ogg",
+		      "noises": "paper_airplane.ogg"
 		},
 		"food": {
 		      "pic": "food/pretzel.png",
@@ -494,7 +513,8 @@
 		"toys": {
 		      "pic": "toys/paint.png",
 		      "name": "PAINT",
-		      "sound_pic": "paint.ogg"
+		      "sound_pic": "paint.ogg",
+		      "noises": "paint.ogg"
 		}
 	}},
 	{"Q": {
@@ -525,7 +545,8 @@
 		"toys": {
 		      "pic": "toys/quilt.png",
 		      "name": "QUILT",
-		      "sound_pic": "quilt.ogg"
+		      "sound_pic": "quilt.ogg",
+		      "noises": "quilt.ogg"
 		}
 	}},
 	{"R": {
@@ -565,7 +586,8 @@
 		"misc": {
 		      "pic": "misc/star.png",
 		      "name": "STAR",
-		      "sound_pic": "star.ogg"
+		      "sound_pic": "star.ogg",
+		      "noises": "star.ogg"
 		},
 		"food": {
 		      "pic": "food/strawberry.png",
@@ -587,7 +609,8 @@
 		"toys": {
 		      "pic": "toys/seesaw.png",
 		      "name": "SEESAW",
-		      "sound_pic": "seesaw.ogg"
+		      "sound_pic": "seesaw.ogg",
+		      "noises": "seesaw.ogg"
 		}
 	}},
 	{"T": {
@@ -606,7 +629,8 @@
 		"animals": {
 		      "pic": "animals/turtle.png",
 		      "name": "TURTLE",
-		      "sound_pic": "turtle.ogg"
+		      "sound_pic": "turtle.ogg",
+		      "noises": "turtle.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/trumpet.png",
@@ -617,7 +641,8 @@
 		"toys": {
 		      "pic": "toys/top.png",
 		      "name": "TOP",
-		      "sound_pic": "top.ogg"
+		      "sound_pic": "top.ogg",
+		      "noises": "top.ogg"
 		}
 	}},
 	{"U": {
@@ -636,7 +661,8 @@
 		"animals": {
 		      "pic": "animals/urchin.png",
 		      "name": "URCHIN",
-		      "sound_pic": "urchin.ogg"
+		      "sound_pic": "urchin.ogg",
+		      "noises": "urchin.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/ukulele.png",
@@ -647,7 +673,8 @@
 		"toys": {
 		      "pic": "toys/unicycle.png",
 		      "name": "UNICYCLE",
-		      "sound_pic": "unicycle.ogg"
+		      "sound_pic": "unicycle.ogg",
+		      "noises": "unicycle.ogg"
 		}
 	}},
 	{"V": {
@@ -655,7 +682,8 @@
 		"misc": {
 		      "pic": "misc/vase.png",
 		      "name": "VASE",
-		      "sound_pic": "vase.ogg"
+		      "sound_pic": "vase.ogg",
+		      "noises": "vase.ogg"
 		},
 		"food": {
 		      "pic": "food/vegetables.png",
@@ -677,7 +705,8 @@
 		"toys": {
 		      "pic": "toys/volleyball.png",
 		      "name": "VOLLEYBALL",
-		      "sound_pic": "volleyball.ogg"
+		      "sound_pic": "volleyball.ogg",
+		      "noises": "volleyball.ogg"
 		}
 	}},
  	{"W": {
@@ -708,7 +737,8 @@
 		"toys": {
 		      "pic": "toys/wagon.png",
 		      "name": "WAGON",
-		      "sound_pic": "wagon.ogg"
+		      "sound_pic": "wagon.ogg",
+		      "noises": "wagon.ogg"
 		}
 	}},
  	{"X": {
@@ -716,7 +746,8 @@
 		"misc": {
 		      "pic": "misc/x-ray.png",
 		      "name": "X-RAY",
-		      "sound_pic": "x-ray.ogg"
+		      "sound_pic": "x-ray.ogg",
+		      "noises": "x-ray.ogg"
 		},
 		"food": {
 		      "pic": "food/x-cookie.png",
@@ -726,7 +757,8 @@
 		"animals": {
 		      "pic": "animals/xiphias.png",
 		      "name": "XIPHIAS",
-		      "sound_pic": "xiphias.ogg"
+		      "sound_pic": "xiphias.ogg",
+		      "noises": "fish.ogg"
 		},
 		"instrument": {
 		      "pic": "instrument/xun.png",
@@ -746,7 +778,8 @@
 		"misc": {
 		      "pic": "misc/yinyang.png",
 		      "name": "YINYANG",
-		      "sound_pic": "yinyang.ogg"
+		      "sound_pic": "yinyang.ogg",
+		      "noises": "yinyang.ogg"
 		},
 		"food": {
 		      "pic": "food/yam.png",
@@ -768,7 +801,8 @@
 		"toys": {
 		      "pic": "toys/yoyo.png",
 		      "name": "YOYO",
-		      "sound_pic": "yoyo.ogg"
+		      "sound_pic": "yoyo.ogg",
+		      "noises": "yoyo.ogg"
 		}
 	}},
  	{"Z": {
@@ -799,7 +833,8 @@
 		"toys": {
 		      "pic": "toys/zipline.png",
 		      "name": "ZIPLINE",
-		      "sound_pic": "zipline.ogg"
+		      "sound_pic": "zipline.ogg",
+		      "noises": "zipline.ogg"
 		}
 	}}
    ]
