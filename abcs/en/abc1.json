@@ -140,7 +140,8 @@
 		"misc": {
 		      "pic": "misc/earth.png",
 		      "name": "EARTH",
-		      "sound_pic": "earth.ogg"
+		      "sound_pic": "earth.ogg",
+		      "noises": "earth.ogg"
 		},
 		"food": {
 		      "pic": "food/egg.png",
