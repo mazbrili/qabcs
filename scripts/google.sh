@@ -180,7 +180,7 @@ case $1 in
    use)
       case $lang in
       be)
-          if [ -z "`echo $filename|grep '^ч$'`" ] && [ -z "`echo $filename|grep -v '^ў$'|grep 'ў'`" ] && [ -z "`echo $filename|grep 'г'`" ] && [ -z "`echo $filename|grep 'шч'`" ] && [ -z "`echo $filename|grep 'чы'`" ] && [ -z "`echo $filename|grep 'чэ'`" ] && [ -z "`echo $filename|grep 'чу'`" ] && [ -z "`echo $filename|grep 'ці'`" ] && [ -z "`echo $filename|grep -v 'формачка'|grep 'чк'`" ] && [ -z "`echo $filename|grep -v 'качаня'|grep 'ча'`" ] && [ -z "`echo $filename|grep 'чо'`" ] && [ -z "`echo $filename|grep 'ця'`" ] && [ ! "$filename" = "ы" ] && [ ! "$filename" = "ыых" ] && [ ! "$filename" = "ямс" ] && [ ! "$filename" = "воппер" ] && [ ! "$filename" = "абялікс" ] && [ ! "$filename" = "марскі_цмок" ] && [ ! "$filename" = "мядзведзь" ] && [ ! "$filename" = "чвэрць_долара" ] && [ ! "$filename" = "абедзенная_скрынка" ] && [ ! "$filename" = "абруч" ] && [ ! "$filename" = "смятана" ]
+          if [ -z "`echo $filename|grep '^ч$'`" ] && [ -z "`echo $filename|grep '.*ч$'`" ] && [ -z "`echo $filename|grep -v '^ў$'|grep 'ў'`" ] && [ -z "`echo $filename|grep 'г'`" ] && [ -z "`echo $filename|grep 'шч'`" ] && [ -z "`echo $filename|grep 'чы'`" ] && [ -z "`echo $filename|grep 'чэ'`" ] && [ -z "`echo $filename|grep 'чу'`" ] && [ -z "`echo $filename|grep -v 'формачка'|grep 'чк'`" ] && [ -z "`echo $filename|grep -v 'качаня'|grep 'ча'`" ] && [ -z "`echo $filename|grep 'чо'`" ] && [ -z "`echo $filename|grep 'ця'`" ] && [ -z "`echo $filename|grep 'ці'`" ] && [ -z "`echo $filename|grep 'це'`" ] && [ -z "`echo $filename|grep 'цю'`" ] && [ -z "`echo $filename|grep 'цё'`" ] && [ ! "$filename" = "ы" ] && [ ! "$filename" = "ыых" ] && [ ! "$filename" = "ямс" ] && [ ! "$filename" = "воппер" ] && [ ! "$filename" = "абялікс" ] && [ ! "$filename" = "марскі_цмок" ] && [ ! "$filename" = "мядзведзь" ] && [ ! "$filename" = "чвэрць_долара" ] && [ ! "$filename" = "абедзенная_скрынка" ] && [ ! "$filename" = "смятана" ]
           then
             lang="ru"
             languageCode="ru-RU"
@@ -478,7 +478,7 @@ do
        text=`echo "$text"|sed "s|марскі вожык|марскі́ вожык|g"`
        text=`echo "$text"|sed "s|марскі цмок|мар-с-кі цмок|g"`
        text=`echo "$text"|sed "s|мядуза|мя-дуза|g"`
-       text=`echo "$text"|sed "s|мядзведзь|мядзьведзь|g"`
+       text=`echo "$text"|sed "s|мядзведзь|мядзьвець|g"`
        text=`echo "$text"|sed "s|мідыя|мі́дыя|g"`
        text=`echo "$text"|sed "s|мурашкаед|мурашкае́д|g"`
        text=`echo "$text"|sed "s|бранзалет|бранзале́т|g"`
@@ -559,6 +559,9 @@ do
        text=`echo "$text"|sed "s|кручок|кру--чок|g"`
        text=`echo "$text"|sed "s|смятана|сьмя-тана|g"`
        text=`echo "$text"|sed "s|запяканка|запя-канка|g"`
+       text=`echo "$text"|sed "s|клавіятура|клаві-йатура|g"`
+       text=`echo "$text"|sed "s|нацюрморт|нацюр-морт|g"`
+       text=`echo "$text"|sed "s|іван-царэвіч|іван-ца-рэвіч|g"`
        ;;
      uk)
        #acute accent does not work with uk yet
