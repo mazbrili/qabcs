@@ -23,6 +23,9 @@ case $lang in
      en*)
        abc="abcdefghijklmnopqrstuvwxyz"
        ;;
+     la)
+       abc="abcdefghijklmnopqrstuvwxyz"
+       ;;
      el)
        abc="αβγδεζηθικλμνξοπρστυφχψω"
        ;;

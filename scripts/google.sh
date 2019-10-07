@@ -59,6 +59,9 @@ case $lang in
      is)
        api=false
        ;;
+     la)
+       api=false
+       ;;
      nl)
        languageCode="nl-NL"
        name="nl-NL-Standard-A"
