@@ -24,6 +24,8 @@
 # using Google Cloud Text-to-Speech API or not
 #api=true
 
+rm -f 1.txt
+
 lang="$1"
 
 if [ -z "$lang" ]
@@ -60,7 +62,7 @@ case $lang in
        api=false
        ;;
      la)
-       api=false
+       api=true
        ;;
      nl)
        languageCode="nl-NL"
@@ -178,6 +180,194 @@ be_into_ru() {
   fi
 }
 
+la_into_ru() {
+  # exceptions
+  text=`echo "$text"|sed "s|áulos|а́улос|g"`
+  text=`echo "$text"|sed "s|balaena|балаэна|g"`
+  text=`echo "$text"|sed "s|bellaria|бэлляриа|g"`
+  text=`echo "$text"|sed "s|ferox|фе́рокс|g"`
+  text=`echo "$text"|sed "s|volans|во́ланс|g"`
+  # rules
+  text=`echo "$text"|sed "s|y|i|g"`
+  text=`echo "$text"|sed "s|ý|í|g"`
+  text=`echo "$text"|sed "s|qu|кв|g"`
+  text=`echo "$text"|sed "s|ce|це|g"`
+  text=`echo "$text"|sed "s|cé|це́|g"`
+  text=`echo "$text"|sed "s|ci|ци|g"`
+  text=`echo "$text"|sed "s|cí|ци́|g"`
+  text=`echo "$text"|sed "s|cae|це|g"`
+  text=`echo "$text"|sed "s|cáe|це́|g"`
+  text=`echo "$text"|sed "s|coe|цё|g"`
+  text=`echo "$text"|sed "s|cóe|цё́|g"`
+  text=`echo "$text"|sed "s|ae|э|g"`
+  text=`echo "$text"|sed "s|áe|э́|g"`
+  text=`echo "$text"|sed "s|oe|ё|g"`
+  text=`echo "$text"|sed "s|óe|ё́|g"`
+  text=`echo "$text"|sed "s|ch|х|g"`
+  text=`echo "$text"|sed "s|lingu|лингв|g"`
+  text=`echo "$text"|sed "s|ph|ф|g"`
+  text=`echo "$text"|sed "s|rh|р|g"`
+  text=`echo "$text"|sed "s|th|т|g"`
+  text=`echo "$text"|sed "s|sti|сти|g"`
+  text=`echo "$text"|sed "s|stí|сти́|g"`
+  text=`echo "$text"|sed "s|tti|тти|g"`
+  text=`echo "$text"|sed "s|ttí|тти́|g"`
+  text=`echo "$text"|sed "s|xti|ксти|g"`
+  text=`echo "$text"|sed "s|xtí|ксти́|g"`
+  text=`echo "$text"|sed "s|tia|циа|g"`
+  text=`echo "$text"|sed "s|tía|ци́а|g"`
+  text=`echo "$text"|sed "s|tiá|циа́|g"`
+  text=`echo "$text"|sed "s|tie|циэ|g"`
+  text=`echo "$text"|sed "s|tíe|ци́э|g"`
+  text=`echo "$text"|sed "s|tié|циэ́|g"`
+  text=`echo "$text"|sed "s|tii|ции|g"`
+  text=`echo "$text"|sed "s|tíi|ци́и|g"`
+  text=`echo "$text"|sed "s|tií|ции́|g"`
+  text=`echo "$text"|sed "s|tio|цио|g"`
+  text=`echo "$text"|sed "s|tío|ци́о|g"`
+  text=`echo "$text"|sed "s|tió|цио́|g"`
+  text=`echo "$text"|sed "s|tiu|циу|g"`
+  text=`echo "$text"|sed "s|tíu|ци́у|g"`
+  text=`echo "$text"|sed "s|tiú|циу́|g"`
+  text=`echo "$text"|sed "s|ti|ти|g"`
+  text=`echo "$text"|sed "s|tí|ти́|g"`
+  text=`echo "$text"|sed "s|la|ля|g"`
+  text=`echo "$text"|sed "s|lá|ля́|g"`
+  text=`echo "$text"|sed "s|le|ле|g"`
+  text=`echo "$text"|sed "s|lé|ле́|g"`
+  text=`echo "$text"|sed "s|lo|лё|g"`
+  text=`echo "$text"|sed "s|ló|лё́|g"`
+  text=`echo "$text"|sed "s|lu|лю|g"`
+  text=`echo "$text"|sed "s|lú|лю́|g"`
+  text=`echo "$text"|sed "s|li|ли|g"`
+  text=`echo "$text"|sed "s|lí|ли́|g"`
+  text=`echo "$text"|sed "s|ja|я|g"`
+  text=`echo "$text"|sed "s|já|я́|g"`
+  text=`echo "$text"|sed "s|je|е|g"`
+  text=`echo "$text"|sed "s|jé|е́|g"`
+  text=`echo "$text"|sed "s|jo|ё|g"`
+  text=`echo "$text"|sed "s|jó|ё́|g"`
+  text=`echo "$text"|sed "s|ju|ю|g"`
+  text=`echo "$text"|sed "s|jú|ю́|g"`
+  text=`echo "$text"|sed "s|эsэ|эзэ|g"`
+  text=`echo "$text"|sed "s|э́sэ|э́зэ|g"`
+  text=`echo "$text"|sed "s|эsэ́|эзэ́|g"`
+  text=`echo "$text"|sed "s|эsё|эзё|g"`
+  text=`echo "$text"|sed "s|э́sё|э́зё|g"`
+  text=`echo "$text"|sed "s|эsё́|эзё́|g"`
+  text=`echo "$text"|sed "s|ёsэ|ёзэ|g"`
+  text=`echo "$text"|sed "s|ё́sэ|ё́зэ|g"`
+  text=`echo "$text"|sed "s|ёsэ́|ёзэ́|g"`
+  text=`echo "$text"|sed "s|ёsё|ёзё|g"`
+  text=`echo "$text"|sed "s|ё́sё|ё́зё|g"`
+  text=`echo "$text"|sed "s|ёsё́|ёзё́|g"`
+  text=`echo "$text"|sed "s|asa|аза|g"`
+  text=`echo "$text"|sed "s|ása|а́за|g"`
+  text=`echo "$text"|sed "s|asá|аза́|g"`
+  text=`echo "$text"|sed "s|ase|азэ|g"`
+  text=`echo "$text"|sed "s|áse|а́зэ|g"`
+  text=`echo "$text"|sed "s|asé|азэ́|g"`
+  text=`echo "$text"|sed "s|aso|азо|g"`
+  text=`echo "$text"|sed "s|áso|а́зо|g"`
+  text=`echo "$text"|sed "s|asó|азо́|g"`
+  text=`echo "$text"|sed "s|asu|азу|g"`
+  text=`echo "$text"|sed "s|ásu|а́зу|g"`
+  text=`echo "$text"|sed "s|asú|азу́|g"`
+  text=`echo "$text"|sed "s|esa|эза|g"`
+  text=`echo "$text"|sed "s|ésa|э́за|g"`
+  text=`echo "$text"|sed "s|esá|эза́|g"`
+  text=`echo "$text"|sed "s|osa|оза|g"`
+  text=`echo "$text"|sed "s|ósa|о́за|g"`
+  text=`echo "$text"|sed "s|osá|оза́|g"`
+  text=`echo "$text"|sed "s|usa|уза|g"`
+  text=`echo "$text"|sed "s|úsa|у́за|g"`
+  text=`echo "$text"|sed "s|usá|уза́|g"`
+  text=`echo "$text"|sed "s|ese|эзэ|g"`
+  text=`echo "$text"|sed "s|ése|э́зэ|g"`
+  text=`echo "$text"|sed "s|esé|эзэ́|g"`
+  text=`echo "$text"|sed "s|eso|эзо|g"`
+  text=`echo "$text"|sed "s|éso|э́зо|g"`
+  text=`echo "$text"|sed "s|esó|эзо́|g"`
+  text=`echo "$text"|sed "s|esu|эзу|g"`
+  text=`echo "$text"|sed "s|ésu|э́зу|g"`
+  text=`echo "$text"|sed "s|esú|эзу́|g"`
+  text=`echo "$text"|sed "s|ose|озэ|g"`
+  text=`echo "$text"|sed "s|óse|о́зэ|g"`
+  text=`echo "$text"|sed "s|osé|озэ́|g"`
+  text=`echo "$text"|sed "s|use|узэ|g"`
+  text=`echo "$text"|sed "s|úse|у́зэ|g"`
+  text=`echo "$text"|sed "s|usé|узэ́|g"`
+  text=`echo "$text"|sed "s|oso|озо|g"`
+  text=`echo "$text"|sed "s|óso|о́зо|g"`
+  text=`echo "$text"|sed "s|osó|озо́|g"`
+  text=`echo "$text"|sed "s|osu|озу|g"`
+  text=`echo "$text"|sed "s|ósu|о́зу|g"`
+  text=`echo "$text"|sed "s|osú|озу́|g"`
+  text=`echo "$text"|sed "s|uso|узо|g"`
+  text=`echo "$text"|sed "s|úso|у́зо|g"`
+  text=`echo "$text"|sed "s|usó|узо́|g"`
+  text=`echo "$text"|sed "s|usu|узу|g"`
+  text=`echo "$text"|sed "s|úsu|у́зу|g"`
+  text=`echo "$text"|sed "s|usú|узу́|g"`
+  text=`echo "$text"|sed "s|isa|иза|g"`
+  text=`echo "$text"|sed "s|ísa|и́за|g"`
+  text=`echo "$text"|sed "s|isá|иза́|g"`
+  text=`echo "$text"|sed "s|asi|ази|g"`
+  text=`echo "$text"|sed "s|ási|а́зи|g"`
+  text=`echo "$text"|sed "s|así|ази́|g"`
+  text=`echo "$text"|sed "s|ise|изэ|g"`
+  text=`echo "$text"|sed "s|íse|и́зэ|g"`
+  text=`echo "$text"|sed "s|isé|изэ́|g"`
+  text=`echo "$text"|sed "s|esi|эзи|g"`
+  text=`echo "$text"|sed "s|ési|э́зи|g"`
+  text=`echo "$text"|sed "s|esí|эзи́|g"`
+  text=`echo "$text"|sed "s|isi|изи|g"`
+  text=`echo "$text"|sed "s|ísi|и́зи|g"`
+  text=`echo "$text"|sed "s|isí|изи́|g"`
+  text=`echo "$text"|sed "s|iso|изо|g"`
+  text=`echo "$text"|sed "s|íso|и́зо|g"`
+  text=`echo "$text"|sed "s|isó|изо́|g"`
+  text=`echo "$text"|sed "s|osi|ози|g"`
+  text=`echo "$text"|sed "s|ósi|о́зи|g"`
+  text=`echo "$text"|sed "s|osí|ози́|g"`
+  text=`echo "$text"|sed "s|isu|изу|g"`
+  text=`echo "$text"|sed "s|ísu|и́зу|g"`
+  text=`echo "$text"|sed "s|isú|изу́|g"`
+  text=`echo "$text"|sed "s|usi|узи|g"`
+  text=`echo "$text"|sed "s|úsi|у́зи|g"`
+  text=`echo "$text"|sed "s|usí|узи́|g"`
+  text=`echo "$text"|sed "s|a|а|g"`
+  text=`echo "$text"|sed "s|á|а́|g"`
+  text=`echo "$text"|sed "s|b|б|g"`
+  text=`echo "$text"|sed "s|c|к|g"`
+  text=`echo "$text"|sed "s|d|д|g"`
+  text=`echo "$text"|sed "s|e|э|g"`
+  text=`echo "$text"|sed "s|é|э́|g"`
+  text=`echo "$text"|sed "s|f|ф|g"`
+  text=`echo "$text"|sed "s|g|г|g"`
+  text=`echo "$text"|sed "s|h|х|g"`
+  text=`echo "$text"|sed "s|i|и|g"`
+  text=`echo "$text"|sed "s|í|и́|g"`
+  text=`echo "$text"|sed "s|j|й|g"`
+  text=`echo "$text"|sed "s|k|к|g"`
+  text=`echo "$text"|sed "s|l|ль|g"`
+  text=`echo "$text"|sed "s|m|м|g"`
+  text=`echo "$text"|sed "s|n|н|g"`
+  text=`echo "$text"|sed "s|o|о|g"`
+  text=`echo "$text"|sed "s|ó|о́|g"`
+  text=`echo "$text"|sed "s|p|п|g"`
+  text=`echo "$text"|sed "s|r|р|g"`
+  text=`echo "$text"|sed "s|s|с|g"`
+  text=`echo "$text"|sed "s|t|т|g"`
+  text=`echo "$text"|sed "s|u|у|g"`
+  text=`echo "$text"|sed "s|ú|у́|g"`
+  text=`echo "$text"|sed "s|v|в|g"`
+  text=`echo "$text"|sed "s|w|в|g"`
+  text=`echo "$text"|sed "s|x|кс|g"`
+  text=`echo "$text"|sed "s|z|з|g"`
+  echo "$text" >> 1.txt
+}
+
 lang_runtime() {
 case $1 in
    use)
@@ -198,11 +388,26 @@ case $1 in
             be_into_uk "$text"
           fi
       ;;
+    la)
+        if [ "$2" = "words" ]
+        then
+          api=true
+          lang="ru"
+          languageCode="ru-RU"
+          name="ru-RU-Standard-D"
+          ssmlGender="MALE"
+          la_into_ru "$text"
+        else
+          api=false
+          lang=$lang0
+          format="wav"
+          output="mp3"
+        fi
       esac
       ;;
    reset)
       case $lang0 in
-      be)
+      be|la)
         lang=$lang0
       ;;
       esac
@@ -211,7 +416,7 @@ esac
 }
 
 get_sound(){
-lang_runtime "use"
+lang_runtime "use" "$1"
 if [ "$api" = "true" ]
 then
   curl -H "X-Goog-Api-Key: $key" \
@@ -352,6 +557,61 @@ do
        text=`echo "$text"|sed "s|yueqin|yuee ch'in|g"`
        text=`echo "$text"|sed "s|yupka|yoopka|g"`
        text=`echo "$text"|sed "s|zhaleyka|zhaaleyka|g"`
+       ;;
+     la)
+       text=`echo "$text"|sed "s|acetum|a-cetum|g"`
+       text=`echo "$text"|sed "s|crepito|crépito|g"`
+       text=`echo "$text"|sed "s|castrensis|castrénsis|g"`
+       text=`echo "$text"|sed "s|aegithina|aegithína|g"`
+       text=`echo "$text"|sed "s|chartaceum|chartacéum|g"`
+       text=`echo "$text"|sed "s|albatrus|albátrus|g"`
+       text=`echo "$text"|sed "s|alces|álces|g"`
+       text=`echo "$text"|sed "s|alearum|ale-arum|g"`
+       text=`echo "$text"|sed "s|amelanchier|amelánchier|g"`
+       text=`echo "$text"|sed "s|ananas|ánanas|g"`
+       text=`echo "$text"|sed "s|anas|ánas|g"`
+       text=`echo "$text"|sed "s|anaticula|anatícula|g"`
+       text=`echo "$text"|sed "s|anser|ánser|g"`
+       text=`echo "$text"|sed "s|anura|anúra|g"`
+       text=`echo "$text"|sed "s|aquila|áquila|g"`
+       text=`echo "$text"|sed "s|aranea|aránea|g"`
+       text=`echo "$text"|sed "s|arbor natalicia|árbor natalícia|g"`
+       text=`echo "$text"|sed "s|heterophyllus|heterophýllus|g"`
+       text=`echo "$text"|sed "s|asinus|ásinus|g"`
+       text=`echo "$text"|sed "s|astrum|ástrum|g"`
+       text=`echo "$text"|sed "s|aulos|áulos|g"`
+       text=`echo "$text"|sed "s|jaga|jága|g"`
+       text=`echo "$text"|sed "s|tabula|tábula|g"`
+       text=`echo "$text"|sed "s|birota|biróta|g"`
+       text=`echo "$text"|sed "s|mutus|mútus|g"`
+       text=`echo "$text"|sed "s|bubo|búbo|g"`
+       text=`echo "$text"|sed "s|cacajao|cacajáo|g"`
+       text=`echo "$text"|sed "s|caelestis|caeléstis|g"`
+       text=`echo "$text"|sed "s|canis|cánis|g"`
+       text=`echo "$text"|sed "s|trabalis|trabális|g"`
+       text=`echo "$text"|sed "s|caseus|cáseus|g"`
+       text=`echo "$text"|sed "s|sibilus|sibílus|g"`
+       text=`echo "$text"|sed "s|cepa|cépa|g"`
+       text=`echo "$text"|sed "s|cervesia|cer-ve-sia|g"`
+       text=`echo "$text"|sed "s|cervus|cérvus|g"`
+       text=`echo "$text"|sed "s|chamaeleo|chamae-leo|g"`
+       text=`echo "$text"|sed "s|clarinetum|clari-netum|g"`
+       text=`echo "$text"|sed "s|clausura|clausúra|g"`
+       text=`echo "$text"|sed "s|clavile|clávile|g"`
+       text=`echo "$text"|sed "s|coccinella|coccinélla|g"`
+       text=`echo "$text"|sed "s|consumentur|consuméntur|g"`
+       text=`echo "$text"|sed "s|velut|vélut|g"`
+       text=`echo "$text"|sed "s|tinea|tínea|g"`
+       text=`echo "$text"|sed "s|coquus|cóquus|g"`
+       text=`echo "$text"|sed "s|crepitetum|crepi-tetum|g"`
+       text=`echo "$text"|sed "s|crepundia|crepúndia|g"`
+       text=`echo "$text"|sed "s|crustulum|crustúlum|g"`
+       text=`echo "$text"|sed "s|caseum|cáseum|g"`
+       text=`echo "$text"|sed "s|diapason|diapáson|g"`
+       text=`echo "$text"|sed "s|dioscorea|dioscórea|g"`
+       text=`echo "$text"|sed "s|discipula|discípula|g"`
+       text=`echo "$text"|sed "s|domum|dómum|g"`
+       text=`echo "$text"|sed "s|dromaius|dromáius|g"`
        ;;
      fr)
        text=`echo "$text"|sed "s|dulzaina|doulzaina|g"`
@@ -615,6 +875,9 @@ do
        text=`echo "$text"|sed "s|^й$|і нескладовае|g"`
        text=`echo "$text"|sed "s|^ў$|у нескладовае|g"`
        text=`echo "$text"|sed "s|^ь$|мяккі знак|g"`
+       ;;
+     la)
+       lang_runtime "reset"
        ;;
   esac
   get_sound "alpha"
