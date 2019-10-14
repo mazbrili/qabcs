@@ -196,6 +196,26 @@ la_into_ru() {
   text=`echo "$text"|sed "s|x |kz |g"`
   text=`echo "$text"|sed "s|y|i|g"`
   text=`echo "$text"|sed "s|ý|í|g"`
+  text=`echo "$text"|sed "s|^ia|я|g"`
+  text=`echo "$text"|sed "s| ia| я|g"`
+  text=`echo "$text"|sed "s|^iá|я́|g"`
+  text=`echo "$text"|sed "s| iá| я́|g"`
+  text=`echo "$text"|sed "s|^ie|е|g"`
+  text=`echo "$text"|sed "s| ie| е|g"`
+  text=`echo "$text"|sed "s|^ié|е́|g"`
+  text=`echo "$text"|sed "s| ié| е́|g"`
+  text=`echo "$text"|sed "s|^ii|и|g"`
+  text=`echo "$text"|sed "s| ii| и|g"`
+  text=`echo "$text"|sed "s|^ií|и́|g"`
+  text=`echo "$text"|sed "s| ií| и́|g"`
+  text=`echo "$text"|sed "s|^io|ё|g"`
+  text=`echo "$text"|sed "s| io| ё|g"`
+  text=`echo "$text"|sed "s|^ió|ё́|g"`
+  text=`echo "$text"|sed "s| ió| ё́|g"`
+  text=`echo "$text"|sed "s|^iu|ю|g"`
+  text=`echo "$text"|sed "s| iu| ю|g"`
+  text=`echo "$text"|sed "s|^iú|ю́|g"`
+  text=`echo "$text"|sed "s| iú| ю́|g"`
   text=`echo "$text"|sed "s|qu|кв|g"`
   text=`echo "$text"|sed "s|ce|цэ|g"`
   text=`echo "$text"|sed "s|cé|цэ́|g"`
@@ -792,6 +812,8 @@ do
        text=`echo "$text"|sed "s|curculio|curcúlio|g"`
        text=`echo "$text"|sed "s|subiugalis|subiugális|g"`
        text=`echo "$text"|sed "s|sabdariffa|sabdáriffa|g"`
+       text=`echo "$text"|sed "s|yeti|yéti|g"`
+       text=`echo "$text"|sed "s|yorgia|yórgia|g"`
        ;;
      fr)
        text=`echo "$text"|sed "s|dulzaina|doulzaina|g"`
