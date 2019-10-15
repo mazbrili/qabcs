@@ -190,7 +190,9 @@ la_into_ru() {
   text=`echo "$text"|sed "s|eclair|экла́ир|g"`
   text=`echo "$text"|sed "s|folles aerii|фоллес эари́и|g"`
   text=`echo "$text"|sed "s|gerens|гэ́ренс|g"`
-  text=`echo "$text"|sed "s|caestu|ка-эсту|g"`
+  text=`echo "$text"|sed "s|kazoo|казу́|g"`
+  text=`echo "$text"|sed "s|guanicoe|гуанико́э|g"`
+  text=`echo "$text"|sed "s|erhu|эрху|g"`
   # rules
   text=`echo "$text"|sed "s|x$|kz|g"`
   text=`echo "$text"|sed "s|x |kz |g"`
@@ -596,10 +598,9 @@ do
        text=`echo "$text"|sed "s|zhaleyka|zhaaleyka|g"`
        ;;
      la)
-       text=`echo "$text"|sed "s|acetum|a-cetum|g"`
        text=`echo "$text"|sed "s|crepito|crépito|g"`
        text=`echo "$text"|sed "s|castrensis|castrénsis|g"`
-       text=`echo "$text"|sed "s|aegithina|aegithína|g"`
+       text=`echo "$text"|sed "s|aegithina|aaegithína|g"`
        text=`echo "$text"|sed "s|chartaceum|chartacéum|g"`
        text=`echo "$text"|sed "s|albatrus|albátrus|g"`
        text=`echo "$text"|sed "s|alces|álces|g"`
@@ -622,10 +623,10 @@ do
        text=`echo "$text"|sed "s|mutus|mútus|g"`
        text=`echo "$text"|sed "s|bubo|búbo|g"`
        text=`echo "$text"|sed "s|cacajao|cacajáo|g"`
-       text=`echo "$text"|sed "s|caelestis|caeléstis|g"`
+       text=`echo "$text"|sed "s|caelestis|caaeléstis|g"`
        text=`echo "$text"|sed "s|canis|cánis|g"`
        text=`echo "$text"|sed "s|trabalis|trabális|g"`
-       text=`echo "$text"|sed "s|caseus|ca seus|g"`
+       text=`echo "$text"|sed "s|caseus|caséus|g"`
        text=`echo "$text"|sed "s|sibilus|sibílus|g"`
        text=`echo "$text"|sed "s|cepa|cépa|g"`
        text=`echo "$text"|sed "s|cervesia|cer-vésia|g"`
@@ -637,13 +638,13 @@ do
        text=`echo "$text"|sed "s|coccinella|coccinélla|g"`
        text=`echo "$text"|sed "s|consumentur|consuméntur|g"`
        text=`echo "$text"|sed "s|velut|vélut|g"`
-       text=`echo "$text"|sed "s|tinea|tínea|g"`
+       text=`echo "$text"|sed "s|tinea|tinéa|g"`
        text=`echo "$text"|sed "s|coquus|cóquus|g"`
        text=`echo "$text"|sed "s|crepitetum|crepi-tetum|g"`
        text=`echo "$text"|sed "s|crepundia|crepúndia|g"`
        text=`echo "$text"|sed "s|crustulum|crustúlum|g"`
        text=`echo "$text"|sed "s|caseum|cáseum|g"`
-       text=`echo "$text"|sed "s|dioscorea|dioscórea|g"`
+       text=`echo "$text"|sed "s|dioscorea|dioscoréa|g"`
        text=`echo "$text"|sed "s|discipula|discípula|g"`
        text=`echo "$text"|sed "s|domum|dómum|g"`
        text=`echo "$text"|sed "s|dromaius|dromáius|g"`
@@ -679,7 +680,7 @@ do
        text=`echo "$text"|sed "s|iglu|íglu|g"`
        text=`echo "$text"|sed "s|ignis|ígnis|g"`
        text=`echo "$text"|sed "s|jarana|jarána|g"`
-       text=`echo "$text"|sed "s|juglans regia|júglanz régia|g"`
+       text=`echo "$text"|sed "s|juglans regia|júglanz regía|g"`
        text=`echo "$text"|sed "s|kangurus|kangúrus|g"`
        text=`echo "$text"|sed "s|kisanji|kisán-ji|g"`
        text=`echo "$text"|sed "s|accumsan|accúmsan|g"`
@@ -695,9 +696,9 @@ do
        text=`echo "$text"|sed "s|mala|mála|g"`
        text=`echo "$text"|sed "s|malum|málum|g"`
        text=`echo "$text"|sed "s|manus|mánus|g"`
-       text=`echo "$text"|sed "s|maracae|maráca-e|g"`
+       text=`echo "$text"|sed "s|maracae|marácaae|g"`
        text=`echo "$text"|sed "s|miles|míles|g"`
-       text=`echo "$text"|sed "s|mirum contingat amicius arvum|mírum contíngat amicíus árvum|g"`
+       text=`echo "$text"|sed "s|mirum contingat amicius arvum|mírum contíngat amícius árvum|g"`
        text=`echo "$text"|sed "s|mulus|múlus|g"`
        text=`echo "$text"|sed "s|mustela|mustéla|g"`
        text=`echo "$text"|sed "s|mylabris|mylabriz|g"`
@@ -705,11 +706,9 @@ do
        text=`echo "$text"|sed "s|nachos|náchos|g"`
        text=`echo "$text"|sed "s|nasus|násus|g"`
        text=`echo "$text"|sed "s|nauta|náuta|g"`
-       text=`echo "$text"|sed "s|obelix|obélix|g"`
        text=`echo "$text"|sed "s|ocarina|ocárina|g"`
        text=`echo "$text"|sed "s|ocellaturis|ocellatúris|g"`
-       text=`echo "$text"|sed "s|octopus|óctopus|g"`
-       text=`echo "$text"|sed "s|oktobass|óktobas|g"`
+       text=`echo "$text"|sed "s|oktobass|októbas|g"`
        text=`echo "$text"|sed "s|ole lukoje|óle lukóje|g"`
        text=`echo "$text"|sed "s|oleum|óleum|g"`
        text=`echo "$text"|sed "s|oscillum|os-cíllum|g"`
@@ -757,7 +756,6 @@ do
        text=`echo "$text"|sed "s|strigops habroptila|strígobz habróptila|g"`
        text=`echo "$text"|sed "s|telum|télum|g"`
        text=`echo "$text"|sed "s|sucus|súcus|g"`
-       text=`echo "$text"|sed "s|sula|súla|g"`
        text=`echo "$text"|sed "s|tabella|tabélla|g"`
        text=`echo "$text"|sed "s|tanbur|tánbur|g"`
        text=`echo "$text"|sed "s|tangelo|tangélo|g"`
@@ -771,9 +769,9 @@ do
        text=`echo "$text"|sed "s|turbonis|turbónis|g"`
        text=`echo "$text"|sed "s|turtur|túrtur|g"`
        text=`echo "$text"|sed "s|scandalum|scandálum|g"`
-       text=`echo "$text"|sed "s|ugal|úgal|g"`
        text=`echo "$text"|sed "s|umbella|umbélla|g"`
        text=`echo "$text"|sed "s|ursula|úrsula|g"`
+       text=`echo "$text"|sed "s|^sula|súla|g"`
        text=`echo "$text"|sed "s|ursus|úrsus|g"`
        text=`echo "$text"|sed "s|maritimus|marítimus|g"`
        text=`echo "$text"|sed "s|uszka|us-zka|g"`
@@ -790,7 +788,6 @@ do
        text=`echo "$text"|sed "s|vulpes|vúlpes|g"`
        text=`echo "$text"|sed "s|zerda|zérda|g"`
        text=`echo "$text"|sed "s|vultur|vúltur|g"`
-       text=`echo "$text"|sed "s|washint|wáshint|g"`
        text=`echo "$text"|sed "s|whopper|whópper|g"`
        text=`echo "$text"|sed "s|wonton|wónton|g"`
        text=`echo "$text"|sed "s|x-men|iks-men|g"`
@@ -802,9 +799,7 @@ do
        text=`echo "$text"|sed "s|yakult|yakúlt|g"`
        text=`echo "$text"|sed "s|yobel|yóbel|g"`
        text=`echo "$text"|sed "s|zamenis|zaménis|g"`
-       text=`echo "$text"|sed "s|zetygen|zetýgen|g"`
        text=`echo "$text"|sed "s|zizania|zizánia|g"`
-       text=`echo "$text"|sed "s|zurna|zúrna|g"`
        text=`echo "$text"|sed "s|lodix|lódix|g"`
        text=`echo "$text"|sed "s|alimentis|aliménti-s|g"`
        text=`echo "$text"|sed "s|gratin|gratín|g"`
@@ -814,6 +809,17 @@ do
        text=`echo "$text"|sed "s|sabdariffa|sabdáriffa|g"`
        text=`echo "$text"|sed "s|yeti|yéti|g"`
        text=`echo "$text"|sed "s|yorgia|yórgia|g"`
+       text=`echo "$text"|sed "s|anaticula|anatícula|g"`
+       text=`echo "$text"|sed "s|prandii|prandíi|g"`
+       text=`echo "$text"|sed "s|aeolinum|aaeolinum|g"`
+       text=`echo "$text"|sed "s|caestu|ca-aestu|g"`
+       text=`echo "$text"|sed "s|circulus|circúlus|g"`
+       text=`echo "$text"|sed "s|clupea|clupéa|g"`
+       text=`echo "$text"|sed "s|currii|curríi|g"`
+       text=`echo "$text"|sed "s|radii|radíi|g"`
+       text=`echo "$text"|sed "s|autocineticum|autocinetícum|g"`
+       text=`echo "$text"|sed "s|yanornis|yanórnis|g"`
+       text=`echo "$text"|sed "s|longissimus|longissímus|g"`
        ;;
      fr)
        text=`echo "$text"|sed "s|dulzaina|doulzaina|g"`
