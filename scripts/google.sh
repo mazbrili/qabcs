@@ -61,8 +61,16 @@ case $lang in
      is)
        api=false
        ;;
-     la)
+     la_ru)
+       languageCode="ru-RU"
+       name="ru-RU-Standard-D"
+       ssmlGender="MALE"
        api=true
+       ;;
+     la_it)
+       lang0=$lang
+       lang="la"
+       api=false
        ;;
      nl)
        languageCode="nl-NL"
@@ -145,6 +153,10 @@ case $lang in
      be)
        api=true
        ;;
+     la)
+       echo "Latin language can be 'la_ru' or 'la_it', but not 'la'!"
+       exit 1
+       ;;
      *)
        echo "Unknown language!"
        exit 1
@@ -194,7 +206,18 @@ la_into_ru() {
   text=`echo "$text"|sed "s|guanicoe|гуанико́э|g"`
   text=`echo "$text"|sed "s|erhu|эрху|g"`
   text=`echo "$text"|sed "s|ney|нэй|g"`
-  # rules
+  # rules for letters
+  text=`echo "$text"|sed "s|^c$|цэ|g"`
+  text=`echo "$text"|sed "s|^e$|е|g"`
+  text=`echo "$text"|sed "s|^h$|аш|g"`
+  text=`echo "$text"|sed "s|^j$|жи|g"`
+  text=`echo "$text"|sed "s|^l$|эль|g"`
+  text=`echo "$text"|sed "s|^q$|ку|g"`
+  text=`echo "$text"|sed "s|^w$|дубль-вэ|g"`
+  text=`echo "$text"|sed "s|^x$|икс|g"`
+  text=`echo "$text"|sed "s|^y$|игрек|g"`
+  text=`echo "$text"|sed "s|^z$|зет|g"`
+  # rules for words
   text=`echo "$text"|sed "s|x$|kz|g"`
   text=`echo "$text"|sed "s|x |kz |g"`
   text=`echo "$text"|sed "s|y|i|g"`
@@ -408,6 +431,12 @@ la_into_ru() {
   echo "$text" >> 1.txt
 }
 
+la_into_it() {
+  # rules for letters
+  text=`echo "$text"|sed "s|^t$|tii|g"`
+  text=`echo "$text"|sed "s|^y$|i greca|g"`
+}
+
 lang_runtime() {
 case $1 in
    use)
@@ -428,26 +457,16 @@ case $1 in
             be_into_uk "$text"
           fi
       ;;
-    la)
-        if [ "$2" = "words" ]
-        then
-          api=true
-          lang="ru"
-          languageCode="ru-RU"
-          name="ru-RU-Standard-D"
-          ssmlGender="MALE"
+      la_ru)
           la_into_ru "$text"
-        else
-          api=false
-          lang=$lang0
-          format="wav"
-          output="mp3"
-        fi
+      ;;
+      la)
+          la_into_it "$text"
       esac
       ;;
    reset)
       case $lang0 in
-      be|la)
+      be)
         lang=$lang0
       ;;
       esac
@@ -456,7 +475,7 @@ esac
 }
 
 get_sound(){
-lang_runtime "use" "$1"
+lang_runtime "use"
 if [ "$api" = "true" ]
 then
   curl -H "X-Goog-Api-Key: $key" \
@@ -490,7 +509,10 @@ fi
 lang_runtime "reset"
 }
 
-lang0=$lang
+if [ -z "$lang0" ]
+then
+  lang0=$lang
+fi
 audioEncoding="LINEAR16"
 if [ "$api" = "true" ]
 then
@@ -598,7 +620,7 @@ do
        text=`echo "$text"|sed "s|yupka|yoopka|g"`
        text=`echo "$text"|sed "s|zhaleyka|zhaaleyka|g"`
        ;;
-     la)
+     la_ru)
        text=`echo "$text"|sed "s|crepito|crépito|g"`
        text=`echo "$text"|sed "s|castrensis|castrénsis|g"`
        text=`echo "$text"|sed "s|aegithina|aaegithína|g"`
@@ -1087,9 +1109,6 @@ do
        text=`echo "$text"|sed "s|^й$|і нескладовае|g"`
        text=`echo "$text"|sed "s|^ў$|у нескладовае|g"`
        text=`echo "$text"|sed "s|^ь$|мяккі знак|g"`
-       ;;
-     la)
-       lang_runtime "reset"
        ;;
   esac
   get_sound "alpha"

@@ -20,10 +20,7 @@ then
 fi
 
 case $lang in
-     en*)
-       abc="abcdefghijklmnopqrstuvwxyz"
-       ;;
-     la)
+     en*|la_ru|la_it)
        abc="abcdefghijklmnopqrstuvwxyz"
        ;;
      el)
