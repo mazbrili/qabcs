@@ -193,6 +193,7 @@ la_into_ru() {
   text=`echo "$text"|sed "s|kazoo|казу́|g"`
   text=`echo "$text"|sed "s|guanicoe|гуанико́э|g"`
   text=`echo "$text"|sed "s|erhu|эрху|g"`
+  text=`echo "$text"|sed "s|ney|нэй|g"`
   # rules
   text=`echo "$text"|sed "s|x$|kz|g"`
   text=`echo "$text"|sed "s|x |kz |g"`
@@ -626,7 +627,7 @@ do
        text=`echo "$text"|sed "s|caelestis|caaeléstis|g"`
        text=`echo "$text"|sed "s|canis|cánis|g"`
        text=`echo "$text"|sed "s|trabalis|trabális|g"`
-       text=`echo "$text"|sed "s|caseus|caséus|g"`
+       text=`echo "$text"|sed "s|caseus|cáseus|g"`
        text=`echo "$text"|sed "s|sibilus|sibílus|g"`
        text=`echo "$text"|sed "s|cepa|cépa|g"`
        text=`echo "$text"|sed "s|cervesia|cer-vésia|g"`
@@ -723,7 +724,7 @@ do
        text=`echo "$text"|sed "s|latrina|latrína|g"`
        text=`echo "$text"|sed "s|petrus|pe-trus|g"`
        text=`echo "$text"|sed "s|pharomachrus|pharomáchrus|g"`
-       text=`echo "$text"|sed "s|pila flexilis|píla fléxilis|g"`
+       text=`echo "$text"|sed "s|pila flexilis|píla flexílis|g"`
        text=`echo "$text"|sed "s|piscis|píscis|g"`
        text=`echo "$text"|sed "s|pistris|pístris|g"`
        text=`echo "$text"|sed "s|pisum|písum|g"`
@@ -783,7 +784,7 @@ do
        text=`echo "$text"|sed "s|vermicelli|vérmi-cel-li|g"`
        text=`echo "$text"|sed "s|vermilingua|vermilíngua|g"`
        text=`echo "$text"|sed "s|vermis|vérmis|g"`
-       text=`echo "$text"|sed "s|vinegret|vi-négret|g"`
+       text=`echo "$text"|sed "s|vinegret|vine-gret|g"`
        text=`echo "$text"|sed "s|vitulus|vitúlus|g"`
        text=`echo "$text"|sed "s|vulpes|vúlpes|g"`
        text=`echo "$text"|sed "s|zerda|zérda|g"`
@@ -820,6 +821,9 @@ do
        text=`echo "$text"|sed "s|autocineticum|autocinetícum|g"`
        text=`echo "$text"|sed "s|yanornis|yanórnis|g"`
        text=`echo "$text"|sed "s|longissimus|longissímus|g"`
+       text=`echo "$text"|sed "s|principis|princípis|g"`
+       text=`echo "$text"|sed "s|sella|sélla|g"`
+       text=`echo "$text"|sed "s|egressaeque|egréssaeque|g"`
        ;;
      fr)
        text=`echo "$text"|sed "s|dulzaina|doulzaina|g"`
