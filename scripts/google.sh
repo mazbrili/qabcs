@@ -209,6 +209,7 @@ la_into_ru() {
   # rules for letters
   text=`echo "$text"|sed "s|^c$|цэ|g"`
   text=`echo "$text"|sed "s|^e$|е|g"`
+  text=`echo "$text"|sed "s|^g$|жэ|g"`
   text=`echo "$text"|sed "s|^h$|аш|g"`
   text=`echo "$text"|sed "s|^j$|жи|g"`
   text=`echo "$text"|sed "s|^l$|эль|g"`
@@ -435,6 +436,9 @@ la_into_it() {
   # rules for letters
   text=`echo "$text"|sed "s|^t$|tii|g"`
   text=`echo "$text"|sed "s|^y$|i greca|g"`
+  # rules for words
+  text=`echo "$text"|sed "s|qu|kw|g"`
+  text=`echo "$text"|sed "s|cy|ci|g"`
 }
 
 lang_runtime() {
@@ -829,7 +833,6 @@ do
        text=`echo "$text"|sed "s|artemisia|artemísia|g"`
        text=`echo "$text"|sed "s|curculio|curcúlio|g"`
        text=`echo "$text"|sed "s|subiugalis|subiugális|g"`
-       text=`echo "$text"|sed "s|sabdariffa|sabdáriffa|g"`
        text=`echo "$text"|sed "s|yeti|yéti|g"`
        text=`echo "$text"|sed "s|yorgia|yórgia|g"`
        text=`echo "$text"|sed "s|anaticula|anatícula|g"`
@@ -846,6 +849,99 @@ do
        text=`echo "$text"|sed "s|principis|princípis|g"`
        text=`echo "$text"|sed "s|sella|sélla|g"`
        text=`echo "$text"|sed "s|egressaeque|egréssaeque|g"`
+       text=`echo "$text"|sed "s|harenae|harenáae|g"`
+       ;;
+     la_it)
+       text=`echo "$text"|sed "s|aegithina|aegi-thina|g"`
+       text=`echo "$text"|sed "s|amelanchier|amelanchiher|g"`
+       text=`echo "$text"|sed "s|gratin|grah-tin|g"`
+       text=`echo "$text"|sed "s|chartaceum|cartaceum|g"`
+       text=`echo "$text"|sed "s|chalcophonos|calcophonos|g"`
+       text=`echo "$text"|sed "s|chalumeau|calu-meau|g"`
+       text=`echo "$text"|sed "s|chamaeleo|camaehleo|g"`
+       text=`echo "$text"|sed "s|changu|cangu|g"`
+       text=`echo "$text"|sed "s|cichorium|cicorium|g"`
+       text=`echo "$text"|sed "s|circulus|cirhculus|g"`
+       text=`echo "$text"|sed "s|circus|cirhcus|g"`
+       text=`echo "$text"|sed "s|cochlearibus|coclearibus|g"`
+       text=`echo "$text"|sed "s|aquila|aqui-la|g"`
+       text=`echo "$text"|sed "s|quelea|quehlea|g"`
+       text=`echo "$text"|sed "s|quinua|cwinua|g"`
+       text=`echo "$text"|sed "s|crustulum|crus-tulum|g"`
+       text=`echo "$text"|sed "s|cymbali|cym-bali|g"`
+       text=`echo "$text"|sed "s|procyon|procy-on|g"`
+       text=`echo "$text"|sed "s|dioscorea|dios-corea|g"`
+       text=`echo "$text"|sed "s|dulzaina|dul-zaina|g"`
+       text=`echo "$text"|sed "s|eclair|eclahir|g"`
+       text=`echo "$text"|sed "s|lucius|lu-cius|g"`
+       text=`echo "$text"|sed "s|euphonium|eufonium|g"`
+       text=`echo "$text"|sed "s|folles|follhes|g"`
+       text=`echo "$text"|sed "s|aerii|ae-rii|g"`
+       text=`echo "$text"|sed "s|gerens|gerenhs|g"`
+       text=`echo "$text"|sed "s|tympanum|tym-panum|g"`
+       text=`echo "$text"|sed "s|sabdariffa|sab-dariffa|g"`
+       text=`echo "$text"|sed "s|horologium|horo-logium|g"`
+       text=`echo "$text"|sed "s|idefix|ihdefix|g"`
+       text=`echo "$text"|sed "s|idiophonum|idio-phonum|g"`
+       text=`echo "$text"|sed "s|indonesiaca harpa|indonesiaca, harpa|g"`
+       text=`echo "$text"|sed "s|jasminum|iasminum|g"`
+       text=`echo "$text"|sed "s|jatagan|jata-gan|g"`
+       text=`echo "$text"|sed "s|jo-jo|io-io|g"`
+       text=`echo "$text"|sed "s|jogurtum|iogurtum|g"`
+       text=`echo "$text"|sed "s|joulutorttu|ioulutorttu|g"`
+       text=`echo "$text"|sed "s|juglans regia|juglans, regia|g"`
+       text=`echo "$text"|sed "s|kisanji|kisahnji|g"`
+       text=`echo "$text"|sed "s|accumsan|accumhsan|g"`
+       text=`echo "$text"|sed "s|later|lahter|g"`
+       text=`echo "$text"|sed "s|lycalopex|licalopex|g"`
+       text=`echo "$text"|sed "s|maizium|ma-isium|g"`
+       text=`echo "$text"|sed "s|organum|or-ganum|g"`
+       text=`echo "$text"|sed "s|maracae|maracaheh|g"`
+       text=`echo "$text"|sed "s|melongena|melohn-gena|g"`
+       text=`echo "$text"|sed "s|miles|mi-les|g"`
+       text=`echo "$text"|sed "s|mylabris|milabris|g"`
+       text=`echo "$text"|sed "s|mytilus|mitilus|g"`
+       text=`echo "$text"|sed "s|nachos|nachous|g"`
+       text=`echo "$text"|sed "s|nautilus|nauhtilus|g"`
+       text=`echo "$text"|sed "s|obelix|obe-lix|g"`
+       text=`echo "$text"|sed "s|objectivum|obiec-tivum|g"`
+       text=`echo "$text"|sed "s|ocarina|ocaahrina|g"`
+       text=`echo "$text"|sed "s|octopus|octohpus|g"`
+       text=`echo "$text"|sed "s|olivier|olivjer|g"`
+       text=`echo "$text"|sed "s|petrus rabidus|petrus, rabidus|g"`
+       text=`echo "$text"|sed "s|pharomachrus|pharomacrus|g"`
+       text=`echo "$text"|sed "s|cinereus|cinerheus|g"`
+       text=`echo "$text"|sed "s|phaseolus|faseolus|g"`
+       text=`echo "$text"|sed "s|phasianus|fasianus|g"`
+       text=`echo "$text"|sed "s|pyrrhula|pyr-rula|g"`
+       text=`echo "$text"|sed "s|python|pithohn|g"`
+       text=`echo "$text"|sed "s|quartam nota|quartam, nota|g"`
+       text=`echo "$text"|sed "s|quatuor|quátuor|g"`
+       text=`echo "$text"|sed "s|quatuor|quattuor|g"`
+       text=`echo "$text"|sed "s|rhinoceros|rinoceros|g"`
+       text=`echo "$text"|sed "s|rocheta|rocketa|g"`
+       text=`echo "$text"|sed "s|arcticus|ark-ticus|g"`
+       text=`echo "$text"|sed "s|sahrzad|sahr-zad|g"`
+       text=`echo "$text"|sed "s|sampler|sahmpler|g"`
+       text=`echo "$text"|sed "s|saxophonum|saxo-phonum|g"`
+       text=`echo "$text"|sed "s|halvah|hal-vah|g"`
+       text=`echo "$text"|sed "s|stylodipus|stilodipus|g"`
+       text=`echo "$text"|sed "s|tagliatelle|taghli-atelle|g"`
+       text=`echo "$text"|sed "s|tangelo|tanhgelo|g"`
+       text=`echo "$text"|sed "s|tragemata|tragehmata|g"`
+       text=`echo "$text"|sed "s|ugal|u-gal|g"`
+       text=`echo "$text"|sed "s|uszka|uhszka|g"`
+       text=`echo "$text"|sed "s|venator|venahtor|g"`
+       text=`echo "$text"|sed "s|vibraslap|vibra-zlap|g"`
+       text=`echo "$text"|sed "s|vinegret|vineg-reth|g"`
+       text=`echo "$text"|sed "s|wallabia|wahllabia|g"`
+       text=`echo "$text"|sed "s|washint|vashint|g"`
+       text=`echo "$text"|sed "s|xenopus|xenohpus|g"`
+       text=`echo "$text"|sed "s|xiphias|xifias|g"`
+       text=`echo "$text"|sed "s|xoubas|ksoubas|g"`
+       text=`echo "$text"|sed "s|yorgia|yorgi-a|g"`
+       text=`echo "$text"|sed "s|zetygen|zety-gen|g"`
+       text=`echo "$text"|sed "s|zurna|zur-na|g"`
        ;;
      fr)
        text=`echo "$text"|sed "s|dulzaina|doulzaina|g"`
