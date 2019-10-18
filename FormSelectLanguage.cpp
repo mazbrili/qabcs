@@ -117,7 +117,7 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
 
             }
 
-            languageName[0]=languageName[0].toUpper();
+            if (!languageName.isEmpty()) languageName[0]=languageName[0].toUpper();
 
             if (languageName.isEmpty() or languageName=="C"){
                     languageName=lang_code;
