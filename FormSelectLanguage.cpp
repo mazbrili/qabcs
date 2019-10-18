@@ -41,8 +41,8 @@ FormSelectLanguage::FormSelectLanguage(QWidget *parent) :
         dir2.setFilter(QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot);
         dir2.setSorting(QDir::Name|QDir::Type);
         QFileInfoList list2 = dir2.entryInfoList();
-        for (int i = 0; i < list2.size(); ++i) {
-            QFileInfo fileInfo2 = list2.at(i);
+        for (int y = 0; y < list2.size(); ++y) {
+            QFileInfo fileInfo2 = list2.at(y);
             QString lang_filename = fileInfo2.fileName();
             if (lang_filename.indexOf(QRegExp("(.*)(.json|.properties)$"))==-1) continue;
 
