@@ -1133,14 +1133,13 @@ void MainWindow::clickButtonInfo(){
 
 
 bool MainWindow::isExistSox(){
-    QProcess proc;
-    global_path_to_play="play";
 
 #if defined(_WIN32)
+    global_path_to_play = "\""+QString(GLOBAL_PATH_USERDATA) + "/3rdparty/sox/play.exe\"";
     return true;
-    //global_path_to_play = "\""+QCoreApplication::applicationDirPath() + "/3rdparty/sox/play.exe\"";
-#endif
-
+#else
+    QProcess proc;
+    global_path_to_play="play";
     proc.start(global_path_to_play+" --version");
     proc.waitForFinished();
     QString text = proc.readAll();
@@ -1151,6 +1150,8 @@ bool MainWindow::isExistSox(){
     }
 
     return false;
+#endif
+
 }
 
 bool MainWindow::isExistEspeak(){

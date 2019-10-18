@@ -25,24 +25,29 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
     if (!QFile::exists(filename)) return;
     QFileInfo fileInfo(filename);
 
+
 #if defined(_WIN32)
     QCoreApplication::instance()->processEvents();
 
-    qDebug() << "[DEBUG] play " << fileInfo.absoluteFilePath();
-
-    if (async){
-        playerBackgroud->stop();
-        playerBackgroud->setMedia(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
-        playerBackgroud->play();
-    }else{
-        SndPlayer player(nullptr,fileInfo.absoluteFilePath());
-        player.wait();
+    if (!QFile(global_path_to_play.replace("\"","")).exists()){
+        qDebug() << "[DEBUG] playerBackgroud " << fileInfo.absoluteFilePath();
+        if (async){
+            playerBackgroud->stop();
+            playerBackgroud->setMedia(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
+            playerBackgroud->play();
+        }else{
+            SndPlayer player(nullptr,fileInfo.absoluteFilePath());
+            player.wait();
+        }
+        return;
     }
-#else
+#endif
+
+
     QProcess proc;
     QString cmd_to_play = global_path_to_play+" "+fileInfo.absoluteFilePath();
 
-    qDebug() << "[DEBUG] " << cmd_to_play;
+    qDebug() << "[DEBUG] " << cmd_to_play << async;
 
 #if defined(_WIN32)
     cmd_to_play=global_path_to_play+" \""+fileInfo.absoluteFilePath()+"\"  -t waveaudio";
@@ -63,12 +68,14 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
     proc.setWorkingDirectory(workingDirectory);
 #endif
 
+    qDebug() << "[DEBUG] play " << fileInfo.absoluteFilePath();
     if (async){
         proc.startDetached(cmd_to_play);
     }else{
         proc.execute(cmd_to_play);
+
     }
-#endif
+
 
 }
 
