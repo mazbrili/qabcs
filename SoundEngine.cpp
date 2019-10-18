@@ -11,14 +11,14 @@
 #include "LoaderAbcFormats.h"
 #include "sndplayer.h"
 
-QMediaPlayer *playerBackgroud=nullptr;
+QMediaPlayer *playerBackground=nullptr;
 
 SoundEngine::SoundEngine(){
 
 }
 
 void SoundEngine::init(){
-    playerBackgroud = new QMediaPlayer();
+    playerBackground = new QMediaPlayer();
 }
 
 void SoundEngine::playSoundFromFile(QString filename, bool async){
@@ -32,9 +32,9 @@ void SoundEngine::playSoundFromFile(QString filename, bool async){
     if (!QFile(global_path_to_play.replace("\"","")).exists()){
         qDebug() << "[DEBUG] playerBackgroud " << fileInfo.absoluteFilePath();
         if (async){
-            playerBackgroud->stop();
-            playerBackgroud->setMedia(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
-            playerBackgroud->play();
+            playerBackground->stop();
+            playerBackground->setMedia(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
+            playerBackground->play();
         }else{
             SndPlayer player(nullptr,fileInfo.absoluteFilePath());
             player.wait();
