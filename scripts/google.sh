@@ -70,8 +70,8 @@ case $lang in
        ;;
      la_it)
        languageCode="it-IT"
-       name="it-IT-Standard-B"
-       ssmlGender="FEMALE"
+       name="it-IT-Standard-D"
+       ssmlGender="MALE"
        api=true
        ;;
      nl)
@@ -716,7 +716,7 @@ do
        text=`echo "$text"|sed "s|accumsan|accúmsan|g"`
        text=`echo "$text"|sed "s|lazanki|lazánki|g"`
        text=`echo "$text"|sed "s|leuciscus|leucíscus|g"`
-       text=`echo "$text"|sed "s|lituus gallicus|lítuus gállicus|g"`
+       text=`echo "$text"|sed "s|gallicus|gállicus|g"`
        text=`echo "$text"|sed "s|exam|exám|g"`
        text=`echo "$text"|sed "s|lunam|lúnam|g"`
        text=`echo "$text"|sed "s|lycalopex|lycalópex|g"`
