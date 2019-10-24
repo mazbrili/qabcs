@@ -5,6 +5,7 @@
 #include <QVector>
 #include <QLabel>
 #include <QSettings>
+#include <QKeyEvent>
 
 #include "LoaderAbcFormats.h"
 
@@ -18,7 +19,7 @@ class AlphabetTable : public QDialog
 
     public:
         explicit AlphabetTable(QWidget *parent = nullptr);
-        ~AlphabetTable();
+        ~AlphabetTable() override;
 
     private:
         Ui::AlphabetTable *ui;
@@ -28,9 +29,13 @@ class AlphabetTable : public QDialog
         QVector<QLabel*> listLabelLetters;
 
         void setPalette(QLabel *label, bool fill);
+        void playLetter(QLabel *label);
+
+        bool isPlayLetter;
 
     protected:
-        bool eventFilter(QObject *obj, QEvent *event);
+        bool eventFilter(QObject *obj, QEvent *event) override;
+        void keyPressEvent(QKeyEvent *event) override;
 
 };
 

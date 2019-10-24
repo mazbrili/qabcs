@@ -14,7 +14,8 @@ AlphabetTable::AlphabetTable(QWidget *parent) :
     ui->setupUi(this);    
     this->setWindowTitle(tr("Alphabet table"));
     this->setWindowIcon(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/abc.png"));
-    this->setWindowFlag(Qt::Tool);
+
+    isPlayLetter=false;
 
     QDir dirConfig(QDir::homePath()+"/.qabcs/");
     confSettings = new QSettings(dirConfig.absoluteFilePath("settings.ini"), QSettings::IniFormat);
@@ -65,70 +66,85 @@ AlphabetTable::~AlphabetTable(){
 
 
 bool AlphabetTable::eventFilter(QObject *obj, QEvent *event){
-
-    if (event->type() == QEvent::MouseButtonRelease){
+    if (event->type() == QEvent::MouseButtonRelease and !isPlayLetter){
         auto it = std::find_if(listLabelLetters.begin(),listLabelLetters.end(),[&obj](QLabel *label){
             return obj==label;
         });
         if (it!=listLabelLetters.end()){
-            QLabel *label = dynamic_cast<QLabel*>(obj);
-            QString letter = obj->property("letter").toString();
+            QLabel *label = dynamic_cast<QLabel*>(*it);
+            if (label==nullptr) return QDialog::eventFilter(obj, event);
 
-            if (label==nullptr){
-                return QDialog::eventFilter(obj, event);
-            }
-
-            auto it2 = std::find_if(config_current.letters.begin(),config_current.letters.end(),[&letter](ABC_CONFIG_ALPHA configAlpha){
-                return configAlpha.letter==letter;
-            });
-
-            if (it2!=config_current.letters.end()){
-                setPalette(label,true);
-                ABC_CONFIG_ALPHA l = static_cast<ABC_CONFIG_ALPHA>(*it2);
-
-                QString currentLanguageAbc=confSettings->value("abc/language","en").toString();
-                QString currentFilenameAbc=confSettings->value("abc/filename","abc1.json").toString();
-
-
-                QString speak_method = (l.speak_method.isEmpty()) ? config_current.speak_method : l.speak_method;
-                QString espeak_params = (l.espeak_params.isEmpty()) ? config_current.espeak_params : l.espeak_params;
-
-                if (config_current.format=="properties"){
-                    if (speak_method!="properties_espeak"){
-                        QString letterSoundLetterFilename =  SoundEngine::findSoundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc,letter,"letter");
-                        if (!letterSoundLetterFilename.isEmpty()){
-                            SoundEngine::playSoundFromFile(letterSoundLetterFilename,false);
-                            setPalette(label,false);
-                            return true;
-                        }
-                    }
-                    if (!l.espeak_words.isEmpty()){
-                        SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",false);
-                    }
-
-                }else{
-                    if (speak_method=="espeak"){
-                        if (!l.espeak_words.isEmpty()){
-                            SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",false);
-                        }
-                    }else{
-                        QString filename = l.sound_letter;
-                        if (!filename.isEmpty() and QFile::exists(filename)){
-                            SoundEngine::playSoundFromFile(filename,false);
-                        }else{
-                            SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+letter+"\"",false);
-                        }
-                    }
-                }
-
-                setPalette(label,false);
-            }
+            playLetter(label);
         }
     }
 
     return QDialog::eventFilter(obj, event);
 }
 
+void AlphabetTable::keyPressEvent(QKeyEvent *event){
+    if (isPlayLetter) return;
+    int key=event->key();
+
+    auto it = std::find_if(listLabelLetters.begin(),listLabelLetters.end(),[&key](QLabel *label){
+        return LoaderAbcFormats::upperString(label->property("letter").toString())==QString(QChar(key));
+    });
+    if (it!=listLabelLetters.end()){
+        QLabel *label = dynamic_cast<QLabel*>(*it);
+        if (label==nullptr) return;
+        playLetter(label);
+    }
+
+}
+
+void AlphabetTable::playLetter(QLabel *label){
+    QString letter = label->property("letter").toString();
+
+    auto it2 = std::find_if(config_current.letters.begin(),config_current.letters.end(),[&letter](ABC_CONFIG_ALPHA configAlpha){
+        return configAlpha.letter==letter;
+    });
+    if (it2==config_current.letters.end()) return;
+
+    ABC_CONFIG_ALPHA configAlpha = static_cast<ABC_CONFIG_ALPHA>(*it2);
+
+    setPalette(label,true);
+
+    QString currentLanguageAbc=confSettings->value("abc/language","en").toString();
+    QString currentFilenameAbc=confSettings->value("abc/filename","abc1.json").toString();
+
+
+    QString speak_method = (configAlpha.speak_method.isEmpty()) ? config_current.speak_method : configAlpha.speak_method;
+    QString espeak_params = (configAlpha.espeak_params.isEmpty()) ? config_current.espeak_params : configAlpha.espeak_params;
+
+    if (config_current.format=="properties"){
+        if (speak_method!="properties_espeak"){
+            QString letterSoundLetterFilename =  SoundEngine::findSoundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc,letter,"letter");
+            if (!letterSoundLetterFilename.isEmpty()){
+                SoundEngine::playSoundFromFile(letterSoundLetterFilename,false);
+                setPalette(label,false);
+                return;
+            }
+        }
+        if (!configAlpha.espeak_words.isEmpty()){
+            SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+configAlpha.espeak_words+"\"",false);
+        }
+
+    }else{
+        if (speak_method=="espeak"){
+            if (!configAlpha.espeak_words.isEmpty()){
+                SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+configAlpha.espeak_words+"\"",false);
+            }
+        }else{
+            QString filename = configAlpha.sound_letter;
+            if (!filename.isEmpty() and QFile::exists(filename)){
+                SoundEngine::playSoundFromFile(filename,false);
+            }else{
+                SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+letter+"\"",false);
+            }
+        }
+    }
+
+    setPalette(label,false);
+}
 
 void AlphabetTable::setPalette(QLabel *label,bool fill){
 
@@ -145,12 +161,14 @@ void AlphabetTable::setPalette(QLabel *label,bool fill){
         palette.setBrush(QPalette::Active, QPalette::Window, brush3);
         palette.setBrush(QPalette::Inactive, QPalette::Window, brush3);
         palette.setBrush(QPalette::Disabled, QPalette::Window, brush3);
+        isPlayLetter=true;
     }else{
         QBrush brush2(QColor(0, 255, 255, 255));
         brush2.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Window, brush2);
         palette.setBrush(QPalette::Inactive, QPalette::Window, brush2);
         palette.setBrush(QPalette::Disabled, QPalette::Window, brush2);
+        isPlayLetter=false;
     }
 
     label->setPalette(palette);
