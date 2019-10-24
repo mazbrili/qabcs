@@ -594,10 +594,32 @@ void MainWindow::refreshViewer(){
     QString currentLetter = listLetters.at(currentIndexLetter).letter;
     QString text = listCollections[typeGameToString(typeGame)]->getName(currentLetter);
 
-    text.replace("_"," ");
-    text.replace(currentLetter,"<font color=\"red\">"+currentLetter+"</font>");
+    QStringList currentLetterList = {currentLetter};
 
-    setLetterAndText(currentLetter.toUpper()+currentLetter.toLower(),text);
+    QFile file;
+    file.setFileName(QString(GLOBAL_PATH_USERDATA)+"/langs/variants_"+currentLanguageAbc+".txt");
+    if (!file.exists()){
+        file.setFileName(QString(GLOBAL_PATH_USERDATA)+"/langs/variants.txt");
+    }
+
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        while (!file.atEnd()) {
+            QString line = file.readLine();
+            QStringList pairs = line.split("=");
+            if (pairs.size()!=2) continue;
+            if (pairs.at(0)==currentLetter.toLower()){
+                QString l = pairs.at(1);
+                l.replace(QRegExp("\\t|\\s|\\n|\\r"),"");
+                currentLetterList.push_back(l);
+            }
+        }
+        file.close();
+    }
+
+    text.replace("_"," ");
+    text.replace(QRegExp("("+currentLetterList.join("|")+")",Qt::CaseInsensitive),"<font color=\"red\">\\1</font>");
+
+    setLetterAndText(LoaderAbcFormats::upperString(currentLetter)+currentLetter.toLower(),text);
     setPixmapViewer(listCollections[typeGameToString(typeGame)]->getPixmap(currentLetter));
 }
 
