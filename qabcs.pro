@@ -105,6 +105,7 @@ INSTALLS += data_langs
 
 # Input
 SOURCES += main.cpp \
+    AlphabetTable.cpp \
     FormAbout.cpp \
     mainwindow.cpp \
     FormHelp.cpp \
@@ -115,11 +116,13 @@ SOURCES += main.cpp \
     sndplayer.cpp
 
 FORMS += \
+    AlphabetTable.ui \
     FormAbout.ui \
     FormHelp.ui \
     FormSelectLanguage.ui
 
 HEADERS += \
+    AlphabetTable.h \
     FormAbout.h \
     mainwindow.h \
     FormHelp.h \

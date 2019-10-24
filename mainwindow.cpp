@@ -6,6 +6,7 @@
 #include "FormSelectLanguage.h"
 #include "SoundEngine.h"
 #include "LoaderAbcFormats.h"
+#include "AlphabetTable.h"
 
 #include <QDebug>
 #include <QDir>
@@ -171,6 +172,9 @@ void MainWindow::initToolBar(){
     accTyping = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/typing_on.png"), tr("Typing on/off"), this);
     accTyping->setStatusTip(tr("Typing on/off"));
 
+    accAlphabetTable = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/alphabet_table.png"), tr("Alphabet Table"), this);
+    accAlphabetTable->setStatusTip(tr("Alphabet Table"));
+
     accLang = new QAction(QIcon(QString(GLOBAL_PATH_USERDATA)+"/images/icons/languages.png"), tr("Select language"), this);
     accLang->setStatusTip(tr("Select language"));
 
@@ -192,6 +196,7 @@ void MainWindow::initToolBar(){
     toolBar->addSeparator();
     toolBar->addAction(accSound);
     toolBar->addAction(accTyping);
+    toolBar->addAction(accAlphabetTable);
     toolBar->addAction(accLang);
     toolBar->addAction(accHelp);
     toolBar->addAction(accInfo);
@@ -207,6 +212,7 @@ void MainWindow::initToolBar(){
     connect(accGameToys,SIGNAL(changed()),this,SLOT(clickButtonGameToys()));
     connect(accSound,SIGNAL(triggered()),this,SLOT(clickButtonSound()));
     connect(accTyping,SIGNAL(triggered()),this,SLOT(clickButtonTyping()));
+    connect(accAlphabetTable,SIGNAL(triggered()),this,SLOT(clickButtonAlphabetTable()));
     connect(accLang,SIGNAL(triggered()),this,SLOT(clickButtonLang()));
     connect(accHelp,SIGNAL(triggered()),this,SLOT(clickButtonHelp()));
     connect(accInfo,SIGNAL(triggered()),this,SLOT(clickButtonInfo()));
@@ -1110,6 +1116,11 @@ void MainWindow::clickButtonTyping(){
         _disable_additional_keys=true;
         confSettings->setValue("global/typing","true");
     }
+}
+
+void MainWindow::clickButtonAlphabetTable(){
+    AlphabetTable form(this);
+    form.exec();
 }
 
 void MainWindow::clickButtonLang(){

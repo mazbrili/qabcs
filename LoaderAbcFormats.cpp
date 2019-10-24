@@ -7,22 +7,64 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QtDebug>
+
+#include "config_qabcs.h"
 
 
-ABC_CONFIG LoaderAbcFormats::LoadFilename(const QString &fileName){
+ABC_CONFIG LoaderAbcFormats::LoadFilename(const QString &fileName,bool recursion){
+    ABC_CONFIG result;
+
     if (fileName.indexOf(QRegExp("(.*)(.json)$"))!=-1){
         if (QFile::exists(fileName)){
-            return loadAbcConfigJson(fileName);
+            result = loadAbcConfigJson(fileName);
         }
     }
 
     if (fileName.indexOf(QRegExp("(.*)(.properties)$"))!=-1){
         if (QFile::exists(fileName)){
-            return loadAbcConfigProperties(fileName);
+            result = loadAbcConfigProperties(fileName);
         }
     }
 
-    return ABC_CONFIG();
+    if (recursion and result.filename!="" and result.inheritsFrom!=""){
+        ABC_CONFIG parentConfig = result;
+        result = LoadFilename(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+result.inheritsFrom);
+
+        if (parentConfig.speak_method!="") result.speak_method=parentConfig.speak_method;
+        if (parentConfig.espeak_params!="") result.espeak_params=parentConfig.espeak_params;
+        if (parentConfig.view_letters!="") result.view_letters=parentConfig.view_letters;
+
+        for (ABC_CONFIG_ALPHA &x:parentConfig.letters){
+            QString letter = x.letter;
+
+            auto it = std::find_if(result.letters.begin(),result.letters.end(),[&letter](ABC_CONFIG_ALPHA config){
+                return config.letter==letter;
+            });
+            if (it==result.letters.end()){
+                result.letters.push_back(x);
+            }else{
+                if (x.espeak_words!="") it->espeak_words=x.espeak_words;
+                if (x.sound_letter!="") it->sound_letter=x.sound_letter;
+                if (x.speak_method!="") it->speak_method=x.speak_method;
+                if (x.espeak_params!="") it->espeak_params=x.espeak_params;
+
+                QMapIterator<QString,ABC_CONFIG_GAME> i(x.games);
+                while (i.hasNext()) {
+                    i.next();
+                    if (x.games[i.key()].pic!="") it->games[i.key()].pic=i.value().pic;
+                    if (x.games[i.key()].name!="") it->games[i.key()].name=i.value().name;
+                    if (x.games[i.key()].noises!="") it->games[i.key()].noises=i.value().noises;
+                    if (x.games[i.key()].sound_pic!="") it->games[i.key()].sound_pic=i.value().sound_pic;
+                    if (x.games[i.key()].espeak_words!="") it->games[i.key()].espeak_words=i.value().espeak_words;
+                    if (x.games[i.key()].speak_method!="") it->games[i.key()].speak_method=i.value().speak_method;
+                    if (x.games[i.key()].espeak_params!="") it->games[i.key()].espeak_params=i.value().espeak_params;
+                }
+            }
+        }
+    }
+
+    return result;
 }
 
 ABC_CONFIG LoaderAbcFormats::loadAbcConfigJson(const QString &fileName){
@@ -32,7 +74,7 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigJson(const QString &fileName){
     QFile file;
     file.setFileName(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(0,"qABCs",QObject::tr("Error while opening")+" "+fileName+"\n"+file.errorString());
+        QMessageBox::critical(nullptr,"qABCs",QObject::tr("Error while opening")+" "+fileName+"\n"+file.errorString());
         return ABC_CONFIG();
     }
     val = file.readAll();
@@ -46,7 +88,7 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigJson(const QString &fileName){
 
     QJsonDocument document = QJsonDocument::fromJson(val);
     if (document.isEmpty()){
-        QMessageBox::critical(0,"qABCs",fileName+" "+QObject::tr("is not valid"));
+        QMessageBox::critical(nullptr,"qABCs",fileName+" "+QObject::tr("is not valid"));
         return ABC_CONFIG();
     }
     QJsonObject root = document.object();
@@ -117,7 +159,7 @@ ABC_CONFIG LoaderAbcFormats::loadAbcConfigProperties(const QString &fileName){
 
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        QMessageBox::critical(0,"qABCs",QObject::tr("Error while opening")+" "+fileName+"\n"+file.errorString());
+        QMessageBox::critical(nullptr,"qABCs",QObject::tr("Error while opening")+" "+fileName+"\n"+file.errorString());
         return ABC_CONFIG();
     }
 

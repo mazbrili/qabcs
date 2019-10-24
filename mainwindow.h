@@ -89,6 +89,7 @@ class MainWindow : public QMainWindow {
         QAction *accGameFood;
         QAction *accGameInstrument;
         QAction *accGameToys;
+        QAction *accAlphabetTable;
 
         QAction *accSound;
         QAction *accLang;
@@ -147,6 +148,7 @@ class MainWindow : public QMainWindow {
         void clickButtonGameToys();
         void clickButtonSound();
         void clickButtonTyping();
+        void clickButtonAlphabetTable();
         void clickButtonLang();
         void clickButtonHelp();
         void clickButtonInfo();

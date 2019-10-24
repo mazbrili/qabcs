@@ -42,7 +42,7 @@ struct ABC_CONFIG {
 
 class LoaderAbcFormats {
     public:
-        static ABC_CONFIG LoadFilename(const QString &fileName);
+        static ABC_CONFIG LoadFilename(const QString &fileName,bool recursion=false);
         static ABC_CONFIG loadAbcConfigJson(const QString &fileName);
         static ABC_CONFIG loadAbcConfigProperties(const QString &fileName);
 
