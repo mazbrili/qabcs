@@ -57,6 +57,7 @@ class MainWindow : public QMainWindow {
         QString typeGameToString(TYPE_GAME type);
 
         void setAbcLang(QString lang, QString filename);
+        void readLetterVariants();
         void refreshViewer();        
         void setLetterAndText(QString letter, QString text);
         void setPixmapViewer(QPixmap pixmap);
@@ -103,6 +104,7 @@ class MainWindow : public QMainWindow {
 
         QString currentLanguageAbc;
         QString currentFilenameAbc;
+        QMap<QString,QVector<QString>> listLetterVariants;
 
         QSettings *confSettings;
 

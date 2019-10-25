@@ -538,6 +538,7 @@ void MainWindow::setAbcLang(QString lang,QString filename){
     currentIndexLetter=0;
 
     initLanguageAbc();
+    readLetterVariants();
 
     QString type_game = confSettings->value("global/gametype","misc").toString();
     if (type_game=="rand"){
@@ -585,6 +586,33 @@ void MainWindow::setAbcLang(QString lang,QString filename){
     }else{
         lblAbcLetter->setVisible(true);
     }
+}
+
+void MainWindow::readLetterVariants(){
+    listLetterVariants.clear();
+
+    QStringList filepaths {
+        QString(GLOBAL_PATH_USERDATA)+"/langs/variants_"+currentLanguageAbc+".txt",
+        QString(GLOBAL_PATH_USERDATA)+"/langs/variants.txt"
+    };
+
+    for (auto filename:filepaths){
+        QFile file(filename);
+        if (!file.exists()) continue;
+
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+            while (!file.atEnd()) {
+                QString line = file.readLine();
+                QStringList pairs = line.split("=");
+                if (pairs.size()!=2) continue;
+
+                QString l = pairs.at(1);
+                l.replace(QRegExp("\\t|\\s|\\n|\\r"),"");
+                listLetterVariants[pairs.at(0)].push_back(l);
+            }
+            file.close();
+        }
+    }
 
 }
 
@@ -596,24 +624,10 @@ void MainWindow::refreshViewer(){
 
     QStringList currentLetterList = {currentLetter};
 
-    QFile file;
-    file.setFileName(QString(GLOBAL_PATH_USERDATA)+"/langs/variants_"+currentLanguageAbc+".txt");
-    if (!file.exists()){
-        file.setFileName(QString(GLOBAL_PATH_USERDATA)+"/langs/variants.txt");
-    }
-
-    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        while (!file.atEnd()) {
-            QString line = file.readLine();
-            QStringList pairs = line.split("=");
-            if (pairs.size()!=2) continue;
-            if (pairs.at(0)==currentLetter.toLower()){
-                QString l = pairs.at(1);
-                l.replace(QRegExp("\\t|\\s|\\n|\\r"),"");
-                currentLetterList.push_back(l);
-            }
-        }
-        file.close();
+    if (listLetterVariants.count(currentLetter.toLower())!=0){
+        std::for_each (listLetterVariants[currentLetter.toLower()].begin(), listLetterVariants[currentLetter.toLower()].end(),[&currentLetterList](QString var){
+            currentLetterList.push_back(var);
+        });
     }
 
     text.replace("_"," ");
