@@ -100,11 +100,26 @@ QString Collection::getSound(QString letter){
     return listLetters[letter].sound_pic;
 }
 
-QPixmap Collection::getPixmap(QString letter){
+QString Collection::getPixmap(QString letter){
     QStringList listCombinationspaths;
 
+    /* Supported Image Formats
+    Format    MIME type               Description
+    BMP       image/bmp                  Windows Bitmap
+    GIF       image/gif                  Graphic Interchange Format (optional)
+    JPG       image/jpeg                 Joint Photographic Experts Group
+    PNG       image/png                  Portable Network Graphics
+    PBM       image/x-portable-bitmap    Portable Bitmap
+    PGM       image/x-portable-graymap   Portable Graymap
+    PPM       image/x-portable-pixmap    Portable Pixmap
+    XBM       image/x-xbitmap            X11 Bitmap
+    XPM       image/x-xpixmap            X11 Pixmap
+    SVG       image/svg+xml              Scalable Vector Graphics
+    */
+
+
     QStringList listTypes = QStringList() << "misc" << "food" << "animals" << "instrument" << "toys";
-    QStringList listExtensionFiles = QStringList() << "png" << "xpm" << "svg";
+    QStringList listExtensionFiles = QStringList() << "png" << "xpm" << "svg" << "gif" << "bmp" << "jpg" << "pbm" << "pgm" << "ppm" << "xbm";
 
     listCombinationspaths.push_back(QString(GLOBAL_PATH_USERDATA)+"/abcs/all/pics/"+listLetters[letter].pic.toLower());
     for (QString type:listTypes){
@@ -116,10 +131,10 @@ QPixmap Collection::getPixmap(QString letter){
 
     for (QString filename:listCombinationspaths){
         QFileInfo fileInfo(filename);
-        if (QFile::exists(filename) and fileInfo.isFile()) return QPixmap(filename);
+        if (QFile::exists(filename) and fileInfo.isFile()) return filename;
     }
 
-    return QPixmap();
+    return "";
 }
 
 LETTER_CONFIG Collection::getLetterConfig(QString letter){

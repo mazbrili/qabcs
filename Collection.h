@@ -40,7 +40,7 @@ class Collection{
         QString getName(QString letter);
         QString getSound(QString letter);
 
-        QPixmap getPixmap(QString letter);
+        QString getPixmap(QString letter);
 
         LETTER_CONFIG getLetterConfig(QString letter);
 
