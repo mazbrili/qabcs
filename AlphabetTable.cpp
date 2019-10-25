@@ -35,7 +35,7 @@ AlphabetTable::AlphabetTable(QWidget *parent) :
 
     for (auto &obj:config_current.letters){
         QLabel *cube = new QLabel(this);
-        cube->setText(LoaderAbcFormats::upperString(obj.letter)+obj.letter);
+        cube->setText(LoaderAbcFormats::upperString(obj.letter)+obj.letter.toLower());
         cube->setFont(font);
         cube->setAutoFillBackground(true);
         cube->setAlignment(Qt::AlignCenter);
