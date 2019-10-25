@@ -99,10 +99,10 @@ void AlphabetTable::keyPressEvent(QKeyEvent *event){
 }
 
 void AlphabetTable::playLetter(QLabel *label){
-    QString letter = label->property("letter").toString();
+    QString letter = label->property("letter").toString().toLower();
 
     auto it2 = std::find_if(config_current.letters.begin(),config_current.letters.end(),[&letter](ABC_CONFIG_ALPHA configAlpha){
-        return configAlpha.letter==letter;
+        return configAlpha.letter.toLower()==letter.toLower();
     });
     if (it2==config_current.letters.end()) return;
 
@@ -136,9 +136,10 @@ void AlphabetTable::playLetter(QLabel *label){
                 SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+configAlpha.espeak_words+"\"",false);
             }
         }else{
-            QString filename = configAlpha.sound_letter;
-            if (!filename.isEmpty() and QFile::exists(filename)){
-                SoundEngine::playSoundFromFile(filename,false);
+            QString soundFile = configAlpha.sound_letter;
+            QString pathSoundLetterFilename = SoundEngine::findSoundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc,soundFile,"letter");
+            if (!pathSoundLetterFilename.isEmpty() and QFile::exists(pathSoundLetterFilename)){
+                SoundEngine::playSoundFromFile(pathSoundLetterFilename,false);
             }else{
                 SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+letter+"\"",false);
             }

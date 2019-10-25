@@ -754,9 +754,9 @@ void MainWindow::playSoundLetter(QString letter,bool async){
                         SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+l.espeak_words+"\"",async);
                     }
                 }else{
-                    QString filename = l.sound_letter;
-                    if (!filename.isEmpty() and QFile::exists(filename)){
-                        SoundEngine::playSoundFromFile(filename,async);
+                    QString pathSoundLetterFilename = SoundEngine::findSoundFile(QString(GLOBAL_PATH_USERDATA)+"/abcs/"+currentLanguageAbc+"/"+currentFilenameAbc,l.sound_letter,"letter");
+                    if (!pathSoundLetterFilename.isEmpty() and QFile::exists(pathSoundLetterFilename)){
+                        SoundEngine::playSoundFromFile(pathSoundLetterFilename,async);
                     }else{
                         SoundEngine::playSoundFromSpeechSynthesizer(global_path_to_espeak+" "+espeak_params+" \""+letter+"\"",async);
                     }
