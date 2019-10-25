@@ -215,7 +215,7 @@ bool AlphabetTable::isKeypressLetter(QString letter,QString key){
         [&key](QString var){
             return (key.toLower()==var.toLower());
         }
-    )!=listLetterVariants[letter].end()){
+    )!=listLetterVariants[letter.toLower()].end()){
         return true;
     }
 
