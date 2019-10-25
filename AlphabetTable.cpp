@@ -57,6 +57,7 @@ AlphabetTable::AlphabetTable(QWidget *parent) :
 
     this->setFixedSize(sizeFormWidth,y+90);
 
+    readLetterVariants();
 }
 
 AlphabetTable::~AlphabetTable(){
@@ -85,8 +86,8 @@ void AlphabetTable::keyPressEvent(QKeyEvent *event){
     if (isPlayLetter) return;
     int key=event->key();
 
-    auto it = std::find_if(listLabelLetters.begin(),listLabelLetters.end(),[&key](QLabel *label){
-        return LoaderAbcFormats::upperString(label->property("letter").toString())==QString(QChar(key));
+    auto it = std::find_if(listLabelLetters.begin(),listLabelLetters.end(),[&](QLabel *label){
+        return isKeypressLetter(label->property("letter").toString(),QString(QChar(key)));
     });
     if (it!=listLabelLetters.end()){
         QLabel *label = dynamic_cast<QLabel*>(*it);
@@ -172,4 +173,50 @@ void AlphabetTable::setPalette(QLabel *label,bool fill){
     }
 
     label->setPalette(palette);
+    QCoreApplication::instance()->processEvents();
+}
+
+
+void AlphabetTable::readLetterVariants(){
+    listLetterVariants.clear();
+
+    QString currentLanguageAbc=confSettings->value("abc/language","en").toString();
+
+    QStringList filepaths {
+        QString(GLOBAL_PATH_USERDATA)+"/langs/variants_"+currentLanguageAbc+".txt",
+        QString(GLOBAL_PATH_USERDATA)+"/langs/variants.txt"
+    };
+
+    for (auto filename:filepaths){
+        QFile file(filename);
+        if (!file.exists()) continue;
+
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+            while (!file.atEnd()) {
+                QString line = file.readLine();
+                QStringList pairs = line.split("=");
+                if (pairs.size()!=2) continue;
+
+                QString l = pairs.at(1);
+                l.replace(QRegExp("\\t|\\s|\\n|\\r"),"");
+                listLetterVariants[pairs.at(0)].push_back(l);
+            }
+            file.close();
+        }
+    }
+
+}
+
+bool AlphabetTable::isKeypressLetter(QString letter,QString key){
+    if (letter.toLower().at(0)==key.toLower().at(0)) return true;
+
+    if (std::find_if(listLetterVariants[letter.toLower()].begin(),listLetterVariants[letter.toLower()].end(),
+        [&key](QString var){
+            return (key.toLower()==var.toLower());
+        }
+    )!=listLetterVariants[letter].end()){
+        return true;
+    }
+
+    return  false;
 }

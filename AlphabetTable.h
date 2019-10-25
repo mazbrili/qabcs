@@ -30,8 +30,12 @@ class AlphabetTable : public QDialog
 
         void setPalette(QLabel *label, bool fill);
         void playLetter(QLabel *label);
+        bool isKeypressLetter(QString letter, QString key);
+        void readLetterVariants();
 
         bool isPlayLetter;
+        QMap<QString,QVector<QString>> listLetterVariants;
+
 
     protected:
         bool eventFilter(QObject *obj, QEvent *event) override;

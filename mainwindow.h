@@ -65,6 +65,8 @@ class MainWindow : public QMainWindow {
         void updateletterToList(QString folder_lang, LETTER_INFO letter);
         void playSoundLetter(QString letter, bool async=false);
 
+        bool isKeypressLetter(QString letter,QString key);
+
         bool isExistSox();
         bool isExistEspeak();
 
