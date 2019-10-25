@@ -11,6 +11,7 @@
 #include <QStatusBar>
 #include <QLabel>
 #include <QTranslator>
+#include <QMovie>
 
 #include "Collection.h"
 
@@ -61,6 +62,8 @@ class MainWindow : public QMainWindow {
         void refreshViewer();        
         void setLetterAndText(QString letter, QString text);
         void setPixmapViewer(QPixmap pixmap);
+        void setPixmapViewer(QString filename);
+        void normalPixmapViewer();
 
         void updateletterToList(QString folder_lang, LETTER_INFO letter);
         void playSoundLetter(QString letter, bool async=false);
@@ -78,6 +81,7 @@ class MainWindow : public QMainWindow {
         QStatusBar *statusbar;
         QToolBar *toolBar;
         QLabel *lblAbcPicture;
+        QMovie *moviePicture;
         QLabel *lblAbcLetter;
         QLabel *lblAbcText;
 

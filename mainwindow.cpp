@@ -104,6 +104,8 @@ void MainWindow::initGUI(){
     lblAbcPicture->installEventFilter(this);
     //lblAbcPicture->setFrameShape(QFrame::Box);
 
+    moviePicture = new QMovie(this);
+
     lblAbcText = new QLabel(this);
     lblAbcText->setFont(fontSizeText);
     lblAbcText->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
@@ -651,14 +653,31 @@ void MainWindow::setLetterAndText(QString letter,QString text){
 
 void MainWindow::setPixmapViewer(QPixmap pixmap){
     lblAbcPicture->setPixmap(pixmap);
-
-    int startY = 70;
-
-    int maxWidth = this->width()-20;
-    int maxHeight = 290;
-
     lblAbcPicture->setFixedSize(pixmap.width(),pixmap.height());
 
+    normalPixmapViewer();
+}
+
+void MainWindow::setPixmapViewer(QString filename){
+    QFile file(filename);
+    if (!file.exists()){
+        lblAbcPicture->setPixmap(QPixmap());
+        return;
+    }
+
+    moviePicture->stop();
+    moviePicture->setFileName(filename);
+    moviePicture->start();
+    lblAbcPicture->setMovie(moviePicture);
+    lblAbcPicture->setFixedSize(moviePicture->frameRect().width(),moviePicture->frameRect().height());
+
+    normalPixmapViewer();
+}
+
+void MainWindow::normalPixmapViewer(){
+    int startY = 70;
+    int maxWidth = this->width()-20;
+    int maxHeight = 290;
 
     if (lblAbcPicture->height()>maxHeight){
         double deltaH = static_cast<double>(lblAbcPicture->height())/static_cast<double>(maxHeight);
@@ -672,11 +691,10 @@ void MainWindow::setPixmapViewer(QPixmap pixmap){
         lblAbcPicture->setFixedHeight(lblAbcPicture->height()/deltaW);
     }
 
-
-
     // move to center
     lblAbcPicture->move((this->width()-lblAbcPicture->width())/2,startY+(maxHeight-lblAbcPicture->height())/2);
 }
+
 
 void MainWindow::updateletterToList(QString folder_lang,LETTER_INFO letter){
     int indexLetter=-1;
@@ -1078,7 +1096,7 @@ void MainWindow::clickButtonGameAnimals(){
     }
 
     setLetterAndText(tr("Animals"),"");
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/animals.png"));
+    setPixmapViewer(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/animals.gif");
 }
 
 void MainWindow::clickButtonGameFood(){
@@ -1098,7 +1116,7 @@ void MainWindow::clickButtonGameFood(){
     }
 
 
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/food.png"));
+    setPixmapViewer(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/food.gif");
     setLetterAndText(tr("Food"),"");
 }
 
@@ -1119,7 +1137,7 @@ void MainWindow::clickButtonGameInstrument(){
     }
 
     setLetterAndText(tr("Music"),"");
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/instrument.png"));
+    setPixmapViewer(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/instrument.gif");
 }
 
 void MainWindow::clickButtonGameToys(){
@@ -1139,7 +1157,7 @@ void MainWindow::clickButtonGameToys(){
     }
 
     setLetterAndText(tr("Toys"),"");
-    setPixmapViewer(QPixmap(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/toys.png"));
+    setPixmapViewer(QString(GLOBAL_PATH_USERDATA)+"/images/backgrounds/toys.gif");
 }
 
 void MainWindow::clickButtonSound(){

@@ -2,6 +2,7 @@
 #include "ui_AlphabetTable.h"
 
 #include <QDir>
+#include <QIcon>
 #include <QtDebug>
 
 #include "config_qabcs.h"
