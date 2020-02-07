@@ -1,6 +1,6 @@
 Name:           qabcs
-Version:        1.0.2
-Release:        %mkrel 1
+Version:        1.0.3
+Release:        1
 Summary:        Learn alphabet
 Group:          Education
 License:        GPLv3+

@@ -1,5 +1,5 @@
 Name:           qabcs
-Version:        1.0.2
+Version:        1.0.3
 Release:        alt1
 Summary:        Learn alphabet
 Group:          Education
@@ -40,5 +40,5 @@ associated with it.
 %{_mandir}/man1/*.1*
 
 %changelog
-* Fri Feb 7 2020 Alexander Danilov  <admsasha@altlinux.org> 1.0.2-alt1
-- release 1.0.2
+* Fri Feb 7 2020 Alexander Danilov  <admsasha@altlinux.org> 1.0.3-alt1
+- release 1.0.3
