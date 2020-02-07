@@ -19,6 +19,7 @@
 #include <QCoreApplication>
 #include <QTranslator>
 #include <QLibraryInfo>
+#include <QLayout>
 
 QString global_path_to_espeak;
 QString global_path_to_play;
@@ -132,6 +133,8 @@ void MainWindow::initToolBar(){
     toolBar = new QToolBar("User");
     toolBar->setMovable(false);
     toolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    toolBar->layout()->setSpacing(0);
+
     addToolBar(Qt::TopToolBarArea, toolBar);
 
     toolBar->setIconSize(QSize(40, 40));
