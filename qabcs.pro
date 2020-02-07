@@ -100,7 +100,7 @@ data_images.files = images/*
 INSTALLS += data_images
 
 data_langs.path = /usr/share/qabcs/langs/
-data_langs.files = langs/*.qm langs/langs.json
+data_langs.files = langs/*.qm langs/langs.json langs/variants*.txt
 INSTALLS += data_langs
 
 # Input
