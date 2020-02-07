@@ -1250,7 +1250,7 @@ bool MainWindow::isExistEspeak(){
 #endif
 
     for (QString pathEspeak:pathForSearch){
-        proc.start(pathEspeak+" --version");
+        proc.start(pathEspeak+" --help");
         proc.waitForFinished();
         QString text = proc.readAll();
         if (!text.isEmpty()){
